@@ -25,7 +25,7 @@ export default function Header() {
        <ul className={styles.headtag}>
         <li><Link href="/Dispense" className={`${styles.navLink} ${styles.navLinkActive}`}>Dispense</Link></li>
         <li><Link href="/Goods" className={styles.navLink}>Goods</Link></li>
-        <li><Link href="#paradise" className={styles.navLink}>Paradise</Link></li>
+        <li><Link href="/Paradise" className={styles.navLink}>Paradise</Link></li>
         <li><Link href="#hisotory" className={styles.navLink}>楽しむ</Link></li>
         </ul>
       </nav>
