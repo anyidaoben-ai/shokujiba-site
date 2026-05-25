@@ -18,17 +18,6 @@
   50%       { text-shadow: 0 0 30px #74c0fc88, 0 0 60px #69db7c44; }
 }
 
-.title {
-  font-size: 64px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  display: inline-block; /* ← アニメーションに必要！ */
-  animation:
-    rainbow 3s linear infinite,   /* 🌈 虹色に変化 */
-    float   3s ease-in-out infinite, /* 🪄 ふわふわ浮く */
-    glow    3s ease-in-out infinite; /* ✨ 光る */
-}
-
 .subtitle {
   font-size: 1.9rem;
   font-weight: 500;
@@ -47,8 +36,8 @@
 }
 
 @keyframes colorShift {
-  0%, 100% { color: #1dba8a; } /* エメラルド */
-  50%       { color: #e05a9a; } /* コーラル */
+  0%, 100% { color: #1dba8a; } 
+  50%       { color: #e05a9a; } 
 }
 
 .videoList {
@@ -67,6 +56,45 @@
 .videoItem video {
   border-radius: 12px; /* 角を丸くして見やすく */
 }
+
+/* ページ全体 */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ロゴエリア */
+.logoArea {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 24px;
+  border-radius: 50%;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: 16px;
+  padding: 0 8px;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-left: 17px; 
+}
+
+.imageGrid img {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  object-fit: cover;
+}
+
+.imageGrid img:hover {
+  transform: scale(1.05);
+}
+
 
 
 

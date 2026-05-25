@@ -9,7 +9,6 @@ export default function Page() {
       <Header />
 
       <main>
-        <h1 className={styles.title}>Paradiseはこちら</h1>
         <Carousel />
 
 

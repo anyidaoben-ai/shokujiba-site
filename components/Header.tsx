@@ -1,6 +1,7 @@
 // components/Header.jsx
 import Image from "next/image";
 import styles from "./Header.module.css";
+import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -22,10 +23,10 @@ export default function Header() {
       {/* ── 右上：タブナビゲーション ────────── */}
       <nav>
        <ul className={styles.headtag}>
-        <li><a href="#home" className={`${styles.navLink} ${styles.navLinkActive}`}>Dispens</a></li>
-        <li><a href="#menu" className={styles.navLink}></a></li>
-        <li><a href="#paradise" className={styles.navLink}></a></li>
-        <li><a href="#hisotory" className={styles.navLink}>楽しむ</a></li>
+        <li><Link href="/Dispense" className={`${styles.navLink} ${styles.navLinkActive}`}>Dispense</Link></li>
+        <li><Link href="/Goods" className={styles.navLink}>Goods</Link></li>
+        <li><Link href="#paradise" className={styles.navLink}>Paradise</Link></li>
+        <li><Link href="#hisotory" className={styles.navLink}>楽しむ</Link></li>
         </ul>
       </nav>
 
