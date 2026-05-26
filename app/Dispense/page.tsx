@@ -41,7 +41,12 @@ const products: Product[] = [
   { id: "tougarasi", name: "赤とうがらし", category: "香味", price: 360, unit: "120g", image: "/images/tougarasi.png", note: "鮮烈な辛み。オイル漬けや炒め物に。" },
   { id: "toumorokosi", name: "とうもろこし", category: "野菜", price: 580, unit: "2本", image: "/images/toumorokosi.png", note: "粒立ちの良い甘さ。茹でても焼いても主役級。" },
   { id: "yakiimo", name: "紅やきいも", category: "根菜", price: 640, unit: "700g", image: "/images/yakiimo.png", note: "しっとり甘いさつまいも。焼き芋や天ぷらに。" },
-  { id: "wagyu", name: "和牛", category: "肉", price: 1200, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
+  { id: "koubebeef", name: "神戸ビーフ", category: "肉", price: 4800, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
+  { id: "matuzakausi", name: "松坂牛", category: "肉", price: 3600, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
+  { id: "oumigyu", name: "近江牛", category: "肉", price: 4600, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
+  { id: "shatoburian", name: "シャトーブリアン", category: "肉", price: 7000, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
+  { id: "kinkaton", name: "金華豚", category: "肉", price: 7000, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
+  { id: "angasubeef", name: "アンガスビーフ", category: "肉", price: 3000, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
 ];
 
 const categories = ["すべて", ...Array.from(new Set(products.map((product) => product.category)))];
