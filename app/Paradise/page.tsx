@@ -1,4 +1,7 @@
+"use client";
+
 import styles from "./page.module.css";
+import Image from "next/image";
 
 const stats = [
   {
@@ -103,7 +106,7 @@ export default function ParadisePage() {
           aria-label="PARADISE EARTHの全体画像"
         >
           <div className={styles.imageFrame}>
-            <img
+            <Image
               src="/public/paradise-earth.jpg"
               alt="PARADISE EARTHの巨大リゾート構想マップ"
             />
