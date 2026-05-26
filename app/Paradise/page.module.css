@@ -264,45 +264,242 @@
     padding: 100px 30px;
   }
 }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Arial,sans-serif;background:#020611;color:white;line-height:1.8;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
-    .bg-glow{position:fixed;inset:0;pointer-events:none;z-index:-1;background:
-      radial-gradient(circle at 20% 20%,rgba(0,190,255,.22),transparent 30%),
-      radial-gradient(circle at 80% 10%,rgba(255,190,70,.18),transparent 28%),
-      radial-gradient(circle at 50% 90%,rgba(17,255,170,.14),transparent 35%)}
-    nav{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;background:rgba(2,6,17,.55);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .logo{font-family:Georgia,serif;letter-spacing:.16em;color:#f7c96b;font-size:18px;font-weight:700}
-    .navlinks{display:flex;gap:22px;font-size:13px;color:#e9f7ff}
-    .hero{min-height:100vh;background:linear-gradient(90deg,rgba(2,6,17,.97),rgba(2,6,17,.35),rgba(2,6,17,.8)),url("shokujiba-paradise-concept.png") center/cover;display:flex;align-items:center;padding:130px 7vw 80px}
-    .eyebrow{color:#62eaff;letter-spacing:.25em;font-size:13px;text-transform:uppercase}
-    h1{font-family:Georgia,serif;font-size:clamp(54px,9vw,150px);line-height:.92;margin:18px 0;color:#f7c96b;letter-spacing:.06em;text-shadow:0 0 40px rgba(247,201,107,.25)}
-    .hero p{font-size:clamp(18px,2vw,29px);max-width:850px;color:#eefaff}
-    .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-    .btn{display:inline-block;padding:14px 30px;border-radius:999px;font-weight:900;border:1px solid rgba(247,201,107,.85)}
-    .primary{background:#f7c96b;color:#06101d}
-    .ghost{background:rgba(255,255,255,.07);color:white}
-    section{padding:95px 7vw}
-    h2{font-family:Georgia,serif;font-size:clamp(36px,5.5vw,82px);line-height:1.04;margin:0 0 24px;color:#f7c96b}
-    .lead{max-width:1050px;color:#d9ecf7;font-size:19px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px;margin-top:42px}
-    .card{padding:30px;border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.13);box-shadow:0 24px 70px rgba(0,0,0,.32)}
-    .card h3{margin:0 0 12px;color:#f7c96b;font-size:24px}
-    .card p,.card li{color:#dcecf5}
-    .stat strong{display:block;font-family:Georgia,serif;color:#f7c96b;font-size:42px;line-height:1.1}
-    .dark{background:linear-gradient(180deg,#061a2c,#020611)}
-    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
-    .image-panel{min-height:520px;border-radius:38px;background:url("shokujiba-paradise-concept.png") center/cover;border:1px solid rgba(247,201,107,.35);box-shadow:0 30px 100px rgba(0,0,0,.48)}
-    .tag{display:inline-block;margin:7px 7px 0 0;padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#e7f7ff;font-size:13px;background:rgba(255,255,255,.05)}
-    .gold{background:linear-gradient(135deg,rgba(247,201,107,.2),rgba(0,194,255,.12));border:1px solid rgba(247,201,107,.42);border-radius:40px;padding:48px}
-    .timeline{border-left:1px solid rgba(247,201,107,.45);padding-left:28px;margin-top:40px}
-    .phase{margin-bottom:34px}
-    .phase b{color:#62eaff;letter-spacing:.12em}
-    .price{font-size:38px;color:#f7c96b;font-family:Georgia,serif}
-    .feature-list{columns:2;column-gap:50px}
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    input,textarea,select{width:100%;padding:15px;border-radius:16px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:white;margin-bottom:14px}
-    textarea{height:150px}
-    footer{padding:55px 7vw;text-align:center;background:#020611;color:#91aabe}
-    @media(max-width:850px){.navlinks{display:none}.split,.contact{grid-template-columns:1fr}.image-panel{min-height:300px}.feature-list{columns:1}section{padding:70px 6vw}}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Arial, sans-serif;
+  background: #020611;
+  color: white;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+.bgGlow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 190, 255, 0.22), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(255, 190, 70, 0.18), transparent 28%),
+    radial-gradient(circle at 50% 90%, rgba(17, 255, 170, 0.14), transparent 35%);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 99;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 6vw;
+
+  background: rgba(2, 6, 17, 0.55);
+  backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-family: Georgia, serif;
+  letter-spacing: 0.16em;
+  color: #f7c96b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.navlinks {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+  color: #e9f7ff;
+}
+
+.hero {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 17, 0.97),
+      rgba(2, 6, 17, 0.35),
+      rgba(2, 6, 17, 0.8)
+    ),
+    url("/images/shokujiba-paradise-concept.png");
+
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+
+  padding: 130px 7vw 80px;
+}
+
+.eyebrow {
+  color: #62eaff;
+  letter-spacing: 0.25em;
+  font-size: 13px;
+}
+
+.title {
+  font-family: Georgia, serif;
+  font-size: clamp(54px, 9vw, 150px);
+  line-height: 0.92;
+  margin: 18px 0;
+  color: #f7c96b;
+}
+
+.heroText {
+  font-size: clamp(18px, 2vw, 29px);
+  max-width: 850px;
+  color: #eefaff;
+}
+
+.cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.primary {
+  background: #f7c96b;
+  color: #06101d;
+}
+
+.ghost {
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  border: 1px solid rgba(247, 201, 107, 0.85);
+}
+
+.section {
+  padding: 95px 7vw;
+}
+
+.heading {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5.5vw, 82px);
+  color: #f7c96b;
+}
+
+.lead {
+  max-width: 1050px;
+  color: #d9ecf7;
+  font-size: 19px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 22px;
+  margin-top: 42px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.stat strong {
+  display: block;
+  font-size: 42px;
+  color: #f7c96b;
+}
+
+.dark {
+  background: linear-gradient(180deg, #061a2c, #020611);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 38px;
+  align-items: center;
+}
+
+.imagePanel {
+  min-height: 520px;
+  border-radius: 38px;
+
+  background: url("/images/shokujiba-paradise-concept.png");
+  background-position: center;
+  background-size: cover;
+
+  border: 1px solid rgba(247, 201, 107, 0.35);
+}
+
+.tag {
+  display: inline-block;
+  margin: 7px 7px 0 0;
+  padding: 8px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.price {
+  font-size: 38px;
+  color: #f7c96b;
+  font-family: Georgia, serif;
+}
+
+.footer {
+  padding: 55px 7vw;
+  text-align: center;
+  background: #020611;
+  color: #91aabe;
+}
+
+@media (max-width: 850px) {
+  .navlinks {
+    display: none;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .imagePanel {
+    min-height: 300px;
+  }
+
+  .section {
+    padding: 70px 6vw;
+  }
+}
