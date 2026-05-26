@@ -104,7 +104,7 @@ export default function ParadisePage() {
         >
           <div className={styles.imageFrame}>
             <img
-              src="/assets/paradise-earth.jpg"
+              src="/public/paradise-earth.jpg"
               alt="PARADISE EARTHの巨大リゾート構想マップ"
             />
           </div>
