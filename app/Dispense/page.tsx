@@ -42,11 +42,17 @@ const products: Product[] = [
   { id: "toumorokosi", name: "とうもろこし", category: "野菜", price: 580, unit: "2本", image: "/images/toumorokosi.png", note: "粒立ちの良い甘さ。茹でても焼いても主役級。" },
   { id: "yakiimo", name: "紅やきいも", category: "根菜", price: 640, unit: "700g", image: "/images/yakiimo.png", note: "しっとり甘いさつまいも。焼き芋や天ぷらに。" },
   { id: "koubebeef", name: "神戸ビーフ", category: "肉", price: 4800, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
-  { id: "matuzakausi", name: "松坂牛", category: "肉", price: 3600, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
-  { id: "oumigyu", name: "近江牛", category: "肉", price: 4600, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
-  { id: "shatoburian", name: "シャトーブリアン", category: "肉", price: 7000, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
-  { id: "kinkaton", name: "金華豚", category: "肉", price: 7000, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
-  { id: "angasubeef", name: "アンガスビーフ", category: "肉", price: 3000, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
+  { id: "matuzakausi", name: "松坂牛", category: "肉", price: 3600, unit: "100g", image: "/images/matuzakausi.png", note: "とろける極上和牛。" },
+  { id: "oumigyu", name: "近江牛", category: "肉", price: 4600, unit: "100g", image: "/images/oumigyu.png", note: "とろける高級和牛。" },
+  { id: "shatoburian", name: "シャトーブリアン", category: "肉", price: 7000, unit: "100g", image: "/images/shatoburian.png", note: "希少部位の極み" },
+  { id: "kinkaton", name: "金華豚", category: "肉", price: 7000, unit: "100g", image: "/images/kinkaton.png", note: "甘み広がる贅沢豚。" },
+  { id: "angasubeef", name: "アンガスビーフ", category: "肉", price: 3000, unit: "100g", image: "/images/angasubeef.png", note: "旨味濃厚ステーキ" },
+  { id: "honmaguro", name: "本マグロ", category: "魚", price: 15000, unit: "100g", image: "/images/honmaguro.png", note: "脂乗り極上マグロ" },
+  { id: "hugu", name: "フグ", category: "魚", price: 8000, unit: "100g", image: "/images/hugu.png", note: "高級白身の贅沢" },
+  { id: "awabi", name: "アワビ", category: "魚", price: 10000, unit: "100g", image: "/images/awabi.png", note: "磯香る極上食感" },
+  { id: "iseebi", name: "伊勢海老", category: "魚", price: 15000, unit: "100g", image: "/images/iseebi.png", note: "ぷりぷり海の王様。" },
+  { id: "hamo", name: "ハモ", category: "魚", price: 9000, unit: "100g", image: "/images/hamo.png", note: "夏香る上品白身" },
+  { id: "samon", name: "サーモン", category: "魚", price: 9000, unit: "100g", image: "/images/samon.png", note: "脂とろける絶品魚" },
 ];
 
 const categories = ["すべて", ...Array.from(new Set(products.map((product) => product.category)))];
