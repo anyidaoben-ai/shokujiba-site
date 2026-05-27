@@ -104,7 +104,7 @@ export default function ParadisePage() {
         >
           <div className={styles.imageFrame}>
             <img
-              src="/assets/paradise-earth.png"
+              src="/assets/paradise-earth.jpg"
               alt="PARADISE EARTHの巨大リゾート構想マップ"
             />
           </div>
@@ -336,7 +336,6 @@ export default function ParadisePage() {
               <p>メール：info@shokujiba-paradise.com</p>
               <p>Instagram：@shokujiba_paradise</p>
             </div>
-
             <form className={styles.shokujibaForm}>
               <input placeholder="お名前" />
               <input placeholder="メールアドレス" />
