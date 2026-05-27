@@ -1,7 +1,4 @@
-"use client";
-
 import styles from "./page.module.css";
-import Image from "next/image";
 
 const stats = [
   {
@@ -106,8 +103,8 @@ export default function ParadisePage() {
           aria-label="PARADISE EARTHの全体画像"
         >
           <div className={styles.imageFrame}>
-            <Image
-              src="/public/paradise-earth.jpg"
+            <img
+              src="/assets/paradise-earth.png"
               alt="PARADISE EARTHの巨大リゾート構想マップ"
             />
           </div>
@@ -140,8 +137,226 @@ export default function ParadisePage() {
             </div>
           </div>
         </section>
+
+                <section className={styles.shokujibaHero}>
+          <div>
+            <p className={styles.shokujibaEyebrow}>
+              THE ULTIMATE MEGA RESORT PROJECT
+            </p>
+            <h2 className={styles.shokujibaTitle}>
+              SHOKUJIBA
+              <br />
+              PARADISE
+            </h2>
+            <p className={styles.shokujibaLead}>
+              世界最大級を目指す、超巨大パラダイスリゾート計画。
+              ホテル、海、プール、ジャングル、未来都市、ショー、VIPヴィラ、
+              ウェルネスを全部入れ込んだ“楽園都市”。
+            </p>
+
+            <div className={styles.shokujibaActions}>
+              <a className={`${styles.shokujibaButton} ${styles.shokujibaPrimary}`} href="#shokujiba-vision">
+                全計画を見る
+              </a>
+              <a className={`${styles.shokujibaButton} ${styles.shokujibaGhost}`} href="#shokujiba-contact">
+                参加・出資相談
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.shokujibaSection} id="shokujiba-vision">
+          <h2>世界観</h2>
+          <p className={styles.shokujibaText}>
+            Shokujiba Paradiseは、ただのホテルでも、ただのテーマパークでもありません。
+            “泊まる・遊ぶ・癒される・稼ぐ・発信する・夢を見る”を全部まとめた、
+            巨大リゾートブランドです。炎、水、ネオン、南国植物、海、ジャングル、
+            未来建築を融合し、訪れた瞬間に別世界へ入る体験を作ります。
+          </p>
+
+          <div className={styles.shokujibaGrid}>
+            <div className={styles.shokujibaCard}>
+              <strong>500,000ha</strong>
+              <span>最大級スケール構想</span>
+            </div>
+            <div className={styles.shokujibaCard}>
+              <strong>300,000室</strong>
+              <span>ホテル客室イメージ</span>
+            </div>
+            <div className={styles.shokujibaCard}>
+              <strong>1,000+</strong>
+              <span>大型施設</span>
+            </div>
+            <div className={styles.shokujibaCard}>
+              <strong>50,000,000人</strong>
+              <span>年間来場者目標</span>
+            </div>
+          </div>
+        </section>
+
+        <section className={`${styles.shokujibaSection} ${styles.shokujibaDark}`} id="shokujiba-zones">
+          <h2>Resort Zones</h2>
+          <p className={styles.shokujibaText}>
+            1つの敷地に、世界レベルのリゾートエリアを複数展開。
+          </p>
+
+          <div className={styles.shokujibaGrid}>
+            <article className={styles.shokujibaCard}>
+              <h3>Paradise Beach</h3>
+              <p>白砂ビーチ、透明な海、サンセットバー、海上花火、プライベートカバナ。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Sky Palace Hotel</h3>
+              <p>超高層ラグジュアリーホテル。天空プール、ヘリポート、VIPラウンジ。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Ocean Kingdom</h3>
+              <p>巨大水族館、イルカショー、海底レストラン、水中ホテル、海中トンネル。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Water World</h3>
+              <p>最大級ウォーターパーク。波のプール、流れるプール、ナイトプール、巨大スライダー。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Jungle Village</h3>
+              <p>熱帯雨林、滝、吊り橋、ジャングルヴィラ、ナイトサファリ。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Entertainment City</h3>
+              <p>テーマパーク、ライブ会場、クラブ、映画館、アリーナ、花火ショー。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Shopping Kingdom</h3>
+              <p>高級ブランド、屋外モール、ナイトマーケット、免税エリア。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Wellness Island</h3>
+              <p>温泉、スパ、ヨガ、瞑想、医療リトリート、長期滞在施設。</p>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.shokujibaSection}>
+          <div className={styles.shokujibaSplit}>
+            <div>
+              <h2>Hotel & Stay</h2>
+              <p className={styles.shokujibaText}>
+                客室はすべて“世界観別”。宿泊自体がアトラクションになる設計。
+              </p>
+
+              <div className={styles.shokujibaTags}>
+                <span>海上ヴィラ</span>
+                <span>水中スイート</span>
+                <span>天空スイート</span>
+                <span>ジャングルヴィラ</span>
+                <span>ファイヤーテラス</span>
+                <span>プライベートプール</span>
+                <span>ロイヤルスイート</span>
+                <span>長期滞在レジデンス</span>
+              </div>
+            </div>
+
+            <div className={styles.shokujibaImagePanel}></div>
+          </div>
+        </section>
+
+        <section className={`${styles.shokujibaSection} ${styles.shokujibaDark}`}>
+          <h2>体験コンテンツ</h2>
+
+          <div className={styles.shokujibaGrid}>
+            <article className={styles.shokujibaCard}>
+              <h3>Day Experience</h3>
+              <p>プール、ビーチ、ジャングル、ショッピング、アクティビティを1日中楽しめる。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Night Paradise</h3>
+              <p>炎のショー、花火、DJ、ナイトプール、ライトアップで夜も眠らない。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Food Paradise</h3>
+              <p>世界中の料理、海上レストラン、ジャングルBBQ、VIPダイニング。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Future Transport</h3>
+              <p>モノレール、電動カート、海上タクシー、ヘリ、未来型移動システム。</p>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.shokujibaSection}>
+          <h2>VIP Membership</h2>
+          <p className={styles.shokujibaText}>
+            Shokujiba Paradiseの世界観をさらに濃く体験するためのVIP制度。
+          </p>
+
+          <div className={styles.shokujibaGrid}>
+            <article className={styles.shokujibaCard}>
+              <h3>Gold Member</h3>
+              <div className={styles.shokujibaPrice}>¥50,000〜</div>
+              <p>優先予約、限定イベント、ラウンジ利用。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Paradise VIP</h3>
+              <div className={styles.shokujibaPrice}>¥300,000〜</div>
+              <p>VIPカバナ、専属案内、特別ディナー、ショー優先席。</p>
+            </article>
+
+            <article className={styles.shokujibaCard}>
+              <h3>Royal Owner</h3>
+              <div className={styles.shokujibaPrice}>相談制</div>
+              <p>専用ヴィラ、投資枠、共同ブランド展開、特別待遇。</p>
+            </article>
+          </div>
+        </section>
+
+        <section className={`${styles.shokujibaSection} ${styles.shokujibaDark}`} id="shokujiba-contact">
+          <h2>Contact</h2>
+          <p className={styles.shokujibaText}>
+            出資、協業、土地提供、飲食出店、イベント、メディア掲載、採用などはこちら。
+          </p>
+
+          <div className={styles.shokujibaContact}>
+            <div className={styles.shokujibaGold}>
+              <h3>募集パートナー</h3>
+              <p>
+                投資家 / 建築家 / ホテル運営 / 飲食ブランド / 農家・生産者 /
+                イベント会社 / インフルエンサー / スタッフ
+              </p>
+              <p>メール：info@shokujiba-paradise.com</p>
+              <p>Instagram：@shokujiba_paradise</p>
+            </div>
+
+            <form className={styles.shokujibaForm}>
+              <input placeholder="お名前" />
+              <input placeholder="メールアドレス" />
+              <select defaultValue="">
+                <option value="" disabled>
+                  お問い合わせ種別
+                </option>
+                <option>出資相談</option>
+                <option>協業相談</option>
+                <option>出店相談</option>
+                <option>採用応募</option>
+              </select>
+              <textarea placeholder="内容"></textarea>
+              <button className={`${styles.shokujibaButton} ${styles.shokujibaPrimary}`} type="button">
+                送信する
+              </button>
+            </form>
+          </div>
+        </section>
       </main>
-      
 
       <footer className={styles.footer}>PARADISE EARTH visual introduction page</footer>
     </div>

@@ -339,3 +339,226 @@
     width: 100%;
   }
 }
+
+.shokujibaHero {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 17, 0.97),
+      rgba(2, 6, 17, 0.35),
+      rgba(2, 6, 17, 0.8)
+    ),
+    url("/assets/shokujiba-paradise-concept.png") center / cover;
+  display: flex;
+  align-items: center;
+  padding: 130px 7vw 80px;
+  color: white;
+}
+
+.shokujibaEyebrow {
+  color: #62eaff;
+  letter-spacing: 0.25em;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.shokujibaTitle {
+  font-family: Georgia, serif;
+  font-size: clamp(54px, 9vw, 150px);
+  line-height: 0.92;
+  margin: 18px 0;
+  color: #f7c96b;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 40px rgba(247, 201, 107, 0.25);
+}
+
+.shokujibaLead {
+  font-size: clamp(18px, 2vw, 29px);
+  max-width: 850px;
+  color: #eefaff;
+  line-height: 1.8;
+}
+
+.shokujibaActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.shokujibaButton {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-weight: 900;
+  border: 1px solid rgba(247, 201, 107, 0.85);
+  text-decoration: none;
+}
+
+.shokujibaPrimary {
+  background: #f7c96b;
+  color: #06101d;
+}
+
+.shokujibaGhost {
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+}
+
+.shokujibaSection {
+  padding: 95px 7vw;
+  background: #020611;
+  color: white;
+}
+
+.shokujibaSection h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 5.5vw, 82px);
+  line-height: 1.04;
+  margin: 0 0 24px;
+  color: #f7c96b;
+}
+
+.shokujibaText {
+  max-width: 1050px;
+  color: #d9ecf7;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.shokujibaDark {
+  background: linear-gradient(180deg, #061a2c, #020611);
+}
+
+.shokujibaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 22px;
+  margin-top: 42px;
+}
+
+.shokujibaCard {
+  padding: 30px;
+  border-radius: 30px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.11),
+    rgba(255, 255, 255, 0.025)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.shokujibaCard h3 {
+  margin: 0 0 12px;
+  color: #f7c96b;
+  font-size: 24px;
+}
+
+.shokujibaCard p,
+.shokujibaCard span {
+  color: #dcecf5;
+}
+
+.shokujibaCard strong {
+  display: block;
+  font-family: Georgia, serif;
+  color: #f7c96b;
+  font-size: 42px;
+  line-height: 1.1;
+}
+
+.shokujibaSplit {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 38px;
+  align-items: center;
+}
+
+.shokujibaImagePanel {
+  min-height: 520px;
+  border-radius: 38px;
+  background: url("/assets/shokujiba-paradise-concept.png") center / cover;
+  border: 1px solid rgba(247, 201, 107, 0.35);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.48);
+}
+
+.shokujibaTags span {
+  display: inline-block;
+  margin: 7px 7px 0 0;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #e7f7ff;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.shokujibaPrice {
+  font-size: 38px;
+  color: #f7c96b;
+  font-family: Georgia, serif;
+}
+
+.shokujibaContact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 42px;
+}
+
+.shokujibaGold {
+  background: linear-gradient(
+    135deg,
+    rgba(247, 201, 107, 0.2),
+    rgba(0, 194, 255, 0.12)
+  );
+  border: 1px solid rgba(247, 201, 107, 0.42);
+  border-radius: 40px;
+  padding: 48px;
+}
+
+.shokujibaGold h3 {
+  color: #f7c96b;
+  margin-top: 0;
+}
+
+.shokujibaGold p {
+  color: #dcecf5;
+}
+
+.shokujibaForm input,
+.shokujibaForm textarea,
+.shokujibaForm select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  margin-bottom: 14px;
+}
+
+.shokujibaForm textarea {
+  height: 150px;
+}
+
+@media (max-width: 850px) {
+  .shokujibaHero {
+    padding: 110px 6vw 70px;
+  }
+
+  .shokujibaSection {
+    padding: 70px 6vw;
+  }
+
+  .shokujibaSplit,
+  .shokujibaContact {
+    grid-template-columns: 1fr;
+  }
+
+  .shokujibaImagePanel {
+    min-height: 300px;
+  }
+}
