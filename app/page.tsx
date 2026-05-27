@@ -114,7 +114,7 @@ const oceanSlides: Slide[] = [
     id: 4,
     title: 'Paradise',
     description: '夜のParadise',
-    image: '/images/power.PNG',
+    image: '/images/rusutu.PNG',
     textColor: 'white',
   },
 ];
