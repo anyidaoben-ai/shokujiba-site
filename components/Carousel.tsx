@@ -1,23 +1,44 @@
-// components/Carousel.tsx
-
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-const slides = [
+const onsenslides = [
   { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
   { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
-  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpeg', textColor: '#1d1d1f' },
+  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
   { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
-  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpeg', textColor: '#1d1d1f' },
+  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
+];
+
+const beachslides = [
+  { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
+  { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
+  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
+  { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
+  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
+];
+
+const oceanslides = [
+  { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
+  { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
+  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
+  { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
+  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
+];
+
+const hotelslides = [
+  { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
+  { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
+  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
+  { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
+  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
 ];
 
 export default function Carousel() {
   const [current, setCurrent] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 自動スライド
   const startTimer = () => {
     timerRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -31,7 +52,6 @@ export default function Carousel() {
     };
   }, []);
 
-  // ボタンを押したらタイマーをリセット
   const goTo = (index: number) => {
     if (timerRef.current) clearInterval(timerRef.current);
     setCurrent(index);
@@ -55,7 +75,6 @@ export default function Carousel() {
         style={{ objectFit: 'cover' }}
       />
 
-      {/* テキスト */}
       <div style={{
         position: 'absolute',
         bottom: '80px',
@@ -66,11 +85,9 @@ export default function Carousel() {
         <p style={{ fontSize: '16px', margin: 0 }}>{slide.description}</p>
       </div>
 
-      {/* 左右ボタン */}
       <button onClick={prev} style={btnStyle('left')}>‹</button>
       <button onClick={next} style={btnStyle('right')}>›</button>
 
-      {/* ドット */}
       <div style={{ position: 'absolute', bottom: '24px', width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
         {slides.map((_, i) => (
           <button
@@ -94,7 +111,6 @@ export default function Carousel() {
   );
 }
 
-// 左右ボタンのスタイル
 function btnStyle(side: 'left' | 'right'): React.CSSProperties {
   return {
     position: 'absolute',

@@ -141,6 +141,7 @@ export default function ParadisePage() {
           </div>
         </section>
       </main>
+      
 
       <footer className={styles.footer}>PARADISE EARTH visual introduction page</footer>
     </div>
