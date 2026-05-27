@@ -7,16 +7,51 @@ import styles from './page.module.css';
 const onsenSlides: Slide[] = [
   {
     id: 1,
-    title: 'Paradise Onsen',
+    title: 'Shokujiba Onsen',
     description: '極上のパラダイス温泉。',
-    image: '/images/gokujuonsenn.png',
+    image: '/images/kaijou.png',
     textColor: 'white',
   },
   {
     id: 2,
-    title: 'TechnologyLand',
-    description: 'AIのワクワクを、最高の環境で。',
-    image: '/images/dragonai.png',
+    title: 'Shokujiba Onsen',
+    description: '極上のパラダイス温泉。',
+    image: '/images/hiroma.png',
+    textColor: '#1d1d1f',
+  },
+  {
+    id: 3,
+    title: 'Shokujiba Onsen',
+    description: '極上のパラダイス温泉。',
+    image: '/images/enkaijou.png',
+    textColor: '#1d1d1f',
+  },
+  {
+    id: 4,
+    title: 'Shokujiba Onsen',
+    description: '極上のパラダイス温泉。',
+    image: '/images/koushoujou.png',
+    textColor: '#1d1d1f',
+  },
+  {
+    id: 5,
+    title: 'Shokujiba Onsen',
+    description: '極上のパラダイス温泉。',
+    image: '/images/nedoko.png',
+    textColor: '#1d1d1f',
+  },
+  {
+    id: 6,
+    title: 'Shokujiba Onsen',
+    description: '極上のパラダイス温泉。',
+    image: '/images/oyu.png',
+    textColor: '#1d1d1f',
+  },
+  {
+    id: 7,
+    title: 'Shokujiba Onsen',
+    description: '極上のパラダイス温泉。',
+    image: '/images/sikounoyu.png',
     textColor: '#1d1d1f',
   },
 ];
@@ -31,9 +66,24 @@ const beachSlides: Slide[] = [
   },
   {
     id: 2,
-    title: 'Japanese Hokkaido',
-    description: '道産子パラダイス。',
-    image: '/images/japanesehokkaido.jpg',
+    title: 'Shokujiba Beach',
+    description: 'Paradiseを感じよう',
+    image: '/images/beach.jpg',
+    textColor: '#1d1d1f',
+  },
+  {
+    id: 3,
+    title: 'Shokujiba Beach',
+    description: 'Paradiseを感じよう。',
+    image: '/images/ocean.JPG',
+    textColor: '#1d1d1f',
+
+  },
+  {
+    id: 4,
+    title: 'Shokujiba Beach',
+    description: 'Paradiseを感じよう。',
+    image: '/images/ocean.JPG',
     textColor: '#1d1d1f',
   },
 ];
@@ -49,6 +99,41 @@ const oceanSlides: Slide[] = [
 ];
 
 const hotelSlides: Slide[] = [
+  {
+    id: 1,
+    title: 'Hotel',
+    description: '最高の宿泊空間。',
+    image: '/images/paradise-earth.jpg',
+    textColor: 'white',
+  },
+  {
+    id: 1,
+    title: 'Hotel',
+    description: '最高の宿泊空間。',
+    image: '/images/restoran.PNG',
+    textColor: 'white',
+  },
+  {
+    id: 2,
+    title: 'Hotel',
+    description: '最高の宿泊空間。',
+    image: '/images/hotel.PNG',
+    textColor: 'white',
+  },
+  {
+    id: 3,
+    title: 'Hotel',
+    description: '最高の宿泊空間。',
+    image: '/images/toshokan.PNG',
+    textColor: 'white',
+  },
+  {
+    id: 4,
+    title: 'Hotel',
+    description: '最高の宿泊空間。',
+    image: '/images/bar.PNG',
+    textColor: 'white',
+  },
   {
     id: 1,
     title: 'Hotel',
