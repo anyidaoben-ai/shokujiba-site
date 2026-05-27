@@ -68,7 +68,7 @@ const beachSlides: Slide[] = [
     id: 2,
     title: 'Shokujiba Beach',
     description: 'Paradiseを感じよう',
-    image: '/images/beach.jpg',
+    image: '/images/beach.jpeg',
     textColor: '#1d1d1f',
   },
   {
@@ -83,7 +83,7 @@ const beachSlides: Slide[] = [
     id: 4,
     title: 'Shokujiba Beach',
     description: 'Paradiseを感じよう。',
-    image: '/images/ocean.JPG',
+    image: '/images/umi.JPG',
     textColor: '#1d1d1f',
   },
 ];
@@ -93,19 +93,40 @@ const oceanSlides: Slide[] = [
     id: 1,
     title: 'Ocean',
     description: '海の世界。',
-    image: '/images/neontokyo.jpg',
+    image: '/images/kisi.PNG',
+    textColor: 'white',
+  },
+  {
+    id: 2,
+    title: 'Ocean',
+    description: '海の世界。',
+    image: '/images/fish.PNG',
+    textColor: 'white',
+  },
+  {
+    id: 3,
+    title: 'Ocean',
+    description: '海の世界。',
+    image: '/images/nami.PNG',
+    textColor: 'white',
+  },
+  {
+    id: 4,
+    title: 'Ocean',
+    description: '海の世界。',
+    image: '/images/tunami.PNG',
+    textColor: 'white',
+  },
+  {
+    id: 5,
+    title: 'Ocean',
+    description: '海の世界。',
+    image: '/images/kame.PNG',
     textColor: 'white',
   },
 ];
 
 const hotelSlides: Slide[] = [
-  {
-    id: 1,
-    title: 'Hotel',
-    description: '最高の宿泊空間。',
-    image: '/images/paradise-earth.jpg',
-    textColor: 'white',
-  },
   {
     id: 1,
     title: 'Hotel',
@@ -132,13 +153,6 @@ const hotelSlides: Slide[] = [
     title: 'Hotel',
     description: '最高の宿泊空間。',
     image: '/images/bar.PNG',
-    textColor: 'white',
-  },
-  {
-    id: 1,
-    title: 'Hotel',
-    description: '最高の宿泊空間。',
-    image: '/images/paradise-earth.jpg',
     textColor: 'white',
   },
 ];
