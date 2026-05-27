@@ -1,41 +1,22 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 
-const onsenslides = [
-  { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
-  { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
-  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
-  { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
-  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
-];
+export type Slide = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  textColor: string;
+};
 
-const beachslides = [
-  { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
-  { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
-  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
-  { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
-  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
-];
+type CarouselProps = {
+  slides: Slide[];
+};
 
-const oceanslides = [
-  { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
-  { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
-  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
-  { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
-  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
-];
-
-const hotelslides = [
-  { id: 1, title: 'Paradise Onsenn', description: '極上のパラダイス温泉。極楽の湯。日々の疲れを癒すのに最適', image: '/images/gokujouonsenn.png', textColor: 'white' },
-  { id: 2, title: 'TechnologyLand', description: 'AIのワクワクを、最高の環境で。', image: '/images/dragonai.png', textColor: '#1d1d1f' },
-  { id: 3, title: 'Japanese Hokkaido', description: '道産子パラダイス。まだまだのびしろあり', image: '/images/japanesehokkaido.jpg', textColor: '#1d1d1f' },
-  { id: 4, title: 'Shokujiba Beach', description: 'Paradiseを感じよう。', image: '/images/shokujibabeach.jpg', textColor: '#1d1d1f' },
-  { id: 5, title: 'Japanese Tokyo', description: 'Tokyo', image: '/images/neontokyo.jpg', textColor: '#1d1d1f' },
-];
-
-export default function Carousel() {
+export default function Carousel({ slides }: CarouselProps) {
   const [current, setCurrent] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -47,10 +28,11 @@ export default function Carousel() {
 
   useEffect(() => {
     startTimer();
+
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, []);
+  }, [slides.length]);
 
   const goTo = (index: number) => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -64,9 +46,7 @@ export default function Carousel() {
   const slide = slides[current];
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden' }}>
-
-      {/* 画像 */}
+    <div style={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden', marginBottom: '80px' }}>
       <Image
         key={slide.id}
         src={slide.image}
@@ -75,12 +55,14 @@ export default function Carousel() {
         style={{ objectFit: 'cover' }}
       />
 
-      <div style={{
-        position: 'absolute',
-        bottom: '80px',
-        left: '40px',
-        color: slide.textColor,
-      }}>
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '80px',
+          left: '40px',
+          color: slide.textColor,
+        }}
+      >
         <h2 style={{ fontSize: '32px', margin: '0 0 8px' }}>{slide.title}</h2>
         <p style={{ fontSize: '16px', margin: 0 }}>{slide.description}</p>
       </div>
@@ -106,12 +88,11 @@ export default function Carousel() {
           />
         ))}
       </div>
-
     </div>
   );
 }
 
-function btnStyle(side: 'left' | 'right'): React.CSSProperties {
+function btnStyle(side: 'left' | 'right'): CSSProperties {
   return {
     position: 'absolute',
     top: '50%',
@@ -125,8 +106,5 @@ function btnStyle(side: 'left' | 'right'): React.CSSProperties {
     height: '44px',
     fontSize: '24px',
     cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
   };
 }
