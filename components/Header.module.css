@@ -149,7 +149,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 22px 16px;
+  padding: 18px 16px;
   position: relative;
   z-index: 20;
 }
@@ -158,189 +158,90 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   list-style: none;
   margin: 0;
-  padding: 12px;
+  padding: 10px;
   border-radius: 999px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.26),
-      rgba(255, 255, 255, 0.08),
-      rgba(120, 220, 255, 0.12),
-      rgba(255, 210, 120, 0.14)
-    );
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-
-  border: 1px solid rgba(255, 255, 255, 0.38);
-
-  box-shadow:
-    0 28px 80px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }
 
 .paradiseNavLink {
-  position: relative;
-  isolation: isolate;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 104px;
-  padding: 13px 22px;
+  min-width: 96px;
+  padding: 12px 18px;
   border-radius: 999px;
 
-  color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 
-  overflow: hidden;
-
-  border: 1px solid rgba(255, 255, 255, 0.42);
-
-  text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.38),
-    0 0 18px rgba(255, 255, 255, 0.28);
-
-  box-shadow:
-    0 16px 34px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -10px 18px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 
   transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease,
-    filter 0.28s ease;
-}
-
-.paradiseNavLink::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  z-index: -1;
-  border-radius: inherit;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.08) 35%,
-      rgba(255, 255, 255, 0.25)
-    );
-
-  opacity: 0.52;
-}
-
-.paradiseNavLink::after {
-  content: "";
-  position: absolute;
-  top: -80%;
-  left: -40%;
-  width: 70%;
-  height: 240%;
-  z-index: -1;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.68),
-    transparent
-  );
-
-  transform: rotate(24deg);
-  opacity: 0;
-  transition: left 0.55s ease, opacity 0.35s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 .paradiseNavLink:hover {
-  transform: translateY(-4px) scale(1.04);
-  filter: brightness(1.18) saturate(1.25);
-
-  box-shadow:
-    0 24px 50px rgba(0, 0, 0, 0.32),
-    0 0 28px rgba(255, 255, 255, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    inset 0 -12px 22px rgba(0, 0, 0, 0.14);
-}
-
-.paradiseNavLink:hover::after {
-  left: 110%;
-  opacity: 1;
+  transform: translateY(-3px);
+  filter: brightness(1.08) saturate(1.15);
 }
 
 .dispensLink {
-  background:
-    radial-gradient(circle at 20% 15%, #ffffff 0%, transparent 20%),
-    linear-gradient(135deg, #00f5ff, #0066ff 42%, #6f00ff 100%);
+  color: #092d3a;
+  background: linear-gradient(135deg, #ffffff, #bff6ff, #62dfff);
   box-shadow:
-    0 16px 36px rgba(0, 170, 255, 0.42),
-    0 0 34px rgba(0, 230, 255, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+    0 12px 30px rgba(98, 223, 255, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .goodsLink {
-  color: #2a1600;
-  background:
-    radial-gradient(circle at 18% 18%, #fff7c2 0%, transparent 24%),
-    linear-gradient(135deg, #fff2a8, #ffb300 32%, #ff5f00 66%, #ff0080 100%);
+  color: #3a2400;
+  background: linear-gradient(135deg, #ffffff, #ffe9a8, #ffb84d);
   box-shadow:
-    0 16px 36px rgba(255, 175, 0, 0.46),
-    0 0 34px rgba(255, 95, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.78);
-  text-shadow:
-    0 1px 1px rgba(255, 255, 255, 0.38),
-    0 0 18px rgba(255, 255, 255, 0.36);
+    0 12px 30px rgba(255, 184, 77, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .paradiseLink {
-  color: #03291a;
-  background:
-    radial-gradient(circle at 22% 14%, #ffffff 0%, transparent 22%),
-    linear-gradient(135deg, #d9fff1, #6dffbf 28%, #00d084 58%, #00a9ff 100%);
+  color: #123026;
+  background: linear-gradient(135deg, #ffffff, #ffe9a8, #8fffd2);
   box-shadow:
-    0 16px 36px rgba(0, 220, 150, 0.44),
-    0 0 36px rgba(72, 255, 200, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.78);
-  text-shadow:
-    0 1px 1px rgba(255, 255, 255, 0.45),
-    0 0 14px rgba(255, 255, 255, 0.32);
+    0 12px 30px rgba(255, 229, 150, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .tripLink {
-  background:
-    radial-gradient(circle at 20% 14%, #ffffff 0%, transparent 22%),
-    linear-gradient(135deg, #ffb7f3, #ff4fd8 28%, #9b5cff 62%, #3b82f6 100%);
+  color: #32123f;
+  background: linear-gradient(135deg, #ffffff, #ffd6f6, #b78cff);
   box-shadow:
-    0 16px 36px rgba(180, 80, 255, 0.44),
-    0 0 38px rgba(255, 90, 220, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    0 12px 30px rgba(183, 140, 255, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .upitelLink {
-  color: #071632;
-  background:
-    radial-gradient(circle at 18% 15%, #ffffff 0%, transparent 24%),
-    linear-gradient(135deg, #ffffff, #b8f3ff 24%, #78a7ff 52%, #6d5dfc 78%, #ff9ff3 100%);
+  color: #0d1d45;
+  background: linear-gradient(135deg, #ffffff, #d9ecff, #8da7ff);
   box-shadow:
-    0 16px 36px rgba(120, 160, 255, 0.46),
-    0 0 40px rgba(180, 230, 255, 0.36),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
-  text-shadow:
-    0 1px 1px rgba(255, 255, 255, 0.5),
-    0 0 16px rgba(255, 255, 255, 0.34);
+    0 12px 30px rgba(141, 167, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 768px) {
   .paradiseNav {
-    padding: 16px 10px;
+    padding: 14px 10px;
   }
 
   .paradiseHeadtag {
@@ -348,8 +249,7 @@
     justify-content: flex-start;
     overflow-x: auto;
     gap: 10px;
-    padding: 9px;
-    border-radius: 28px;
+    padding: 8px;
   }
 
   .paradiseHeadtag::-webkit-scrollbar {
@@ -359,8 +259,9 @@
   .paradiseNavLink {
     min-width: auto;
     white-space: nowrap;
-    padding: 11px 16px;
+    padding: 10px 14px;
     font-size: 13px;
   }
 }
+
 
