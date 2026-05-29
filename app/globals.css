@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg:        #F5EFE0; /* クリーム背景 */
+  --color-bg:        #f7f2e6; /* クリーム背景 */
   --color-text:      #1A1A1A; /* メインテキスト */
   --color-dark-bg:   #111111; /* ダークセクション背景 */
   --color-dark-text: #FFFFFF; /* ダークセクション内テキスト */
