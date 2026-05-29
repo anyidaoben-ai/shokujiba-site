@@ -21,14 +21,42 @@ export default function Header() {
       </a>
 
       {/* ── 右上：タブナビゲーション ────────── */}
-      <nav>
-       <ul className={styles.headtag}>
-        <li><Link href="/Dispense" className={`${styles.navLink} ${styles.navLinkActive}`}>Dispense</Link></li>
-        <li><Link href="/Goods" className={styles.navLink}>Goods</Link></li>
-        <li><Link href="/Paradise" className={styles.navLink}>Paradise</Link></li>
-        <li><Link href="#hisotory" className={styles.navLink}>楽しむ</Link></li>
-        </ul>
-      </nav>
+     <nav className={styles.paradiseNav}>
+  <ul className={styles.paradiseHeadtag}>
+    <li>
+      <Link
+        href="/Dispense"
+        className={`${styles.paradiseNavLink} ${styles.paradiseNavLinkActive}`}
+      >
+        Dispens
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/Goods" className={styles.paradiseNavLink}>
+        Goods
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/Paradise" className={styles.paradiseNavLink}>
+        Paradise
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/trip" className={styles.paradiseNavLink}>
+        楽しむ
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/upitel" className={styles.paradiseNavLink}>
+        UpiteL
+      </Link>
+    </li>
+  </ul>
+</nav>
 
     </header>
   );
