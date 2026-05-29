@@ -95,4 +95,8 @@
   transform: scale(1.05);
 }
 
-
+.page {
+  min-height: 100vh;
+  background: #f7f2e6;
+  color: #1f1f1f;
+}
