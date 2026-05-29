@@ -145,123 +145,176 @@
 }
 
 
+/* ── 右上ナビ全体 ───────────────────── */
+
 .paradiseNav {
-  width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 18px 16px;
-  position: relative;
-  z-index: 20;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .paradiseHeadtag {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 14px;
   list-style: none;
+  padding: 0;
   margin: 0;
-  padding: 10px;
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }
 
+/* ── 全リンク共通：高級Paradise仕様 ───────── */
+
 .paradiseNavLink {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 96px;
-  padding: 12px 18px;
+  padding: 12px 22px;
   border-radius: 999px;
 
-  text-decoration: none;
   font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: #fff;
+
+  overflow: hidden;
+  isolation: isolate;
 
   border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 10px 25px rgba(0, 0, 0, 0.22),
+    0 0 28px rgba(255, 255, 255, 0.16);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    filter 0.25s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* 光の膜 */
+.paradiseNavLink::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.08) 35%,
+      rgba(255, 255, 255, 0.02) 70%
+    );
+  z-index: -1;
+}
+
+/* 流れる光 */
+.paradiseNavLink::after {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -40%;
+  width: 45%;
+  height: 250%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: left 0.65s ease, opacity 0.35s ease;
 }
 
 .paradiseNavLink:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.08) saturate(1.15);
+  transform: translateY(-4px) scale(1.04);
+  filter: saturate(1.18) brightness(1.08);
 }
 
+.paradiseNavLink:hover::after {
+  left: 115%;
+  opacity: 1;
+}
+
+/* Dispens：高級グリーン */
 .dispensLink {
-  color: #092d3a;
-  background: linear-gradient(135deg, #ffffff, #bff6ff, #62dfff);
+  background:
+    radial-gradient(circle at 20% 20%, #eaffd7 0%, transparent 28%),
+    linear-gradient(135deg, #0b3d2e, #17b978, #d6ff8f);
+  color: #f8fff4;
   box-shadow:
-    0 12px 30px rgba(98, 223, 255, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 12px 28px rgba(23, 185, 120, 0.35),
+    0 0 32px rgba(214, 255, 143, 0.28);
 }
 
+/* Goods：高級ゴールド */
 .goodsLink {
-  color: #3a2400;
-  background: linear-gradient(135deg, #ffffff, #ffe9a8, #ffb84d);
+  background:
+    radial-gradient(circle at 25% 20%, #fff7c2 0%, transparent 30%),
+    linear-gradient(135deg, #5c3b00, #d6a637, #fff0a8);
+  color: #fffaf0;
   box-shadow:
-    0 12px 30px rgba(255, 184, 77, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 12px 28px rgba(214, 166, 55, 0.4),
+    0 0 35px rgba(255, 240, 168, 0.3);
 }
 
+/* Paradise：虹色オーロラ */
 .paradiseLink {
-  color: #123026;
-  background: linear-gradient(135deg, #ffffff, #ffe9a8, #8fffd2);
+  background:
+    radial-gradient(circle at 20% 20%, #ffffff 0%, transparent 24%),
+    linear-gradient(135deg, #ff6bcb, #8b5cf6, #38bdf8, #34d399);
+  color: #ffffff;
   box-shadow:
-    0 12px 30px rgba(255, 229, 150, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 12px 30px rgba(139, 92, 246, 0.45),
+    0 0 38px rgba(56, 189, 248, 0.35);
 }
 
+/* Trip：高級スカイブルー */
 .tripLink {
-  color: #32123f;
-  background: linear-gradient(135deg, #ffffff, #ffd6f6, #b78cff);
+  background:
+    radial-gradient(circle at 20% 20%, #e0f7ff 0%, transparent 30%),
+    linear-gradient(135deg, #063b5c, #0ea5e9, #a5f3fc);
+  color: #f2fbff;
   box-shadow:
-    0 12px 30px rgba(183, 140, 255, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 12px 28px rgba(14, 165, 233, 0.38),
+    0 0 34px rgba(165, 243, 252, 0.32);
 }
 
+/* UpiteL：宇宙パープル */
 .upitelLink {
-  color: #0d1d45;
-  background: linear-gradient(135deg, #ffffff, #d9ecff, #8da7ff);
+  background:
+    radial-gradient(circle at 25% 20%, #f5d0fe 0%, transparent 30%),
+    linear-gradient(135deg, #2e1065, #7c3aed, #f0abfc);
+  color: #fff7ff;
   box-shadow:
-    0 12px 30px rgba(141, 167, 255, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    0 12px 30px rgba(124, 58, 237, 0.42),
+    0 0 38px rgba(240, 171, 252, 0.3);
 }
 
 @media (max-width: 768px) {
-  .paradiseNav {
-    padding: 14px 10px;
-  }
-
   .paradiseHeadtag {
-    width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 8px;
-  }
-
-  .paradiseHeadtag::-webkit-scrollbar {
-    display: none;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .paradiseNavLink {
-    min-width: auto;
-    white-space: nowrap;
-    padding: 10px 14px;
-    font-size: 13px;
+    padding: 9px 14px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
   }
 }
+
 
 
