@@ -205,3 +205,27 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
+@media (max-width: 768px) {
+  .paradiseNav {
+    padding: 14px 10px;
+  }
+
+  .paradiseHeadtag {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .paradiseHeadtag::-webkit-scrollbar {
+    display: none;
+  }
+
+  .paradiseNavLink {
+    min-width: auto;
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
