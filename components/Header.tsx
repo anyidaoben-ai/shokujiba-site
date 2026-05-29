@@ -26,32 +26,44 @@ export default function Header() {
     <li>
       <Link
         href="/Dispense"
-        className={`${styles.paradiseNavLink} ${styles.paradiseNavLinkActive}`}
+        className={`${styles.paradiseNavLink} ${styles.dispensLink}`}
       >
         Dispens
       </Link>
     </li>
 
     <li>
-      <Link href="/Goods" className={styles.paradiseNavLink}>
+      <Link
+        href="/Goods"
+        className={`${styles.paradiseNavLink} ${styles.goodsLink}`}
+      >
         Goods
       </Link>
     </li>
 
     <li>
-      <Link href="/Paradise" className={styles.paradiseNavLink}>
+      <Link
+        href="/Paradise"
+        className={`${styles.paradiseNavLink} ${styles.paradiseLink}`}
+      >
         Paradise
       </Link>
     </li>
 
     <li>
-      <Link href="/trip" className={styles.paradiseNavLink}>
-        楽しむ
+      <Link
+        href="/trip"
+        className={`${styles.paradiseNavLink} ${styles.tripLink}`}
+      >
+        Trip
       </Link>
     </li>
 
     <li>
-      <Link href="/upitel" className={styles.paradiseNavLink}>
+      <Link
+        href="/upitel"
+        className={`${styles.paradiseNavLink} ${styles.upitelLink}`}
+      >
         UpiteL
       </Link>
     </li>
@@ -61,3 +73,4 @@ export default function Header() {
     </header>
   );
 }
+

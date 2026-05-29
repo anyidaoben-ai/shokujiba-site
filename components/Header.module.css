@@ -151,7 +151,7 @@
   justify-content: center;
   padding: 18px 16px;
   position: relative;
-  z-index: 10;
+  z-index: 20;
 }
 
 .paradiseHeadtag {
@@ -180,29 +180,46 @@
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.04em;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   transition:
     transform 0.25s ease,
-    background 0.25s ease,
     box-shadow 0.25s ease,
-    color 0.25s ease;
+    filter 0.25s ease;
 }
 
 .paradiseNavLink:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+  filter: brightness(1.15);
 }
 
-.paradiseNavLinkActive {
-  color: #123026;
-  background: linear-gradient(135deg, #ffffff, #ffe9a8, #8fffd2);
-  box-shadow:
-    0 12px 30px rgba(255, 229, 150, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+.dispensLink {
+  background: linear-gradient(135deg, #00e5ff, #0077ff);
+  box-shadow: 0 12px 28px rgba(0, 180, 255, 0.35);
+}
+
+.goodsLink {
+  background: linear-gradient(135deg, #ffdf6e, #ff8c00);
+  box-shadow: 0 12px 28px rgba(255, 170, 0, 0.35);
+  color: #2b1b00;
+}
+
+.paradiseLink {
+  background: linear-gradient(135deg, #7cffc4, #00c26e);
+  box-shadow: 0 12px 28px rgba(0, 220, 130, 0.35);
+  color: #06291a;
+}
+
+.tripLink {
+  background: linear-gradient(135deg, #ff9ff3, #9b5cff);
+  box-shadow: 0 12px 28px rgba(170, 90, 255, 0.35);
+}
+
+.upitelLink {
+  background: linear-gradient(135deg, #ffffff, #9ee7ff, #5b7cfa);
+  box-shadow: 0 12px 28px rgba(120, 170, 255, 0.4);
+  color: #071a3a;
 }
 
 @media (max-width: 768px) {
