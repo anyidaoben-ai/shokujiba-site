@@ -21,7 +21,8 @@ export default function Header() {
       </a>
 
       {/* ── 右上：タブナビゲーション ────────── */}
-     <nav className={styles.paradiseNav}>
+     {/* ── 右上：タブナビゲーション ────────── */}
+<nav className={styles.paradiseNav}>
   <ul className={styles.paradiseHeadtag}>
     <li>
       <Link
@@ -65,6 +66,15 @@ export default function Header() {
         className={`${styles.paradiseNavLink} ${styles.upitelLink}`}
       >
         UpiteL
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        href="/TechnologyLand"
+        className={`${styles.paradiseNavLink} ${styles.technologyLink}`}
+      >
+        TechnologyLand
       </Link>
     </li>
   </ul>
