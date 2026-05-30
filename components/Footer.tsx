@@ -117,7 +117,7 @@ export default function Footer() {
 
         <div className="flex gap-5 text-gray-600 text-lg">
           <a
-            href="#"
+            href=""
             className="hover:text-[#1dba8a] transition-colors"
             aria-label="X"
           >
@@ -133,7 +133,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="#"
+            href="https://youtube.com/channel/UCaeDV49zxiXGYhSupRYi2Nw?si=FLY6Nvf8RE1FY65U"
             className="hover:text-[#1dba8a] transition-colors"
             aria-label="YouTube"
           >
