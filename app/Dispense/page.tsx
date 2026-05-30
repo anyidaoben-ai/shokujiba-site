@@ -58,12 +58,10 @@ const products: Product[] = [
 
 const handleCheckout = async () => {
   try {
-    const cartItems = [
-      {
-        id: "shokujiba-product-001",
-        quantity: 1,
-      },
-    ];
+    const cartItems = cartEntries.map(({ product, quantity }) => ({
+  id: product.id,
+  quantity,
+}));
 
     const res = await fetch("/api/checkout", {
       method: "POST",
@@ -109,9 +107,20 @@ export default function DispensePage() {
     });
   }, [category, query]);
 
-  const cartEntries = Object.entries(cart)
-    .map(([id, quantity]) => ({ product: products.find((item) => item.id === id), quantity }))
-    .filter((entry): entry is { product: Product; quantity: number } => Boolean(entry.product));
+const cartEntries = Object.entries(cart).flatMap(([id, quantity]) => {
+  const product = products.find((item) => item.id === id);
+
+  if (!product) {
+    return [];
+  }
+
+  return [
+    {
+      product,
+      quantity,
+    },
+  ];
+});
 
   const cartCount = cartEntries.reduce((sum, entry) => sum + entry.quantity, 0);
   const cartTotal = cartEntries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
