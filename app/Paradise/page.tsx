@@ -333,7 +333,7 @@ export default function ParadisePage() {
                 投資家 / 建築家 / ホテル運営 / 飲食ブランド / 農家・生産者 /
                 イベント会社 / インフルエンサー / スタッフ
               </p>
-              <p>メール：info@shokujiba-paradise.com</p>
+              <p>メール：shokujibamaster@gmail.com</p>
               <p>Instagram：@shokujiba_paradise</p>
             </div>
             <form className={styles.shokujibaForm}>
