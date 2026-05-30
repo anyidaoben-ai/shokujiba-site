@@ -125,6 +125,39 @@ const cartEntries = Object.entries(cart).flatMap(([id, quantity]) => {
   const cartCount = cartEntries.reduce((sum, entry) => sum + entry.quantity, 0);
   const cartTotal = cartEntries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
 
+  const handleCheckout = async () => {
+  try {
+    if (cartEntries.length === 0) {
+      alert("カートが空です");
+      return;
+    }
+
+    const cartItems = cartEntries.map(({ product, quantity }) => ({
+      id: product.id,
+      quantity,
+    }));
+
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cartItems }),
+    });
+
+    const data = await res.json();
+
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert(data.error || "決済ページを開けませんでした");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("決済エラーが発生しました");
+  }
+};
+
   function showToast(message: string) {
     setToast(message);
     window.setTimeout(() => setToast(""), 1600);
