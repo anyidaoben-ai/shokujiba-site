@@ -58,10 +58,33 @@ const products: Product[] = [
 
 const handleCheckout = async () => {
   try {
-    const cartItems = cartEntries.map(({ product, quantity }) => ({
-      id: product.id,
-      quantity,
-    }));
+    const cartItems = [
+      {
+        id: "shokujiba-product-001",
+        quantity: 1,
+      },
+    ];
+
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cartItems }),
+    });
+
+    const data = await res.json();
+
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert(data.error || "決済ページを開けませんでした");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("決済エラーが発生しました");
+  }
+};
 
     const res = await fetch("/api/checkout", {
       method: "POST",
