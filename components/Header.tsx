@@ -71,7 +71,7 @@ export default function Header() {
 
     <li>
       <Link
-        href="/TechnologyLand"
+        href="/TechnologyLand-AI"
         className={`${styles.paradiseNavLink} ${styles.technologyLink}`}
       >
         TechnologyLand
