@@ -57,8 +57,17 @@ const products: Product[] = [
 
 const handleCheckout = async () => {
   try {
+    const cartItems = cartEntries.map(({ product, quantity }) => ({
+      id: product.id,
+      quantity,
+    }));
+
     const res = await fetch("/api/checkout", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cartItems }),
     });
 
     const data = await res.json();
@@ -66,7 +75,7 @@ const handleCheckout = async () => {
     if (data.url) {
       window.location.href = data.url;
     } else {
-      alert("決済ページを開けませんでした");
+      alert(data.error || "決済ページを開けませんでした");
     }
   } catch (error) {
     console.error(error);
