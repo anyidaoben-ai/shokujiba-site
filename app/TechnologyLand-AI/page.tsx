@@ -72,7 +72,7 @@ export default function TechnologyLandAIPage() {
           <h1 className={styles.title}>
             アイデアを、
             <br />
-            AIで形にする。
+            神速で形にする。
           </h1>
 
           <p className={styles.lead}>
