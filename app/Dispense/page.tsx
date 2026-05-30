@@ -55,25 +55,6 @@ const products: Product[] = [
   { id: "samon", name: "サーモン", category: "魚", price: 9000, unit: "100g", image: "/images/samon.png", note: "脂とろける絶品魚" },
 ];
 
-const cartEntries = Object.entries(cart)
-  .map(([productId, quantity]) => {
-    const product = products.find((item) => item.id === productId);
-
-    if (!product) return null;
-
-    return {
-      product,
-      quantity,
-    };
-  })
-  .filter(
-    (
-      item
-    ): item is {
-      product: Product;
-      quantity: number;
-    } => item !== null
-  );
 
 const handleCheckout = async () => {
   try {
