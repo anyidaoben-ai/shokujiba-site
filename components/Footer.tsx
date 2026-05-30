@@ -7,7 +7,7 @@ export default function Footer() {
 
         {/* ブランド */}
         <div>
-          <p className="text-xl font-medium tracking-wide mb-2">Paradise</p>
+          <p className="text-xl font-medium tracking-wide mb-2">Shokujiba Paradise</p>
           <span className="text-sm text-gray-500 leading-relaxed">
             株式会社食事場
           </span>
@@ -17,10 +17,12 @@ export default function Footer() {
         <div>
           <h3 className="text-xs tracking-widest text-gray-600 mb-3">EXPLORE</h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">TechnologyLand & AI</a></li>
-            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">Paradise Onsenn</a></li>
-            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">Japanese Hokkaido</a></li>
-            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">Shokujiba Beach</a></li>
+            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">Dispens</a></li>
+            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">Goods</a></li>
+            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">Paradise</a></li>
+            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">Trip</a></li>
+            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">UpiteL</a></li>
+            <li><a href="#" className="hover:text-[#1dba8a] transition-colors">TechnologyLand&AI</a></li>
           </ul>
         </div>
 
