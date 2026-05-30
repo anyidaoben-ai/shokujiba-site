@@ -154,6 +154,7 @@ export default function Page() {
   return (
     <>
       <Header />
+      <h1> 食事場 | Shokujiba</h1>
 
       <main className={styles.main}>
         <Carousel slides={onsenSlides} />

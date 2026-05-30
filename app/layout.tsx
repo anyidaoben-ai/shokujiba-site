@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shokujiba 公式サイト",
-  description: "Shokujibaへようこそ。ここにはすべてあります。",
+  title: " 食事場 | Shokujiba 公式サイト",
+  description: " 食事場 | Shokujiba へようこそ。ここにはすべてあります。",
 };
 
 export default function RootLayout({
