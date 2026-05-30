@@ -60,11 +60,16 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ url: session.url });
-  } catch (error) {
+    } catch (error) {
     console.error("Stripe Checkout Error:", error);
 
     return NextResponse.json(
-      { error: "決済ページを作成できませんでした" },
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "決済ページを作成できませんでした",
+      },
       { status: 500 }
     );
   }
