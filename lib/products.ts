@@ -6,7 +6,7 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: "ikdi",
+    id: "jkdj",
     name: "泥つき生姜",
     price: 520,
   },
