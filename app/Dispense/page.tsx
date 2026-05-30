@@ -55,6 +55,25 @@ const products: Product[] = [
   { id: "samon", name: "サーモン", category: "魚", price: 9000, unit: "100g", image: "/images/samon.png", note: "脂とろける絶品魚" },
 ];
 
+const handleCheckout = async () => {
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+    });
+
+    const data = await res.json();
+
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert("決済ページを開けませんでした");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("決済エラーが発生しました");
+  }
+};
+
 const categories = ["すべて", ...Array.from(new Set(products.map((product) => product.category)))];
 const yen = new Intl.NumberFormat("ja-JP", { style: "currency", currency: "JPY", maximumFractionDigits: 0 });
 
@@ -287,7 +306,13 @@ export default function DispensePage() {
             <span>合計</span>
             <span>{yen.format(cartTotal)}</span>
           </div>
-          <button className={styles.checkout} type="button">注文へ進む</button>
+          <button
+            className={styles.checkout}
+            type="button"
+            onClick={handleCheckout}
+          >
+            注文へ進む
+          </button>
         </div>
       </aside>
 
