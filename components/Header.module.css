@@ -174,9 +174,9 @@
   align-items: center;
   justify-content: center;
 
-  min-width: 92px;
-  height: 44px;
-  padding: 0 18px;
+  width: 150px;
+  height: 46px;
+  padding: 0;
 
   text-decoration: none;
   font-size: 14px;
@@ -215,46 +215,6 @@
     0 14px 32px rgba(255, 183, 0, 0.45);
 }
 
-/* 各リンクごとの高級色 */
-.dispensLink {
-  background: linear-gradient(135deg, #fff8c7, #ffd64d, #f6a800);
-}
-
-.goodsLink {
-  background: linear-gradient(135deg, #fff1b8, #ffbf3f, #d98a00);
-}
-
-.paradiseLink {
-  background: linear-gradient(135deg, #fff9d8, #ffe66d, #ffb300);
-}
-
-.tripLink {
-  background: linear-gradient(135deg, #fff4c7, #ffc857, #d49a00);
-}
-
-.upitelLink {
-  background: linear-gradient(135deg, #fff7dc, #f7d56a, #b8860b);
-}
-
-/* 追加：TechnologyLand */
-.technologyLink {
-  color: #10231d;
-  background: linear-gradient(
-    135deg,
-    #fff8c9 0%,
-    #ffe45c 28%,
-    #f0b400 55%,
-    #00d6b4 100%
-  );
-
-  border: 1px solid rgba(255, 223, 100, 0.95);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -4px 12px rgba(0, 80, 65, 0.2),
-    0 10px 28px rgba(0, 214, 180, 0.28),
-    0 10px 28px rgba(255, 190, 0, 0.32);
-}
 
 @media (max-width: 768px) {
   .paradiseNav {
