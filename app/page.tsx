@@ -218,7 +218,9 @@ export default function Page() {
         <Carousel slides={onsenSlides} />
         <Carousel slides={beachSlides} />
         <Carousel slides={oceanSlides} />
-        <Carousel slides={hotelSlides} />
+        <Carousel slides={nightShowSlides} />
+        <Carousel slides={shoppingSlides} />
+        <Carousel slides={sportsSlides} />
       </main>
 
       <Footer />
