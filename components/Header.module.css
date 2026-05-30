@@ -142,6 +142,7 @@
 .logoImage {
   border-radius: 50%; /* ← これだけで丸になる！ */
   object-fit: cover;  /* ← 画像が歪まないようにする */
+  margin-left: 12px;
 }
 
 
