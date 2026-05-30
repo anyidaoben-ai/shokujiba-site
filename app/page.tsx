@@ -4,6 +4,13 @@ import Carousel from '@/components/Carousel';
 import type { Slide } from '@/components/Carousel';
 import styles from './page.module.css';
 
+const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "食事場",
+  alternateName: "Shokujiba",
+  url: "https://shokujiba-site.vercel.app",
+};
 const onsenSlides: Slide[] = [
   {
     id: 1,
@@ -152,9 +159,21 @@ const hotelSlides: Slide[] = [
 
 export default function Page() {
   return (
+    
     <>
+    
       <Header />
-      <h1> 食事場 | Shokujiba</h1>
+      <main className={styles.main}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteStructuredData),
+        }}
+      />
+
+      <h1>食事場</h1>
+      <p>Shokujiba 公式サイト</p>
+    </main>
 
       <main className={styles.main}>
         <Carousel slides={onsenSlides} />
