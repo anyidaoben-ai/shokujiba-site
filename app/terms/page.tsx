@@ -103,7 +103,7 @@ export default function TermsPage() {
 
         <div className={styles.footer}>
           <p>制定日：2026年5月30日</p>
-          <p>運営者：TechnologyLand & AI</p>
+          <p>運営者：株式会社食事場</p>
         </div>
       </section>
     </main>
