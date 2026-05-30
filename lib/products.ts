@@ -6,9 +6,24 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: "shokujiba-product-001",
-    name: "食事場 商品",
-    price: 3000,
+    id: "ikdi",
+    name: "泥つき生姜",
+    price: 520,
+  },
+  {
+    id: "kiui",
+    name: "完熟キウイ",
+    price: 620,
+  },
+  {
+    id: "kek",
+    name: "グリーンパプリカ",
+    price: 460,
+  },
+  {
+    id: "kokonat",
+    name: "ココナッツ",
+    price: 980,
   },
 ];
 
