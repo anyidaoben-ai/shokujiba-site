@@ -166,7 +166,7 @@ export default function DispensePage() {
       <header className={styles.topbar}>
         <div className={`${styles.shell} ${styles.nav}`}>
           <div className={styles.brand}>
-            <div className={styles.mark} aria-hidden="true">Shokujiba</div>
+            <div className={styles.mark} aria-hidden="true">食</div>
             <span>Shokuzai Dispens</span>
           </div>
           <nav className={styles.navLinks} aria-label="メインナビゲーション">
@@ -185,9 +185,9 @@ export default function DispensePage() {
         <section className={`${styles.shell} ${styles.hero}`}>
           <div className={styles.heroCopy}>
             <span className={styles.eyebrow}>北海道から、Shokujibaの食材をお届けいたします</span>
-            <h1>最高のTripを最高の食材で。</h1>
+            <h1>最高のTripを 最高の食材で。</h1>
             <p>
-              北海道の旬を、産地直送で。Shokujibaは、こだわりのオーガニック食材を厳選し、鮮度を保ったままお届けするオンラインショップです。
+              北海道の旬を、産地直送で。Shokuzai Dispensは、こだわりのオーガニック食材を厳選し、鮮度を保ったままお届けするオンラインショップです。
             </p>
             <div className={styles.heroActions}>
               <a className={styles.primary} href="#products">旬の食材を見る</a>
@@ -209,7 +209,7 @@ export default function DispensePage() {
 
         <section className={`${styles.shell} ${styles.section}`} id="products">
           <div className={styles.sectionHead}>
-            <h2>Seasonal Orbit</h2>
+            <h2>Shokuzai Dispens ONLINE SHOP</h2>
             <p>北海道由来のShokujibaの食材から、料理に合う一品をすぐに探索。カテゴリと検索で、ほしい北海道オーガニックがワンクリックで届きます。</p>
           </div>
 
@@ -268,8 +268,8 @@ export default function DispensePage() {
 
         <section className={`${styles.shell} ${styles.section}`} id="promise">
           <div className={styles.sectionHead}>
-            <h2>Organic Promise</h2>
-            <p>幻想的な見た目の奥に、産地直送ECとしての安心感を。鮮度、温度、用途、ギフト体験まで丁寧に整えています。</p>
+            <h2>Shokuzai</h2>
+            <p>産地直送ECサイト。ワンクリックであなたの元までShokujibaの食材が届きます。鮮度、温度、用途、ギフト体験まで丁寧に整えています。</p>
           </div>
           <div className={styles.promise}>
             {[
@@ -290,7 +290,7 @@ export default function DispensePage() {
         <section className={`${styles.shell} ${styles.section}`} id="delivery">
           <div className={styles.checkoutBand}>
             <div>
-              <h2>今日の食卓に、ひとつの星を。</h2>
+              <h2>Tripのお供に、Shokujibaの食材を。</h2>
               <p>北海道の旬を自由に選んで、自分だけの一箱へ。カートの合計を見ながら、そのまま注文へ進めます。</p>
             </div>
             <a className={styles.primary} href="#products">買い物を続ける</a>
