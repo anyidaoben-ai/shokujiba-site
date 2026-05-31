@@ -341,7 +341,7 @@ export default function DispensePage() {
       </div>
 
       <footer className={styles.footer}>
-        <div className={styles.shell}>© 北の星畑. Hokkaido organic produce market.</div>
+        <div className={styles.shell}>© Shokuzai Dispens Hokkaido organic produce market.by Shokujiba</div>
       </footer>
     </div>
   );
