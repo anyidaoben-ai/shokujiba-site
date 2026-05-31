@@ -22,6 +22,8 @@ export async function POST(request: Request) {
       quantity: number;
     }[];
 
+    const returnPath = body.returnPath || "/Goods";
+
     if (!cartItems || cartItems.length === 0) {
       return NextResponse.json(
         { error: "カートが空です" },
@@ -55,21 +57,16 @@ export async function POST(request: Request) {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: lineItems,
-      success_url: `${siteUrl}/success`,
-      cancel_url: `${siteUrl}/Dispense`,
+      success_url: `${siteUrl}${returnPath}?success=true`,
+      cancel_url: `${siteUrl}${returnPath}?canceled=true`,
     });
 
     return NextResponse.json({ url: session.url });
-    } catch (error) {
+  } catch (error) {
     console.error("Stripe Checkout Error:", error);
 
     return NextResponse.json(
-      {
-        error:
-          error instanceof Error
-            ? error.message
-            : "決済ページを作成できませんでした",
-      },
+      { error: "決済ページを作成できませんでした" },
       { status: 500 }
     );
   }

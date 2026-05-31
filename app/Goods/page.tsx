@@ -92,6 +92,55 @@ export default function GoodsPage() {
   const [cartOpen, setCartOpen] = useState(false);
   const [toast, setToast] = useState("");
 
+  const cartEntries = Object.entries(cart).flatMap(([id, quantity]) => {
+  const product = products.find((item) => item.id === id);
+
+  if (!product) {
+    return [];
+  }
+
+  return [
+    {
+      product,
+      quantity,
+    },
+  ];
+});
+
+const handleCheckout = async () => {
+  try {
+    if (cart.length === 0) {
+      setToast("カートに商品がありません");
+      return;
+    }
+
+    const response = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        returnPath: "/Goods",
+        cartItems: cart.map((item) => ({
+          id: item.product.id,
+          quantity: item.quantity,
+        })),
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.url) {
+      throw new Error(data.error || "決済ページを作成できませんでした");
+    }
+
+    window.location.href = data.url;
+  } catch (error) {
+    console.error("Checkout Error:", error);
+    setToast("決済ページを開けませんでした");
+  }
+};
+
   const activeProduct = products.find((product) => product.id === activeId) || products[0];
 
   const filteredProducts = useMemo(() => {
@@ -322,7 +371,9 @@ export default function GoodsPage() {
         </div>
         <div className={styles.cartFoot}>
           <div><span>Total</span><strong>{yen.format(cartTotal)}</strong></div>
-          <button type="button">Checkout</button>
+          <button type="button" onClick={handleCheckout}>
+            Checkout
+          </button>
         </div>
       </aside>
 
