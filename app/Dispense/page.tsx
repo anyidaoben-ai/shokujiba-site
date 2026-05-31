@@ -199,12 +199,6 @@ export default function DispensePage() {
               <div className={styles.metric}><strong>完全無農薬</strong><span>北海道の恵み</span></div>
             </div>
           </div>
-
-          <div className={styles.heroMarket} aria-label="注目商品">
-            <HeroTile product={products[10]} label="銀河みたいに濃密な甘み" />
-            <HeroTile product={products[22]} label="朝露をまとった旬の赤" />
-            <HeroTile product={products[0]} label="なめらかな緑のごちそう" />
-          </div>
         </section>
 
         <section className={`${styles.shell} ${styles.section}`} id="products">
@@ -268,7 +262,7 @@ export default function DispensePage() {
 
         <section className={`${styles.shell} ${styles.section}`} id="promise">
           <div className={styles.sectionHead}>
-            <h2>Shokuzai</h2>
+            <h2>Shokuzai Dispens</h2>
             <p>産地直送ECサイト。ワンクリックであなたの元までShokujibaの食材が届きます。鮮度、温度、用途、ギフト体験まで丁寧に整えています。</p>
           </div>
           <div className={styles.promise}>
