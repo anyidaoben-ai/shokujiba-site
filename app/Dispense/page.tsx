@@ -166,8 +166,8 @@ export default function DispensePage() {
       <header className={styles.topbar}>
         <div className={`${styles.shell} ${styles.nav}`}>
           <div className={styles.brand}>
-            <div className={styles.mark} aria-hidden="true">北</div>
-            <span>北の星畑</span>
+            <div className={styles.mark} aria-hidden="true">Shokujiba</div>
+            <span>Shokuzai Dispens</span>
           </div>
           <nav className={styles.navLinks} aria-label="メインナビゲーション">
             <a href="#products">商品</a>
@@ -187,7 +187,7 @@ export default function DispensePage() {
             <span className={styles.eyebrow}>北海道から、Shokujibaの食材をお届けいたします</span>
             <h1>最高のTripを最高の食材で。</h1>
             <p>
-              北海道の旬を、産地直送で。星畑は、こだわりのオーガニック食材を厳選し、鮮度を保ったままお届けするオンラインショップです。
+              北海道の旬を、産地直送で。Shokujibaは、こだわりのオーガニック食材を厳選し、鮮度を保ったままお届けするオンラインショップです。
             </p>
             <div className={styles.heroActions}>
               <a className={styles.primary} href="#products">旬の食材を見る</a>
