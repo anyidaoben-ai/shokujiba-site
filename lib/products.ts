@@ -195,6 +195,26 @@ export const products: Product[] = [
     name: "サーモン",
     price: 620,
   },
+  {
+    id: "abokado",
+    name: "樹上アボカド",
+    price: 620,
+  },
+  {
+    id: "burokkori",
+    name: "畑ブロッコリー",
+    price: 620,
+  },
+  {
+    id: "endoumame",
+    name: "朝露えんどう豆",
+    price: 620,
+  },
+  {
+    id: "jagaimo",
+    name: "新じゃがいも",
+    price: 620,
+  },
 ];
 
 export const getProductById = (id: string) => {
