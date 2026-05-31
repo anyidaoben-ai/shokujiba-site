@@ -215,6 +215,11 @@ export const products: Product[] = [
     name: "新じゃがいも",
     price: 620,
   },
+  {
+    id: "klek",
+    name: "グリーンパプリカ",
+    price: 620,
+  },
 ];
 
 export const getProductById = (id: string) => {
