@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import styles from "./page.module.css";
 
@@ -92,54 +93,40 @@ export default function GoodsPage() {
   const [cartOpen, setCartOpen] = useState(false);
   const [toast, setToast] = useState("");
 
-  const cartEntries = Object.entries(cart).flatMap(([id, quantity]) => {
-  const product = products.find((item) => item.id === id);
+  const handleCheckout = async () => {
+    try {
+      if (cart.length === 0) {
+        setToast("カートに商品がありません");
+        return;
+      }
 
-  if (!product) {
-    return [];
-  }
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          returnPath: "/Goods",
+          cartItems: cart.map((item) => ({
+            id: item.product.id,
+            size: item.size,
+            quantity: item.quantity,
+          })),
+        }),
+      });
 
-  return [
-    {
-      product,
-      quantity,
-    },
-  ];
-});
+      const data = await response.json();
 
-const handleCheckout = async () => {
-  try {
-    if (cart.length === 0) {
-      setToast("カートに商品がありません");
-      return;
+      if (!response.ok || !data.url) {
+        throw new Error(data.error || "決済ページを作成できませんでした");
+      }
+
+      window.location.assign(data.url);
+    } catch (error) {
+      console.error("Checkout Error:", error);
+      setToast("決済ページを開けませんでした");
     }
-
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        returnPath: "/Goods",
-        cartItems: cart.map((item) => ({
-          id: item.product.id,
-          quantity: item.quantity,
-        })),
-      }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok || !data.url) {
-      throw new Error(data.error || "決済ページを作成できませんでした");
-    }
-
-    window.location.href = data.url;
-  } catch (error) {
-    console.error("Checkout Error:", error);
-    setToast("決済ページを開けませんでした");
-  }
-};
+  };
 
   const activeProduct = products.find((product) => product.id === activeId) || products[0];
 
@@ -189,10 +176,10 @@ const handleCheckout = async () => {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <a className={styles.brand} href="/">
+        <Link className={styles.brand} href="/">
           <span className={styles.brandMark}>RD</span>
           <span>ROYAL DINING GOODS</span>
-        </a>
+        </Link>
         <nav className={styles.nav} aria-label="Goods navigation">
           <a href="#collection">Collection</a>
           <a href="#fit">Fit</a>

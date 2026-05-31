@@ -19,12 +19,13 @@ export async function POST(request: Request) {
 
     const cartItems = body.cartItems as {
       id: string;
+      size?: string;
       quantity: number;
     }[];
 
     const returnPath = body.returnPath || "/Goods";
 
-    if (!cartItems || cartItems.length === 0) {
+    if (!Array.isArray(cartItems) || cartItems.length === 0) {
       return NextResponse.json(
         { error: "カートが空です" },
         { status: 400 }
@@ -39,11 +40,15 @@ export async function POST(request: Request) {
           throw new Error(`商品が見つかりません: ${item.id}`);
         }
 
+        if (!Number.isInteger(item.quantity) || item.quantity <= 0) {
+          throw new Error(`数量が正しくありません: ${item.id}`);
+        }
+
         return {
           price_data: {
             currency: "jpy",
             product_data: {
-              name: product.name,
+              name: item.size ? `${product.name} / Size ${item.size}` : product.name,
             },
             unit_amount: product.price,
           },

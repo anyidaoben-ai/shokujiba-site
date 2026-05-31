@@ -78,57 +78,57 @@ export default function DispensePage() {
     });
   }, [category, query]);
 
-const cartEntries = Object.entries(cart).flatMap(([id, quantity]) => {
-  const product = products.find((item) => item.id === id);
+  const cartEntries = Object.entries(cart).flatMap(([id, quantity]) => {
+    const product = products.find((item) => item.id === id);
 
-  if (!product) {
-    return [];
-  }
+    if (!product) {
+      return [];
+    }
 
-  return [
-    {
-      product,
-      quantity,
-    },
-  ];
-});
+    return [
+      {
+        product,
+        quantity,
+      },
+    ];
+  });
 
   const cartCount = cartEntries.reduce((sum, entry) => sum + entry.quantity, 0);
   const cartTotal = cartEntries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
 
-const handleCheckout = async () => {
-  try {
-    if (cart.length === 0) {
-      setToast("カートに商品がありません");
-      return;
+  const handleCheckout = async () => {
+    try {
+      if (cartEntries.length === 0) {
+        setToast("カートに商品がありません");
+        return;
+      }
+
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          returnPath: "/Dispense",
+          cartItems: cartEntries.map(({ product, quantity }) => ({
+            id: product.id,
+            quantity,
+          })),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.url) {
+        throw new Error(data.error || "決済ページを作成できませんでした");
+      }
+
+      window.location.assign(data.url);
+    } catch (error) {
+      console.error("Checkout Error:", error);
+      setToast("決済ページを開けませんでした");
     }
-
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        returnPath: "/Dispense",
-        cartItems: cart.map((item) => ({
-          id: item.product.id,
-          quantity: item.quantity,
-        })),
-      }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok || !data.url) {
-      throw new Error(data.error || "決済ページを作成できませんでした");
-    }
-
-    window.location.href = data.url;
-  } catch (error) {
-    console.error("Checkout Error:", error);
-    setToast("決済ページを開けませんでした");
-  }
-};
+  };
 
   function showToast(message: string) {
     setToast(message);
