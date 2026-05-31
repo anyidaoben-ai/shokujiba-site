@@ -220,6 +220,11 @@ export const products: Product[] = [
     name: "グリーンパプリカ",
     price: 620,
   },
+  {
+    id: "kokonatu",
+    name: "ココナッツ",
+    price: 620,
+  },
 ];
 
 export const getProductById = (id: string) => {
