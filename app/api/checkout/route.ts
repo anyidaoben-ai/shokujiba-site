@@ -56,12 +56,31 @@ export async function POST(request: Request) {
         };
       });
 
+    const orderSummary = cartItems
+      .map((item) => {
+        const product = getProductById(item.id);
+        const size = item.size ? ` / Size ${item.size}` : "";
+
+        return product ? `${product.name}${size} x ${item.quantity}` : "";
+      })
+      .filter(Boolean)
+      .join(", ");
+
+    const totalQuantity = cartItems.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: lineItems,
+      metadata: {
+        productName: orderSummary || "商品",
+        quantity: String(totalQuantity),
+      },
       success_url: `${siteUrl}${returnPath}?success=true`,
       cancel_url: `${siteUrl}${returnPath}?canceled=true`,
     });

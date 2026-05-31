@@ -166,8 +166,8 @@ export default function DispensePage() {
       <header className={styles.topbar}>
         <div className={`${styles.shell} ${styles.nav}`}>
           <div className={styles.brand}>
-            <div className={styles.mark} aria-hidden="true">S</div>
-            <span>SHOKUJIBA PRIME</span>
+            <div className={styles.mark} aria-hidden="true">北</div>
+            <span>北の星畑</span>
           </div>
           <nav className={styles.navLinks} aria-label="メインナビゲーション">
             <a href="#products">商品</a>
@@ -184,40 +184,40 @@ export default function DispensePage() {
       <main>
         <section className={`${styles.shell} ${styles.hero}`}>
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>朝採れデータで選ぶ次世代マルシェ</span>
-            <h1>産地を、そのまま食卓へ。</h1>
+            <span className={styles.eyebrow}>北海道から、Shokujibaの食材をお届けいたします</span>
+            <h1>最高のTripを最高の食材で。</h1>
             <p>
-              果物、野菜、根菜、香味野菜をひとつのスマートストアで。鮮度・旬・使いやすさを見ながら、今日の料理に合う一品をすぐに選べます。
+              北海道の旬を、産地直送で。星畑は、こだわりのオーガニック食材を厳選し、鮮度を保ったままお届けするオンラインショップです。
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.primary} href="#products">商品を見る</a>
-              <button className={styles.secondary} type="button" onClick={addSurpriseItem}>おすすめを選ぶ</button>
+              <a className={styles.primary} href="#products">旬の食材を見る</a>
+              <button className={styles.secondary} type="button" onClick={addSurpriseItem}>今月のおすすめ</button>
             </div>
             <div className={styles.metricRow} aria-label="サービス指標">
-              <div className={styles.metric}><strong>26</strong><span>旬の商品</span></div>
-              <div className={styles.metric}><strong>24h</strong><span>鮮度発送</span></div>
-              <div className={styles.metric}><strong>4.9</strong><span>購入満足度</span></div>
+              <div className={styles.metric}><strong>38</strong><span>旬の食材</span></div>
+              <div className={styles.metric}><strong>24h</strong><span>鮮度優先発送</span></div>
+              <div className={styles.metric}><strong>完全無農薬</strong><span>北海道の恵み</span></div>
             </div>
           </div>
 
           <div className={styles.heroMarket} aria-label="注目商品">
-            <HeroTile product={products[10]} label="今週のプレミアム" />
-            <HeroTile product={products[22]} label="水分量の高い濃厚タイプ" />
-            <HeroTile product={products[0]} label="サラダにも朝食にも" />
+            <HeroTile product={products[10]} label="銀河みたいに濃密な甘み" />
+            <HeroTile product={products[22]} label="朝露をまとった旬の赤" />
+            <HeroTile product={products[0]} label="なめらかな緑のごちそう" />
           </div>
         </section>
 
         <section className={`${styles.shell} ${styles.section}`} id="products">
           <div className={styles.sectionHead}>
-            <h2>Fresh Catalog</h2>
-            <p>写真で選んで、料理のイメージまで一気に決められる商品一覧。検索とカテゴリで目的の食材にすぐ届きます。</p>
+            <h2>Seasonal Orbit</h2>
+            <p>北海道由来のShokujibaの食材から、料理に合う一品をすぐに探索。カテゴリと検索で、ほしい北海道オーガニックがワンクリックで届きます。</p>
           </div>
 
           <div className={styles.toolbar}>
             <input
               className={styles.search}
               type="search"
-              placeholder="商品名・カテゴリで検索"
+              placeholder="食材名・カテゴリ・料理で探索"
               aria-label="商品検索"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
@@ -268,15 +268,15 @@ export default function DispensePage() {
 
         <section className={`${styles.shell} ${styles.section}`} id="promise">
           <div className={styles.sectionHead}>
-            <h2>Quality Stack</h2>
-            <p>見た目の良さだけではなく、発送前チェック、温度管理、料理用途まで考えた販売体験にしています。</p>
+            <h2>Organic Promise</h2>
+            <p>幻想的な見た目の奥に、産地直送ECとしての安心感を。鮮度、温度、用途、ギフト体験まで丁寧に整えています。</p>
           </div>
           <div className={styles.promise}>
             {[
-              ["01", "写真品質で選べる", "商品ごとの個性が伝わる大きな写真で、買う前の不安を減らします。"],
-              ["02", "朝採れ優先発送", "注文タイミングに合わせて、鮮度の高いロットから出荷します。"],
+              ["01", "産地の個性が見える", "食材ごとの色、香り、食感が伝わる写真で、買う前の期待を高めます。"],
+              ["02", "鮮度優先で発送", "注文タイミングに合わせて、状態の良いロットから丁寧に出荷します。"],
               ["03", "料理用途を明記", "サラダ、煮込み、グリル、デザートなど、使い道で迷いません。"],
-              ["04", "ギフトにも対応", "フルーツや旬野菜の詰め合わせ販売にも拡張しやすい設計です。"],
+              ["04", "贈り物にも映える", "星空のように記憶に残る、旬食材のギフト体験にも展開できます。"],
             ].map(([number, title, text]) => (
               <div className={styles.promiseItem} key={number}>
                 <div className={styles.icon}>{number}</div>
@@ -290,8 +290,8 @@ export default function DispensePage() {
         <section className={`${styles.shell} ${styles.section}`} id="delivery">
           <div className={styles.checkoutBand}>
             <div>
-              <h2>今日の一箱を、今すぐ組む。</h2>
-              <p>商品をカートに入れると合計がすぐ確認できます。決済機能を追加すれば、そのまま販売サイトとして発展できます。</p>
+              <h2>今日の食卓に、ひとつの星を。</h2>
+              <p>北海道の旬を自由に選んで、自分だけの一箱へ。カートの合計を見ながら、そのまま注文へ進めます。</p>
             </div>
             <a className={styles.primary} href="#products">買い物を続ける</a>
           </div>
@@ -347,7 +347,7 @@ export default function DispensePage() {
       </div>
 
       <footer className={styles.footer}>
-        <div className={styles.shell}>© SHOKUJIBA PRIME. Farm direct concept store.</div>
+        <div className={styles.shell}>© 北の星畑. Hokkaido organic produce market.</div>
       </footer>
     </div>
   );

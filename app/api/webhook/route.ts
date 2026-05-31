@@ -2,9 +2,22 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { sendPurchaseEmail } from "@/lib/sendPurchaseEmail";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+export const runtime = "nodejs";
 
 export async function POST(req: Request) {
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  if (!stripeSecretKey || !webhookSecret) {
+    console.error("Stripe webhook environment variables are not set");
+
+    return NextResponse.json(
+      { error: "Webhookの環境変数が設定されていません" },
+      { status: 500 }
+    );
+  }
+
+  const stripe = new Stripe(stripeSecretKey);
   const body = await req.text();
   const signature = req.headers.get("stripe-signature");
 
@@ -21,7 +34,7 @@ export async function POST(req: Request) {
     event = stripe.webhooks.constructEvent(
       body,
       signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
+      webhookSecret
     );
   } catch (error) {
     console.error("Webhook署名エラー:", error);
