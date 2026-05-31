@@ -29,7 +29,7 @@ export default function Header() {
         href="/Dispense"
         className={`${styles.paradiseNavLink} ${styles.dispensLink}`}
       >
-        Dispens
+        Shokuzai
       </Link>
     </li>
 

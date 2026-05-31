@@ -230,6 +230,31 @@ export const products: Product[] = [
     name: "畑パイナップル",
     price: 620,
   },
+  {
+    id: "yukata-black",
+    name: "Royal Dining 浴衣 Black Crown",
+    price: 620,
+  },
+  {
+    id: "yukata-gold",
+    name: "Royal Dining 浴衣 Gold Feast",
+    price: 620,
+  },
+  {
+    id: "sweat-white",
+    name: "Royal Dining Hoodie Set White",
+    price: 620,
+  },
+  {
+    id: "tee-white",
+    name: "Royal Dining Tee & Shorts White",
+    price: 620,
+  },
+  {
+    id: "sweat-black",
+    name: "Royal Dining Hoodie Set Black",
+    price: 620,
+  },
 ];
 
 export const getProductById = (id: string) => {
