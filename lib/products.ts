@@ -16,7 +16,7 @@ export const products: Product[] = [
     price: 620,
   },
   {
-    id: "kek",
+    id: "klek",
     name: "グリーンパプリカ",
     price: 460,
   },
@@ -223,6 +223,11 @@ export const products: Product[] = [
   {
     id: "kokonatu",
     name: "ココナッツ",
+    price: 620,
+  },
+  {
+    id: "painapuru",
+    name: "畑パイナップル",
     price: 620,
   },
 ];
