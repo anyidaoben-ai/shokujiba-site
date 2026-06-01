@@ -1,14 +1,26 @@
-// components/Header.jsx
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
-import Link from 'next/link';
+
+const navItems = [
+  { href: "/Dispense", label: "Dispens", style: styles.dispensLink },
+  { href: "/Goods", label: "Goods", style: styles.goodsLink },
+  { href: "/Paradise", label: "Paradise", style: styles.paradiseLink },
+  { href: "/trip", label: "Trip", style: styles.tripLink },
+  { href: "/TechnologyLand-AI", label: "Services", style: styles.technologyLink },
+  { href: "/upitel", label: "Contact", style: styles.contactLink },
+];
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className={styles.header}>
-
       {/* ── 左上：ロゴ ───────────────────── */}
-      <a href="#home" className={styles.logoArea}>
+      <Link href="/#home" className={styles.logoArea}>
         <Image
           id="home"
           src="/images/shokujibaicon.jpeg"
@@ -17,70 +29,30 @@ export default function Header() {
           height={48}
           className={styles.logoImage}
         />
-        
-      </a>
+      </Link>
 
       {/* ── 右上：タブナビゲーション ────────── */}
-     {/* ── 右上：タブナビゲーション ────────── */}
-<nav className={styles.paradiseNav}>
-  <ul className={styles.paradiseHeadtag}>
-    <li>
-      <Link
-        href="/Dispense"
-        className={`${styles.paradiseNavLink} ${styles.dispensLink}`}
-      >
-        Shokuzai
-      </Link>
-    </li>
+      <nav className={styles.paradiseNav}>
+        <ul className={styles.paradiseHeadtag}>
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
 
-    <li>
-      <Link
-        href="/Goods"
-        className={`${styles.paradiseNavLink} ${styles.goodsLink}`}
-      >
-        Goods
-      </Link>
-    </li>
-
-    <li>
-      <Link
-        href="/Paradise"
-        className={`${styles.paradiseNavLink} ${styles.paradiseLink}`}
-      >
-        Paradise
-      </Link>
-    </li>
-
-    <li>
-      <Link
-        href="/trip"
-        className={`${styles.paradiseNavLink} ${styles.tripLink}`}
-      >
-        Trip
-      </Link>
-    </li>
-
-    <li>
-      <Link
-        href="/upitel"
-        className={`${styles.paradiseNavLink} ${styles.upitelLink}`}
-      >
-        Contact
-      </Link>
-    </li>
-
-    <li>
-      <Link
-        href="/TechnologyLand-AI"
-        className={`${styles.paradiseNavLink} ${styles.technologyLink}`}
-      >
-        Services
-      </Link>
-    </li>
-  </ul>
-</nav>
-
+            return (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`${styles.paradiseNavLink} ${item.style} ${
+                    isActive ? styles.paradiseNavLinkActive : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </header>
   );
 }
-
