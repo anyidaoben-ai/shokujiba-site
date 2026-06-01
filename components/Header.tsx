@@ -65,7 +65,7 @@ export default function Header() {
         href="/upitel"
         className={`${styles.paradiseNavLink} ${styles.upitelLink}`}
       >
-        UpiteL
+        Contact
       </Link>
     </li>
 
@@ -74,7 +74,7 @@ export default function Header() {
         href="/TechnologyLand-AI"
         className={`${styles.paradiseNavLink} ${styles.technologyLink}`}
       >
-        TechnologyLand
+        Services
       </Link>
     </li>
   </ul>
