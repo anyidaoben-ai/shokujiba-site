@@ -221,15 +221,6 @@ export default function Page() {
               Shokujibaなリンクから、Shokujibaの世界感を体験しよう。Dispens、Goods、Paradise、TripなどShokujibaを楽しめるShokujibaのトップページです。
             </p>
           </div>
-
-          <div className={styles.tabWorld} aria-hidden="true">
-            <div className={styles.tabWorldInner}>
-              <span className={styles.orbitLine} />
-              <span className={styles.worldCore} />
-              <span className={styles.worldLeafLeft} />
-              <span className={styles.worldLeafRight} />
-            </div>
-          </div>
         </section>
 
      
