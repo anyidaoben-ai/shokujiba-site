@@ -81,7 +81,7 @@ export default function Footer() {
 
       <div className={styles.footerBottom}>
         <p>© 2026 Shokujiba Paradise. All rights reserved.</p>
-        <span>NagareBou × 食事場</span>
+        <span>Shokujiba × NagareBou</span>
       </div>
     </footer>
   );
