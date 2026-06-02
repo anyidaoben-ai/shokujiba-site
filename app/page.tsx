@@ -218,8 +218,7 @@ export default function Page() {
             <h1 id="shokujiba-title">食事場</h1>
             <p className={styles.subtitle}>Shokujiba 公式サイト</p>
             <p className={styles.lead}>
-              高級なリンクタブから、食事場の世界へ。自然、空、地球、植物、食の体験が
-              5次元のゲートとしてつながるShokujibaのトップページです。
+              Shokujibaなリンクから、Shokujibaの世界感を体験しよう。Dispens、Goods、Paradise、TripなどShokujibaを楽しめるShokujibaのトップページです。
             </p>
           </div>
 
