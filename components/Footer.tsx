@@ -20,11 +20,11 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerFrame}>
         <div className={styles.brandPanel}>
-          <p className={styles.eyebrow}>5th Dimension Dining World</p>
+          <p className={styles.eyebrow}>食事場</p>
           <h2>Shokujiba Paradise</h2>
           <p>
-            空、地球、植物、食事場がひとつにつながるShokujibaの世界。
-            高級なリンクタブから、それぞれの体験へ進めます。
+            空、神、自然がひとつにつながるShokujibaの世界。
+            Shokujibaリンクタブから、それぞれの体験へ進めます。
           </p>
           <span>株式会社食事場</span>
         </div>
@@ -81,7 +81,7 @@ export default function Footer() {
 
       <div className={styles.footerBottom}>
         <p>© 2026 Shokujiba Paradise. All rights reserved.</p>
-        <span>Nature × Earth × Dining × 5D</span>
+        <span>NagareBou × 食事場</span>
       </div>
     </footer>
   );
