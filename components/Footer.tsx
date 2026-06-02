@@ -63,7 +63,7 @@ export default function Footer() {
                 href="/UpiteL"
                 className="hover:text-[#1dba8a] transition-colors"
               >
-                UpiteL
+                Services
               </Link>
             </li>
 
@@ -72,7 +72,7 @@ export default function Footer() {
                 href="/TechnologyLand-AI"
                 className="hover:text-[#1dba8a] transition-colors"
               >
-                TechnologyLand{"&"}AI
+                Contact
               </Link>
             </li>
           </ul>
