@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Carousel from '@/components/Carousel';
 import type { Slide } from '@/components/Carousel';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 const websiteStructuredData = {
@@ -198,29 +199,94 @@ const sportsSlides: Slide[] = [
 ];
 export default function Page() {
   return (
-    
     <>
-    
       <Header />
       <main className={styles.main}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteStructuredData),
-        }}
-      />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
 
-      <h1>食事場</h1>
-      <p>Shokujiba 公式サイト</p>
-    </main>
+        <section className={styles.hero} aria-labelledby="shokujiba-title">
+          <div className={`${styles.cloud} ${styles.cloudOne}`} />
+          <div className={`${styles.cloud} ${styles.cloudTwo}`} />
+          <div className={`${styles.cloud} ${styles.cloudThree}`} />
 
-      <main className={styles.main}>
-        <Carousel slides={onsenSlides} />
-        <Carousel slides={beachSlides} />
-        <Carousel slides={oceanSlides} />
-        <Carousel slides={nightShowSlides} />
-        <Carousel slides={shoppingSlides} />
-        <Carousel slides={sportsSlides} />
+          <div className={styles.heroContent}>
+            <p className={styles.eyebrow}>5th Dimension Dining World</p>
+            <h1 id="shokujiba-title">食事場</h1>
+            <p className={styles.subtitle}>Shokujiba 公式サイト</p>
+            <p className={styles.lead}>
+              空に浮かぶ地球から、料理、旅、温泉、海、買い物、夜のショーが芽吹く。
+              Shokujibaは、自然と高級感が同じ世界に息づく5次元の食事場です。
+            </p>
+
+            <nav className={styles.worldTabs} aria-label="Shokujiba worlds">
+              <Link href="/Dispense" className={styles.worldTab}>Dispens</Link>
+              <Link href="/Goods" className={styles.worldTab}>Goods</Link>
+              <Link href="/Paradise" className={styles.worldTab}>Paradise</Link>
+              <Link href="/TechnologyLand-AI" className={styles.worldTab}>Services</Link>
+            </nav>
+          </div>
+
+          <div className={styles.planetStage} aria-hidden="true">
+            <div className={styles.dimensionRing} />
+            <div className={styles.planet}>
+              <span className={`${styles.land} ${styles.landOne}`} />
+              <span className={`${styles.land} ${styles.landTwo}`} />
+              <span className={`${styles.land} ${styles.landThree}`} />
+              <span className={`${styles.land} ${styles.landFour}`} />
+              <span className={`${styles.planetCloud} ${styles.planetCloudOne}`} />
+              <span className={`${styles.planetCloud} ${styles.planetCloudTwo}`} />
+            </div>
+            <div className={`${styles.sprout} ${styles.sproutMain}`}>
+              <span className={styles.stem} />
+              <span className={`${styles.leaf} ${styles.leafLeft}`} />
+              <span className={`${styles.leaf} ${styles.leafRight}`} />
+              <span className={`${styles.leaf} ${styles.leafSmall}`} />
+            </div>
+            <div className={`${styles.sprout} ${styles.sproutSmall}`}>
+              <span className={styles.stem} />
+              <span className={`${styles.leaf} ${styles.leafLeft}`} />
+              <span className={`${styles.leaf} ${styles.leafRight}`} />
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.intro}>
+          <p className={styles.sectionLabel}>World Concept</p>
+          <h2>地球の上に、食事場の世界が生えている。</h2>
+          <div className={styles.conceptGrid}>
+            <article className={styles.conceptCard}>
+              <span>Sky</span>
+              <h3>空と光</h3>
+              <p>澄んだ青空と雲の奥行きで、サイト全体を軽やかな別世界として見せます。</p>
+            </article>
+            <article className={styles.conceptCard}>
+              <span>Earth</span>
+              <h3>地球と自然</h3>
+              <p>丸い惑星、海、緑、芽吹きを重ねて、Shokujibaの生命感を表現します。</p>
+            </article>
+            <article className={styles.conceptCard}>
+              <span>Dining</span>
+              <h3>高級な食事場</h3>
+              <p>金色のラインとガラスの質感で、食とリゾートの上質さを残します。</p>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.carouselWorlds} aria-label="Shokujiba experience gallery">
+          <p className={styles.sectionLabel}>Experience Gates</p>
+          <h2>5次元の食事場へ入る。</h2>
+          <Carousel slides={onsenSlides} />
+          <Carousel slides={beachSlides} />
+          <Carousel slides={oceanSlides} />
+          <Carousel slides={nightShowSlides} />
+          <Carousel slides={shoppingSlides} />
+          <Carousel slides={sportsSlides} />
+        </section>
       </main>
 
       <Footer />
