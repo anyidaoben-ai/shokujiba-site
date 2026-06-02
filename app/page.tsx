@@ -215,7 +215,7 @@ export default function Page() {
           <div className={`${styles.cloud} ${styles.cloudThree}`} />
 
           <div className={styles.heroContent}>
-            <h2 id="shokujiba-title">食事場へようこそ</h2>
+            <h1 id="shokujiba-title">食事場へようこそ</h1>
             <p className={styles.subtitle}>Shokujiba 公式サイト</p>
             <p className={styles.lead}>
               Shokujibaなリンクから、Shokujibaの世界感を体感しよう。Dispens、Goods、Paradise、TripなどShokujibaを楽しめるShokujibaのトップページです。
