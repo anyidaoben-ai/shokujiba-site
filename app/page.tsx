@@ -215,19 +215,12 @@ export default function Page() {
           <div className={`${styles.cloud} ${styles.cloudThree}`} />
 
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>5th Dimension Shokujiba</p>
             <h1 id="shokujiba-title">食事場</h1>
             <p className={styles.subtitle}>Shokujiba 公式サイト</p>
             <p className={styles.lead}>
               高級なリンクタブから、食事場の世界へ。自然、空、地球、植物、食の体験が
               5次元のゲートとしてつながるShokujibaのトップページです。
             </p>
-            <nav className={styles.worldTabs} aria-label="Shokujiba main links">
-              <Link href="/Dispense" className={styles.worldTab}>Dispens</Link>
-              <Link href="/Goods" className={styles.worldTab}>Goods</Link>
-              <Link href="/Paradise" className={styles.worldTab}>Paradise</Link>
-              <Link href="/TechnologyLand-AI" className={styles.worldTab}>Services</Link>
-            </nav>
           </div>
 
           <div className={styles.tabWorld} aria-hidden="true">
