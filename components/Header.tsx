@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 
 const navItems = [
-  { href: "/Dispense", label: "Dispens", style: styles.dispensLink },
+  { href: "/Dispense", label: "Shokuzai", style: styles.dispensLink },
   { href: "/Goods", label: "Goods", style: styles.goodsLink },
   { href: "/Paradise", label: "Paradise", style: styles.paradiseLink },
   { href: "/trip", label: "Trip", style: styles.tripLink },
