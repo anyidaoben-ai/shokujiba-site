@@ -1,124 +1,61 @@
 import Link from "next/link";
+import styles from "./Footer.module.css";
+
+const exploreLinks = [
+  { href: "/Dispense", label: "Dispens" },
+  { href: "/Goods", label: "Goods" },
+  { href: "/Paradise", label: "Paradise" },
+  { href: "/trip", label: "Trip" },
+  { href: "/TechnologyLand-AI", label: "Services" },
+  { href: "/upitel", label: "Contact" },
+];
+
+const legalLinks = [
+  { href: "/privacy", label: "プライバシーポリシー" },
+  { href: "/terms", label: "利用規約" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white px-8 pt-12 pb-6">
-      {/* リンク グリッド */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-        {/* ブランド */}
-        <div>
-          <p className="text-xl font-medium tracking-wide mb-2">
-            Shokujiba Paradise
+    <footer className={styles.footer}>
+      <div className={styles.footerFrame}>
+        <div className={styles.brandPanel}>
+          <p className={styles.eyebrow}>5th Dimension Dining World</p>
+          <h2>Shokujiba Paradise</h2>
+          <p>
+            空、地球、植物、食事場がひとつにつながるShokujibaの世界。
+            高級なリンクタブから、それぞれの体験へ進めます。
           </p>
-          <span className="text-sm text-gray-500 leading-relaxed">
-            株式会社食事場
-          </span>
+          <span>株式会社食事場</span>
         </div>
 
-        {/* Explore */}
-        <div>
-          <h3 className="text-xs tracking-widest text-gray-600 mb-3">
-            EXPLORE
-          </h3>
-
-          <ul className="space-y-2 text-sm text-gray-400">
-            <li>
-              <Link
-                href="/Dispense"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                Dispens
+        <div className={styles.linkPanel}>
+          <h3>EXPLORE</h3>
+          <nav className={styles.footerTabs} aria-label="Footer navigation">
+            {exploreLinks.map((link) => (
+              <Link href={link.href} className={styles.footerTab} key={link.href}>
+                {link.label}
               </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/Goods"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                Goods
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/Paradise"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                Paradise
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/Trip"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                Trip
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/UpiteL"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                Services
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/TechnologyLand-AI"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
+            ))}
+          </nav>
         </div>
 
-        {/* Legal */}
-        <div>
-          <h3 className="text-xs tracking-widest text-gray-600 mb-3">
-            LEGAL
-          </h3>
-
-          <ul className="space-y-2 text-sm text-gray-400">
-            <li>
-              <Link
-                href="/privacy"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                プライバシーポリシー
+        <div className={styles.linkPanel}>
+          <h3>LEGAL</h3>
+          <nav className={styles.legalLinks} aria-label="Legal navigation">
+            {legalLinks.map((link) => (
+              <Link href={link.href} key={link.href}>
+                {link.label}
               </Link>
-            </li>
-
-            <li>
-              <Link
-                href="/terms"
-                className="hover:text-[#1dba8a] transition-colors"
-              >
-                利用規約
-              </Link>
-            </li>
-          </ul>
+            ))}
+          </nav>
         </div>
-      </div>
 
-      {/* 区切り線 */}
-      <hr className="border-t border-white/10 mb-5" />
-
-      {/* コピーライト + SNS */}
-      <div className="flex flex-wrap justify-between items-center gap-3">
-        <p className="text-xs text-gray-600">
-          © 2026 Paradise. All rights reserved.
-        </p>
-
-        <div className="flex gap-5 text-gray-600 text-lg">
+        <div className={styles.socialPanel}>
+          <h3>SOCIAL</h3>
           <a
             href=""
-            className="hover:text-[#1dba8a] transition-colors"
+            className={styles.socialLink}
             aria-label="X"
           >
             X
@@ -126,7 +63,7 @@ export default function Footer() {
 
           <a
             href="#"
-            className="hover:text-[#1dba8a] transition-colors"
+            className={styles.socialLink}
             aria-label="Instagram"
           >
             ◎
@@ -134,12 +71,17 @@ export default function Footer() {
 
           <a
             href="https://youtube.com/channel/UCaeDV49zxiXGYhSupRYi2Nw?si=FLY6Nvf8RE1FY65U"
-            className="hover:text-[#1dba8a] transition-colors"
+            className={styles.socialLink}
             aria-label="YouTube"
           >
             ▶
           </a>
         </div>
+      </div>
+
+      <div className={styles.footerBottom}>
+        <p>© 2026 Shokujiba Paradise. All rights reserved.</p>
+        <span>Nature × Earth × Dining × 5D</span>
       </div>
     </footer>
   );
