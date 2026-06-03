@@ -95,7 +95,6 @@ export default function Page() {
           <div className="absolute inset-x-[-20%] top-24 h-56 rotate-[-8deg] bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.9),rgba(255,221,125,.48),rgba(175,245,255,.42),transparent)] blur-2xl [animation:nagare-flow_10s_ease-in-out_infinite]" />
           <div className="absolute right-[-12rem] top-56 h-[36rem] w-[36rem] rounded-full bg-[conic-gradient(from_40deg,rgba(255,255,255,.1),rgba(255,216,116,.42),rgba(143,233,255,.34),rgba(236,180,255,.34),rgba(255,255,255,.1))] blur-2xl [animation:prism-pulse_8s_ease-in-out_infinite]" />
           <div className="absolute bottom-[-18rem] left-[-14rem] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,rgba(255,229,145,.42),rgba(255,255,255,.18)_44%,transparent_68%)] blur-2xl" />
-          <div className="absolute inset-0 opacity-[.18] [background-image:linear-gradient(rgba(185,143,46,.38)_1px,transparent_1px),linear-gradient(90deg,rgba(185,143,46,.3)_1px,transparent_1px)] [background-size:92px_92px]" />
         </div>
 
         <section className="relative min-h-[calc(100vh-88px)] px-5 pb-16 pt-16 sm:px-8 lg:px-12">
