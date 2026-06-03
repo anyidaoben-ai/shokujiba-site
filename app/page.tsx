@@ -245,19 +245,6 @@ export default function Page() {
                 見た人の心に、ワクワクが点灯する。
               </h2>
             </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {["Matter = Shokujiba", "Light = NagareBou", "Energy = Wakuwaku"].map((formula) => (
-                <div
-                  className="border border-white/95 bg-white/76 p-6 shadow-[0_0_52px_rgba(255,255,255,1),0_16px_44px_rgba(184,134,11,.08),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-xl"
-                  key={formula}
-                >
-                  <p className="text-[11px] font-black uppercase tracking-[.24em] text-slate-500">Formula</p>
-                  <p className="mt-4 text-xl font-black text-[#050508] drop-shadow-[0_0_18px_rgba(255,255,255,1)]">
-                    {formula}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
