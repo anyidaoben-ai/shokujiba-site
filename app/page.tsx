@@ -175,12 +175,6 @@ export default function Page() {
                     </span>
                   </h1>
                   <div className="mt-8 max-w-2xl border-l-2 border-amber-300/80 pl-5">
-                    <p className="text-xl font-black uppercase tracking-[.18em] text-[#17151a] sm:text-2xl">
-                      Energy is Wakuwaku.
-                    </p>
-                    <p className="mt-4 text-base font-semibold leading-8 text-slate-700 sm:text-lg">
-                      Shokujiba WebサイトのENERGYは、見た人をワクワクさせるエネルギー。アメリカの自由、夢、スケールをParadise国家へ上げ、NagareBouの白い光、金色の光、淡い虹色として現実へ流れ込みます。
-                    </p>
                   </div>
                   <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                     <Link
@@ -224,9 +218,6 @@ export default function Page() {
                       className="relative z-10 h-full w-full object-contain mix-blend-multiply drop-shadow-[0_0_32px_rgba(255,188,35,.68)]"
                     />
                   </div>
-                  <p className="absolute bottom-7 left-7 right-7 text-center text-xs font-black uppercase tracking-[.28em] text-amber-800 drop-shadow-[0_0_16px_rgba(255,255,255,.9)]">
-                    Energy = Shokujiba x NagareBou²
-                  </p>
                 </div>
               </div>
             </div>
