@@ -87,6 +87,18 @@ export default function Page() {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
           }
+          @keyframes symbol-float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.018); }
+          }
+          @keyframes aura-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          @keyframes receive-pulse {
+            0%, 100% { opacity: .55; transform: scale(.96); }
+            50% { opacity: .95; transform: scale(1.04); }
+          }
           .reveal-energy {
             animation: rise-in .9s ease both;
             animation-timeline: view();
@@ -110,12 +122,12 @@ export default function Page() {
           <div className="mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl flex-col justify-center">
             <div className="reveal-energy relative overflow-hidden border border-white/80 bg-white/50 px-5 py-5 shadow-[0_24px_90px_rgba(189,142,24,.15),inset_0_1px_0_rgba(255,255,255,.95)] backdrop-blur-2xl sm:px-8 lg:px-12 [animation:gate-glow_5s_ease-in-out_infinite]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#ffd65b,#ffffff,#74e6ff,#ffb7ef,#ffd65b)]" />
-              <div className="grid gap-10 py-10 lg:grid-cols-[1.04fr_.96fr] lg:items-center lg:py-14">
+              <div className="grid gap-10 py-10 lg:grid-cols-[.86fr_1.14fr] lg:items-center lg:py-14">
                 <div className="relative z-10">
                   <p className="inline-flex border border-amber-300/70 bg-white/70 px-4 py-2 text-[11px] font-black uppercase tracking-[.3em] text-amber-800 shadow-[0_0_34px_rgba(255,219,102,.34)] backdrop-blur-xl">
-                    Shokujiba Web Site / Receive Energy
+                    Receive Energy from the Symbol
                   </p>
-                  <h1 className="mt-7 max-w-5xl text-[clamp(3.2rem,10.4vw,10rem)] font-black leading-[.84] tracking-normal text-[#111018]">
+                  <h1 className="mt-7 max-w-5xl text-[clamp(3rem,8.2vw,8.2rem)] font-black leading-[.86] tracking-normal text-[#111018]">
                     Shokujiba
                     <span className="block bg-[linear-gradient(92deg,#a66d00,#ffe680_18%,#ffffff_31%,#4edfff_52%,#ff99e8_70%,#d99a00_92%)] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,228,129,.72)]">
                       Paradise
@@ -145,24 +157,32 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="relative min-h-[430px] overflow-hidden border border-amber-200/70 bg-[linear-gradient(180deg,rgba(255,255,255,.78),rgba(255,247,205,.42),rgba(238,252,255,.58))] shadow-[inset_0_1px_0_rgba(255,255,255,.96),0_24px_70px_rgba(183,133,18,.14)]">
-                  <div className="absolute inset-x-10 top-10 h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
-                  <div className="absolute bottom-0 left-[12%] h-[78%] w-[16%] border border-white/70 bg-white/35 shadow-[0_0_34px_rgba(255,255,255,.5)] backdrop-blur-md" />
-                  <div className="absolute bottom-0 left-[33%] h-[58%] w-[18%] border border-cyan-100/80 bg-white/30 shadow-[0_0_34px_rgba(116,230,255,.22)] backdrop-blur-md" />
-                  <div className="absolute bottom-0 right-[18%] h-[70%] w-[20%] border border-amber-100/90 bg-white/30 shadow-[0_0_34px_rgba(255,218,99,.25)] backdrop-blur-md" />
-                  <div className="absolute inset-x-[-12%] top-[44%] h-16 rotate-[-10deg] bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.95),rgba(255,217,96,.55),rgba(108,224,255,.46),transparent)] blur-lg" />
-                  <div className="absolute left-1/2 top-[47%] w-[78%] -translate-x-1/2 border-t border-amber-300/60" />
-                  <div className="absolute left-1/2 top-[47%] grid h-56 w-56 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-amber-300/70 bg-white/85 p-5 shadow-[0_0_80px_rgba(255,255,255,.98),0_0_58px_rgba(255,216,102,.62),0_0_44px_rgba(108,224,255,.3)] backdrop-blur-xl sm:h-64 sm:w-64">
+                <div className="relative min-h-[520px] overflow-hidden border border-amber-200/70 bg-[radial-gradient(circle_at_50%_44%,rgba(255,255,255,.98),rgba(255,246,204,.66)_28%,rgba(232,252,255,.62)_56%,rgba(255,246,252,.6)),linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,247,205,.42),rgba(238,252,255,.58))] shadow-[inset_0_1px_0_rgba(255,255,255,.98),0_24px_80px_rgba(183,133,18,.18)] sm:min-h-[620px]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(255,215,79,.28),transparent_34%),radial-gradient(circle_at_50%_48%,rgba(112,226,255,.2),transparent_52%),radial-gradient(circle_at_50%_48%,rgba(255,155,231,.16),transparent_68%)]" />
+                  <div className="absolute inset-x-8 top-10 h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
+                  <div className="absolute bottom-0 left-[8%] h-[72%] w-[14%] border border-white/70 bg-white/30 shadow-[0_0_34px_rgba(255,255,255,.5)] backdrop-blur-md" />
+                  <div className="absolute bottom-0 left-[28%] h-[50%] w-[16%] border border-cyan-100/80 bg-white/24 shadow-[0_0_34px_rgba(116,230,255,.22)] backdrop-blur-md" />
+                  <div className="absolute bottom-0 right-[13%] h-[64%] w-[18%] border border-amber-100/90 bg-white/24 shadow-[0_0_34px_rgba(255,218,99,.25)] backdrop-blur-md" />
+                  <div className="absolute inset-x-[-18%] top-[46%] h-20 rotate-[-10deg] bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.95),rgba(255,217,96,.62),rgba(108,224,255,.48),rgba(255,170,235,.36),transparent)] blur-lg" />
+                  <div className="absolute inset-x-[-18%] top-[54%] h-16 rotate-[9deg] bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.86),rgba(255,236,160,.46),rgba(255,163,228,.32),transparent)] blur-xl" />
+                  <div className="absolute left-1/2 top-[50%] h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-300/50 shadow-[0_0_70px_rgba(255,221,111,.32)]" />
+                  <div className="absolute left-1/2 top-[50%] h-[68%] w-[68%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cyan-200/60 shadow-[0_0_58px_rgba(108,224,255,.24)]" />
+                  <div className="absolute left-1/2 top-[50%] h-[54%] w-[54%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-fuchsia-200/60 shadow-[0_0_54px_rgba(255,170,235,.22)]" />
+                  <div className="absolute left-1/2 top-[50%] h-[86%] w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[conic-gradient(from_90deg,transparent,rgba(255,218,92,.34),transparent,rgba(111,225,255,.26),transparent,rgba(255,166,231,.28),transparent)] blur-sm [animation:aura-spin_18s_linear_infinite]" />
+                  <div className="absolute left-1/2 top-[50%] h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.82),rgba(255,231,142,.34)_42%,transparent_67%)] blur-xl [animation:receive-pulse_4.8s_ease-in-out_infinite]" />
+                  <div className="absolute left-1/2 top-[50%] grid h-[min(74vw,390px)] w-[min(74vw,390px)] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/90 bg-white/82 p-7 shadow-[0_0_100px_rgba(255,255,255,1),0_0_70px_rgba(255,211,72,.7),0_0_56px_rgba(108,224,255,.38)] backdrop-blur-xl [animation:symbol-float_5.6s_ease-in-out_infinite] sm:p-9 lg:h-[430px] lg:w-[430px]">
+                    <div className="absolute inset-3 rounded-full border border-amber-200/70" />
+                    <div className="absolute inset-[-18px] rounded-full border border-white/70" />
                     <Image
                       src="/images/shokujiba-receive-energy.jpg"
                       alt="Shokujibaのエネルギーを受け取る王冠とカトラリーのシンボル"
-                      width={360}
-                      height={360}
+                      width={640}
+                      height={640}
                       priority
-                      className="h-full w-full object-contain drop-shadow-[0_0_26px_rgba(255,205,53,.55)]"
+                      className="relative z-10 h-full w-full object-contain mix-blend-multiply drop-shadow-[0_0_32px_rgba(255,188,35,.68)]"
                     />
                   </div>
-                  <p className="absolute bottom-7 left-7 right-7 text-center text-xs font-black uppercase tracking-[.28em] text-slate-600">
+                  <p className="absolute bottom-7 left-7 right-7 text-center text-xs font-black uppercase tracking-[.28em] text-amber-800 drop-shadow-[0_0_16px_rgba(255,255,255,.9)]">
                     Energy = Shokujiba x NagareBou²
                   </p>
                 </div>
