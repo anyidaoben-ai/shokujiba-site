@@ -40,13 +40,13 @@ const worlds = [
     title: 'Services',
     description: 'Shokujibaの概念を形にするサービス。',
     body: 'Webサイト制作、映像制作、AI表現、世界観設計。Shokujibaの思想や美しさを、実際のサービスとして形にします。',
-    href: '/upitel',
+    href: '/TechnologyLand-AI',
   },
   {
     title: 'Contact',
     description: 'Masterとつながる場所。',
     body: '制作の相談、商品について、Paradiseについて、Shokujibaとの関わりはこちらから始まります。',
-    href: '/TechnologyLand-AI',
+    href: '/upitel',
   },
 ];
 
@@ -71,7 +71,7 @@ export default function Page() {
             <h1 id="shokujiba-title">Shokujibaへようこそ</h1>
             <p className={styles.subtitle}>Shokujiba 公式サイト</p>
             <p className={styles.lead}>
-              Shokujibaなリンクから、Shokujibaの世界感を体感しよう。Shokuzai、Goods、Paradise、TripなどShokujibaを楽しめるトップページです。
+              Shokujibaのリンクから、Shokujibaの世界感を体感しよう。Shokuzai、Goods、Paradise、TripなどShokujibaを楽しめるトップページです。
             </p>
           </div>
         </section>
@@ -79,7 +79,7 @@ export default function Page() {
         <section className={styles.worldSections} aria-label="Shokujiba worlds">
           <div className={styles.sectionIntro}>
             <p className={styles.sectionLabel}>Shokujiba Worlds</p>
-            <h2>Shokujibaの世界をめぐる6つの入口。</h2>
+            <h2>Shokujibaを知ろう</h2>
           </div>
 
           <div className={styles.worldList}>
