@@ -13,44 +13,44 @@ const websiteStructuredData = {
 
 const energyRoutes = [
   {
-    title: "Dispens",
-    label: "Energy Charge",
-    description: "アメリカをこえるShokujiba Paradiseのエネルギーを、最初に受け取る場所。",
+    title: "Shokuzai",
+    label: "Shokuzai",
+    description: "Shokuzaiやパワーを受け取るリンク",
     href: "/Dispense",
     tone: "from-[#ffe38a] via-[#ffffff] to-[#8feaff]",
   },
   {
     title: "Goods",
-    label: "Take It Home",
-    description: "ワクワクするエネルギーを現実へ持ち帰るためのShokujiba Goods。",
+    label: "Goods",
+    description: "Shokujibaファンがグッズを受け取る",
     href: "/Goods",
     tone: "from-[#ffb7e8] via-[#ffffff] to-[#ffe28a]",
   },
   {
     title: "Paradise",
-    label: "Main Area",
-    description: "Shokujiba国家の中核。巨大な楽園エリアから光が流れ出す。",
+    label: "Paradise",
+    description: "Shokujibaのエネルギーを肌で体感する",
     href: "/Paradise",
     tone: "from-[#9cffcf] via-[#ffffff] to-[#ffd1f1]",
   },
   {
     title: "Trip",
-    label: "Travel Energy",
-    description: "Shokujiba Paradiseの世界を旅として体験し、胸が上がるルート。",
+    label: "Trip",
+    description: "ShokujibaのShokuzaiで楽しむ",
     href: "/trip",
     tone: "from-[#99ddff] via-[#ffffff] to-[#d6bdff]",
   },
   {
     title: "Services",
-    label: "Make Energy",
-    description: "Web制作、AI画像、映像制作、世界観制作でエネルギーを形にする場所。",
+    label: "Services",
+    description: "Shokujibaの歴史を知る、Shokujibaを利用する",
     href: "/TechnologyLand-AI",
     tone: "from-[#c8d0ff] via-[#ffffff] to-[#fff08f]",
   },
   {
     title: "Contact",
-    label: "Master Link",
-    description: "Masterとつながり、現実世界とShokujiba Paradiseを接続する窓口。",
+    label: "Contact",
+    description: "Masterとつながれる唯一のリンク",
     href: "/upitel",
     tone: "from-[#ffc0d1] via-[#ffffff] to-[#90f0df]",
   },
@@ -78,7 +78,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="relative isolate min-h-screen overflow-hidden bg-[#fffdf7] text-[#101018]">
+      <main className="relative isolate min-h-screen overflow-hidden bg-white text-[#050508]">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -115,6 +115,10 @@ export default function Page() {
             0%, 100% { opacity: .55; transform: scale(.96); }
             50% { opacity: .95; transform: scale(1.04); }
           }
+          @keyframes white-dimension {
+            0%, 100% { opacity: .72; filter: blur(18px) brightness(1); }
+            50% { opacity: 1; filter: blur(24px) brightness(1.08); }
+          }
           @keyframes star-blink {
             0%, 100% { opacity: .32; transform: scale(.92); }
             50% { opacity: .86; transform: scale(1.08); }
@@ -130,8 +134,10 @@ export default function Page() {
         `}</style>
 
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,#fffdf7_0%,#fff8db_18%,#f1fdff_42%,#fff7fb_64%,#ffffff_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,#ffffff_0%,#fffef9_18%,#ffffff_42%,#fffafd_64%,#ffffff_100%)]" />
+          <div className="absolute left-1/2 top-[-22rem] h-[54rem] w-[54rem] -translate-x-1/2 rounded-full bg-white shadow-[0_0_180px_rgba(255,255,255,1)] [animation:white-dimension_7s_ease-in-out_infinite]" />
           <div className="absolute inset-x-[-12%] top-[-7rem] h-[26rem] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,.98),rgba(255,232,141,.54)_36%,rgba(159,236,255,.26)_58%,transparent_76%)] blur-2xl" />
+          <div className="absolute left-[8%] top-[28rem] h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(201,30,57,.13),rgba(255,255,255,.72)_42%,transparent_70%)] blur-xl" />
           <div className="absolute inset-x-[-18%] top-[18rem] h-36 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.96),rgba(255,220,113,.62),rgba(143,235,255,.5),rgba(255,188,238,.42),transparent)] blur-xl [animation:light-sweep_8s_ease-in-out_infinite_alternate]" />
           <div className="absolute left-[-12%] top-[10rem] h-[46rem] w-[34rem] rotate-[-18deg] bg-[repeating-linear-gradient(180deg,rgba(255,255,255,.0)_0,rgba(255,255,255,.0)_28px,rgba(201,30,57,.08)_28px,rgba(201,30,57,.08)_42px,rgba(23,71,151,.075)_42px,rgba(23,71,151,.075)_56px)] blur-[1px]" />
           <div className="absolute right-[-10%] top-[5rem] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(23,71,151,.13),transparent_62%)] blur-2xl" />
@@ -142,7 +148,7 @@ export default function Page() {
 
         <section className="relative px-5 pb-16 pt-14 sm:px-8 lg:px-12">
           <div className="mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl flex-col justify-center">
-            <div className="reveal-energy relative overflow-hidden border border-white/80 bg-white/50 px-5 py-5 shadow-[0_24px_90px_rgba(189,142,24,.15),inset_0_1px_0_rgba(255,255,255,.95)] backdrop-blur-2xl sm:px-8 lg:px-12 [animation:gate-glow_5s_ease-in-out_infinite]">
+            <div className="reveal-energy relative overflow-hidden border border-white/90 bg-white/72 px-5 py-5 shadow-[0_0_90px_rgba(255,255,255,1),0_24px_90px_rgba(189,142,24,.08),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl sm:px-8 lg:px-12 [animation:gate-glow_5s_ease-in-out_infinite]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#ffd65b,#ffffff,#74e6ff,#ffb7ef,#ffd65b)]" />
               <div className="pointer-events-none absolute right-0 top-0 h-48 w-64 bg-[linear-gradient(135deg,rgba(23,71,151,.16),rgba(255,255,255,.22)_48%,rgba(201,30,57,.13))]" />
               <div className="pointer-events-none absolute right-6 top-6 grid grid-cols-4 gap-2 opacity-60">
@@ -164,7 +170,7 @@ export default function Page() {
                   </p>
                   <h1 className="mt-7 max-w-5xl text-[clamp(3rem,8.2vw,8.2rem)] font-black leading-[.86] tracking-normal text-[#111018]">
                     Shokujiba
-                    <span className="block bg-[linear-gradient(92deg,#a66d00,#ffe680_18%,#ffffff_31%,#4edfff_52%,#ff99e8_70%,#d99a00_92%)] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,228,129,.72)]">
+                    <span className="block text-[#050508] drop-shadow-[0_0_30px_rgba(255,255,255,1)]">
                       Paradise
                     </span>
                   </h1>
@@ -179,7 +185,7 @@ export default function Page() {
                   <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/Paradise"
-                      className="inline-flex items-center justify-center border border-amber-300 bg-[#111018] px-6 py-4 text-sm font-black uppercase tracking-[.18em] text-white shadow-[0_20px_54px_rgba(17,16,24,.22),0_0_38px_rgba(255,221,119,.48)] transition duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#111018]"
+                      className="inline-flex items-center justify-center border border-amber-300/80 bg-white px-6 py-4 text-sm font-black uppercase tracking-[.18em] text-[#050508] shadow-[0_0_42px_rgba(255,255,255,1),0_0_32px_rgba(255,221,119,.38),0_18px_44px_rgba(17,16,24,.08)] transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white"
                     >
                       Enter Paradise
                     </Link>
@@ -192,7 +198,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="relative min-h-[520px] overflow-hidden border border-amber-200/70 bg-[radial-gradient(circle_at_50%_44%,rgba(255,255,255,.98),rgba(255,246,204,.66)_28%,rgba(232,252,255,.62)_56%,rgba(255,246,252,.6)),linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,247,205,.42),rgba(238,252,255,.58))] shadow-[inset_0_1px_0_rgba(255,255,255,.98),0_24px_80px_rgba(183,133,18,.18)] sm:min-h-[620px]">
+                <div className="relative min-h-[520px] overflow-hidden border border-white/90 bg-[radial-gradient(circle_at_50%_44%,rgba(255,255,255,1),rgba(255,252,236,.78)_28%,rgba(244,253,255,.72)_56%,rgba(255,250,253,.72)),linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,253,246,.62),rgba(250,254,255,.72))] shadow-[0_0_100px_rgba(255,255,255,1),inset_0_1px_0_rgba(255,255,255,1),0_24px_80px_rgba(183,133,18,.12)] sm:min-h-[620px]">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(255,215,79,.28),transparent_34%),radial-gradient(circle_at_50%_48%,rgba(112,226,255,.2),transparent_52%),radial-gradient(circle_at_50%_48%,rgba(255,155,231,.16),transparent_68%)]" />
                   <div className="absolute inset-0 opacity-50 bg-[repeating-linear-gradient(0deg,transparent_0,transparent_34px,rgba(201,30,57,.07)_34px,rgba(201,30,57,.07)_42px,transparent_42px,transparent_68px,rgba(23,71,151,.06)_68px,rgba(23,71,151,.06)_76px)]" />
                   <div className="absolute inset-x-8 top-10 h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
@@ -227,11 +233,11 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="overflow-hidden border-y border-amber-200/60 bg-white/45 py-4 backdrop-blur-xl">
+        <section className="overflow-hidden border-y border-white/90 bg-white/72 py-4 shadow-[0_0_60px_rgba(255,255,255,1)] backdrop-blur-xl">
           <div className="flex w-[200%] gap-8 whitespace-nowrap [animation:word-flow_22s_linear_infinite]">
             {[...energyWords, ...energyWords, ...energyWords, ...energyWords].map((word, index) => (
               <span
-                className="bg-[linear-gradient(90deg,#9b6b03,#fff3b4,#58d8ff,#eaa8ff,#d99a00)] bg-clip-text text-sm font-black uppercase tracking-[.3em] text-transparent"
+                className="text-sm font-black uppercase tracking-[.3em] text-[#050508] drop-shadow-[0_0_18px_rgba(255,255,255,1)]"
                 key={`${word}-${index}`}
               >
                 {word}
@@ -242,7 +248,7 @@ export default function Page() {
 
         <section className="px-5 py-16 sm:px-8 lg:px-12">
           <div className="reveal-energy mx-auto grid max-w-7xl gap-5 lg:grid-cols-[.95fr_1.05fr]">
-            <div className="border border-white/90 bg-white/58 p-7 shadow-[0_20px_70px_rgba(255,255,255,.54),inset_0_1px_0_rgba(255,255,255,.96)] backdrop-blur-2xl sm:p-9">
+            <div className="border border-white/95 bg-white/76 p-7 shadow-[0_0_72px_rgba(255,255,255,1),0_20px_70px_rgba(255,255,255,.72),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl sm:p-9">
               <p className="text-xs font-black uppercase tracking-[.3em] text-amber-700">Energy Definition</p>
               <h2 className="mt-5 text-4xl font-black leading-tight text-[#111018] sm:text-6xl">
                 見た人の心に、ワクワクが点灯する。
@@ -251,11 +257,11 @@ export default function Page() {
             <div className="grid gap-4 sm:grid-cols-3">
               {["Matter = Shokujiba", "Light = NagareBou", "Energy = Wakuwaku"].map((formula) => (
                 <div
-                  className="border border-amber-200/70 bg-white/62 p-6 shadow-[0_16px_44px_rgba(184,134,11,.1),inset_0_1px_0_rgba(255,255,255,.95)] backdrop-blur-xl"
+                  className="border border-white/95 bg-white/76 p-6 shadow-[0_0_52px_rgba(255,255,255,1),0_16px_44px_rgba(184,134,11,.08),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-xl"
                   key={formula}
                 >
                   <p className="text-[11px] font-black uppercase tracking-[.24em] text-slate-500">Formula</p>
-                  <p className="mt-4 bg-[linear-gradient(90deg,#9b6b03,#fff3b4,#58d8ff,#eaa8ff)] bg-clip-text text-xl font-black text-transparent">
+                  <p className="mt-4 text-xl font-black text-[#050508] drop-shadow-[0_0_18px_rgba(255,255,255,1)]">
                     {formula}
                   </p>
                 </div>
@@ -265,7 +271,7 @@ export default function Page() {
         </section>
 
         <section className="px-5 py-8 sm:px-8 lg:px-12">
-          <div className="reveal-energy relative mx-auto max-w-7xl overflow-hidden border border-white/90 bg-white/58 p-6 shadow-[0_22px_72px_rgba(23,71,151,.08),inset_0_1px_0_rgba(255,255,255,.96)] backdrop-blur-2xl sm:p-8">
+          <div className="reveal-energy relative mx-auto max-w-7xl overflow-hidden border border-white/95 bg-white/78 p-6 shadow-[0_0_76px_rgba(255,255,255,1),0_22px_72px_rgba(23,71,151,.07),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl sm:p-8">
             <div className="absolute inset-y-0 left-0 w-2 bg-[linear-gradient(180deg,#174797,#ffffff,#c91e39,#ffd65b)]" />
             <div className="absolute right-0 top-0 h-32 w-64 bg-[linear-gradient(135deg,rgba(23,71,151,.14),rgba(255,255,255,.3),rgba(201,30,57,.12))]" />
             <div className="relative grid gap-5 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
@@ -278,10 +284,10 @@ export default function Page() {
               <div className="grid gap-4 sm:grid-cols-3">
                 {nationSignals.map((signal) => (
                   <div
-                    className="border border-white/80 bg-white/62 p-5 shadow-[0_16px_44px_rgba(23,71,151,.08),inset_0_1px_0_rgba(255,255,255,.94)]"
+                    className="border border-white/90 bg-white/76 p-5 shadow-[0_0_44px_rgba(255,255,255,1),0_16px_44px_rgba(23,71,151,.07),inset_0_1px_0_rgba(255,255,255,1)]"
                     key={signal.label}
                   >
-                    <p className="bg-[linear-gradient(90deg,#174797,#ffffff,#c91e39,#d99a00)] bg-clip-text text-xl font-black text-transparent">
+                    <p className="text-xl font-black text-[#050508] drop-shadow-[0_0_18px_rgba(255,255,255,1)]">
                       {signal.label}
                     </p>
                     <p className="mt-3 text-sm font-semibold leading-7 text-slate-700">{signal.text}</p>
@@ -303,7 +309,7 @@ export default function Page() {
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {energyRoutes.map((route, index) => (
                 <Link
-                  className="reveal-energy group relative min-h-[330px] overflow-hidden border border-white/90 bg-white/58 p-7 shadow-[0_18px_54px_rgba(148,112,24,.12),inset_0_1px_0_rgba(255,255,255,.95)] backdrop-blur-2xl transition duration-500 hover:-translate-y-2 hover:border-amber-300 hover:bg-white/80 hover:shadow-[0_30px_86px_rgba(184,134,11,.22),0_0_48px_rgba(255,236,166,.54)]"
+                  className="reveal-energy group relative min-h-[330px] overflow-hidden border border-white/95 bg-white/76 p-7 shadow-[0_0_58px_rgba(255,255,255,1),0_18px_54px_rgba(148,112,24,.08),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl transition duration-500 hover:-translate-y-2 hover:border-amber-200 hover:bg-white hover:shadow-[0_0_86px_rgba(255,255,255,1),0_30px_86px_rgba(184,134,11,.14),0_0_48px_rgba(255,236,166,.54)]"
                   href={route.href}
                   key={route.title}
                   style={{ animationDelay: `${index * 70}ms` }}
@@ -334,22 +340,22 @@ export default function Page() {
         </section>
 
         <section className="px-5 pb-28 pt-12 sm:px-8 lg:px-12">
-          <div className="reveal-energy relative mx-auto max-w-7xl overflow-hidden border border-amber-200/80 bg-[#111018] px-6 py-16 text-white shadow-[0_30px_100px_rgba(17,16,24,.22)] sm:px-10 lg:px-16">
-            <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(255,255,255,.1),transparent_28%,rgba(255,222,118,.2)_48%,rgba(111,225,255,.18)_68%,transparent),radial-gradient(ellipse_at_top,rgba(255,255,255,.28),transparent_58%)]" />
-            <div className="absolute inset-x-[-12%] top-20 h-28 rotate-[-6deg] bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.82),rgba(255,218,96,.52),rgba(112,226,255,.38),transparent)] blur-xl" />
+          <div className="reveal-energy relative mx-auto max-w-7xl overflow-hidden border border-white/95 bg-white/82 px-6 py-16 text-[#050508] shadow-[0_0_110px_rgba(255,255,255,1),0_30px_100px_rgba(17,16,24,.08),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl sm:px-10 lg:px-16">
+            <div className="absolute inset-0 bg-[linear-gradient(125deg,rgba(255,255,255,.96),transparent_28%,rgba(255,222,118,.18)_48%,rgba(111,225,255,.13)_68%,transparent),radial-gradient(ellipse_at_top,rgba(255,255,255,1),transparent_58%)]" />
+            <div className="absolute inset-x-[-12%] top-20 h-28 rotate-[-6deg] bg-[linear-gradient(90deg,transparent,rgba(255,255,255,1),rgba(255,218,96,.34),rgba(112,226,255,.24),transparent)] blur-xl" />
             <div className="relative grid gap-10 lg:grid-cols-[1fr_.72fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[.3em] text-amber-200">Shokujiba Web Site Energy</p>
+                <p className="text-xs font-black uppercase tracking-[.3em] text-amber-700">Shokujiba Web Site Energy</p>
                 <h2 className="mt-5 text-4xl font-black leading-tight sm:text-6xl">
                   RECEIVE ENERGYは、ワクワクを受け取ること。
                 </h2>
-                <p className="mt-7 max-w-2xl text-lg font-semibold leading-9 text-white/76">
+                <p className="mt-7 max-w-2xl text-lg font-semibold leading-9 text-slate-700">
                   Shokujiba Paradiseを見た瞬間に、行きたい、知りたい、持ち帰りたい、つながりたいという感覚が立ち上がる。その動きが、このWebサイトのENERGYです。
                 </p>
               </div>
               <Link
                 href="/upitel"
-                className="inline-flex w-full items-center justify-center border border-white/60 bg-white px-6 py-4 text-sm font-black uppercase tracking-[.2em] text-[#111018] shadow-[0_0_44px_rgba(255,255,255,.42)] transition duration-300 hover:-translate-y-1 hover:border-amber-200 hover:bg-[#fff2b8] sm:w-auto"
+                className="inline-flex w-full items-center justify-center border border-amber-200 bg-white px-6 py-4 text-sm font-black uppercase tracking-[.2em] text-[#050508] shadow-[0_0_52px_rgba(255,255,255,1),0_0_28px_rgba(255,218,96,.28)] transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:bg-white sm:w-auto"
               >
                 Contact Master
               </Link>

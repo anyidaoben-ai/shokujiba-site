@@ -6,164 +6,130 @@
   padding: 0;
 }
 
-/* ─── 変更点を追記した .navLink ─── */
 .navLink {
+  position: relative;
   display: inline-block;
-  padding: 10px 28px;        /* 少し広げて内線のスペースを確保 */
-  border: 1px solid #b8986a; /* 外枠ライン */
-  color: #b8986a;
+  padding: 10px 28px;
+  border: 1px solid rgba(20, 20, 28, 0.18);
+  color: #111018;
   text-decoration: none;
   letter-spacing: 0.15em;
   font-size: 0.85rem;
-  font-weight: 300;           /* 細めにすると上品さが増す */
-  background-color: transparent;
-  transition: all 0.4s ease;
-  border-radius: 0;           /* ←★ 角を完全に四角に */
-  position: relative;         /* ←★ 疑似要素の基準点 */
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0 26px rgba(255, 255, 255, 0.92), inset 0 1px 0 #ffffff;
+  transition: all 0.35s ease;
 }
 
-/* ─── ★ ここが高級感のミソ：内側の細いライン ─── */
 .navLink::before {
-  content: '';
+  content: "";
   position: absolute;
-  inset: 4px;                 /* 内側に4px入った位置に */
-  border: 0.5px solid #b8986a;
-  transition: all 0.4s ease;
+  inset: 4px;
+  border: 1px solid rgba(255, 218, 92, 0.32);
   pointer-events: none;
 }
 
-/* ─── ホバー：金色で塗りつぶす ─── */
-.navLink:hover {
-  background-color: #b8986a;
-  color: #0f0e0c;
-}
-
-.navLink:hover::before {
-  border-color: rgba(255, 245, 220, 0.45); /* 内線を白っぽく */
-}
-
-/* ─── アクティブページ（現在地）の強調 ─── */
+.navLink:hover,
 .navLinkActive {
-  border-color: #d4b483;
-  color: #d4b483;
-  font-weight: 400;
+  transform: translateY(-2px);
+  border-color: rgba(255, 218, 92, 0.72);
+  background: #ffffff;
+  box-shadow:
+    0 0 34px rgba(255, 255, 255, 1),
+    0 0 28px rgba(255, 218, 92, 0.38),
+    0 0 24px rgba(23, 71, 151, 0.12);
 }
 
-.navLinkActive::before {
-  border-width: 1px;         /* 内線を少し太く */
-  border-color: #d4b483;
+.logoSubtitle,
+.logoTitle {
+  color: #111018;
 }
 
 .logoSubtitle {
   font-size: 0.72rem;
-  font-weight: 300;           /* 細めのフォントで上品に */
-  letter-spacing: 0.35em;     /* 広めの字間で高級感 */ 
-
-  /* ─── ゴールドのグラデーション文字 ─── */
-  background: linear-gradient(
-    90deg,
-    #8a6a38 0%,
-    #d4a855 25%,
-    #f5e0a0 50%,  /* 中央だけ明るく光らせる */
-    #d4a855 75%,
-    #8a6a38 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  /* ─── 光が流れるアニメーション ─── */
-  animation: logoShine 3.5s linear infinite;
-
-  /* ─── 上に細いラインで区切り ─── */
-  border-top: 0.5px solid #5a4520;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  border-top: 1px solid rgba(17, 16, 24, 0.16);
   padding-top: 5px;
   margin-top: 3px;
 }
 
-@keyframes logoShine {
-  0%   { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
 .logoTitle {
-  font-size: 2rem;            /* お好みで調整 */
-  font-weight: 800;           /* 太くして存在感を出す */
-  letter-spacing: 0.18em;     /* 字間を広げて格調アップ */
-
-  /* ─── 深みのあるゴールドグラデーション ─── */
-  background: linear-gradient(
-    160deg,
-    #6b4e1e 0%,
-    #b8986a 20%,
-    #f0d898 40%,
-    #fffbe8 50%,   /* 中心だけ白く輝かせる */
-    #f0d898 60%,
-    #b8986a 80%,
-    #6b4e1e 100%
-  );
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  /* ─── ゆっくり揺れる光のアニメーション ─── */
-  animation: logoTitleShine 4s ease-in-out infinite alternate;
-
-  /* ─── 疑似要素で下に金ラインを引く ─── */
   position: relative;
   display: inline-block;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
 }
 
-/* 文字の下の装飾ライン */
 .logoTitle::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   right: 0;
-  height: 0.5px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #b8986a 30%,
-    #f0d898 50%,  /* 中央が一番明るい */
-    #b8986a 70%,
-    transparent
-  );
-}
-
-@keyframes logoTitleShine {
-  0%   { background-position: 0% center; }
-  100% { background-position: 100% center; }
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #111018, transparent);
 }
 
 .logoImage {
-  border-radius: 50%; /* ← これだけで丸になる！ */
-  object-fit: cover;  /* ← 画像が歪まないようにする */
+  border-radius: 50%;
+  object-fit: cover;
   margin-left: 12px;
+  background: white;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.95),
+    0 0 28px rgba(255, 255, 255, 1),
+    0 0 34px rgba(255, 218, 92, 0.36);
 }
 
-
 .header {
-  position: relative;
-  z-index: 20;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 18px;
   width: 100%;
-  padding: 18px clamp(14px, 4vw, 36px);
+  padding: 16px clamp(14px, 4vw, 36px);
   background:
-    linear-gradient(115deg, rgba(1, 31, 22, 0.94), rgba(5, 74, 52, 0.82) 48%, rgba(2, 20, 15, 0.94)),
-    radial-gradient(circle at 18% 0%, rgba(247, 220, 132, 0.22), transparent 34%),
-    radial-gradient(circle at 82% 100%, rgba(137, 255, 216, 0.16), transparent 36%);
-  border-bottom: 1px solid rgba(235, 202, 112, 0.28);
-  box-shadow: 0 16px 42px rgba(0, 24, 17, 0.32);
+    radial-gradient(circle at 16% 0%, rgba(255, 255, 255, 1), transparent 24rem),
+    radial-gradient(circle at 84% 16%, rgba(23, 71, 151, 0.08), transparent 20rem),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 250, 232, 0.78), rgba(255, 255, 255, 0.92));
+  border-bottom: 1px solid rgba(17, 16, 24, 0.08);
+  box-shadow:
+    0 0 38px rgba(255, 255, 255, 1),
+    0 18px 54px rgba(17, 16, 24, 0.06),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(22px) saturate(1.25);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201, 30, 57, 0.28), #ffffff, rgba(23, 71, 151, 0.28), rgba(255, 218, 92, 0.48), transparent);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 1);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -140px;
+  width: min(72vw, 760px);
+  height: 220px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.96), rgba(255, 228, 126, 0.22), transparent 68%);
+  pointer-events: none;
 }
 
 .logoArea {
+  position: relative;
+  z-index: 2;
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
@@ -171,8 +137,9 @@
   text-decoration: none;
 }
 
-/* ── ナビ全体 ───────────────────── */
 .paradiseNav {
+  position: relative;
+  z-index: 2;
   flex: 1 1 auto;
   width: min(100%, 1040px);
   display: flex;
@@ -180,7 +147,6 @@
   min-width: 0;
 }
 
-/* ── リンクを並べる箱 ───────────────────── */
 .paradiseHeadtag {
   list-style: none;
   display: grid;
@@ -192,7 +158,6 @@
   justify-content: center;
 }
 
-/* ── 共通リンクデザイン：5次元パラダイスの高級タブ ───────────────────── */
 .paradiseNavLink {
   position: relative;
   isolation: isolate;
@@ -200,41 +165,31 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 56px;
+  min-height: 54px;
   padding: 0 14px;
   overflow: hidden;
-
-  text-decoration: none;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  color: #fffdf0;
-  text-shadow:
-    0 1px 0 rgba(16, 45, 28, 0.75),
-    0 0 14px rgba(226, 255, 236, 0.35);
-
+  border: 1px solid rgba(17, 16, 24, 0.1);
+  color: #111018;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 24%, rgba(122, 255, 209, 0.2) 52%, transparent 74%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.84), rgba(239, 216, 129, 0.34) 28%, transparent 54%),
-    linear-gradient(140deg, #092d20 0%, #0d5a42 34%, #e4be55 50%, #f8f3d1 58%, #37c89d 74%, #062118 100%);
-
-  border: 1px solid rgba(252, 229, 142, 0.66);
-  border-radius: 8px;
-
+    linear-gradient(120deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 232, 0.72), rgba(255, 255, 255, 0.96)),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 1), rgba(255, 218, 92, 0.16), transparent 56%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    inset 0 -12px 24px rgba(0, 35, 24, 0.3),
-    0 8px 22px rgba(1, 27, 19, 0.28),
-    0 0 18px rgba(214, 184, 91, 0.24);
-
-  backdrop-filter: blur(14px) saturate(1.25);
+    0 0 30px rgba(255, 255, 255, 0.96),
+    0 12px 34px rgba(17, 16, 24, 0.06),
+    inset 0 1px 0 #ffffff,
+    inset 0 -18px 34px rgba(255, 255, 255, 0.55);
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 1);
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(16px) saturate(1.2);
   transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease,
-    border-color 0.22s ease,
-    filter 0.22s ease;
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease,
+    background 0.24s ease;
 }
 
 .paradiseNavLink::before,
@@ -245,111 +200,66 @@
 }
 
 .paradiseNavLink::before {
-  inset: 4px;
+  inset: 5px;
   z-index: -1;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: 5px;
+  border: 1px solid rgba(255, 218, 92, 0.22);
   background:
-    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent),
-    radial-gradient(circle at 20% 20%, rgba(132, 255, 218, 0.32), transparent 38%);
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(circle at 20% 20%, rgba(201, 30, 57, 0.06), transparent 36%),
+    radial-gradient(circle at 80% 80%, rgba(23, 71, 151, 0.07), transparent 38%);
 }
 
 .paradiseNavLink::after {
-  inset: -42% -18%;
+  inset: -70% -28%;
   z-index: -1;
-  background: linear-gradient(115deg, transparent 36%, rgba(255, 255, 255, 0.64), transparent 54%);
-  transform: translateX(-56%) rotate(8deg);
-  transition: transform 0.55s ease;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.98), transparent 58%);
+  transform: translateX(-58%) rotate(8deg);
+  transition: transform 0.65s ease;
 }
 
-/* ── ホバー時 ───────────────────── */
-.paradiseNavLink:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 250, 209, 0.96);
-  filter: saturate(1.12) brightness(1.08);
+.paradiseNavLink:hover,
+.paradiseNavLinkActive {
+  transform: translateY(-4px);
+  border-color: rgba(255, 218, 92, 0.72);
+  background: #ffffff;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.88),
-    inset 0 -12px 24px rgba(0, 35, 24, 0.22),
-    0 15px 30px rgba(1, 27, 19, 0.32),
-    0 0 28px rgba(231, 205, 111, 0.56),
-    0 0 42px rgba(103, 255, 203, 0.25);
+    0 0 42px rgba(255, 255, 255, 1),
+    0 0 36px rgba(255, 218, 92, 0.38),
+    0 0 30px rgba(23, 71, 151, 0.13),
+    0 16px 38px rgba(17, 16, 24, 0.08),
+    inset 0 1px 0 #ffffff;
 }
 
-.paradiseNavLink:hover::after {
+.paradiseNavLink:hover::after,
+.paradiseNavLinkActive::after {
   transform: translateX(58%) rotate(8deg);
 }
 
-/* ── 押した時 ───────────────────── */
 .paradiseNavLink:active {
   transform: translateY(-1px) scale(0.98);
 }
 
-/* ── 個別リンク：同じ大きさのまま、少しずつ世界観を変える ───────────────────── */
-
-.dispensLink {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 24%, rgba(122, 255, 209, 0.18) 52%, transparent 74%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.84), rgba(239, 216, 129, 0.34) 28%, transparent 54%),
-    linear-gradient(140deg, #073224, #12684d 36%, #e7c15b 52%, #fff9da 60%, #33c393 78%, #051f17);
-}
-
-.goodsLink {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 24%, rgba(200, 255, 229, 0.16) 52%, transparent 74%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.8), rgba(244, 227, 149, 0.32) 28%, transparent 54%),
-    linear-gradient(140deg, #09251c, #0c513d 36%, #d5af4a 52%, #fff5c7 60%, #68dfb4 78%, #061c15);
-}
-
-.paradiseLink {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 24%, rgba(128, 255, 219, 0.22) 52%, transparent 74%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.88), rgba(248, 221, 126, 0.36) 28%, transparent 54%),
-    linear-gradient(140deg, #0a3b2a, #15825f 34%, #efc95e 50%, #fffce6 59%, #48ffd2 78%, #062019);
-}
-
-.tripLink {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 24%, rgba(130, 255, 224, 0.18) 52%, transparent 74%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.78), rgba(235, 211, 128, 0.34) 28%, transparent 54%),
-    linear-gradient(140deg, #06261d, #10513f 34%, #c99c34 50%, #fff1bd 59%, #3bd0ad 78%, #041914);
-}
-
+.dispensLink,
+.goodsLink,
+.paradiseLink,
+.tripLink,
 .contactLink,
-.upitelLink {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 24%, rgba(171, 255, 229, 0.18) 52%, transparent 74%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.84), rgba(246, 226, 150, 0.34) 28%, transparent 54%),
-    linear-gradient(140deg, #092b21, #0e5b43 34%, #ddb84f 50%, #fff7d2 59%, #7cf4c9 78%, #062119);
-}
-
+.upitelLink,
 .technologyLink {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 24%, rgba(123, 255, 235, 0.24) 52%, transparent 74%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.86), rgba(241, 218, 136, 0.32) 28%, transparent 54%),
-    linear-gradient(140deg, #073127, #096250 34%, #d8b34f 50%, #fff8d4 59%, #58ffe0 78%, #041c17);
+    linear-gradient(120deg, rgba(255, 255, 255, 0.98), rgba(255, 252, 240, 0.8), rgba(255, 255, 255, 0.96)),
+    radial-gradient(circle at 16% 18%, rgba(201, 30, 57, 0.06), transparent 34%),
+    radial-gradient(circle at 84% 78%, rgba(23, 71, 151, 0.07), transparent 36%),
+    radial-gradient(circle at 50% 0%, rgba(255, 218, 92, 0.16), transparent 54%);
 }
 
 .paradiseNavLinkActive {
-  color: #ffffff;
-  border-color: rgba(255, 255, 236, 0.98);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.42), transparent 22%, rgba(140, 255, 220, 0.28) 54%, transparent 76%),
-    radial-gradient(circle at 50% 0%, #ffffff, rgba(249, 226, 137, 0.7) 30%, transparent 58%),
-    linear-gradient(140deg, #0d4733 0%, #178264 32%, #f0cf69 49%, #fffbe4 58%, #5ffff0 76%, #073424 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -12px 26px rgba(0, 44, 30, 0.22),
-    0 0 24px rgba(255, 230, 133, 0.68),
-    0 0 40px rgba(117, 255, 216, 0.34),
-    0 14px 30px rgba(0, 25, 17, 0.28);
-}
-
-.paradiseNavLinkActive::before {
-  border-color: rgba(255, 255, 255, 0.7);
+  color: #000000;
 }
 
 @media (max-width: 760px) {
   .header {
+    position: relative;
     flex-direction: column;
     padding: 14px 12px 16px;
   }
