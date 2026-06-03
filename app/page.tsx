@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 
 const websiteStructuredData = {
@@ -151,12 +152,15 @@ export default function Page() {
                   <div className="absolute bottom-0 right-[18%] h-[70%] w-[20%] border border-amber-100/90 bg-white/30 shadow-[0_0_34px_rgba(255,218,99,.25)] backdrop-blur-md" />
                   <div className="absolute inset-x-[-12%] top-[44%] h-16 rotate-[-10deg] bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.95),rgba(255,217,96,.55),rgba(108,224,255,.46),transparent)] blur-lg" />
                   <div className="absolute left-1/2 top-[47%] w-[78%] -translate-x-1/2 border-t border-amber-300/60" />
-                  <div className="absolute left-1/2 top-[47%] grid h-44 w-44 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-amber-300/70 bg-white/70 shadow-[0_0_70px_rgba(255,255,255,.95),0_0_48px_rgba(255,216,102,.52)] backdrop-blur-xl">
-                    <div className="text-center">
-                      <p className="text-[10px] font-black uppercase tracking-[.26em] text-amber-800">Receive</p>
-                      <p className="mt-2 text-5xl font-black text-[#111018]">E</p>
-                      <p className="mt-2 text-[10px] font-black uppercase tracking-[.18em] text-slate-600">Wakuwaku</p>
-                    </div>
+                  <div className="absolute left-1/2 top-[47%] grid h-56 w-56 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-amber-300/70 bg-white/85 p-5 shadow-[0_0_80px_rgba(255,255,255,.98),0_0_58px_rgba(255,216,102,.62),0_0_44px_rgba(108,224,255,.3)] backdrop-blur-xl sm:h-64 sm:w-64">
+                    <Image
+                      src="/images/shokujiba-receive-energy.jpg"
+                      alt="Shokujibaのエネルギーを受け取る王冠とカトラリーのシンボル"
+                      width={360}
+                      height={360}
+                      priority
+                      className="h-full w-full object-contain drop-shadow-[0_0_26px_rgba(255,205,53,.55)]"
+                    />
                   </div>
                   <p className="absolute bottom-7 left-7 right-7 text-center text-xs font-black uppercase tracking-[.28em] text-slate-600">
                     Energy = Shokujiba x NagareBou²
