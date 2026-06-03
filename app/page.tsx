@@ -1,202 +1,55 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Carousel from '@/components/Carousel';
-import type { Slide } from '@/components/Carousel';
 import Link from 'next/link';
 import styles from './page.module.css';
 
 const websiteStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "食事場",
-  alternateName: "Shokujiba",
-  url: "https://shokujiba-site.vercel.app",
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '食事場',
+  alternateName: 'Shokujiba',
+  url: 'https://shokujiba-site.vercel.app',
 };
-const onsenSlides: Slide[] = [
+
+const worlds = [
   {
-    id: 1,
-    title: '',
-    description: '',
-    image: '/images/luxury.png',
-    textColor: 'white',
+    title: 'Shokuzai',
+    description: '全て北海道産のオーガニック食材',
+    body: 'by Shokujiba',
+    href: '/Shokuzai',
   },
   {
-    id: 2,
-    title: '',
-    description: '',
-    image: '/images/luxuryimage.png',
-    textColor: '#1d1d1f',
+    title: 'Goods',
+    description: 'Shokujibaの世界を日常へ持ち帰る。',
+    body: 'アクセサリー、お守り、ジュエリーなど、Shokujibaの力を身につけ、持ち運ぶためのアイテム（実体のないものを実体にするアイテム）',
+    href: '/Goods',
   },
   {
-    id: 3,
-    title: '',
-    description: '',
-    image: '/images/villa.png',
-    textColor: '#1d1d1f',
+    title: 'Paradise',
+    description: 'すべてがあり、すべてが満たされる',
+    body: 'Paradiseは、Shokujibaが目指す満たされる世界の姿です。自然と未来都市が重なり、訪れる人の感覚を上の次元へ導きます。',
+    href: '/Paradise',
   },
   {
-    id: 4,
-    title: '',
-    description: '',
-    image: '/images/lvilla.png',
-    textColor: '#1d1d1f',
+    title: 'Trip',
+    description: 'Shokujibaを体験する空間。',
+    body: 'Shokujibaの世界を現実の体験として受け取るための空間です。',
+    href: '/Trip',
+  },
+  {
+    title: 'Services',
+    description: 'Shokujibaの概念を形にするサービス。',
+    body: 'Webサイト制作、映像制作、AI表現、世界観設計。Shokujibaの思想や美しさを、実際のサービスとして形にします。',
+    href: '/upitel',
+  },
+  {
+    title: 'Contact',
+    description: 'Masterとつながる場所。',
+    body: '制作の相談、商品について、Paradiseについて、Shokujibaとの関わりはこちらから始まります。',
+    href: '/TechnologyLand-AI',
   },
 ];
 
-const beachSlides: Slide[] = [
-  {
-    id: 1,
-    title: '',
-    description: '',
-    image: '/images/water.png',
-    textColor: '#1d1d1f',
-  },
-  {
-    id: 2,
-    title: '',
-    description: '',
-    image: '/images/waterl.png',
-    textColor: '#1d1d1f',
-  },
-  {
-    id: 3,
-    title: '',
-    description: '',
-    image: '/images/waterroom.png',
-    textColor: '#1d1d1f',
-  },
-  {
-    id: 4,
-    title: '',
-    description: '',
-    image: '/images/oceanspa.png',
-    textColor: '#1d1d1f',
-  },
-];
-
-const oceanSlides: Slide[] = [
-  {
-    id: 1,
-    title: '',
-    description: '',
-    image: '/images/dining.png',
-    textColor: 'white',
-  },
-  {
-    id: 2,
-    title: '',
-    description: '',
-    image: '/images/ryouri.png',
-    textColor: 'white',
-  },
-  {
-    id: 3,
-    title: '',
-    description: '',
-    image: '/images/pasuta.png',
-    textColor: 'white',
-  },
-  {
-    id: 4,
-    title: '',
-    description: '',
-    image: '/images/dryouri.png',
-    textColor: 'white',
-  },
-];
-
-const nightShowSlides: Slide[] = [
-  {
-    id: 1,
-    title: '',
-    description: '',
-    image: '/images/nights.png',
-    textColor: 'white',
-  },
-  {
-    id: 2,
-    title: '',
-    description: '',
-    image: '/images/nighti.png',
-    textColor: 'white',
-  },
-  {
-    id: 3,
-    title: '',
-    description: '',
-    image: '/images/nighth.png',
-    textColor: 'white',
-  },
-  {
-    id: 4,
-    title: '',
-    description: '',
-    image: '/images/show.png',
-    textColor: 'white',
-  },
-];
-
-const shoppingSlides: Slide[] = [
-  {
-    id: 1,
-    title: '',
-    description: '',
-    image: '/images/shopping.png',
-    textColor: 'white',
-  },
-  {
-    id: 2,
-    title: '',
-    description: '',
-    image: '/images/shoppin.png',
-    textColor: 'white',
-  },
-  {
-    id: 3,
-    title: '',
-    description: '',
-    image: '/images/shopp.png',
-    textColor: 'white',
-  },
-  {
-    id: 4,
-    title: '',
-    description: '',
-    image: '/images/shoppinga.png',
-    textColor: 'white',
-  },
-];
-
-const sportsSlides: Slide[] = [
-  {
-    id: 1,
-    title: '',
-    description: '',
-    image: '/images/sportsarena.png',
-    textColor: 'white',
-  },
-  {
-    id: 2,
-    title: '',
-    description: '',
-    image: '/images/sportsa.png',
-    textColor: 'white',
-  },
-  {
-    id: 3,
-    title: '',
-    description: '',
-    image: '/images/sportsar.png',
-    textColor: 'white',
-  },
-  {
-    id: 4,
-    title: '',
-    description: '',
-    image: '/images/sportsare.png',
-    textColor: 'white',
-  },
-];
 export default function Page() {
   return (
     <>
@@ -218,22 +71,37 @@ export default function Page() {
             <h1 id="shokujiba-title">Shokujibaへようこそ</h1>
             <p className={styles.subtitle}>Shokujiba 公式サイト</p>
             <p className={styles.lead}>
-              Shokujibaなリンクから、Shokujibaの世界感を体感しよう。Dispens、Goods、Paradise、TripなどShokujibaを楽しめるShokujibaのトップページです。
+              Shokujibaなリンクから、Shokujibaの世界感を体感しよう。Shokuzai、Goods、Paradise、TripなどShokujibaを楽しめるトップページです。
             </p>
           </div>
         </section>
 
-     
+        <section className={styles.worldSections} aria-label="Shokujiba worlds">
+          <div className={styles.sectionIntro}>
+            <p className={styles.sectionLabel}>Shokujiba Worlds</p>
+            <h2>Shokujibaの世界をめぐる6つの入口。</h2>
+          </div>
 
-        <section className={styles.carouselWorlds} aria-label="Shokujiba experience gallery">
-          <p className={styles.sectionLabel}>Experience Gates</p>
-          <h2>Shokujiba Paradise</h2>
-          <Carousel slides={onsenSlides} />
-          <Carousel slides={beachSlides} />
-          <Carousel slides={oceanSlides} />
-          <Carousel slides={nightShowSlides} />
-          <Carousel slides={shoppingSlides} />
-          <Carousel slides={sportsSlides} />
+          <div className={styles.worldList}>
+            {worlds.map((world, index) => (
+              <section className={styles.worldSection} key={world.title}>
+                <div className={styles.worldImageSlot} aria-label={`${world.title} image area`}>
+                  <span className={styles.imageNumber}>{String(index + 1).padStart(2, '0')}</span>
+                  <span className={styles.imageSlotText}>Image Area</span>
+                </div>
+
+                <div className={styles.worldText}>
+                  <p className={styles.worldKicker}>Shokujiba / {world.title}</p>
+                  <h3>{world.title}</h3>
+                  <p className={styles.worldDescription}>{world.description}</p>
+                  <p className={styles.worldBody}>{world.body}</p>
+                  <Link className={styles.worldButton} href={world.href}>
+                    詳細ページへ進む
+                  </Link>
+                </div>
+              </section>
+            ))}
+          </div>
         </section>
       </main>
 
