@@ -56,7 +56,23 @@ const energyRoutes = [
   },
 ];
 
-const energyWords = ["WAKUWAKU", "WHITE LIGHT", "GOLD LIGHT", "RAINBOW", "PARADISE", "NAGAREBOU"];
+const energyWords = [
+  "WAKUWAKU",
+  "WHITE LIGHT",
+  "GOLD LIGHT",
+  "RAINBOW",
+  "PARADISE",
+  "NAGAREBOU",
+  "FREEDOM",
+  "DREAM",
+  "BEYOND AMERICA",
+];
+
+const nationSignals = [
+  { label: "Freedom", text: "自由のスケールをParadiseへ上げる。" },
+  { label: "Dream", text: "見た瞬間に、未来へ進みたくなる。" },
+  { label: "Scale", text: "国家のような巨大さでワクワクを満たす。" },
+];
 
 export default function Page() {
   return (
@@ -99,6 +115,10 @@ export default function Page() {
             0%, 100% { opacity: .55; transform: scale(.96); }
             50% { opacity: .95; transform: scale(1.04); }
           }
+          @keyframes star-blink {
+            0%, 100% { opacity: .32; transform: scale(.92); }
+            50% { opacity: .86; transform: scale(1.08); }
+          }
           .reveal-energy {
             animation: rise-in .9s ease both;
             animation-timeline: view();
@@ -113,6 +133,8 @@ export default function Page() {
           <div className="absolute inset-0 bg-[linear-gradient(120deg,#fffdf7_0%,#fff8db_18%,#f1fdff_42%,#fff7fb_64%,#ffffff_100%)]" />
           <div className="absolute inset-x-[-12%] top-[-7rem] h-[26rem] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,.98),rgba(255,232,141,.54)_36%,rgba(159,236,255,.26)_58%,transparent_76%)] blur-2xl" />
           <div className="absolute inset-x-[-18%] top-[18rem] h-36 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,.96),rgba(255,220,113,.62),rgba(143,235,255,.5),rgba(255,188,238,.42),transparent)] blur-xl [animation:light-sweep_8s_ease-in-out_infinite_alternate]" />
+          <div className="absolute left-[-12%] top-[10rem] h-[46rem] w-[34rem] rotate-[-18deg] bg-[repeating-linear-gradient(180deg,rgba(255,255,255,.0)_0,rgba(255,255,255,.0)_28px,rgba(201,30,57,.08)_28px,rgba(201,30,57,.08)_42px,rgba(23,71,151,.075)_42px,rgba(23,71,151,.075)_56px)] blur-[1px]" />
+          <div className="absolute right-[-10%] top-[5rem] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(23,71,151,.13),transparent_62%)] blur-2xl" />
           <div className="absolute inset-x-0 top-[42rem] h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent" />
           <div className="absolute inset-x-0 top-[43rem] h-40 bg-[linear-gradient(180deg,rgba(255,255,255,.52),transparent)]" />
           <div className="absolute bottom-0 left-0 right-0 h-[32rem] bg-[linear-gradient(180deg,transparent,rgba(255,244,197,.42)_36%,rgba(255,255,255,.82))]" />
@@ -122,10 +144,23 @@ export default function Page() {
           <div className="mx-auto flex min-h-[calc(100vh-88px)] max-w-7xl flex-col justify-center">
             <div className="reveal-energy relative overflow-hidden border border-white/80 bg-white/50 px-5 py-5 shadow-[0_24px_90px_rgba(189,142,24,.15),inset_0_1px_0_rgba(255,255,255,.95)] backdrop-blur-2xl sm:px-8 lg:px-12 [animation:gate-glow_5s_ease-in-out_infinite]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#ffd65b,#ffffff,#74e6ff,#ffb7ef,#ffd65b)]" />
+              <div className="pointer-events-none absolute right-0 top-0 h-48 w-64 bg-[linear-gradient(135deg,rgba(23,71,151,.16),rgba(255,255,255,.22)_48%,rgba(201,30,57,.13))]" />
+              <div className="pointer-events-none absolute right-6 top-6 grid grid-cols-4 gap-2 opacity-60">
+                {Array.from({ length: 12 }).map((_, index) => (
+                  <span
+                    className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,.95)] [animation:star-blink_3.4s_ease-in-out_infinite]"
+                    key={index}
+                    style={{ animationDelay: `${index * 120}ms` }}
+                  />
+                ))}
+              </div>
               <div className="grid gap-10 py-10 lg:grid-cols-[.86fr_1.14fr] lg:items-center lg:py-14">
                 <div className="relative z-10">
                   <p className="inline-flex border border-amber-300/70 bg-white/70 px-4 py-2 text-[11px] font-black uppercase tracking-[.3em] text-amber-800 shadow-[0_0_34px_rgba(255,219,102,.34)] backdrop-blur-xl">
                     Receive Energy from the Symbol
+                  </p>
+                  <p className="mt-4 inline-flex border border-blue-200/80 bg-white/70 px-4 py-2 text-[11px] font-black uppercase tracking-[.26em] text-blue-900 shadow-[0_0_28px_rgba(23,71,151,.12)] backdrop-blur-xl">
+                    Paradise Nation beyond America
                   </p>
                   <h1 className="mt-7 max-w-5xl text-[clamp(3rem,8.2vw,8.2rem)] font-black leading-[.86] tracking-normal text-[#111018]">
                     Shokujiba
@@ -138,7 +173,7 @@ export default function Page() {
                       Energy is Wakuwaku.
                     </p>
                     <p className="mt-4 text-base font-semibold leading-8 text-slate-700 sm:text-lg">
-                      Shokujiba WebサイトのENERGYは、見た人をワクワクさせるエネルギー。NagareBouの白い光、金色の光、淡い虹色が、Paradise国家から現実へ流れ込みます。
+                      Shokujiba WebサイトのENERGYは、見た人をワクワクさせるエネルギー。アメリカの自由、夢、スケールをParadise国家へ上げ、NagareBouの白い光、金色の光、淡い虹色として現実へ流れ込みます。
                     </p>
                   </div>
                   <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -159,6 +194,7 @@ export default function Page() {
 
                 <div className="relative min-h-[520px] overflow-hidden border border-amber-200/70 bg-[radial-gradient(circle_at_50%_44%,rgba(255,255,255,.98),rgba(255,246,204,.66)_28%,rgba(232,252,255,.62)_56%,rgba(255,246,252,.6)),linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,247,205,.42),rgba(238,252,255,.58))] shadow-[inset_0_1px_0_rgba(255,255,255,.98),0_24px_80px_rgba(183,133,18,.18)] sm:min-h-[620px]">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(255,215,79,.28),transparent_34%),radial-gradient(circle_at_50%_48%,rgba(112,226,255,.2),transparent_52%),radial-gradient(circle_at_50%_48%,rgba(255,155,231,.16),transparent_68%)]" />
+                  <div className="absolute inset-0 opacity-50 bg-[repeating-linear-gradient(0deg,transparent_0,transparent_34px,rgba(201,30,57,.07)_34px,rgba(201,30,57,.07)_42px,transparent_42px,transparent_68px,rgba(23,71,151,.06)_68px,rgba(23,71,151,.06)_76px)]" />
                   <div className="absolute inset-x-8 top-10 h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
                   <div className="absolute bottom-0 left-[8%] h-[72%] w-[14%] border border-white/70 bg-white/30 shadow-[0_0_34px_rgba(255,255,255,.5)] backdrop-blur-md" />
                   <div className="absolute bottom-0 left-[28%] h-[50%] w-[16%] border border-cyan-100/80 bg-white/24 shadow-[0_0_34px_rgba(116,230,255,.22)] backdrop-blur-md" />
@@ -224,6 +260,34 @@ export default function Page() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 py-8 sm:px-8 lg:px-12">
+          <div className="reveal-energy relative mx-auto max-w-7xl overflow-hidden border border-white/90 bg-white/58 p-6 shadow-[0_22px_72px_rgba(23,71,151,.08),inset_0_1px_0_rgba(255,255,255,.96)] backdrop-blur-2xl sm:p-8">
+            <div className="absolute inset-y-0 left-0 w-2 bg-[linear-gradient(180deg,#174797,#ffffff,#c91e39,#ffd65b)]" />
+            <div className="absolute right-0 top-0 h-32 w-64 bg-[linear-gradient(135deg,rgba(23,71,151,.14),rgba(255,255,255,.3),rgba(201,30,57,.12))]" />
+            <div className="relative grid gap-5 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[.3em] text-blue-900">Paradise Nation Signal</p>
+                <h2 className="mt-4 text-3xl font-black leading-tight text-[#111018] sm:text-5xl">
+                  アメリカのワクワクを、Shokujiba Paradiseの次元へ。
+                </h2>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {nationSignals.map((signal) => (
+                  <div
+                    className="border border-white/80 bg-white/62 p-5 shadow-[0_16px_44px_rgba(23,71,151,.08),inset_0_1px_0_rgba(255,255,255,.94)]"
+                    key={signal.label}
+                  >
+                    <p className="bg-[linear-gradient(90deg,#174797,#ffffff,#c91e39,#d99a00)] bg-clip-text text-xl font-black text-transparent">
+                      {signal.label}
+                    </p>
+                    <p className="mt-3 text-sm font-semibold leading-7 text-slate-700">{signal.text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
