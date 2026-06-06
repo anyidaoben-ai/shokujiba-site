@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: " 食事場 | Shokujiba 公式サイト",
+  applicationName: "Shokujiba",
   description: " 食事場 | Shokujiba へようこそ。ここにはすべてあります。",
 };
 
