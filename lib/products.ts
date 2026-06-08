@@ -68,6 +68,21 @@ export const products: Product[] = [
   { id: "dispense-red-chili", name: "赤とうがらし", price: 390 },
   { id: "dispense-cabbage", name: "高原キャベツ", price: 460 },
   { id: "dispense-edamame", name: "枝付きえだまめ", price: 560 },
+  { id: "dispense-red-apple", name: "雫りんご", price: 380 },
+  { id: "dispense-green-apple-tree", name: "青空青りんご", price: 420 },
+  { id: "dispense-grape-vine", name: "樹上ぶどう", price: 980 },
+  { id: "dispense-lemon-tree", name: "枝付きレモン", price: 480 },
+  { id: "dispense-japanese-pear", name: "洋梨", price: 620 },
+  { id: "dispense-kiwi-tree", name: "樹上キウイ", price: 540 },
+  { id: "dispense-orange-tree", name: "完熟オレンジ", price: 560 },
+  { id: "dispense-melon-vine", name: "畑メロン", price: 1680 },
+  { id: "dispense-watermelon-vine", name: "露地スイカ", price: 1280 },
+  { id: "dispense-strawberry-field", name: "畑いちご", price: 880 },
+  { id: "dispense-blueberry", name: "朝露ブルーベリー", price: 760 },
+  { id: "dispense-banana", name: "房バナナ", price: 360 },
+  { id: "dispense-lime", name: "グリーンライム", price: 420 },
+  { id: "dispense-pineapple", name: "畑パイナップル", price: 980 },
+  { id: "dispense-coconut", name: "生ココナッツ", price: 980 },
 ];
 
 export const getProductById = (id: string) => {
