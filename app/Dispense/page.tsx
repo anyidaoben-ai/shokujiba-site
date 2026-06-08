@@ -18,14 +18,8 @@ type Product = {
 
 const products: Product[] = [
   { id: "momo", name: "香り桃", category: "果物", price: 1280, unit: "4玉", image: "/images/kjewfjkbew.png", origin: "余市", tag: "朝採れ", note: "果汁たっぷり。冷やしてそのまま楽しめます。" },
-  { id: "sakuranbo", name: "光沢さくらんぼ", category: "果物", price: 1380, unit: "300g", image: "/images/sakuranbo.png", origin: "仁木", tag: "旬", note: "甘酸っぱい初夏の主役。ギフトにもおすすめ。" },
   { id: "mango", name: "完熟マンゴー", category: "果物", price: 1480, unit: "2玉", image: "/images/fyi.png", origin: "温室栽培", tag: "濃密", note: "濃密な甘さ。贈り物にも映えるプレミアム品。" },
-  { id: "tomato", name: "露地トマト", category: "野菜", price: 420, unit: "500g", image: "/images/tomato.png", origin: "富良野", tag: "人気", note: "水分と旨みが濃い。冷やして塩だけでも。" },
-  { id: "toumorokosi", name: "とうもろこし", category: "野菜", price: 580, unit: "2本", image: "/images/toumorokosi.png", origin: "十勝", tag: "甘い", note: "粒立ちの良い甘さ。茹でても焼いても主役級。" },
   { id: "burokkori", name: "畑ブロッコリー", category: "野菜", price: 390, unit: "1株", image: "/images/burokori.png", origin: "北見", tag: "定番", note: "茎まで甘い。蒸し料理やグリルで香りが立ちます。" },
-  { id: "yakiimo", name: "紅やきいも", category: "根菜", price: 640, unit: "700g", image: "/images/yakiimo.png", origin: "函館", tag: "しっとり", note: "しっとり甘いさつまいも。焼き芋や天ぷらに。" },
-  { id: "jagaimo", name: "新じゃがいも", category: "根菜", price: 420, unit: "700g", image: "/images/jagaimoo.png", origin: "倶知安", tag: "小粒", note: "皮ごとおいしい小粒系。ローストや煮込みに。" },
-  { id: "neshouga", name: "新しょうが", category: "香味", price: 450, unit: "250g", image: "/images/neshouga.png", origin: "日高", tag: "爽やか", note: "香りが若く爽やか。甘酢漬けや薬味に。" },
   { id: "ninniku", name: "乾燥にんにく", category: "香味", price: 560, unit: "300g", image: "/images/ninnikuu.png", origin: "上川", tag: "強香", note: "香りの芯が強く、炒め物やパスタに便利。" },
   { id: "koubebeef", name: "神戸ビーフ", category: "肉", price: 4800, unit: "100g", image: "/images/wagyu.png", origin: "兵庫", tag: "特選", note: "高級和牛。炙りや寿司に。" },
   { id: "shatoburian", name: "シャトーブリアン", category: "肉", price: 7000, unit: "100g", image: "/images/shatouburian.png", origin: "厳選牧場", tag: "希少", note: "希少部位の極み。特別な日のメインに。" },
