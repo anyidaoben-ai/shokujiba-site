@@ -138,15 +138,13 @@ export default function DispensePage() {
       <header className={styles.topbar}>
         <div className={`${styles.shell} ${styles.nav}`}>
           <a className={styles.brand} href="#top" aria-label="Shokuzai Dispense ホーム">
-            <span className={styles.mark}>食</span>
-            <span>Shokuzai Dispense</span>
+            <span className={styles.mark}>D</span>
+            <span>Dispense</span>
           </a>
           <nav className={styles.navLinks} aria-label="メインナビゲーション">
             <a href="#products">商品</a>
-            <a href="#quality">品質</a>
-            <a href="#delivery">配送</a>
             <button className={styles.cartButton} type="button" onClick={() => setCartOpen(true)}>
-              カート <span>{cartCount}</span>
+              Bag <span>{cartCount}</span>
             </button>
           </nav>
         </div>
@@ -155,14 +153,14 @@ export default function DispensePage() {
       <main id="top">
         <section className={`${styles.shell} ${styles.hero}`}>
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>Hokkaido Organic Market</span>
-            <h1>旬の食材を、旅するように選ぶ。</h1>
+            <span className={styles.eyebrow}>Shokujiba for iPhone</span>
+            <h1>食材を、手のひらで美しく選ぶ。</h1>
             <p>
-              Shokujiba が選ぶ野菜、果物、肉、魚を一箱に。産地の表情が見える売り場で、今日の料理とギフトをすばやく組み立てられます。
+              黄色い光をまとう、静かなオンラインマーケット。旬の食材を見つけて、タップして、あなたの一箱へ。
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.primary} href="#products">商品を見る</a>
-              <button className={styles.secondary} type="button" onClick={addChefSet}>シェフセットを追加</button>
+              <a className={styles.primary} href="#products">Explore</a>
+              <button className={styles.secondary} type="button" onClick={addChefSet}>Chef Set</button>
             </div>
           </div>
 
@@ -180,25 +178,24 @@ export default function DispensePage() {
 
         <section className={styles.quickStats} aria-label="サービスの特徴">
           <div className={styles.shell}>
-            <div><strong>16</strong><span>厳選アイテム</span></div>
-            <div><strong>24h</strong><span>鮮度優先発送</span></div>
-            <div><strong>冷蔵対応</strong><span>食材別に梱包</span></div>
-            <div><strong>Gift</strong><span>贈答にも対応</span></div>
+            <div><strong>16</strong><span>Selected</span></div>
+            <div><strong>24h</strong><span>Fresh ship</span></div>
+            <div><strong>Cold</strong><span>Smart pack</span></div>
           </div>
         </section>
 
         <section className={`${styles.shell} ${styles.section}`} id="products">
           <div className={styles.sectionHead}>
-            <span>ONLINE SHOP</span>
-            <h2>ほしい食材をすぐ探せる。</h2>
-            <p>カテゴリ、産地、料理用途で検索できます。気になる商品はカードからそのままカートへ。</p>
+            <span>STORE</span>
+            <h2>今日の一箱をつくる。</h2>
+            <p>検索、カテゴリ、追加。iPhoneで迷わず進めるために、操作は下へ、情報はすっきり。</p>
           </div>
 
           <div className={styles.toolbar}>
             <input
               className={styles.search}
               type="search"
-              placeholder="食材名、産地、用途で検索"
+              placeholder="Search"
               aria-label="商品検索"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
@@ -253,12 +250,12 @@ export default function DispensePage() {
           <div className={styles.qualityGrid}>
             <div>
               <span className={styles.eyebrow}>QUALITY</span>
-              <h2>食材ごとのいちばん良い状態で届ける。</h2>
+              <h2>軽く、速く、きれいに届く。</h2>
             </div>
             {[
-              ["01", "入荷日に合わせて販売", "状態の良いロットだけを並べ、欠品より鮮度を優先します。"],
-              ["02", "温度帯を分けて梱包", "野菜、果物、肉、魚をそれぞれの状態に合わせて扱います。"],
-              ["03", "料理の入口まで案内", "使い方が想像できる説明で、買った後の迷いを減らします。"],
+              ["01", "Fresh", "状態の良いロットだけを並べ、欠品より鮮度を優先します。"],
+              ["02", "Packed", "野菜、果物、肉、魚をそれぞれの温度帯で扱います。"],
+              ["03", "Simple", "カードを見て、追加して、下部バーから確認できます。"],
             ].map(([number, title, text]) => (
               <article className={styles.qualityItem} key={number}>
                 <b>{number}</b>
@@ -272,8 +269,8 @@ export default function DispensePage() {
         <section className={`${styles.shell} ${styles.delivery}`} id="delivery">
           <div>
             <span className={styles.eyebrow}>DELIVERY</span>
-            <h2>今日の食卓から、特別なギフトまで。</h2>
-            <p>必要なものだけ選んで、カートから注文へ。北海道の旬と高級食材を、ひとつの箱にまとめられます。</p>
+            <h2>Tap. Box. Checkout.</h2>
+            <p>必要なものだけ選んで、カートから注文へ。旬と高級食材をひとつの箱にまとめられます。</p>
           </div>
           <button className={styles.primary} type="button" onClick={() => setCartOpen(true)}>カートを確認</button>
         </section>
@@ -282,8 +279,8 @@ export default function DispensePage() {
       <aside className={`${styles.cartPanel} ${cartOpen ? styles.open : ""}`} aria-label="ショッピングカート">
         <div className={styles.cartHead}>
           <div>
-            <span>YOUR BOX</span>
-            <strong>カート</strong>
+            <span>YOUR BAG</span>
+            <strong>Bag</strong>
           </div>
           <button className={styles.close} type="button" aria-label="カートを閉じる" onClick={() => setCartOpen(false)}>
             x
@@ -321,6 +318,11 @@ export default function DispensePage() {
           </button>
         </div>
       </aside>
+
+      <button className={styles.mobileBag} type="button" onClick={() => setCartOpen(true)} aria-label="カートを確認">
+        <span>{cartCount} items</span>
+        <strong>{yen.format(cartTotal)}</strong>
+      </button>
 
       <div className={`${styles.toast} ${toast ? styles.show : ""}`} role="status" aria-live="polite">
         {toast}
