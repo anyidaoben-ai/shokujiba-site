@@ -12,69 +12,27 @@ type Product = {
   unit: string;
   image: string;
   note: string;
+  origin: string;
+  tag: string;
 };
 
 const products: Product[] = [
-  { id: "abokado", name: "樹上アボカド", category: "果物", price: 680, unit: "2玉", image: "/images/abokadoo.png", note: "濃厚でなめらか。サラダ、トースト、ディップに。" },
-  { id: "burokkori", name: "畑ブロッコリー", category: "野菜", price: 390, unit: "1株", image: "/images/burokori.png", note: "茎まで甘い。蒸し料理やグリルで香りが立ちます。" },
-  { id: "endoumame", name: "朝露えんどう豆", category: "豆類", price: 520, unit: "300g", image: "/images/endoumamee.png", note: "さやの香りが爽やか。豆ごはんやスープに。" },
-  { id: "jagaimo", name: "新じゃがいも", category: "根菜", price: 420, unit: "700g", image: "/images/jagaimoo.png", note: "皮ごとおいしい小粒系。ローストや煮込みに。" },
-  { id: "jkdj", name: "泥つき生姜", category: "香味", price: 520, unit: "250g", image: "/images/shouga.png", note: "掘りたて感のある力強い香り。煮魚や薬味に。" },
-  { id: "kiui", name: "完熟キウイ", category: "果物", price: 620, unit: "4玉", image: "/images/kiuii.png", note: "酸味と甘みのバランスがよく、朝食に最適。" },
-  { id: "klek", name: "グリーンパプリカ", category: "野菜", price: 460, unit: "3個", image: "/images/uiarui.png", note: "肉厚でジューシー。グリルや彩り炒めに。" },
-  { id: "kokonatu", name: "ココナッツ", category: "果物", price: 980, unit: "1玉", image: "/images/kokonatuu.png", note: "南国感のある香り。デザートやドリンクに。" },
-  { id: "konsai", name: "紫根菜ミックス", category: "根菜", price: 480, unit: "1束", image: "/images/hfyj.png", note: "彩りが美しい根菜。浅漬けやローストに。" },
-  { id: "kyuuri", name: "みずみずしい胡瓜", category: "野菜", price: 320, unit: "3本", image: "/images/jhfyf.png", note: "歯切れの良い食感。サラダや冷製料理に。" },
-  { id: "mango", name: "完熟マンゴー", category: "果物", price: 1480, unit: "2玉", image: "/images/fyi.png", note: "濃密な甘さ。贈り物にも映えるプレミアム品。" },
-  { id: "midori", name: "高原白菜", category: "野菜", price: 430, unit: "1玉", image: "/images/ffyjyfuyf.png", note: "葉脈までみずみずしい。鍋、浅漬け、スープに。" },
-  { id: "momo", name: "香り桃", category: "果物", price: 1280, unit: "4玉", image: "/images/kjewfjkbew.png", note: "果汁たっぷり。冷やしてそのまま楽しめます。" },
-  { id: "nasubi", name: "艶なす", category: "野菜", price: 360, unit: "4本", image: "/images/kiowgriogrw.png", note: "油との相性が抜群。焼きなすや麻婆なすに。" },
-  { id: "neshouga", name: "新しょうが", category: "香味", price: 450, unit: "250g", image: "/images/neshouga.png", note: "香りが若く爽やか。甘酢漬けや薬味に。" },
-  { id: "ninjin", name: "土付き人参", category: "根菜", price: 380, unit: "600g", image: "/images/jh.png", note: "甘みが強い土付きタイプ。スープやラペに。" },
-  { id: "ninniku", name: "乾燥にんにく", category: "香味", price: 560, unit: "300g", image: "/images/ninnikuu.png", note: "香りの芯が強く、炒め物やパスタに便利。" },
-  { id: "oribu", name: "グリーンオリーブ", category: "果物", price: 760, unit: "250g", image: "/images/oribu.png", note: "爽やかな苦味。マリネや前菜に。" },
-  { id: "painapuru", name: "畑パイナップル", category: "果物", price: 980, unit: "1玉", image: "/images/painapuru.png", note: "芯まで香る甘酸っぱさ。カットフルーツに。" },
-  { id: "piman", name: "肉厚ピーマン", category: "野菜", price: 340, unit: "5個", image: "/images/pimann.png", note: "苦味控えめ。肉詰め、炒め物、グリルに。" },
-  { id: "sakuranbo", name: "光沢さくらんぼ", category: "果物", price: 1380, unit: "300g", image: "/images/sakuranbo.png", note: "甘酸っぱい初夏の主役。ギフトにもおすすめ。" },
-  { id: "tamanegi", name: "白玉ねぎ", category: "野菜", price: 330, unit: "4玉", image: "/images/tamanegi.png", note: "辛味が穏やか。サラダにも加熱にも使えます。" },
-  { id: "tomato", name: "露地トマト", category: "野菜", price: 420, unit: "500g", image: "/images/tomato.png", note: "水分と旨みが濃い。冷やして塩だけでも。" },
-  { id: "tougarasi", name: "赤とうがらし", category: "香味", price: 360, unit: "120g", image: "/images/tougarasi.png", note: "鮮烈な辛み。オイル漬けや炒め物に。" },
-  { id: "toumorokosi", name: "とうもろこし", category: "野菜", price: 580, unit: "2本", image: "/images/toumorokosi.png", note: "粒立ちの良い甘さ。茹でても焼いても主役級。" },
-  { id: "yakiimo", name: "紅やきいも", category: "根菜", price: 640, unit: "700g", image: "/images/yakiimo.png", note: "しっとり甘いさつまいも。焼き芋や天ぷらに。" },
-  { id: "koubebeef", name: "神戸ビーフ", category: "肉", price: 4800, unit: "100g", image: "/images/wagyu.png", note: "高級和牛。炙りや寿司に。" },
-  { id: "matuzakausi", name: "松坂牛", category: "肉", price: 3600, unit: "100g", image: "/images/matuzakausi.png", note: "とろける極上和牛。" },
-  { id: "oumigyu", name: "近江牛", category: "肉", price: 4600, unit: "100g", image: "/images/oumigyu.png", note: "とろける高級和牛。" },
-  { id: "shatoburian", name: "シャトーブリアン", category: "肉", price: 7000, unit: "100g", image: "/images/shatouburian.png", note: "希少部位の極み" },
-  { id: "kinkaton", name: "金華豚", category: "肉", price: 7000, unit: "100g", image: "/images/kinkaton.png", note: "甘み広がる贅沢豚。" },
-  { id: "angasubeef", name: "アンガスビーフ", category: "肉", price: 3000, unit: "100g", image: "/images/angasubeeff.png", note: "旨味濃厚ステーキ" },
-  { id: "honmaguro", name: "本マグロ", category: "魚", price: 15000, unit: "100g", image: "/images/honmaguroo.png", note: "脂乗り極上マグロ" },
-  { id: "hugu", name: "フグ", category: "魚", price: 8000, unit: "100g", image: "/images/huguu.png", note: "高級白身の贅沢" },
-  { id: "awabi", name: "アワビ", category: "魚", price: 10000, unit: "100g", image: "/images/awabii.png", note: "磯香る極上食感" },
-  { id: "iseebi", name: "伊勢海老", category: "魚", price: 15000, unit: "100g", image: "/images/ebi.png", note: "ぷりぷり海の王様。" },
-  { id: "hamo", name: "ハモ", category: "魚", price: 9000, unit: "100g", image: "/images/hata.png", note: "夏香る上品白身" },
-  { id: "samon", name: "サーモン", category: "魚", price: 9000, unit: "100g", image: "/images/samon.png", note: "脂とろける絶品魚" },
-  { id: "ringo", name: "りんご", category: "果物", price: 200, unit: "1個", image: "/images/tjfy.png", note: "甘酸っぱい味わい。生食に。" },
-  { id: "itigo", name: "イチゴ", category: "果物", price: 600, unit: "1個", image: "/images/itigoo.png", note: "甘い香り。生食に。" },
-  { id: "buruberi", name: "ブルーベリー", category: "果物", price: 9000, unit: "100g", image: "/images/buruberii.png", note: "甘い香り。生食に。" },
-  { id: "suika", name: "スイカ", category: "果物", price: 500, unit: "1個", image: "/images/suikaa.png", note: "甘い香り。生食に。" },
-  { id: "meron", name: "メロン", category: "果物", price: 500, unit: "1個", image: "/images/meronn.png", note: "甘い香り。生食に。" },
-  { id: "remon", name: "レモン", category: "果物", price: 300, unit: "1個", image: "/images/remonn.png", note: "酸っぱい香り。生食に。" },
-  { id: "banana", name: "バナナ", category: "果物", price: 150, unit: "1個", image: "/images/bananaa.png", note: "甘い香り。生食に。" },
-  { id: "budou", name: "ぶどう", category: "果物", price: 500, unit: "1個", image: "/images/budou.png", note: "甘い香り。生食に。" },
-  { id: "aoringo", name: "青リンゴ", category: "果物", price: 300, unit: "1個", image: "/images/aoringoo.png", note: "酸っぱい香り。生食に。" },
-  { id: "younaSi", name: "洋梨", category: "果物", price: 150, unit: "1個", image: "/images/younasii.png", note: "甘い香り。生食に。" },
-  { id: "yoguruto", name: "ヨーグルト", category: "デザート", price: 9000, unit: "100g", image: "/images/yoguruto.png", note: "夏香る上品白身" },
-  { id: "yuzujusu", name: "柚子ジュース", category: "ジュース", price: 9000, unit: "100g", image: "/images/yuzujusu.png", note: "酸っぱい香り。生食に。" },
-  { id: "toryuhu", name: "トリュフ", category: "香味", price: 200, unit: "1個", image: "/images/toryuhu.png", note: "甘酸っぱい味わい。生食に。" },
-  { id: "itigo", name: "イチゴ", category: "果物", price: 600, unit: "1個", image: "/images/itigoo.png", note: "甘い香り。生食に。" },
-  { id: "buruberi", name: "ブルーベリー", category: "果物", price: 9000, unit: "100g", image: "/images/buruberii.png", note: "甘い香り。生食に。" },
-  { id: "suika", name: "スイカ", category: "果物", price: 500, unit: "1個", image: "/images/suikaa.png", note: "甘い香り。生食に。" },
-  { id: "meron", name: "メロン", category: "果物", price: 500, unit: "1個", image: "/images/meronn.png", note: "甘い香り。生食に。" },
-  { id: "remon", name: "レモン", category: "果物", price: 300, unit: "1個", image: "/images/remonn.png", note: "酸っぱい香り。生食に。" },
-  { id: "banana", name: "バナナ", category: "果物", price: 150, unit: "1個", image: "/images/bananaa.png", note: "甘い香り。生食に。" },
-  { id: "budou", name: "ぶどう", category: "果物", price: 500, unit: "1個", image: "/images/budou.png", note: "甘い香り。生食に。" },
-  { id: "aoringo", name: "青リンゴ", category: "果物", price: 300, unit: "1個", image: "/images/aoringoo.png", note: "酸っぱい香り。生食に。" },
-  { id: "younaSi", name: "洋梨", category: "果物", price: 150, unit: "1個", image: "/images/younasii.png", note: "甘い香り。生食に。" },
+  { id: "momo", name: "香り桃", category: "果物", price: 1280, unit: "4玉", image: "/images/kjewfjkbew.png", origin: "余市", tag: "朝採れ", note: "果汁たっぷり。冷やしてそのまま楽しめます。" },
+  { id: "sakuranbo", name: "光沢さくらんぼ", category: "果物", price: 1380, unit: "300g", image: "/images/sakuranbo.png", origin: "仁木", tag: "旬", note: "甘酸っぱい初夏の主役。ギフトにもおすすめ。" },
+  { id: "mango", name: "完熟マンゴー", category: "果物", price: 1480, unit: "2玉", image: "/images/fyi.png", origin: "温室栽培", tag: "濃密", note: "濃密な甘さ。贈り物にも映えるプレミアム品。" },
+  { id: "tomato", name: "露地トマト", category: "野菜", price: 420, unit: "500g", image: "/images/tomato.png", origin: "富良野", tag: "人気", note: "水分と旨みが濃い。冷やして塩だけでも。" },
+  { id: "toumorokosi", name: "とうもろこし", category: "野菜", price: 580, unit: "2本", image: "/images/toumorokosi.png", origin: "十勝", tag: "甘い", note: "粒立ちの良い甘さ。茹でても焼いても主役級。" },
+  { id: "burokkori", name: "畑ブロッコリー", category: "野菜", price: 390, unit: "1株", image: "/images/burokori.png", origin: "北見", tag: "定番", note: "茎まで甘い。蒸し料理やグリルで香りが立ちます。" },
+  { id: "yakiimo", name: "紅やきいも", category: "根菜", price: 640, unit: "700g", image: "/images/yakiimo.png", origin: "函館", tag: "しっとり", note: "しっとり甘いさつまいも。焼き芋や天ぷらに。" },
+  { id: "jagaimo", name: "新じゃがいも", category: "根菜", price: 420, unit: "700g", image: "/images/jagaimoo.png", origin: "倶知安", tag: "小粒", note: "皮ごとおいしい小粒系。ローストや煮込みに。" },
+  { id: "neshouga", name: "新しょうが", category: "香味", price: 450, unit: "250g", image: "/images/neshouga.png", origin: "日高", tag: "爽やか", note: "香りが若く爽やか。甘酢漬けや薬味に。" },
+  { id: "ninniku", name: "乾燥にんにく", category: "香味", price: 560, unit: "300g", image: "/images/ninnikuu.png", origin: "上川", tag: "強香", note: "香りの芯が強く、炒め物やパスタに便利。" },
+  { id: "koubebeef", name: "神戸ビーフ", category: "肉", price: 4800, unit: "100g", image: "/images/wagyu.png", origin: "兵庫", tag: "特選", note: "高級和牛。炙りや寿司に。" },
+  { id: "shatoburian", name: "シャトーブリアン", category: "肉", price: 7000, unit: "100g", image: "/images/shatouburian.png", origin: "厳選牧場", tag: "希少", note: "希少部位の極み。特別な日のメインに。" },
+  { id: "honmaguro", name: "本マグロ", category: "魚", price: 15000, unit: "100g", image: "/images/honmaguroo.png", origin: "大間", tag: "極上", note: "脂乗り極上マグロ。刺身や握りに。" },
+  { id: "iseebi", name: "伊勢海老", category: "魚", price: 15000, unit: "100g", image: "/images/ebi.png", origin: "三重", tag: "祝い", note: "ぷりぷり海の王様。晴れの日の食卓へ。" },
+  { id: "yoguruto", name: "ヨーグルト", category: "デザート", price: 9000, unit: "100g", image: "/images/yoguruto.png", origin: "十勝", tag: "濃厚", note: "なめらかな口当たり。果物と合わせて。" },
+  { id: "yuzujusu", name: "柚子ジュース", category: "ジュース", price: 9000, unit: "100g", image: "/images/yuzujusu.png", origin: "高知", tag: "香る", note: "酸味と香りが立つ一杯。食事の余韻に。" },
 ];
 
 const categories = ["すべて", ...Array.from(new Set(products.map((product) => product.category)))];
@@ -94,7 +52,7 @@ export default function DispensePage() {
       const categoryMatches = category === "すべて" || product.category === category;
       const queryMatches =
         !normalizedQuery ||
-        `${product.name} ${product.category} ${product.note}`.toLowerCase().includes(normalizedQuery);
+        `${product.name} ${product.category} ${product.note} ${product.origin} ${product.tag}`.toLowerCase().includes(normalizedQuery);
 
       return categoryMatches && queryMatches;
     });
@@ -102,34 +60,23 @@ export default function DispensePage() {
 
   const cartEntries = Object.entries(cart).flatMap(([id, quantity]) => {
     const product = products.find((item) => item.id === id);
-
-    if (!product) {
-      return [];
-    }
-
-    return [
-      {
-        product,
-        quantity,
-      },
-    ];
+    return product ? [{ product, quantity }] : [];
   });
 
   const cartCount = cartEntries.reduce((sum, entry) => sum + entry.quantity, 0);
   const cartTotal = cartEntries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
+  const featuredProducts = products.slice(0, 3);
 
   const handleCheckout = async () => {
     try {
       if (cartEntries.length === 0) {
-        setToast("カートに商品がありません");
+        showToast("カートに商品がありません");
         return;
       }
 
       const response = await fetch("/api/checkout", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           returnPath: "/Dispense",
           cartItems: cartEntries.map(({ product, quantity }) => ({
@@ -148,7 +95,7 @@ export default function DispensePage() {
       window.location.assign(data.url);
     } catch (error) {
       console.error("Checkout Error:", error);
-      setToast("決済ページを開けませんでした");
+      showToast("決済ページを開けませんでした");
     }
   };
 
@@ -159,6 +106,7 @@ export default function DispensePage() {
 
   function addToCart(product: Product) {
     setCart((current) => ({ ...current, [product.id]: (current[product.id] || 0) + 1 }));
+    setCartOpen(true);
     showToast(`${product.name}を追加しました`);
   }
 
@@ -177,63 +125,80 @@ export default function DispensePage() {
     });
   }
 
-  function addSurpriseItem() {
-    const product = products[Math.floor(Math.random() * products.length)];
-    addToCart(product);
+  function addChefSet() {
+    [products[0], products[3], products[10]].forEach((product) => {
+      setCart((current) => ({ ...current, [product.id]: (current[product.id] || 0) + 1 }));
+    });
     setCartOpen(true);
+    showToast("シェフセットを追加しました");
   }
 
   return (
     <div className={styles.page}>
       <header className={styles.topbar}>
         <div className={`${styles.shell} ${styles.nav}`}>
-          <div className={styles.brand}>
-            <div className={styles.mark} aria-hidden="true">食</div>
-            <span>Shokuzai Dispens</span>
-          </div>
+          <a className={styles.brand} href="#top" aria-label="Shokuzai Dispense ホーム">
+            <span className={styles.mark}>食</span>
+            <span>Shokuzai Dispense</span>
+          </a>
           <nav className={styles.navLinks} aria-label="メインナビゲーション">
             <a href="#products">商品</a>
-            <a href="#promise">品質</a>
+            <a href="#quality">品質</a>
             <a href="#delivery">配送</a>
             <button className={styles.cartButton} type="button" onClick={() => setCartOpen(true)}>
-              <span>カート</span>
-              <span className={styles.cartCount}>{cartCount}</span>
+              カート <span>{cartCount}</span>
             </button>
           </nav>
         </div>
       </header>
 
-      <main>
+      <main id="top">
         <section className={`${styles.shell} ${styles.hero}`}>
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>北海道から、Shokujibaの食材をお届けいたします</span>
-            <h1>最高のTripを 最高の食材で。</h1>
+            <span className={styles.eyebrow}>Hokkaido Organic Market</span>
+            <h1>旬の食材を、旅するように選ぶ。</h1>
             <p>
-              北海道の旬を、産地直送で。Shokuzai Dispensは、こだわりのオーガニック食材を厳選し、鮮度を保ったままお届けするオンラインショップです。
+              Shokujiba が選ぶ野菜、果物、肉、魚を一箱に。産地の表情が見える売り場で、今日の料理とギフトをすばやく組み立てられます。
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.primary} href="#products">旬の食材を見る</a>
-              <button className={styles.secondary} type="button" onClick={addSurpriseItem}>今月のおすすめ</button>
+              <a className={styles.primary} href="#products">商品を見る</a>
+              <button className={styles.secondary} type="button" onClick={addChefSet}>シェフセットを追加</button>
             </div>
-            <div className={styles.metricRow} aria-label="サービス指標">
-              <div className={styles.metric}><strong>38</strong><span>旬の食材</span></div>
-              <div className={styles.metric}><strong>24h</strong><span>鮮度優先発送</span></div>
-              <div className={styles.metric}><strong>完全無農薬</strong><span>北海道の恵み</span></div>
-            </div>
+          </div>
+
+          <div className={styles.heroBoard} aria-label="おすすめ商品">
+            {featuredProducts.map((product, index) => (
+              <button className={styles.featuredCard} type="button" key={product.id} onClick={() => addToCart(product)}>
+                <Image src={product.image} alt={product.name} fill priority={index === 0} sizes="(max-width: 760px) 86vw, 28vw" />
+                <span>{product.tag}</span>
+                <strong>{product.name}</strong>
+                <small>{yen.format(product.price)} / {product.unit}</small>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.quickStats} aria-label="サービスの特徴">
+          <div className={styles.shell}>
+            <div><strong>16</strong><span>厳選アイテム</span></div>
+            <div><strong>24h</strong><span>鮮度優先発送</span></div>
+            <div><strong>冷蔵対応</strong><span>食材別に梱包</span></div>
+            <div><strong>Gift</strong><span>贈答にも対応</span></div>
           </div>
         </section>
 
         <section className={`${styles.shell} ${styles.section}`} id="products">
           <div className={styles.sectionHead}>
-            <h2>Shokuzai Dispens ONLINE SHOP</h2>
-            <p>北海道由来のShokujibaの食材から、料理に合う一品をすぐに探索。カテゴリと検索で、ほしい北海道オーガニックがワンクリックで届きます。</p>
+            <span>ONLINE SHOP</span>
+            <h2>ほしい食材をすぐ探せる。</h2>
+            <p>カテゴリ、産地、料理用途で検索できます。気になる商品はカードからそのままカートへ。</p>
           </div>
 
           <div className={styles.toolbar}>
             <input
               className={styles.search}
               type="search"
-              placeholder="食材名・カテゴリ・料理で探索"
+              placeholder="食材名、産地、用途で検索"
               aria-label="商品検索"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
@@ -260,65 +225,68 @@ export default function DispensePage() {
                     src={product.image}
                     alt={product.name}
                     fill
-                    sizes="(max-width: 720px) 100vw, (max-width: 980px) 33vw, 25vw"
+                    sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 25vw"
                   />
-                  <span className={styles.badge}>{product.category}</span>
+                  <span>{product.category}</span>
                 </div>
                 <div className={styles.productBody}>
+                  <div className={styles.productMeta}>
+                    <span>{product.origin}</span>
+                    <span>{product.tag}</span>
+                  </div>
                   <div className={styles.productTitle}>
-                    <div>
-                      <h3>{product.name}</h3>
-                      <small>{product.unit}</small>
-                    </div>
-                    <div className={styles.price}>{yen.format(product.price)}</div>
+                    <h3>{product.name}</h3>
+                    <small>{product.unit}</small>
                   </div>
                   <p>{product.note}</p>
-                  <button className={styles.add} type="button" onClick={() => addToCart(product)}>
-                    カートに入れる
-                  </button>
+                  <div className={styles.buyRow}>
+                    <strong>{yen.format(product.price)}</strong>
+                    <button type="button" onClick={() => addToCart(product)}>追加</button>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className={`${styles.shell} ${styles.section}`} id="promise">
-          <div className={styles.sectionHead}>
-            <h2>Shokuzai Dispens</h2>
-            <p>産地直送ECサイト。ワンクリックであなたの元までShokujibaの食材が届きます。鮮度、温度、用途、ギフト体験まで丁寧に整えています。</p>
-          </div>
-          <div className={styles.promise}>
+        <section className={`${styles.shell} ${styles.section}`} id="quality">
+          <div className={styles.qualityGrid}>
+            <div>
+              <span className={styles.eyebrow}>QUALITY</span>
+              <h2>食材ごとのいちばん良い状態で届ける。</h2>
+            </div>
             {[
-              ["01", "産地の個性が見える", "食材ごとの色、香り、食感が伝わる写真で、買う前の期待を高めます。"],
-              ["02", "鮮度優先で発送", "注文タイミングに合わせて、状態の良いロットから丁寧に出荷します。"],
-              ["03", "料理用途を明記", "サラダ、煮込み、グリル、デザートなど、使い道で迷いません。"],
-              ["04", "贈り物にも映える", "星空のように記憶に残る、旬食材のギフト体験にも展開できます。"],
+              ["01", "入荷日に合わせて販売", "状態の良いロットだけを並べ、欠品より鮮度を優先します。"],
+              ["02", "温度帯を分けて梱包", "野菜、果物、肉、魚をそれぞれの状態に合わせて扱います。"],
+              ["03", "料理の入口まで案内", "使い方が想像できる説明で、買った後の迷いを減らします。"],
             ].map(([number, title, text]) => (
-              <div className={styles.promiseItem} key={number}>
-                <div className={styles.icon}>{number}</div>
+              <article className={styles.qualityItem} key={number}>
+                <b>{number}</b>
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
-        <section className={`${styles.shell} ${styles.section}`} id="delivery">
-          <div className={styles.checkoutBand}>
-            <div>
-              <h2>Tripのお供に、Shokujibaの食材を。</h2>
-              <p>北海道の旬を自由に選んで、自分だけの一箱へ。カートの合計を見ながら、そのまま注文へ進めます。</p>
-            </div>
-            <a className={styles.primary} href="#products">買い物を続ける</a>
+        <section className={`${styles.shell} ${styles.delivery}`} id="delivery">
+          <div>
+            <span className={styles.eyebrow}>DELIVERY</span>
+            <h2>今日の食卓から、特別なギフトまで。</h2>
+            <p>必要なものだけ選んで、カートから注文へ。北海道の旬と高級食材を、ひとつの箱にまとめられます。</p>
           </div>
+          <button className={styles.primary} type="button" onClick={() => setCartOpen(true)}>カートを確認</button>
         </section>
       </main>
 
       <aside className={`${styles.cartPanel} ${cartOpen ? styles.open : ""}`} aria-label="ショッピングカート">
         <div className={styles.cartHead}>
-          <strong>カート</strong>
+          <div>
+            <span>YOUR BOX</span>
+            <strong>カート</strong>
+          </div>
           <button className={styles.close} type="button" aria-label="カートを閉じる" onClick={() => setCartOpen(false)}>
-            ×
+            x
           </button>
         </div>
 
@@ -334,7 +302,7 @@ export default function DispensePage() {
                   <span>{yen.format(product.price)} / {product.unit}</span>
                 </div>
                 <div className={styles.qty}>
-                  <button type="button" aria-label={`${product.name}を減らす`} onClick={() => updateQuantity(product.id, -1)}>−</button>
+                  <button type="button" aria-label={`${product.name}を減らす`} onClick={() => updateQuantity(product.id, -1)}>-</button>
                   <b>{quantity}</b>
                   <button type="button" aria-label={`${product.name}を増やす`} onClick={() => updateQuantity(product.id, 1)}>+</button>
                 </div>
@@ -346,13 +314,9 @@ export default function DispensePage() {
         <div className={styles.cartFoot}>
           <div className={styles.total}>
             <span>合計</span>
-            <span>{yen.format(cartTotal)}</span>
+            <strong>{yen.format(cartTotal)}</strong>
           </div>
-          <button
-            className={styles.checkout}
-            type="button"
-            onClick={handleCheckout}
-          >
+          <button className={styles.checkout} type="button" onClick={handleCheckout}>
             注文へ進む
           </button>
         </div>
@@ -363,23 +327,8 @@ export default function DispensePage() {
       </div>
 
       <footer className={styles.footer}>
-        <div className={styles.shell}>© Shokuzai Dispens Hokkaido organic produce market.by Shokujiba</div>
+        <div className={styles.shell}>Shokuzai Dispense by Shokujiba</div>
       </footer>
     </div>
-  );
-}
-
-function HeroTile({ product, label }: { product: Product; label: string }) {
-  return (
-    <article className={styles.marketTile}>
-      <Image src={product.image} alt={product.name} fill priority sizes="(max-width: 720px) 100vw, 40vw" />
-      <div className={styles.tileLabel}>
-        <div>
-          <strong>{product.name}</strong>
-          <span>{label}</span>
-        </div>
-        <b>{yen.format(product.price)}</b>
-      </div>
-    </article>
   );
 }
