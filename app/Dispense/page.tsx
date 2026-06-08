@@ -45,7 +45,7 @@ const products: Product[] = [
   { id: "dispense-red-chili", name: "赤とうがらし", category: "香味", price: 390, unit: "120g", image: "/images/dispense/red-chili.png", origin: "十勝", tag: "鮮烈", note: "鮮やかな辛み。オイル漬けや炒め物のアクセントに。" },
   { id: "dispense-cabbage", name: "高原キャベツ", category: "野菜", price: 460, unit: "1玉", image: "/images/dispense/cabbage.png", origin: "美瑛", tag: "葉脈", note: "葉が締まり、甘みのある高原キャベツ。千切りや蒸し料理に。" },
   { id: "dispense-edamame", name: "枝付きえだまめ", category: "豆類", price: 560, unit: "300g", image: "/images/dispense/edamame.png", origin: "十勝", tag: "青香", note: "畑の香りが残る枝豆。塩茹でで甘みが立ちます。" },
-  { id: "dispense-red-apple", name: "雫りんご", category: "果物", price: 380, unit: "3玉", image: "/images/dispense/red-apple.png", origin: "余市", tag: "蜜香", note: "みずみずしい赤りんご。生食、サラダ、焼き菓子に。" },
+  { id: "dispense-red-apple", name: "雫りんご", category: "果物", price: 380, unit: "3玉", image: "/images/dispense/fy.png", origin: "余市", tag: "蜜香", note: "みずみずしい赤りんご。生食、サラダ、焼き菓子に。" },
   { id: "dispense-green-apple-tree", name: "青空青りんご", category: "果物", price: 420, unit: "3玉", image: "/images/dispense/green-apple-tree.png", origin: "仁木", tag: "爽快", note: "爽やかな酸味と歯切れ。朝食やジュースにぴったりです。" },
   { id: "dispense-grape-vine", name: "樹上ぶどう", category: "果物", price: 980, unit: "1房", image: "/images/dispense/grape-vine.png", origin: "余市", tag: "房採り", note: "日差しを受けた濃い甘み。冷やしてそのままどうぞ。" },
   { id: "dispense-lemon-tree", name: "枝付きレモン", category: "果物", price: 480, unit: "4玉", image: "/images/dispense/lemon-tree.png", origin: "瀬戸内", tag: "香酸", note: "皮まで香るレモン。料理、ドリンク、焼き菓子に。" },
