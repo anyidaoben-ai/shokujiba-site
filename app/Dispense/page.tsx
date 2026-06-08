@@ -56,10 +56,10 @@ const products: Product[] = [
   { id: "dispense-watermelon-vine", name: "露地スイカ", category: "果物", price: 1280, unit: "1玉", image: "/images/dispense/watermelon-vine.png", origin: "富良野", tag: "夏味", note: "みずみずしく甘い夏の主役。大きく切ってどうぞ。" },
   { id: "dispense-strawberry-field", name: "畑いちご", category: "果物", price: 880, unit: "300g", image: "/images/dispense/strawberry-field.png", origin: "日高", tag: "完熟", note: "赤く熟した香り。生食、タルト、ギフトにも。" },
   { id: "dispense-blueberry", name: "朝露ブルーベリー", category: "果物", price: 760, unit: "200g", image: "/images/dispense/blueberry.png", origin: "美瑛", tag: "濃青", note: "粒ごとに香りが立つブルーベリー。朝食やソースに。" },
-  { id: "dispense-banana", name: "房バナナ", category: "果物", price: 360, unit: "1房", image: "/images/dispense/banana.png", origin: "沖縄", tag: "甘熟", note: "やさしい甘さの定番果物。スムージーやおやつに。" },
-  { id: "dispense-lime", name: "グリーンライム", category: "果物", price: 420, unit: "4玉", image: "/images/dispense/lime.png", origin: "高知", tag: "清香", note: "きりっとした酸味。料理や炭酸ドリンクに香りを添えます。" },
-  { id: "dispense-pineapple", name: "畑パイナップル", category: "果物", price: 980, unit: "1玉", image: "/images/dispense/pineapple.png", origin: "沖縄", tag: "南国", note: "甘酸っぱく香る果肉。カットフルーツやデザートに。" },
-  { id: "dispense-coconut", name: "生ココナッツ", category: "果物", price: 980, unit: "1玉", image: "/images/dispense/coconut.png", origin: "沖縄", tag: "白果", note: "白い果肉とやさしい香り。ドリンクやスイーツに。" },
+  { id: "dispense-banana", name: "房バナナ", category: "果物", price: 360, unit: "1房", image: "/images/dispense/fduy.png", origin: "沖縄", tag: "甘熟", note: "やさしい甘さの定番果物。スムージーやおやつに。" },
+  { id: "dispense-lime", name: "グリーンライム", category: "果物", price: 420, unit: "4玉", image: "/images/dispense/tdtu.png", origin: "高知", tag: "清香", note: "きりっとした酸味。料理や炭酸ドリンクに香りを添えます。" },
+  { id: "dispense-pineapple", name: "畑パイナップル", category: "果物", price: 980, unit: "1玉", image: "/images/dispense/tfuy.png", origin: "沖縄", tag: "南国", note: "甘酸っぱく香る果肉。カットフルーツやデザートに。" },
+  { id: "dispense-coconut", name: "生ココナッツ", category: "果物", price: 980, unit: "1玉", image: "/images/dispense/yufyi.png", origin: "沖縄", tag: "白果", note: "白い果肉とやさしい香り。ドリンクやスイーツに。" },
 ];
 
 const categories = ["すべて", ...Array.from(new Set(products.map((product) => product.category)))];
