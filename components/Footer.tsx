@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 
 const exploreLinks = [
-  { href: "/Dispense", label: "Dispens" },
+  { href: "/Dispense", label: "Shokuzai" },
   { href: "/Goods", label: "Goods" },
   { href: "/Paradise", label: "Paradise" },
   { href: "/trip", label: "Trip" },
