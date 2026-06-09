@@ -143,8 +143,8 @@ export default function Page() {
         <section className={styles.hotelSection} aria-label="Luxury Shokujiba stay">
           <div className={styles.hotelMedia}>
             <Image
-              src="/images/hotel.PNG"
-              alt="Shokujibaの上質なホテル空間"
+              src="/images/paradise-theme-park.jpg"
+              alt="Shokujiba Paradiseの巨大テーマパーク"
               fill
               sizes="(max-width: 900px) 100vw, 50vw"
               className={styles.coverImage}
