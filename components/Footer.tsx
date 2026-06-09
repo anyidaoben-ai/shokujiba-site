@@ -23,7 +23,7 @@ export default function Footer() {
           <p className={styles.eyebrow}>食事場</p>
           <h2>Shokujiba Paradise</h2>
           <p>
-            空、神、自然がひとつにつながるShokujibaの世界。
+            ひとつにつながるShokujibaの世界。
             Shokujibaリンクタブから、それぞれの体験へ進めます。
           </p>
           <span>株式会社食事場</span>
@@ -54,7 +54,7 @@ export default function Footer() {
         <div className={styles.socialPanel}>
           <h3>SOCIAL</h3>
           <a
-            href=""
+            href="https://x.com/ShokuzaiDispens"
             className={styles.socialLink}
             aria-label="X"
           >
@@ -62,7 +62,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="#"
+            href="https://x.com/Nagarebou"
             className={styles.socialLink}
             aria-label="Instagram"
           >
@@ -80,8 +80,8 @@ export default function Footer() {
       </div>
 
       <div className={styles.footerBottom}>
-        <p>© 2026 Shokujiba Paradise. All rights reserved.</p>
-        <span>Shokujiba × NagareBou</span>
+        <p>© 2026 Shokujiba Paradise. Shokujiba Prezents</p>
+        <span>Master × nagarebou</span>
       </div>
     </footer>
   );
