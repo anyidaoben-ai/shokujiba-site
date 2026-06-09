@@ -182,7 +182,7 @@ export default function DispensePage() {
         <div className={`${styles.shell} ${styles.nav}`}>
           <a className={styles.brand} href="#top" aria-label="Shokuzai Dispense ホーム">
             <span className={styles.mark}>D</span>
-            <span>Dispense</span>
+            <span>Shokuzai</span>
           </a>
           <nav className={styles.navLinks} aria-label="メインナビゲーション">
             <a href="#products">商品</a>
