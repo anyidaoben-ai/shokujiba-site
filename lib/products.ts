@@ -83,6 +83,22 @@ export const products: Product[] = [
   { id: "dispense-lime", name: "グリーンライム", price: 420 },
   { id: "dispense-pineapple", name: "畑パイナップル", price: 980 },
   { id: "dispense-coconut", name: "生ココナッツ", price: 980 },
+  { id: "dispense-rice", name: "炊きたて白米", price: 1280 },
+  { id: "dispense-egg", name: "平飼いたまご", price: 680 },
+  { id: "dispense-chicken", name: "ハーブ鶏むね肉", price: 980 },
+  { id: "dispense-black-truffle", name: "黒トリュフ", price: 3200 },
+  { id: "dispense-matsutake", name: "桐箱松茸", price: 6800 },
+  { id: "dispense-milk", name: "牧場ミルク", price: 420 },
+  { id: "dispense-orange-juice", name: "オレンジジュース", price: 520 },
+  { id: "dispense-apple-juice", name: "りんごジュース", price: 540 },
+  { id: "dispense-grape-juice", name: "ぶどうジュース", price: 680 },
+  { id: "dispense-mango-juice", name: "マンゴージュース", price: 720 },
+  { id: "dispense-strawberry-juice", name: "いちごジュース", price: 680 },
+  { id: "dispense-pineapple-juice", name: "パイナップルジュース", price: 680 },
+  { id: "dispense-watermelon-juice", name: "スイカジュース", price: 620 },
+  { id: "dispense-mixed-berry-juice", name: "ミックスベリージュース", price: 760 },
+  { id: "dispense-melon-juice", name: "メロンジュース", price: 780 },
+  { id: "dispense-beef-steak", name: "赤身ステーキ", price: 2400 },
 ];
 
 export const getProductById = (id: string) => {

@@ -60,6 +60,22 @@ const products: Product[] = [
   { id: "dispense-lime", name: "グリーンライム", category: "果物", price: 420, unit: "4玉", image: "/images/dispense/tdtu.png", origin: "高知", tag: "清香", note: "きりっとした酸味。料理や炭酸ドリンクに香りを添えます。" },
   { id: "dispense-pineapple", name: "畑パイナップル", category: "果物", price: 980, unit: "1玉", image: "/images/dispense/tfuy.png", origin: "沖縄", tag: "南国", note: "甘酸っぱく香る果肉。カットフルーツやデザートに。" },
   { id: "dispense-coconut", name: "生ココナッツ", category: "果物", price: 980, unit: "1玉", image: "/images/dispense/yufyi.png", origin: "沖縄", tag: "白果", note: "白い果肉とやさしい香り。ドリンクやスイーツに。" },
+  { id: "dispense-rice", name: "炊きたて白米", category: "米", price: 1280, unit: "2kg", image: "/images/dispense/rice.png", origin: "北海道", tag: "艶米", note: "粒立ちの良い白米。毎日の食卓にも贈り物にも。" },
+  { id: "dispense-egg", name: "平飼いたまご", category: "卵", price: 680, unit: "10個", image: "/images/dispense/egg.png", origin: "十勝", tag: "濃黄", note: "黄身の色とコクがしっかり。卵かけご飯や菓子作りに。" },
+  { id: "dispense-chicken", name: "ハーブ鶏むね肉", category: "肉", price: 980, unit: "500g", image: "/images/dispense/chicken.png", origin: "知床", tag: "低脂肪", note: "やわらかな鶏むね肉。グリル、蒸し鶏、サラダに。" },
+  { id: "dispense-black-truffle", name: "黒トリュフ", category: "香味", price: 3200, unit: "30g", image: "/images/dispense/black-truffle.png", origin: "イタリア", tag: "芳香", note: "濃密な香りの高級食材。卵料理やパスタの仕上げに。" },
+  { id: "dispense-matsutake", name: "桐箱松茸", category: "きのこ", price: 6800, unit: "1箱", image: "/images/dispense/matsutake.png", origin: "長野", tag: "秋香", note: "香り高い松茸。土瓶蒸し、炊き込みご飯、焼き物に。" },
+  { id: "dispense-milk", name: "牧場ミルク", category: "乳製品", price: 420, unit: "900ml", image: "/images/dispense/milk.png", origin: "十勝", tag: "自然", note: "まろやかな口当たりの牛乳。朝食やカフェオレに。" },
+  { id: "dispense-orange-juice", name: "オレンジジュース", category: "ジュース", price: 520, unit: "500ml", image: "/images/dispense/orange-juice.png", origin: "和歌山", tag: "果汁", note: "明るい酸味と甘み。冷やして朝の一杯に。" },
+  { id: "dispense-apple-juice", name: "りんごジュース", category: "ジュース", price: 540, unit: "500ml", image: "/images/dispense/apple-juice.png", origin: "余市", tag: "蜜香", note: "りんごの香りを閉じ込めた一本。食事にもデザートにも。" },
+  { id: "dispense-grape-juice", name: "ぶどうジュース", category: "ジュース", price: 680, unit: "500ml", image: "/images/dispense/grape-juice.png", origin: "余市", tag: "濃紫", note: "濃い果実感のぶどうジュース。氷を入れてゆっくりどうぞ。" },
+  { id: "dispense-mango-juice", name: "マンゴージュース", category: "ジュース", price: 720, unit: "500ml", image: "/images/dispense/mango-juice.png", origin: "沖縄", tag: "濃厚", note: "とろりと甘い南国の味。朝食やデザートドリンクに。" },
+  { id: "dispense-strawberry-juice", name: "いちごジュース", category: "ジュース", price: 680, unit: "500ml", image: "/images/dispense/strawberry-juice.png", origin: "日高", tag: "完熟", note: "赤いいちごの香り。冷やしてそのまま楽しめます。" },
+  { id: "dispense-pineapple-juice", name: "パイナップルジュース", category: "ジュース", price: 680, unit: "500ml", image: "/images/dispense/pineapple-juice.png", origin: "沖縄", tag: "南国", note: "甘酸っぱく爽やかな果汁。氷と合わせてすっきり。" },
+  { id: "dispense-watermelon-juice", name: "スイカジュース", category: "ジュース", price: 620, unit: "500ml", image: "/images/dispense/watermelon-juice.png", origin: "富良野", tag: "夏味", note: "みずみずしい夏の一杯。ミントと合わせても爽やかです。" },
+  { id: "dispense-mixed-berry-juice", name: "ミックスベリージュース", category: "ジュース", price: 760, unit: "500ml", image: "/images/dispense/mixed-berry-juice.png", origin: "美瑛", tag: "濃果", note: "複数ベリーの深い酸味と甘み。朝食や炭酸割りに。" },
+  { id: "dispense-melon-juice", name: "メロンジュース", category: "ジュース", price: 780, unit: "500ml", image: "/images/dispense/melon-juice.png", origin: "夕張", tag: "香緑", note: "メロンの香りが広がる上品な甘さ。よく冷やして。" },
+  { id: "dispense-beef-steak", name: "赤身ステーキ", category: "肉", price: 2400, unit: "300g", image: "/images/dispense/beef-steak.png", origin: "十勝", tag: "赤身", note: "旨みの濃い赤身肉。シンプルに焼いて塩で。" },
 ];
 
 const categories = ["すべて", ...Array.from(new Set(products.map((product) => product.category)))];
