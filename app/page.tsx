@@ -100,8 +100,7 @@ export default function Page() {
             <p className={styles.kicker}>Shokujiba Web Experience</p>
             <h1 id="hero-title">Shokujiba</h1>
             <p className={styles.heroLead}>
-              美しさは静かに。世界観は深く。高級ホテルの上質さと未来都市のスケールで、
-              食事場の入口をひとつの没入体験へ。
+              
             </p>
             <div className={styles.heroActions}>
               <Link href="/Paradise" className={styles.primaryAction}>
