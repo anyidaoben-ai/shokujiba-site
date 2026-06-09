@@ -6,7 +6,7 @@ const exploreLinks = [
   { href: "/Goods", label: "Goods" },
   { href: "/Paradise", label: "Paradise" },
   { href: "/trip", label: "Trip" },
-  { href: "/TechnologyLand-AI", label: "Jouhou" },
+  { href: "/TechnologyLand-AI", label: "Keizai" },
   { href: "/upitel", label: "Contact" },
 ];
 
@@ -54,7 +54,7 @@ export default function Footer() {
         <div className={styles.socialPanel}>
           <h3>SOCIAL</h3>
           <a
-            href="https://x.com/ShokuzaiDispens"
+            href=""
             className={styles.socialLink}
             aria-label="X"
           >
