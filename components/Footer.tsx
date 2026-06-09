@@ -6,7 +6,7 @@ const exploreLinks = [
   { href: "/Goods", label: "Goods" },
   { href: "/Paradise", label: "Paradise" },
   { href: "/trip", label: "Trip" },
-  { href: "/TechnologyLand-AI", label: "Services" },
+  { href: "/TechnologyLand-AI", label: "Jouhou" },
   { href: "/upitel", label: "Contact" },
 ];
 
