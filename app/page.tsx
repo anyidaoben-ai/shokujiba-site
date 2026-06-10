@@ -49,10 +49,10 @@ export default function Page() {
         </section>
 
         <section className={styles.intro}>
-          <h2>Shokujibaにはすべてあります</h2>
+          <h2>Shokujiba Paradiseにはすべてがある</h2>
           <p>
-            食材やグッズ、生活に必要なすべてがShokujibaから買う事が出来ます。
-            Shokujiba Paradiseを実際に見る事も出来ます
+            食材やグッズ、生活に必要なすべてをShokujibaから買う事が出来ます。
+            Shokujiba Paradiseを実際に体感する事も出来ます。
           </p>
         </section>
 
@@ -77,7 +77,7 @@ export default function Page() {
         <section className={styles.final}>
           <h2>Shokujiba Paradise</h2>
           <Link href="/Paradise" className={styles.mainLink}>
-            Paradise
+            Paradiseへ
           </Link>
         </section>
       </main>
