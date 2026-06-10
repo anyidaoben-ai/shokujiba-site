@@ -80,8 +80,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.footerBottom}>
-        <p>© 2026 Shokujiba Paradise. Shokujiba Prezents</p>
-        <span>Master × nagarebou</span>
+        <p>© 株式会社食事場</p>
       </div>
     </footer>
   );
