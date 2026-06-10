@@ -7,20 +7,20 @@ import styles from "./page.module.css";
 const businesses = [
   {
     href: "/Dispense",
-    title: "Food Holdings",
-    label: "食材流通",
+    title: "Shokuzai",
+    label: "Shokujibaのエネルギーを体感する",
     image: "/images/ryouri.png",
   },
   {
     href: "/Goods",
-    title: "Asset Goods",
-    label: "物販資産",
+    title: "Goods",
+    label: "Shokujibaのエネルギーを身につける",
     image: "/images/goods/paradise-amulet.jpg",
   },
   {
     href: "/Paradise",
-    title: "Paradise Development",
-    label: "楽園開発",
+    title: "Shokujiba Paradise",
+    label: "欲望を解放する",
     image: "/images/paradise-theme-park.jpg",
   },
 ];
@@ -40,20 +40,19 @@ export default function Page() {
             className={styles.heroImage}
           />
           <div className={styles.heroContent}>
-            <p>Shokujiba Zaibatsu</p>
-            <h1>欲望経済を統治する。</h1>
+            <p>Shokujiba</p>
+            <h1>Shokujiba Paradise</h1>
             <Link href="/trip" className={styles.mainLink}>
-              財閥理念を見る
+              Shokujiba
             </Link>
           </div>
         </section>
 
         <section className={styles.intro}>
-          <h2>Shokujiba財閥は、食欲、購買欲、楽園への欲望を資本として束ねる総合事業体です。</h2>
+          <h2>Shokujibaにはすべてあります</h2>
           <p>
-            食材流通、Goods、Paradise開発を中核に、人が求めるものを供給し、
-            価値へ変換する。Masterの構想から生まれたShokujibaは、
-            欲望の流れを読み、育て、次の経済圏へつなぎます。
+            食材やグッズ、生活に必要なすべてがShokujibaから買う事が出来ます。
+            Shokujiba Paradiseを実際に見る事も出来ます
           </p>
         </section>
 
@@ -76,9 +75,9 @@ export default function Page() {
         </section>
 
         <section className={styles.final}>
-          <h2>Shokujiba Group Capital.</h2>
+          <h2>Shokujiba Paradise</h2>
           <Link href="/Paradise" className={styles.mainLink}>
-            主要事業を見る
+            Paradise
           </Link>
         </section>
       </main>
