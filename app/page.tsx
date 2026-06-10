@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 const gates = [
   {
     href: "/Dispense",
-    title: "Dispense",
+    title: "Shokuzai",
     label: "食欲を満たす",
     image: "/images/ryouri.png",
   },
@@ -41,7 +41,7 @@ export default function Page() {
           />
           <div className={styles.heroContent}>
             <p>Shokujiba</p>
-            <h1>欲望が満たされる場所。</h1>
+            <h1>欲望が満たされる場所</h1>
             <Link href="/trip" className={styles.mainLink}>
               Shokujibaについて
             </Link>
@@ -51,7 +51,7 @@ export default function Page() {
         <section className={styles.intro}>
           <h2>Shokujibaは、食欲、購買欲、思いつく限りの欲望をひとつの世界に集めたWebサイトです。</h2>
           <p>
-            果物や野菜はDispenseへ。身につけたいものはGoodsへ。
+            果物や野菜はShokuzaiへ。身につけたいものはGoodsへ。
             もっと大きな夢や輝きはParadiseへ。Masterが創ったShokujibaの入口がここにあります。
           </p>
         </section>
