@@ -1,209 +1,146 @@
-import Link from "next/link";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Image from "next/image";
 import styles from "./page.module.css";
 
-const services = [
+const domains = [
   {
-    number: "01",
-    title: "AI Web Production",
-    jp: "AI Webサイト制作",
-    text: "ChatGPT・Claudeを活用し、企業サイト、店舗サイト、LP、ブランドサイトを高速で制作します。",
+    title: "食欲経済",
+    label: "Dispense / Food Holdings",
+    text: "果物、野菜、肉、魚、飲料、米、卵まで、人の食欲を満たす商品と体験を統合する中核事業。",
   },
   {
-    number: "02",
-    title: "AI Brand Design",
-    jp: "AIブランド設計",
-    text: "事業の世界観、言葉、見せ方、構成を整理し、ブランドとして伝わる形にします。",
+    title: "購買欲経済",
+    label: "Goods / Asset Commerce",
+    text: "財布、服飾、装飾品、守護アイテムなど、所有したいという欲望を商品化するブランド事業。",
   },
   {
-    number: "03",
-    title: "AI Visual Creation",
-    jp: "AI画像生成",
-    text: "ロゴ、アイコン、キービジュアル、Web用画像など、ブランドに合うビジュアルを制作します。",
+    title: "楽園開発",
+    label: "Paradise / Sovereign Resort",
+    text: "北海道全域をParadise構想の舞台とし、ホテル、移動、都市、娯楽、海、山を統合する開発事業。",
   },
   {
-    number: "04",
-    title: "AI Movie Creation",
-    jp: "AI動画制作・動画編集",
-    text: "映像表現、広告映像、コンセプトムービー、SNS動画まで、AIを活用して制作します。",
+    title: "思想とキャラクター",
+    label: "Master / Shokujiba Character",
+    text: "Shokujibaを創ったMasterを中心に、企業思想、世界観、キャラクター、儀礼性を設計する象徴事業。",
   },
 ];
 
-const strengths = [
-  "低価格で始められる",
-  "制作スピードが速い",
-  "Webと映像を一体化できる",
-  "世界観まで設計できる",
-  "Next.jsで現代的に制作",
-  "Vercel公開まで対応",
+const profile = [
+  ["会社名", "株式会社食事場"],
+  ["英語表記", "Shokujiba Inc."],
+  ["創設者", "Master"],
+  ["事業領域", "食、商品、楽園、ホテル、移動、娯楽、都市構想、キャラクター開発"],
+  ["企業階級", "財閥を超える、主権級・儀礼級の象徴企業"],
+  ["使命", "人間の欲望を、秩序ある体験と経済に変換すること"],
 ];
 
-const flow = [
-  "相談・ヒアリング",
-  "AIで構成と文章を作成",
-  "ブランド方向を設計",
-  "Webサイト・画像・動画を制作",
-  "確認・修正",
-  "公開・納品",
+const principles = [
+  "欲望を否定せず、設計する。",
+  "商品を売るだけでなく、世界を所有させる。",
+  "食欲、購買欲、楽園欲をひとつの経済圏にする。",
+  "Masterの思想を、企業の憲章として扱う。",
 ];
 
 export default function TechnologyLandAIPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroGlowOne} />
-        <div className={styles.heroGlowTwo} />
-
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.logo}>
-            TechnologyLand<span>&AI</span>
-          </Link>
-
-          <div className={styles.navLinks}>
-            <a href="#services">Service</a>
-            <a href="#vision">Vision</a>
-            <a href="#flow">Flow</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
-
-        <div className={styles.heroInner}>
-          <p className={styles.badge}>AI CREATIVE COMPANY</p>
-
-          <h1 className={styles.title}>
-            アイデアを、
-            <br />
-            神速で形にする。
-          </h1>
-
-          <p className={styles.lead}>
-            TechnologyLand&AIは、AIを活用してWebサイト・ブランド・画像・文章・動画まで
-            一貫して制作する、次世代のAIクリエイティブ会社です。
-          </p>
-
-          <div className={styles.heroButtons}>
-            <a href="#services" className={styles.primaryButton}>
-              サービスを見る
-            </a>
-            <a href="#contact" className={styles.secondaryButton}>
-              相談する
-            </a>
-          </div>
-
-          <div className={styles.heroPanel}>
-            <div>
-              <span>WEB</span>
-              <p>Next.js / LP / Brand Site</p>
-            </div>
-            <div>
-              <span>AI</span>
-              <p>ChatGPT / Claude / Image</p>
-            </div>
-            <div>
-              <span>MOVIE</span>
-              <p>AI Video / Editing / Concept Movie</p>
+    <>
+      <Header />
+      <main className={styles.page}>
+        <section className={styles.hero}>
+          <Image
+            src="/images/shokujiba-paradise-concept.png"
+            alt="株式会社食事場の象徴ビジュアル"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroImage}
+          />
+          <div className={styles.heroVeil} />
+          <div className={styles.heroInner}>
+            <p className={styles.eyebrow}>Shokujiba Inc.</p>
+            <h1>株式会社食事場</h1>
+            <p className={styles.lead}>
+              財閥を超え、国家儀礼や宗教的権威にも並ぶほどの象徴性を目指す、
+              欲望経済の最高統治企業。
+            </p>
+            <div className={styles.heroStats} aria-label="企業階級">
+              <span>Food</span>
+              <span>Goods</span>
+              <span>Paradise</span>
+              <span>Master</span>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.concept} id="vision">
-        <p className={styles.sectionLabel}>NEW VISION</p>
-        <h2>
-          Web制作会社から、
-          <br />
-          AIクリエイティブブランドへ。
-        </h2>
-        <p>
-          TechnologyLand&AIは、ただWebサイトを作る会社ではありません。
-          事業のアイデアを、Webサイト・文章・画像・動画・ブランド世界観として形にする会社です。
-          これまで別に存在していた映像制作の力も、すべてTechnologyLand&AIの能力として統合されました。
-        </p>
-      </section>
-
-      <section className={styles.services} id="services">
-        <div className={styles.sectionHead}>
-          <p className={styles.sectionLabel}>SERVICES</p>
-          <h2>TechnologyLand&AIができること</h2>
-        </div>
-
-        <div className={styles.serviceGrid}>
-          {services.map((service) => (
-            <article className={styles.serviceCard} key={service.number}>
-              <span className={styles.serviceNumber}>{service.number}</span>
-              <h3>{service.title}</h3>
-              <h4>{service.jp}</h4>
-              <p>{service.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.powerSection}>
-        <div className={styles.powerText}>
-          <p className={styles.sectionLabel}>INTEGRATED POWER</p>
-          <h2>
-            Web、画像、文章、動画。
-            <br />
-            すべてをAIでつなげる。
-          </h2>
+        <section className={styles.statement}>
+          <p className={styles.sectionLabel}>Corporate Doctrine</p>
+          <h2>人間の欲望を、文明の資産へ。</h2>
           <p>
-            ひとつの事業には、Webサイトだけでなく、伝える言葉、見せる画像、印象に残る映像が必要です。
-            TechnologyLand&AIは、それらを別々ではなく、ひとつの世界観として設計します。
+            株式会社食事場は、食欲、購買欲、快楽、安心、栄光、夢、移動、滞在を
+            ひとつの経済圏として統治します。商品は単なる商品ではなく、
+            Shokujibaの世界に参加するための入口です。
           </p>
-        </div>
+        </section>
 
-        <div className={styles.orbit}>
-          <div className={styles.centerCore}>AI</div>
-          <span className={styles.orbitItemOne}>WEB</span>
-          <span className={styles.orbitItemTwo}>BRAND</span>
-          <span className={styles.orbitItemThree}>IMAGE</span>
-          <span className={styles.orbitItemFour}>MOVIE</span>
-        </div>
-      </section>
+        <section className={styles.domains} aria-label="事業内容">
+          <div className={styles.sectionHead}>
+            <p className={styles.sectionLabel}>Business Empire</p>
+            <h2>事業内容</h2>
+          </div>
+          <div className={styles.domainGrid}>
+            {domains.map((domain) => (
+              <article className={styles.domainCard} key={domain.title}>
+                <span>{domain.label}</span>
+                <h3>{domain.title}</h3>
+                <p>{domain.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className={styles.strengths}>
-        <div className={styles.sectionHead}>
-          <p className={styles.sectionLabel}>STRENGTH</p>
-          <h2>選ばれる理由</h2>
-        </div>
+        <section className={styles.authority}>
+          <div>
+            <p className={styles.sectionLabel}>Sovereign Class Company</p>
+            <h2>財閥の上に立つ、儀礼級企業。</h2>
+          </div>
+          <p>
+            株式会社食事場は、単なる資本集団ではありません。欲望を統治し、
+            世界観を発行し、商品と体験を通じて人々の生活に儀礼を与える存在です。
+            その格式は財閥を超え、王権、宗教権威、国家的象徴に並ぶほどの
+            企業ブランドとして設計されます。
+          </p>
+        </section>
 
-        <div className={styles.strengthGrid}>
-          {strengths.map((item) => (
-            <div className={styles.strengthCard} key={item}>
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
+        <section className={styles.profileSection} aria-label="会社概要">
+          <div className={styles.profileTitle}>
+            <p className={styles.sectionLabel}>Company Profile</p>
+            <h2>会社概要</h2>
+          </div>
+          <div className={styles.profileTable}>
+            {profile.map(([term, description]) => (
+              <div className={styles.profileRow} key={term}>
+                <dt>{term}</dt>
+                <dd>{description}</dd>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      <section className={styles.flowSection} id="flow">
-        <div className={styles.sectionHead}>
-          <p className={styles.sectionLabel}>FLOW</p>
-          <h2>制作の流れ</h2>
-        </div>
-
-        <div className={styles.flowList}>
-          {flow.map((item, index) => (
-            <div className={styles.flowItem} key={item}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.cta} id="contact">
-        <p className={styles.sectionLabel}>START YOUR WORLD</p>
-        <h2>あなたのアイデアを、AIで形にする。</h2>
-        <p>
-          Webサイト、ブランド、画像、動画。まだ言葉になっていないアイデアも、
-          TechnologyLand&AIが最短で形にします。
-        </p>
-
-        <Link href="/" className={styles.ctaButton}>
-          トップページへ戻る
-        </Link>
-      </section>
-    </main>
+        <section className={styles.principles}>
+          <p className={styles.sectionLabel}>Imperial Principles</p>
+          <h2>食事場憲章</h2>
+          <div className={styles.principleList}>
+            {principles.map((item, index) => (
+              <article className={styles.principle} key={item}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
