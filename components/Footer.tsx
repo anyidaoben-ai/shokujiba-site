@@ -7,7 +7,7 @@ const exploreLinks = [
   { href: "/Paradise", label: "Paradise" },
   { href: "/trip", label: "Trip" },
   { href: "/TechnologyLand-AI", label: "Keizai" },
-  { href: "/upitel", label: "Contact" },
+  { href: "mailto:shokujibamaster@gmail.com", label: "Contact" },
 ];
 
 const legalLinks = [
