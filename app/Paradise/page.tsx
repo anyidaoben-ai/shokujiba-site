@@ -124,7 +124,7 @@ export default function ParadisePage() {
               構想を見る
             </a>
             <a href="mailto:shokujibamaster@gmail.com" className={styles.secondary}>
-              Masterへ連絡
+              Contact
             </a>
           </div>
         </div>
