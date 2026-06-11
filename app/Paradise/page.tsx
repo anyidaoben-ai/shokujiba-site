@@ -2,26 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const stats = [
-  {
-    value: "5,000ha",
-    label: "東京ドーム約1,000個分として描かれる広大な敷地",
-  },
-  {
-    value: "12",
-    label: "エリアごとに違う体験を持つ多層的な構成",
-  },
-  {
-    value: "30,000+",
-    label: "ホテル客室数として示される圧倒的なリゾート規模",
-  },
-  {
-    value: "24h",
-    label: "昼も夜も物語が続くようなエンターテインメント性",
-  },
-];
-
-const features = [
+const holdings = [
   {
     title: "Hokkaido Paradise Territory",
     label: "北海道全域開発",
