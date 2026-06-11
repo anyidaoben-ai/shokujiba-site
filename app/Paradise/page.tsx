@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 
 const stats = [
   {
-    value: "5,000ha",
+    value: "5,0000ha",
     label: "東京ドーム約1,000個分として描かれる広大な敷地",
   },
   {
