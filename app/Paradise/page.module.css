@@ -1,564 +1,261 @@
 .page {
-  color-scheme: dark;
-  --ink: #f7f1e8;
-  --muted: #c7d3df;
-  --line: rgba(255, 255, 255, 0.18);
-  --panel: rgba(7, 18, 32, 0.74);
-  --accent: #72d7ff;
-  --gold: #f5c866;
-  --leaf: #4fa36d;
+  --black: #070706;
+  --panel: #10100d;
+  --ink: #fff7e2;
+  --muted: rgba(255, 247, 226, 0.72);
+  --gold: #fec214;
+  --line: rgba(254, 194, 20, 0.28);
 
-  margin: 0;
-  background: #04111d;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 0%, rgba(254, 194, 20, 0.12), transparent 36rem),
+    linear-gradient(180deg, #090907 0%, #15120b 48%, #070706 100%);
   color: var(--ink);
   font-family:
     "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", Georgia,
     serif;
 }
 
-.page img {
-  display: block;
-  max-width: 100%;
-}
-
-.page a {
-  color: inherit;
-}
-
 .hero {
   position: relative;
-  min-height: 92svh;
+  min-height: 100svh;
   display: grid;
   align-items: end;
-  overflow: hidden;
+  padding: clamp(96px, 12vw, 170px) clamp(20px, 7vw, 96px) clamp(58px, 8vw, 96px);
   isolation: isolate;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(2, 10, 20, 0.9) 0%,
-      rgba(2, 10, 20, 0.5) 42%,
-      rgba(2, 10, 20, 0.25) 100%
-    ),
-    linear-gradient(0deg, #04111d 0%, rgba(4, 17, 29, 0) 34%),
-    url("/assets/paradise-earth.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   background:
-    radial-gradient(circle at 62% 20%, rgba(245, 200, 102, 0.18), transparent 24%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0));
-  pointer-events: none;
+    linear-gradient(90deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.76)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), #090907 96%);
 }
 
-.heroInner,
-.sectionInner {
-  width: min(1120px, calc(100% - 40px));
-  margin-inline: auto;
+.heroImage,
+.mapImage {
+  object-fit: cover;
+  z-index: -3;
 }
 
-.heroInner {
-  padding: 56px 0 76px;
+.heroContent {
+  max-width: 960px;
 }
 
-.eyebrow {
+.eyebrow,
+.sectionLabel {
   margin: 0 0 14px;
   color: var(--gold);
-  font-size: 0.84rem;
-  letter-spacing: 0.18em;
+  font-family:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.title {
+.hero h1,
+.statement h2,
+.visualCopy h2,
+.divisions h2 {
   margin: 0;
-  max-width: 780px;
-  font-size: clamp(2.6rem, 7vw, 6.2rem);
-  line-height: 0.96;
-  font-weight: 500;
   letter-spacing: 0;
+  line-height: 1.02;
+}
+
+.hero h1 {
+  max-width: 980px;
+  font-size: clamp(3.2rem, 9vw, 8.6rem);
+  font-weight: 700;
+  text-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
 }
 
 .lead {
-  max-width: 640px;
-  margin: 26px 0 0;
+  max-width: 800px;
+  margin: 28px 0 0;
   color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.9;
+  font-family:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.24rem);
+  line-height: 1.95;
 }
 
-.heroActions {
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 32px;
 }
 
-.button {
+.primary,
+.secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0 20px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 2px;
   text-decoration: none;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.92rem;
+  font-family:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
 }
 
 .primary {
-  border-color: rgba(114, 215, 255, 0.58);
-  background: rgba(114, 215, 255, 0.18);
+  background: var(--gold);
+  color: #11100c;
 }
 
-.main {
-  background: linear-gradient(180deg, #04111d 0%, #071c24 46%, #07151e 100%);
-}
-
-.section {
-  padding: 72px 0;
-}
-
-.intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-  gap: 44px;
-  align-items: center;
-}
-
-.introCopy h2,
-.features h2 {
-  margin: 0;
-  font-size: clamp(1.9rem, 4vw, 3.2rem);
-  line-height: 1.18;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
-.introCopy p {
-  margin: 22px 0 0;
-  color: var(--muted);
-  line-height: 1.95;
-  font-size: 1rem;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.stat {
-  min-height: 118px;
-  padding: 18px;
+.secondary {
   border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.stat strong {
-  display: block;
-  color: var(--gold);
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
-.stat span {
-  display: block;
-  margin-top: 10px;
-  color: var(--muted);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
-
-.imageStage {
-  border-block: 1px solid var(--line);
-  background: #020912;
-  padding: 42px 0;
-}
-
-.imageFrame {
-  width: min(1280px, calc(100% - 24px));
+.statement,
+.holdings,
+.visualBlock,
+.divisions {
+  width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 }
 
-.imageFrame {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+.statement {
+  padding: clamp(76px, 10vw, 130px) 0 42px;
 }
 
-.caption {
-  width: min(1120px, calc(100% - 40px));
-  margin: 16px auto 0;
+.statement h2,
+.visualCopy h2,
+.divisions h2 {
+  max-width: 980px;
+  font-size: clamp(2rem, 5.8vw, 5.6rem);
+  font-weight: 700;
+}
+
+.statement p:not(.sectionLabel),
+.visualCopy p {
+  max-width: 820px;
+  margin: 24px 0 0;
   color: var(--muted);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-family:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.95;
 }
 
-.featuresHeader {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: end;
-  margin-bottom: 28px;
-}
-
-.featuresHeader p {
-  max-width: 430px;
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.featureGrid {
+.holdings {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.feature {
-  min-height: 190px;
-  padding: 22px;
+  gap: 1px;
+  padding: 42px 0 clamp(82px, 10vw, 130px);
+  background: var(--line);
   border: 1px solid var(--line);
-  border-radius: 8px;
+}
+
+.holding {
+  min-height: 300px;
+  padding: clamp(24px, 3vw, 36px);
   background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-    rgba(3, 15, 25, 0.74);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
+    var(--panel);
 }
 
-.feature:nth-child(3n + 1) {
-  border-top-color: rgba(114, 215, 255, 0.62);
+.holding span,
+.divisionGrid span {
+  color: var(--gold);
+  font-family:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
 }
 
-.feature:nth-child(3n + 2) {
-  border-top-color: rgba(245, 200, 102, 0.62);
-}
-
-.feature:nth-child(3n) {
-  border-top-color: rgba(79, 163, 109, 0.62);
-}
-
-.feature h3 {
-  margin: 0;
-  font-size: 1.18rem;
-  font-weight: 500;
+.holding h3 {
+  margin: 58px 0 16px;
+  font-size: clamp(1.55rem, 3vw, 2.6rem);
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
-.feature p {
-  margin: 14px 0 0;
+.holding p {
+  margin: 0;
   color: var(--muted);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.94rem;
-  line-height: 1.75;
+  font-family:
+    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.82;
 }
 
-.closing {
-  padding-top: 32px;
+.visualBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  padding-bottom: clamp(86px, 10vw, 140px);
+}
+
+.mapFrame {
+  position: relative;
+  min-height: min(58vw, 650px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.mapImage {
+  z-index: 0;
+}
+
+.divisions {
+  padding: clamp(74px, 10vw, 130px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.divisionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 34px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.divisionGrid span {
+  display: grid;
+  min-height: 88px;
+  place-items: center;
+  padding: 16px;
+  color: var(--ink);
   text-align: center;
+  background: #0d0c0a;
 }
 
-.closing p {
-  max-width: 720px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.9;
-}
-
-.footer {
-  padding: 28px 20px 40px;
-  color: rgba(247, 241, 232, 0.58);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.82rem;
-  text-align: center;
-  background: #07151e;
-}
-
-@media (max-width: 860px) {
-  .hero {
-    min-height: 86svh;
-  }
-
-  .intro,
-  .featuresHeader {
-    display: block;
-  }
-
-  .stats,
-  .featureGrid {
+@media (max-width: 900px) {
+  .holdings,
+  .visualBlock,
+  .divisionGrid {
     grid-template-columns: 1fr;
   }
 
-  .stats {
-    margin-top: 28px;
-  }
-
-  .featuresHeader p {
-    margin-top: 18px;
-  }
-
-  .section {
-    padding: 54px 0;
+  .holding {
+    min-height: 240px;
   }
 }
 
 @media (max-width: 520px) {
-  .heroInner,
-  .sectionInner,
-  .caption {
-    width: min(100% - 28px, 1120px);
+  .actions {
+    flex-direction: column;
   }
 
-  .heroInner {
-    padding-bottom: 52px;
-  }
-
-  .hero::before {
-    background-position: 58% center;
-  }
-
-  .button {
+  .primary,
+  .secondary {
     width: 100%;
   }
-}
 
-.shokujibaHero {
-  min-height: 100vh;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(2, 6, 17, 0.97),
-      rgba(2, 6, 17, 0.35),
-      rgba(2, 6, 17, 0.8)
-    ),
-    url("/assets/shokujiba-paradise-concept.png") center / cover;
-  display: flex;
-  align-items: center;
-  padding: 130px 7vw 80px;
-  color: white;
-}
-
-.shokujibaEyebrow {
-  color: #62eaff;
-  letter-spacing: 0.25em;
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
-.shokujibaTitle {
-  font-family: Georgia, serif;
-  font-size: clamp(54px, 9vw, 150px);
-  line-height: 0.92;
-  margin: 18px 0;
-  color: #f7c96b;
-  letter-spacing: 0.06em;
-  text-shadow: 0 0 40px rgba(247, 201, 107, 0.25);
-}
-
-.shokujibaLead {
-  font-size: clamp(18px, 2vw, 29px);
-  max-width: 850px;
-  color: #eefaff;
-  line-height: 1.8;
-}
-
-.shokujibaActions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 34px;
-}
-
-.shokujibaButton {
-  display: inline-block;
-  padding: 14px 30px;
-  border-radius: 999px;
-  font-weight: 900;
-  border: 1px solid rgba(247, 201, 107, 0.85);
-  text-decoration: none;
-}
-
-.shokujibaPrimary {
-  background: #f7c96b;
-  color: #06101d;
-}
-
-.shokujibaGhost {
-  background: rgba(255, 255, 255, 0.07);
-  color: white;
-}
-
-.shokujibaSection {
-  padding: 95px 7vw;
-  background: #020611;
-  color: white;
-}
-
-.shokujibaSection h2 {
-  font-family: Georgia, serif;
-  font-size: clamp(36px, 5.5vw, 82px);
-  line-height: 1.04;
-  margin: 0 0 24px;
-  color: #f7c96b;
-}
-
-.shokujibaText {
-  max-width: 1050px;
-  color: #d9ecf7;
-  font-size: 19px;
-  line-height: 1.8;
-}
-
-.shokujibaDark {
-  background: linear-gradient(180deg, #061a2c, #020611);
-}
-
-.shokujibaGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-  gap: 22px;
-  margin-top: 42px;
-}
-
-.shokujibaCard {
-  padding: 30px;
-  border-radius: 30px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.11),
-    rgba(255, 255, 255, 0.025)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-}
-
-.shokujibaCard h3 {
-  margin: 0 0 12px;
-  color: #f7c96b;
-  font-size: 24px;
-}
-
-.shokujibaCard p,
-.shokujibaCard span {
-  color: #dcecf5;
-}
-
-.shokujibaCard strong {
-  display: block;
-  font-family: Georgia, serif;
-  color: #f7c96b;
-  font-size: 42px;
-  line-height: 1.1;
-}
-
-.shokujibaSplit {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 38px;
-  align-items: center;
-}
-
-.shokujibaImagePanel {
-  min-height: 520px;
-  border-radius: 38px;
-  background: url("/assets/shokujiba-paradise-concept.png") center / cover;
-  border: 1px solid rgba(247, 201, 107, 0.35);
-  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.48);
-}
-
-.shokujibaTags span {
-  display: inline-block;
-  margin: 7px 7px 0 0;
-  padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  color: #e7f7ff;
-  font-size: 13px;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.shokujibaPrice {
-  font-size: 38px;
-  color: #f7c96b;
-  font-family: Georgia, serif;
-}
-
-.shokujibaContact {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 42px;
-}
-
-.shokujibaGold {
-  background: linear-gradient(
-    135deg,
-    rgba(247, 201, 107, 0.2),
-    rgba(0, 194, 255, 0.12)
-  );
-  border: 1px solid rgba(247, 201, 107, 0.42);
-  border-radius: 40px;
-  padding: 48px;
-}
-
-.shokujibaGold h3 {
-  color: #f7c96b;
-  margin-top: 0;
-}
-
-.shokujibaGold p {
-  color: #dcecf5;
-}
-
-.shokujibaForm input,
-.shokujibaForm textarea,
-.shokujibaForm select {
-  width: 100%;
-  padding: 15px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.07);
-  color: white;
-  margin-bottom: 14px;
-}
-
-.shokujibaForm textarea {
-  height: 150px;
-}
-
-@media (max-width: 850px) {
-  .shokujibaHero {
-    padding: 110px 6vw 70px;
-  }
-
-  .shokujibaSection {
-    padding: 70px 6vw;
-  }
-
-  .shokujibaSplit,
-  .shokujibaContact {
-    grid-template-columns: 1fr;
-  }
-
-  .shokujibaImagePanel {
-    min-height: 300px;
+  .mapFrame {
+    min-height: 360px;
   }
 }
