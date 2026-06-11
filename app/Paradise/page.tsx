@@ -1,37 +1,102 @@
 import Image from "next/image";
 import Link from "next/link";
+import Carousel, { type Slide } from "@/components/Carousel";
 import styles from "./page.module.css";
 
-const holdings = [
-  {
-    title: "Hokkaido Paradise Territory",
-    label: "北海道全域開発",
-    description:
-      "Shokujiba Paradiseは、北海道全域をParadise全域として扱う巨大構想です。都市、自然、海、雪山、温泉、食、宿泊をひとつの経済圏として束ねます。",
-  },
+const scale = [
+  { value: "5,000ha", label: "敷地面積" },
+  { value: "3,000室", label: "ホテル客室計画" },
+  { value: "500,000,000人", label: "来場者目標" },
+];
+
+const zones = [
   {
     title: "Mega Transportation",
-    label: "広域交通統治",
+    label: "広域交通",
     description:
-      "北海道内を移動するための巨大交通網。空路、鉄道、道路、港湾、専用シャトルを統合し、Paradise全域をひとつの施設のように移動します。",
+      "北海道全域をParadiseとして移動するための統合交通網。空路、鉄道、港湾、専用シャトルを束ね、移動そのものを体験価値へ変えます。",
   },
   {
-    title: "Resort Capital",
-    label: "楽園資本",
+    title: "Entertainment City",
+    label: "娯楽都市",
     description:
-      "ホテル、テーマパーク、ショッピング、飲食、ウェルネスを投資対象として管理し、欲望を体験価値と収益へ変換します。",
+      "ライブ、劇場、ナイトショー、テーマパーク、アリーナを集約する中核都市。Shokujiba Paradiseの熱量を生み出す夜の資本拠点です。",
+  },
+  {
+    title: "Marina Bay",
+    label: "海洋拠点",
+    description:
+      "ヨット、クルーズ、海上レストラン、VIP港湾を備える海の玄関口。富裕層滞在と海洋観光をつなぐ高級マリーナです。",
+  },
+  {
+    title: "Paradise Beach",
+    label: "沿岸楽園",
+    description:
+      "白砂、透明な海、ビーチクラブ、海上花火を展開する開放的な海岸エリア。昼はリゾート、夜は祝祭の舞台になります。",
+  },
+  {
+    title: "Central Mountain",
+    label: "中央象徴",
+    description:
+      "Paradise全域の象徴となる中央山岳。展望、花火、レストラン、ホテル、儀式的演出を担うShokujiba Paradiseのランドマークです。",
+  },
+  {
+    title: "Sky Palace Hotel",
+    label: "天空宿泊",
+    description:
+      "Shokujiba Paradiseの格式を示す高層ホテル群。VIPラウンジ、スイート、天空プール、迎賓機能を備えた財閥の宿泊資産です。",
+  },
+  {
+    title: "Ocean Kingdom",
+    label: "海洋王国",
+    description:
+      "水族館、海中レストラン、海底ホテル、ショーを統合した海洋エンターテインメント領域。家族滞在と高級体験を両立します。",
+  },
+  {
+    title: "Water World",
+    label: "水上娯楽",
+    description:
+      "巨大プール、ウォータースライダー、ナイトプール、温水施設を備える水の都市。季節を問わず集客する体験資産です。",
+  },
+  {
+    title: "Wellness Island",
+    label: "再生医療・癒し",
+    description:
+      "温泉、スパ、ヨガ、瞑想、長期滞在、医療リトリートを担う静のエリア。富裕層の回復と滞在価値を高めます。",
+  },
+  {
+    title: "Jungle Village",
+    label: "自然滞在",
+    description:
+      "森、滝、吊り橋、ヴィラ、ナイトサファリを含む自然没入エリア。北海道の自然をParadiseの物語へ接続します。",
   },
 ];
 
-const divisions = [
-  "Sky Palace Hotel",
-  "Ocean Kingdom",
-  "Water World",
-  "Paradise Beach",
-  "Entertainment City",
-  "Shopping Avenue",
-  "Wellness Island",
-  "Food Holdings",
+const paradiseSlides: Slide[] = [
+  {
+    id: 1,
+    title: "Mega Transportation",
+    description:
+      "北海道全域をParadiseとして接続する広域交通資産。空路、鉄道、港湾、専用シャトルを統合します。",
+    image: "/assets/paradise-earth.jpg",
+    textColor: "#fff7e2",
+  },
+  {
+    id: 2,
+    title: "Entertainment City",
+    description:
+      "ライブ、劇場、ナイトショー、テーマパーク、アリーナを集約する財閥の娯楽都市です。",
+    image: "/images/paradise-theme-park.jpg",
+    textColor: "#fff7e2",
+  },
+  {
+    id: 3,
+    title: "Hokkaido Paradise",
+    description:
+      "北海道の自然、海、食、宿泊、ウェルネスを一つの楽園経済圏として運用します。",
+    image: "/images/japanesehokkaido.jpeg",
+    textColor: "#fff7e2",
+  },
 ];
 
 export default function ParadisePage() {
@@ -40,7 +105,7 @@ export default function ParadisePage() {
       <section className={styles.hero}>
         <Image
           src="/assets/paradise-earth.jpg"
-          alt="Shokujiba Paradise財閥の北海道全域構想"
+          alt="Shokujiba Paradise構想図"
           fill
           priority
           sizes="100vw"
@@ -48,70 +113,74 @@ export default function ParadisePage() {
         />
         <div className={styles.heroContent}>
           <p className={styles.eyebrow}>Shokujiba Paradise Zaibatsu</p>
-          <h1>北海道全域を、楽園資本へ。</h1>
+          <h1>北海道全域を、楽園財閥へ。</h1>
           <p className={styles.lead}>
-            Shokujiba Paradiseは北海道全域をParadise全域として統治する構想です。
-            Mega Transportationによって道内の移動を束ね、観光、食、宿泊、娯楽、
-            商業、ウェルネスをひとつの巨大な財閥経済圏にします。
+            Shokujiba Paradiseは、5,000ha規模の開発、3,000室の宿泊計画、
+            500,000,000人の来場者目標を掲げる巨大構想です。北海道全域をParadiseとして扱い、
+            Mega Transportationで各拠点を結びます。
           </p>
           <div className={styles.actions}>
-            <a href="#territory" className={styles.primary}>
+            <a href="#zones" className={styles.primary}>
               構想を見る
             </a>
-            <Link href="/" className={styles.secondary}>
-              財閥本部へ
-            </Link>
+            <a href="mailto:shokujibamaster@gmail.com" className={styles.secondary}>
+              Masterへ連絡
+            </a>
           </div>
         </div>
       </section>
 
-      <section className={styles.statement} id="territory">
-        <p className={styles.sectionLabel}>Territory</p>
-        <h2>Paradiseは島ではなく、北海道全域に広がる。</h2>
+      <section className={styles.scaleBoard} aria-label="Shokujiba Paradise scale">
+        {scale.map((item) => (
+          <div className={styles.scaleItem} key={item.label}>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </section>
+
+      <section className={styles.statement}>
+        <p className={styles.sectionLabel}>Master Plan</p>
+        <h2>Shokujiba Paradiseは、北海道全域を一つの楽園経済圏として管理する。</h2>
         <p>
-          画像のPARADISE EARTHは、Shokujiba Paradise財閥が目指す全域構想の象徴です。
-          中央都市、山岳、海洋、温泉、食材、ホテル、ショー、商業を北海道という広大な土地に配置し、
-          来訪者の欲望を地域全体で受け止めます。
+          交通、宿泊、食、海洋、娯楽、自然、ウェルネスを財閥の事業領域として統合し、
+          来訪者の欲望を滞在価値、消費価値、投資価値へ変換します。
         </p>
       </section>
 
-      <section className={styles.holdings} aria-label="Shokujiba Paradise holdings">
-        {holdings.map((item) => (
-          <article className={styles.holding} key={item.title}>
-            <span>{item.label}</span>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+      <section className={styles.carouselSection} aria-label="Paradise asset carousel">
+        <div className={styles.carouselHeader}>
+          <p className={styles.sectionLabel}>Capital Assets</p>
+          <h2>主要資産を巡る。</h2>
+        </div>
+        <Carousel slides={paradiseSlides} />
+      </section>
+
+      <section className={styles.zones} id="zones" aria-label="Paradise zones">
+        {zones.map((zone) => (
+          <article className={styles.zone} key={zone.title}>
+            <span>{zone.label}</span>
+            <h3>{zone.title}</h3>
+            <p>{zone.description}</p>
           </article>
         ))}
       </section>
 
-      <section className={styles.visualBlock} aria-label="Paradise Earth visual">
-        <div className={styles.mapFrame}>
-          <Image
-            src="/assets/paradise-earth.jpg"
-            alt="Paradise Earth構想図"
-            fill
-            sizes="(max-width: 900px) 100vw, 70vw"
-            className={styles.mapImage}
-          />
+      <section className={styles.contact} aria-label="Contact Master">
+        <div>
+          <p className={styles.sectionLabel}>Contact</p>
+          <h2>Masterへ送る。</h2>
         </div>
-        <div className={styles.visualCopy}>
-          <p className={styles.sectionLabel}>Master Plan</p>
-          <h2>Mega Transportationが、北海道を一つの楽園に接続する。</h2>
+        <div className={styles.contactBody}>
           <p>
-            来訪者は北海道内を点で移動するのではなく、Shokujiba Paradiseの中を移動します。
-            空港、駅、港、ホテル、食材拠点、娯楽都市を財閥が統合し、移動そのものを体験に変えます。
+            出資、協業、土地提供、飲食出店、イベント、メディア掲載、採用などはこちらから。
           </p>
-        </div>
-      </section>
-
-      <section className={styles.divisions}>
-        <p className={styles.sectionLabel}>Divisions</p>
-        <h2>主要事業領域</h2>
-        <div className={styles.divisionGrid}>
-          {divisions.map((division) => (
-            <span key={division}>{division}</span>
-          ))}
+          <a href="mailto:shokujibamaster@gmail.com" className={styles.mailLink}>
+            shokujibamaster@gmail.com
+          </a>
+          <Link href="/" className={styles.homeLink}>
+            財閥本部へ戻る
+          </Link>
         </div>
       </section>
     </main>

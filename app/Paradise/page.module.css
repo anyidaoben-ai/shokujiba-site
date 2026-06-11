@@ -1,16 +1,18 @@
 .page {
-  --black: #070706;
+  --black: #060605;
   --panel: #10100d;
+  --panel2: #17140c;
   --ink: #fff7e2;
   --muted: rgba(255, 247, 226, 0.72);
   --gold: #fec214;
+  --gold2: #c99d3a;
   --line: rgba(254, 194, 20, 0.28);
 
   min-height: 100vh;
   overflow: hidden;
   background:
-    radial-gradient(circle at 78% 0%, rgba(254, 194, 20, 0.12), transparent 36rem),
-    linear-gradient(180deg, #090907 0%, #15120b 48%, #070706 100%);
+    radial-gradient(circle at 80% 0%, rgba(254, 194, 20, 0.14), transparent 36rem),
+    linear-gradient(180deg, #080806 0%, #17130b 48%, #060605 100%);
   color: var(--ink);
   font-family:
     "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", Georgia,
@@ -22,7 +24,7 @@
   min-height: 100svh;
   display: grid;
   align-items: end;
-  padding: clamp(96px, 12vw, 170px) clamp(20px, 7vw, 96px) clamp(58px, 8vw, 96px);
+  padding: clamp(96px, 12vw, 168px) clamp(20px, 7vw, 96px) clamp(58px, 8vw, 96px);
   isolation: isolate;
 }
 
@@ -32,23 +34,24 @@
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.76)),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.1), #090907 96%);
+    linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.72)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.06), #080806 96%);
 }
 
-.heroImage,
-.mapImage {
+.heroImage {
   object-fit: cover;
   z-index: -3;
 }
 
 .heroContent {
-  max-width: 960px;
+  max-width: 980px;
 }
 
 .eyebrow,
-.sectionLabel {
-  margin: 0 0 14px;
+.sectionLabel,
+.zone span,
+.scaleItem span {
+  margin: 0;
   color: var(--gold);
   font-family:
     var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -60,22 +63,21 @@
 
 .hero h1,
 .statement h2,
-.visualCopy h2,
-.divisions h2 {
-  margin: 0;
+.contact h2 {
+  margin: 14px 0 0;
   letter-spacing: 0;
   line-height: 1.02;
 }
 
 .hero h1 {
-  max-width: 980px;
-  font-size: clamp(3.2rem, 9vw, 8.6rem);
+  max-width: 1040px;
+  font-size: clamp(3rem, 9vw, 8.2rem);
   font-weight: 700;
   text-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
 }
 
 .lead {
-  max-width: 800px;
+  max-width: 820px;
   margin: 28px 0 0;
   color: var(--muted);
   font-family:
@@ -92,7 +94,9 @@
 }
 
 .primary,
-.secondary {
+.secondary,
+.mailLink,
+.homeLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -106,23 +110,51 @@
   font-weight: 900;
 }
 
-.primary {
+.primary,
+.mailLink {
   background: var(--gold);
   color: #11100c;
 }
 
-.secondary {
+.secondary,
+.homeLink {
   border: 1px solid var(--line);
   color: var(--ink);
   background: rgba(255, 255, 255, 0.04);
 }
 
+.scaleBoard,
 .statement,
-.holdings,
-.visualBlock,
-.divisions {
+.carouselSection,
+.zones,
+.contact {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
+}
+
+.scaleBoard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.scaleItem {
+  min-height: 168px;
+  padding: clamp(22px, 3vw, 34px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
+    var(--panel);
+}
+
+.scaleItem strong {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: 0;
 }
 
 .statement {
@@ -130,118 +162,105 @@
 }
 
 .statement h2,
-.visualCopy h2,
-.divisions h2 {
-  max-width: 980px;
-  font-size: clamp(2rem, 5.8vw, 5.6rem);
+.contact h2 {
+  max-width: 1040px;
+  font-size: clamp(2rem, 5.8vw, 5.4rem);
   font-weight: 700;
 }
 
 .statement p:not(.sectionLabel),
-.visualCopy p {
-  max-width: 820px;
-  margin: 24px 0 0;
+.contactBody p,
+.zone p {
   color: var(--muted);
   font-family:
     var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.95;
+  line-height: 1.9;
 }
 
-.holdings {
+.statement p:not(.sectionLabel) {
+  max-width: 820px;
+  margin: 24px 0 0;
+}
+
+.carouselSection {
+  padding: 12px 0 clamp(82px, 10vw, 130px);
+}
+
+.carouselHeader {
+  margin-bottom: 26px;
+}
+
+.carouselHeader h2 {
+  max-width: 880px;
+  margin: 14px 0 0;
+  font-size: clamp(2rem, 5.8vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.zones {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   padding: 42px 0 clamp(82px, 10vw, 130px);
-  background: var(--line);
   border: 1px solid var(--line);
+  background: var(--line);
 }
 
-.holding {
-  min-height: 300px;
+.zone {
+  min-height: 276px;
   padding: clamp(24px, 3vw, 36px);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
     var(--panel);
 }
 
-.holding span,
-.divisionGrid span {
-  color: var(--gold);
-  font-family:
-    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.76rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
+.zone:nth-child(4n + 2),
+.zone:nth-child(4n + 3) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012)),
+    var(--panel2);
 }
 
-.holding h3 {
-  margin: 58px 0 16px;
+.zone h3 {
+  margin: 48px 0 16px;
   font-size: clamp(1.55rem, 3vw, 2.6rem);
   line-height: 1.08;
   letter-spacing: 0;
 }
 
-.holding p {
+.zone p {
   margin: 0;
-  color: var(--muted);
-  font-family:
-    var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.82;
 }
 
-.visualBlock {
+.contact {
   display: grid;
-  grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
-  gap: clamp(24px, 5vw, 64px);
-  align-items: center;
-  padding-bottom: clamp(86px, 10vw, 140px);
-}
-
-.mapFrame {
-  position: relative;
-  min-height: min(58vw, 650px);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #000;
-}
-
-.mapImage {
-  z-index: 0;
-}
-
-.divisions {
+  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1.14fr);
+  gap: clamp(26px, 6vw, 76px);
   padding: clamp(74px, 10vw, 130px) 0;
   border-top: 1px solid var(--line);
 }
 
-.divisionGrid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 34px;
-  border: 1px solid var(--line);
-  background: var(--line);
+.contactBody {
+  align-self: end;
 }
 
-.divisionGrid span {
-  display: grid;
-  min-height: 88px;
-  place-items: center;
-  padding: 16px;
-  color: var(--ink);
-  text-align: center;
-  background: #0d0c0a;
+.contactBody p {
+  margin: 0 0 22px;
+  font-size: clamp(1rem, 1.8vw, 1.22rem);
+}
+
+.mailLink {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 900px) {
-  .holdings,
-  .visualBlock,
-  .divisionGrid {
+  .scaleBoard,
+  .zones,
+  .contact {
     grid-template-columns: 1fr;
-  }
-
-  .holding {
-    min-height: 240px;
   }
 }
 
@@ -251,11 +270,9 @@
   }
 
   .primary,
-  .secondary {
+  .secondary,
+  .mailLink,
+  .homeLink {
     width: 100%;
-  }
-
-  .mapFrame {
-    min-height: 360px;
   }
 }
