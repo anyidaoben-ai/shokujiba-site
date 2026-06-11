@@ -31,6 +31,11 @@ const features = [
       "山頂付近に建つ高層ホテル群。ファンタジーとラグジュアリーが混ざったランドマークです。",
   },
   {
+    title: "Hokkaido Paradise / Mega Transportation",
+    description:
+      "Shokujiba Paradiseでは北海道全域をParadise全域として扱い、Mega Transportationで北海道内を移動する構想です。",
+  },
+  {
     title: "Ocean Kingdom",
     description:
       "海側に広がる水族館・ショーエリア。青い光が、リゾートのスケール感を強調しています。",
