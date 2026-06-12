@@ -1,188 +1,257 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Carousel, { type Slide } from "@/components/Carousel";
 import Image from "next/image";
 import Link from "next/link";
-import Carousel, { type Slide } from "@/components/Carousel";
 import styles from "./page.module.css";
 
 const scale = [
-  { value: "5,000ha", label: "敷地面積" },
-  { value: "3,000室", label: "ホテル客室計画" },
-  { value: "500,000,000人", label: "来場者目標" },
+  { value: "5,000ha", label: "御遊覧と祝祭の庭園" },
+  { value: "3,000室", label: "迎賓宿泊と御休息" },
+  { value: "500,000,000人", label: "世界から訪れる楽園目標" },
+];
+
+const protocols = [
+  {
+    title: "御休息",
+    label: "Imperial Rest",
+    text: "人目と喧騒から離れ、北海道の空気、水、森、温泉に包まれる静養導線。休むほど次の体験が楽しみになる時間を整えます。",
+  },
+  {
+    title: "御遊覧",
+    label: "Royal Leisure",
+    text: "海、山、庭園、劇場、水族館、食の回廊を、品位ある速度で巡る遊覧計画。曲がるたびに驚きが現れる構成です。",
+  },
+  {
+    title: "御食事",
+    label: "Ceremonial Dining",
+    text: "北海道の食材とShokujibaの食文化を、儀礼性のある献立と空間で提供。香り、器、景色まで一皿として演出します。",
+  },
+  {
+    title: "御移動",
+    label: "Mega Transportation",
+    text: "空港、駅、港、ホテル、迎賓施設を結び、移動そのものを静かで安全な体験にします。専用列車も船も旅の主役です。",
+  },
+];
+
+const wonderMoments = [
+  {
+    title: "御幸列車",
+    label: "Royal Train",
+    text: "北海道の景色を額縁のように眺める専用列車。車窓、食、音楽、停車駅の演出で移動を祝祭に変えます。",
+  },
+  {
+    title: "海上パレード",
+    label: "Ocean Parade",
+    text: "マリーナから始まる静かな船上遊覧。夕陽、花火、水上音楽、海上レストランが連続して現れます。",
+  },
+  {
+    title: "天空晩餐",
+    label: "Sky Dinner",
+    text: "Sky Palace Hotelの上層で、北海道の夜景と花火を見ながら行う晩餐。食事そのものが記憶になります。",
+  },
+  {
+    title: "夜の祝祭",
+    label: "Night Ceremony",
+    text: "Entertainment Cityで行う光、音楽、噴水、ドローン、花火の祝祭。派手さではなく品位のある高揚を設計します。",
+  },
+  {
+    title: "秘密の果樹園",
+    label: "Hidden Orchard",
+    text: "Shokujibaらしい果物と野菜の楽園。採る、香る、食べる、贈るまでを、静かな冒険として体験します。",
+  },
 ];
 
 const zones = [
   {
-    title: "Mega Transportation",
-    label: "広域交通",
+    title: "Imperial Garden",
+    label: "迎賓庭園",
     description:
-      "北海道全域をParadiseとして移動するための統合交通網。空路、鉄道、港湾、専用シャトルを束ね、移動そのものを体験価値へ変えます。",
-  },
-  {
-    title: "Entertainment City",
-    label: "娯楽都市",
-    description:
-      "ライブ、劇場、ナイトショー、テーマパーク、アリーナを集約する中核都市。Shokujiba Paradiseの熱量を生み出す夜の資本拠点です。",
-  },
-  {
-    title: "Marina Bay",
-    label: "海洋拠点",
-    description:
-      "ヨット、クルーズ、海上レストラン、VIP港湾を備える海の玄関口。富裕層滞在と海洋観光をつなぐ高級マリーナです。",
-  },
-  {
-    title: "Paradise Beach",
-    label: "沿岸楽園",
-    description:
-      "白砂、透明な海、ビーチクラブ、海上花火を展開する開放的な海岸エリア。昼はリゾート、夜は祝祭の舞台になります。",
-  },
-  {
-    title: "Central Mountain",
-    label: "中央象徴",
-    description:
-      "Paradise全域の象徴となる中央山岳。展望、花火、レストラン、ホテル、儀式的演出を担うShokujiba Paradiseのランドマークです。",
+      "御散策、記念植樹、茶席、静かな写真撮影に対応する庭園。次の小道に何があるのか楽しみになる、Paradiseの公式入口です。",
   },
   {
     title: "Sky Palace Hotel",
-    label: "天空宿泊",
+    label: "迎賓宿泊",
     description:
-      "Shokujiba Paradiseの格式を示す高層ホテル群。VIPラウンジ、スイート、天空プール、迎賓機能を備えた財閥の宿泊資産です。",
+      "皇室級・国賓級の賓客にも対応できるスイート、控室、会食室、警備動線を備える宿泊中枢。空に近い部屋から祝祭を見下ろせます。",
   },
   {
-    title: "Ocean Kingdom",
-    label: "海洋王国",
+    title: "Central Mountain",
+    label: "象徴山岳",
     description:
-      "水族館、海中レストラン、海底ホテル、ショーを統合した海洋エンターテインメント領域。家族滞在と高級体験を両立します。",
-  },
-  {
-    title: "Water World",
-    label: "水上娯楽",
-    description:
-      "巨大プール、ウォータースライダー、ナイトプール、温水施設を備える水の都市。季節を問わず集客する体験資産です。",
+      "北海道全域の眺望、花火、式典、朝の御来光を体験できるParadiseの象徴。登るほど世界が広がる中心ランドマークです。",
   },
   {
     title: "Wellness Island",
-    label: "再生医療・癒し",
+    label: "静養島",
     description:
-      "温泉、スパ、ヨガ、瞑想、長期滞在、医療リトリートを担う静のエリア。富裕層の回復と滞在価値を高めます。",
+      "温泉、スパ、医療リトリート、瞑想、長期滞在に対応する静の区域。回復したあとにもう一度遊びたくなる場所です。",
+  },
+  {
+    title: "Ocean Kingdom",
+    label: "海洋御遊覧",
+    description:
+      "水族館、海上レストラン、海中鑑賞、船上遊覧を含む海の迎賓区域。海の奥へ進むほど驚きが増える設計です。",
+  },
+  {
+    title: "Paradise Beach",
+    label: "沿岸御散策",
+    description:
+      "白砂、海風、夕陽、花火を静かに楽しめる海岸区域。昼は御散策、夕方は海上パレード、夜は祝祭に変わります。",
+  },
+  {
+    title: "Entertainment City",
+    label: "祝祭都市",
+    description:
+      "劇場、音楽、式典、ナイトショーを制御された演出で提供する都市区域。最上位の賓客にも高揚していただく祝祭を担います。",
   },
   {
     title: "Jungle Village",
-    label: "自然滞在",
+    label: "自然御滞在",
     description:
-      "森、滝、吊り橋、ヴィラ、ナイトサファリを含む自然没入エリア。北海道の自然をParadiseの物語へ接続します。",
+      "森、滝、ヴィラ、星空、野生の気配を安全に体験する自然区域。静かな冒険として北海道の自然を味わえます。",
   },
 ];
 
 const paradiseSlides: Slide[] = [
   {
     id: 1,
-    title: "Mega Transportation",
-    description:
-      "北海道全域をParadiseとして接続する広域交通資産。空路、鉄道、港湾、専用シャトルを統合します。",
-    image: "/assets/paradise-earth.jpg",
-    textColor: "#fff7e2",
-  },
-  {
-    id: 2,
-    title: "Entertainment City",
-    description:
-      "ライブ、劇場、ナイトショー、テーマパーク、アリーナを集約する財閥の娯楽都市です。",
+    title: "Royal Surprise Route",
+    description: "天皇陛下にも胸を高鳴らせていただける、静かな驚きが連続する御遊覧コース。",
     image: "/images/paradise-theme-park.jpg",
     textColor: "#fff7e2",
   },
   {
+    id: 2,
+    title: "Sky Palace Festival",
+    description: "天空晩餐、夜景、花火、音楽が重なる、品位あるわくわくを生む迎賓ホテル。",
+    image: "/assets/paradise-earth.jpg",
+    textColor: "#fff7e2",
+  },
+  {
     id: 3,
-    title: "Hokkaido Paradise",
-    description:
-      "北海道の自然、海、食、宿泊、ウェルネスを一つの楽園経済圏として運用します。",
-    image: "/images/japanesehokkaido.jpeg",
+    title: "Ocean Parade",
+    description: "港、船、夕陽、海上レストラン、花火をつなぎ、海そのものを祝祭にします。",
+    image: "/images/shokujibabeach.jpg",
     textColor: "#fff7e2",
   },
 ];
 
 export default function ParadisePage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.hero}>
-        <Image
-          src="/assets/paradise-earth.jpg"
-          alt="Shokujiba Paradise構想図"
-          fill
-          priority
-          sizes="100vw"
-          className={styles.heroImage}
-        />
-        <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>Shokujiba Paradise Zaibatsu</p>
-          <h1>北海道全域を、楽園財閥へ。</h1>
-          <p className={styles.lead}>
-            Shokujiba Paradiseは、5,000ha規模の開発、3,000室の宿泊計画、
-            500,000,000人の来場者目標を掲げる巨大構想です。北海道全域をParadiseとして扱い、
-            Mega Transportationで各拠点を結びます。
-          </p>
-          <div className={styles.actions}>
-            <a href="#zones" className={styles.primary}>
-              構想を見る
-            </a>
-            <a href="mailto:shokujibamaster@gmail.com" className={styles.secondary}>
-              Contact
-            </a>
+    <>
+      <Header />
+      <main className={styles.page}>
+        <section className={styles.hero}>
+          <Image
+            src="/assets/paradise-earth.jpg"
+            alt="Shokujiba Paradiseわくわく迎賓構想"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroImage}
+          />
+          <div className={styles.heroPanel}>
+            <p className={styles.eyebrow}>Shokujiba Paradise Imperial Wonder Plan</p>
+            <h1>天皇陛下にも、わくわくしていただける楽園へ。</h1>
+            <p className={styles.lead}>
+              Shokujiba Paradiseは、北海道全域を品位ある迎賓地として整えながら、
+              最上位の賓客にも胸が高鳴る体験を届ける構想です。
+              御休息、御遊覧、御食事、御移動、祝祭、発見を一体で設計します。
+            </p>
+            <div className={styles.actions}>
+              <a href="#protocol" className={styles.primary}>
+                わくわく計画を見る
+              </a>
+              <a href="mailto:shokujibamaster@gmail.com" className={styles.secondary}>
+                Masterへ連絡
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.scaleBoard} aria-label="Shokujiba Paradise scale">
-        {scale.map((item) => (
-          <div className={styles.scaleItem} key={item.label}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
-          </div>
-        ))}
-      </section>
+        <section className={styles.scaleBoard} aria-label="Paradise scale">
+          {scale.map((item) => (
+            <div className={styles.scaleItem} key={item.label}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </section>
 
-      <section className={styles.statement}>
-        <p className={styles.sectionLabel}>Master Plan</p>
-        <h2>Shokujiba Paradiseは、北海道全域を一つの楽園経済圏として管理する。</h2>
-        <p>
-          交通、宿泊、食、海洋、娯楽、自然、ウェルネスを財閥の事業領域として統合し、
-          来訪者の欲望を滞在価値、消費価値、投資価値へ変換します。
-        </p>
-      </section>
-
-      <section className={styles.carouselSection} aria-label="Paradise asset carousel">
-        <div className={styles.carouselHeader}>
-          <p className={styles.sectionLabel}>Capital Assets</p>
-          <h2>主要資産を巡る。</h2>
-        </div>
-        <Carousel slides={paradiseSlides} />
-      </section>
-
-      <section className={styles.zones} id="zones" aria-label="Paradise zones">
-        {zones.map((zone) => (
-          <article className={styles.zone} key={zone.title}>
-            <span>{zone.label}</span>
-            <h3>{zone.title}</h3>
-            <p>{zone.description}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className={styles.contact} aria-label="Contact Master">
-        <div>
-          <p className={styles.sectionLabel}>Contact</p>
-          <h2>Masterへ送る。</h2>
-        </div>
-        <div className={styles.contactBody}>
+        <section className={styles.statement}>
+          <p className={styles.sectionLabel}>Official Wonder</p>
+          <h2>静かな格式の中に、発見の連続を仕込む。</h2>
           <p>
-            出資、協業、土地提供、飲食出店、イベント、メディア掲載、採用などはこちらから。
+            Paradiseは派手な娯楽施設だけではありません。静けさ、清潔さ、安全性を守りながら、
+            次の扉を開けるたびに驚きが現れる場所です。天皇陛下級の賓客にも、
+            童心のような高揚を感じていただける楽園を目指します。
           </p>
-          <a href="mailto:shokujibamaster@gmail.com" className={styles.mailLink}>
-            shokujibamaster@gmail.com
-          </a>
-          <Link href="/" className={styles.homeLink}>
-            財閥本部へ戻る
-          </Link>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        <section className={styles.protocol} id="protocol" aria-label="迎賓計画">
+          {protocols.map((item) => (
+            <article className={styles.protocolCard} key={item.title}>
+              <span>{item.label}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className={styles.wonder} aria-labelledby="wonder-title">
+          <div className={styles.wonderHeader}>
+            <p className={styles.sectionLabel}>Wakuwaku Moments</p>
+            <h2 id="wonder-title">胸が高鳴る五つの瞬間。</h2>
+          </div>
+          <div className={styles.wonderGrid}>
+            {wonderMoments.map((moment) => (
+              <article className={styles.wonderCard} key={moment.title}>
+                <span>{moment.label}</span>
+                <h3>{moment.title}</h3>
+                <p>{moment.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.carouselSection} aria-label="迎賓資産">
+          <div className={styles.carouselHeader}>
+            <p className={styles.sectionLabel}>Guest Journey</p>
+            <h2>わくわくする御遊覧コース。</h2>
+          </div>
+          <Carousel slides={paradiseSlides} />
+        </section>
+
+        <section className={styles.zones} aria-label="Paradise zones">
+          {zones.map((zone) => (
+            <article className={styles.zone} key={zone.title}>
+              <span>{zone.label}</span>
+              <h3>{zone.title}</h3>
+              <p>{zone.description}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className={styles.contact} aria-label="Contact Master">
+          <div>
+            <p className={styles.sectionLabel}>Audience With Master</p>
+            <h2>迎賓、出資、協業の相談。</h2>
+          </div>
+          <div className={styles.contactBody}>
+            <p>
+              出資、協業、土地提供、飲食出店、イベント、メディア掲載、採用などはこちらから。
+            </p>
+            <a href="mailto:shokujibamaster@gmail.com" className={styles.mailLink}>
+              shokujibamaster@gmail.com
+            </a>
+            <Link href="/" className={styles.homeLink}>
+              公式玄関へ戻る
+            </Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
