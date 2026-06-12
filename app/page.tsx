@@ -4,49 +4,64 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const empireStats = [
-  { value: "Food", label: "食欲を満たす" },
-  { value: "Goods", label: "所有欲を満たす" },
-  { value: "Paradise", label: "欲望を解放する" },
-  { value: "Master", label: "世界観を統治する" },
-];
-
-const businesses = [
+const primarySections = [
   {
     href: "/Dispense",
-    title: "Shokuzai",
-    label: "Food Holdings",
-    text: "果物、野菜、肉、魚、飲料を束ね、食欲を経済に変える中核市場。",
-    image: "/images/cosmic-produce.png",
+    title: "食事場の食を知る",
+    description: "果物、野菜、肉、魚、飲料など、Shokujibaの食欲経済を案内します。",
   },
   {
     href: "/Goods",
-    title: "Goods",
-    label: "Asset Commerce",
-    text: "身につける、持ち歩く、所有する。購買欲をブランド資産へ変える。",
-    image: "/images/goods/paradise-jewelry.jpg",
+    title: "食事場の品位を身につける",
+    description: "お守り、衣服、財布、装飾品など、所有欲を満たすGoodsを案内します。",
   },
   {
     href: "/Paradise",
-    title: "Paradise",
-    label: "Sovereign Resort",
-    text: "北海道全域を舞台に、移動、ホテル、都市、娯楽を統合する楽園構想。",
-    image: "/assets/paradise-earth.jpg",
-  },
-  {
-    href: "/TechnologyLand-AI",
-    title: "Company",
-    label: "Shokujiba Inc.",
-    text: "株式会社食事場の会社概要、事業領域、Masterの思想を記録する中枢。",
-    image: "/images/shokujiba-paradise-concept.png",
+    title: "食事場の楽園を訪れる",
+    description: "北海道全域を舞台とするShokujiba Paradise構想を案内します。",
   },
 ];
 
-const doctrines = [
-  "食欲は市場になる。",
-  "購買欲はブランドになる。",
-  "楽園欲は都市になる。",
-  "Masterの思想は憲章になる。",
+const notices = [
+  {
+    date: "令和8年6月12日",
+    title: "株式会社食事場の公式玄関を整備しました",
+    href: "/TechnologyLand-AI",
+  },
+  {
+    date: "令和8年6月12日",
+    title: "Shokujiba Paradiseの事業構想を公開しています",
+    href: "/Paradise",
+  },
+  {
+    date: "令和8年6月12日",
+    title: "北海道ホテル滞在案内をTripに掲載しました",
+    href: "/trip",
+  },
+];
+
+const contentLinks = [
+  { href: "/TechnologyLand-AI", label: "株式会社食事場について" },
+  { href: "/Dispense", label: "食材・飲料のご案内" },
+  { href: "/Goods", label: "Goodsのご案内" },
+  { href: "/Paradise", label: "Paradise構想" },
+  { href: "/trip", label: "北海道宿泊案内" },
+  { href: "mailto:shokujibamaster@gmail.com", label: "ご意見・お問い合わせ" },
+];
+
+const activityCards = [
+  {
+    title: "Masterについて",
+    text: "Shokujibaを創ったMasterは、株式会社食事場の思想と世界観を司る中心人物です。",
+  },
+  {
+    title: "食事場の役割",
+    text: "食欲、購買欲、楽園欲を秩序ある体験へ変換し、生活の中に豊かさを配します。",
+  },
+  {
+    title: "公式連絡",
+    text: "出資、協業、土地提供、飲食出店、イベント、メディア掲載、採用などを受け付けます。",
+  },
 ];
 
 export default function Page() {
@@ -54,106 +69,95 @@ export default function Page() {
     <>
       <Header />
       <main className={styles.main}>
-        <section className={styles.hero}>
-          <Image
-            src="/images/shokujiba-paradise-concept.png"
-            alt="Shokujiba Paradise"
-            fill
-            priority
-            sizes="100vw"
-            className={styles.heroImage}
-          />
-          <div className={styles.heroShade} />
-
-          <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>Shokujiba Sovereign Portal</p>
-            <h1>欲望経済を、ひとつの楽園へ。</h1>
-            <p className={styles.lead}>
-              Shokujibaは、食材、Goods、Trip、Paradise、そして株式会社食事場を
-              ひとつに束ねる欲望経済の入口です。
+        <section className={styles.hero} aria-labelledby="page-title">
+          <div className={styles.heroText}>
+            <p className={styles.kicker}>株式会社食事場</p>
+            <h1 id="page-title">Shokujiba Paradise</h1>
+            <p>
+              食欲、購買欲、楽園欲をひとつに束ねる、株式会社食事場の公式案内です。
+              事業、構想、商品、宿泊、連絡先をこちらから確認できます。
             </p>
-            <div className={styles.heroActions}>
-              <Link href="/Paradise" className={styles.primaryLink}>
-                Paradiseへ
-              </Link>
-              <Link href="/TechnologyLand-AI" className={styles.secondaryLink}>
-                会社概要を見る
-              </Link>
+          </div>
+          <div className={styles.heroPortrait}>
+            <Image
+              src="/images/shokujibaicon.jpeg"
+              alt="株式会社食事場の印"
+              width={170}
+              height={170}
+              priority
+            />
+            <span>Official Portal</span>
+          </div>
+        </section>
+
+        <section className={styles.primaryNav} aria-label="主要案内">
+          {primarySections.map((item) => (
+            <Link href={item.href} className={styles.primaryCard} key={item.href}>
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+            </Link>
+          ))}
+        </section>
+
+        <section className={styles.infoGrid}>
+          <div className={styles.noticePanel}>
+            <div className={styles.panelHead}>
+              <p>注目情報</p>
+              <Link href="/TechnologyLand-AI">もっと見る</Link>
+            </div>
+            <div className={styles.noticeList}>
+              {notices.map((notice) => (
+                <Link href={notice.href} className={styles.noticeItem} key={notice.title}>
+                  <time>{notice.date}</time>
+                  <span>{notice.title}</span>
+                </Link>
+              ))}
             </div>
           </div>
 
-          <div className={styles.heroStats} aria-label="Shokujiba domains">
-            {empireStats.map((item) => (
-              <div className={styles.stat} key={item.value}>
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
+          <aside className={styles.contactPanel} aria-label="お問い合わせ">
+            <p>お問い合わせ</p>
+            <h2>Masterへ連絡する</h2>
+            <span>
+              出資、協業、土地提供、飲食出店、イベント、メディア掲載、採用などはこちらから。
+            </span>
+            <a href="mailto:shokujibamaster@gmail.com">メールを送る</a>
+          </aside>
         </section>
 
-        <section className={styles.manifesto}>
-          <p className={styles.sectionLabel}>Grand Design</p>
-          <h2>Shokujibaは、欲望を売るのではなく、欲望が満たされる秩序をつくる。</h2>
-          <p>
-            食べたい、買いたい、泊まりたい、移動したい、遊びたい、叶えたい。
-            それぞれの欲望をバラバラに扱わず、ひとつの経済圏として設計する。
-            それが現在のShokujiba Paradiseです。
-          </p>
-        </section>
-
-        <section className={styles.businessSection} aria-label="Shokujiba businesses">
-          <div className={styles.sectionHead}>
-            <p className={styles.sectionLabel}>Empire Gates</p>
-            <h2>四つの入口</h2>
+        <section className={styles.activitySection} aria-labelledby="activity-title">
+          <div className={styles.sectionTitle}>
+            <p>食事場のご活動</p>
+            <h2 id="activity-title">Shokujibaの現在</h2>
           </div>
-
-          <div className={styles.gates}>
-            {businesses.map((business) => (
-              <Link href={business.href} className={styles.gate} key={business.href}>
-                <Image
-                  src={business.image}
-                  alt={business.title}
-                  fill
-                  sizes="(max-width: 760px) 100vw, 50vw"
-                  className={styles.gateImage}
-                />
-                <div className={styles.gateOverlay} />
-                <div className={styles.gateBody}>
-                  <span>{business.label}</span>
-                  <h3>{business.title}</h3>
-                  <p>{business.text}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.doctrine}>
-          <div className={styles.doctrineIntro}>
-            <p className={styles.sectionLabel}>Shokujiba Charter</p>
-            <h2>食事場憲章</h2>
-          </div>
-          <div className={styles.doctrineList}>
-            {doctrines.map((item, index) => (
-              <article className={styles.doctrineItem} key={item}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{item}</p>
+          <div className={styles.activityGrid}>
+            {activityCards.map((card) => (
+              <article className={styles.activityCard} key={card.title}>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className={styles.final}>
-          <p className={styles.sectionLabel}>Next Destination</p>
-          <h2>北海道全域を、Paradiseへ。</h2>
-          <p>
-            Shokujiba Paradiseは、食、Goods、ホテル、移動、都市、娯楽を統合し、
-            現実の北海道を体験可能な楽園へ拡張していきます。
-          </p>
-          <Link href="/trip" className={styles.primaryLink}>
-            Tripを見る
-          </Link>
+        <section className={styles.contents} aria-label="食事場コンテンツ">
+          <div className={styles.sectionTitle}>
+            <p>食事場コンテンツ</p>
+            <h2>各種案内</h2>
+          </div>
+          <div className={styles.contentLinks}>
+            {contentLinks.map((link) =>
+              link.href.startsWith("mailto:") ? (
+                <a href={link.href} className={styles.contentLink} key={link.href}>
+                  {link.label}
+                </a>
+              ) : (
+                <Link href={link.href} className={styles.contentLink} key={link.href}>
+                  {link.label}
+                </Link>
+              ),
+            )}
+          </div>
         </section>
       </main>
       <Footer />
