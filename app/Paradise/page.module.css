@@ -124,6 +124,7 @@
 }
 
 .scaleBoard,
+.currentParadise,
 .statement,
 .yupiteruFeature,
 .yupiteruSteps,
@@ -160,6 +161,96 @@
   color: var(--ink);
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 0.95;
+}
+
+.currentParadise {
+  padding: clamp(64px, 9vw, 116px) 0 0;
+}
+
+.currentHeader {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.currentHeader h2 {
+  max-width: 1040px;
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 5.8rem);
+  font-weight: 820;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.currentHeader p:not(.sectionLabel) {
+  max-width: 840px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.7vw, 1.16rem);
+  font-weight: 650;
+  line-height: 1.95;
+}
+
+.currentHeroImage {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.currentHeroImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.currentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.currentCard {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.currentImage {
+  width: 100%;
+  aspect-ratio: 1.34;
+  height: auto;
+  object-fit: cover;
+}
+
+.currentCard div {
+  padding: 20px;
+}
+
+.currentCard span {
+  color: var(--leaf);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.currentCard h3 {
+  margin: 12px 0 0;
+  font-size: clamp(1.28rem, 2.3vw, 2rem);
+  line-height: 1.1;
+}
+
+.currentCard p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.75;
 }
 
 .statement {
@@ -443,6 +534,7 @@
 
 @media (max-width: 960px) {
   .scaleBoard,
+  .currentGrid,
   .yupiteruFeature,
   .yupiteruSteps,
   .protocol,

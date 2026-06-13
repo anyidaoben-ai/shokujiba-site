@@ -129,22 +129,61 @@ const paradiseSlides: Slide[] = [
     id: 1,
     title: "Yupiteru Wonder Route",
     description: "ユピテルから始まり、食、海、空、祝祭へ広がるParadiseのワクワク導線。",
-    image: "/images/paradise-theme-park.jpg",
+    image: "/images/shokujiba-paradise-concept.png",
     textColor: "#fff7e2",
   },
   {
     id: 2,
-    title: "Sky Palace Festival",
-    description: "天空晩餐、夜景、花火、音楽が重なる、泊まるだけで楽しいParadiseホテル。",
-    image: "/assets/paradise-earth.jpg",
+    title: "Current Paradise Stay",
+    description: "広間、寝床、温泉、ヴィラがつながる、いま見えているParadiseの滞在体験。",
+    image: "/images/hiroma.png",
     textColor: "#fff7e2",
   },
   {
     id: 3,
-    title: "Ocean Parade",
-    description: "港、船、夕陽、海上レストラン、花火をつなぎ、海そのものを祝祭にします。",
-    image: "/images/shokujibabeach.jpg",
+    title: "Ocean Wonder",
+    description: "透明な海、波、海辺の祝祭が、ユピテルから広がる水のParadiseをつくります。",
+    image: "/images/nami.PNG",
     textColor: "#fff7e2",
+  },
+];
+
+const currentParadise = [
+  {
+    title: "光の広間",
+    label: "Hiroma",
+    image: "/images/hiroma.png",
+    text: "現在のParadiseを迎える中心空間。木、灯り、花、静けさが集まる入口です。",
+  },
+  {
+    title: "寝床",
+    label: "Stay",
+    image: "/images/nedoko.png",
+    text: "一日の冒険を終え、次のワクワクへ向かうための休息場所です。",
+  },
+  {
+    title: "至高の湯",
+    label: "Onsen",
+    image: "/images/sikounoyu.png",
+    text: "水、灯り、山の景色が重なる、Paradiseの回復スポットです。",
+  },
+  {
+    title: "Luxury Villa",
+    label: "Villa",
+    image: "/images/luxuryimage.png",
+    text: "海と空を望むヴィラ。泊まること自体がParadiseの遊びになります。",
+  },
+  {
+    title: "波",
+    label: "Ocean",
+    image: "/images/nami.PNG",
+    text: "透明な海と光の波。Dragonと海辺へ飛びたくなる場所です。",
+  },
+  {
+    title: "現在の記録",
+    label: "Now",
+    image: "/images/current-paradise.JPG",
+    text: "いまあるParadiseの気配を残す一枚。構想ではなく、現在につながる景色です。",
   },
 ];
 
@@ -203,6 +242,44 @@ export default function ParadisePage() {
               <span>{item.label}</span>
             </div>
           ))}
+        </section>
+
+        <section className={styles.currentParadise} aria-labelledby="current-title">
+          <div className={styles.currentHeader}>
+            <p className={styles.sectionLabel}>Current Paradise</p>
+            <h2 id="current-title">現在のParadiseも、ここにあります。</h2>
+            <p>
+              ユピテルは未来だけの言葉ではありません。広間、寝床、温泉、海、ヴィラ。
+              いま見えているParadiseの景色が、次のワクワクへつながっています。
+            </p>
+          </div>
+          <div className={styles.currentHeroImage}>
+            <Image
+              src="/images/shokujiba-paradise-concept.png"
+              alt="現在のParadise構想図"
+              width={1536}
+              height={1024}
+              priority
+            />
+          </div>
+          <div className={styles.currentGrid}>
+            {currentParadise.map((place) => (
+              <article className={styles.currentCard} key={place.title}>
+                <Image
+                  src={place.image}
+                  alt={`${place.title}の景色`}
+                  width={720}
+                  height={520}
+                  className={styles.currentImage}
+                />
+                <div>
+                  <span>{place.label}</span>
+                  <h3>{place.title}</h3>
+                  <p>{place.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className={styles.statement}>
