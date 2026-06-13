@@ -115,11 +115,45 @@ const masterPlayModes = [
   },
 ];
 
+const masterQuickActions = [
+  "今日の食材ガチャ",
+  "Dragonと空の散歩",
+  "Goodsの名前づくり",
+  "Paradiseに新施設を追加",
+  "Masterから一言もらう",
+];
+
+const masterQuestLevels = [
+  {
+    level: "Level 1",
+    title: "今日の気分をえらぶ",
+    text: "甘い、強い、豪華、のんびり。いまの気分からShokujibaの一歩目を決めます。",
+  },
+  {
+    level: "Level 2",
+    title: "食材とGoodsを組み合わせる",
+    text: "選んだ食材に合うGoodsを考え、名前、色、効果をMasterと作ります。",
+  },
+  {
+    level: "Level 3",
+    title: "Paradiseの一日をつくる",
+    text: "朝、昼、夜の行き先を決めて、Dragonと一緒に楽園の旅程を完成させます。",
+  },
+  {
+    level: "Level Max",
+    title: "新しい世界を生み出す",
+    text: "Shokujibaにまだない島、施設、キャラクター、伝説をMasterと追加します。",
+  },
+];
+
 export default function Page() {
   return (
     <>
       <Header />
       <main className={styles.main}>
+        <a href="#play-with-master" className={styles.masterFloat}>
+          Masterとあそぶ
+        </a>
         <section className={styles.hero} aria-labelledby="page-title">
           <Image
             src="/images/paradise.PNG"
@@ -259,12 +293,37 @@ export default function Page() {
               Dragonと一緒にParadiseを広げていきます。
             </span>
           </div>
+          <div className={styles.masterConsole} aria-label="Masterとすぐ遊ぶ">
+            <div>
+              <p>Master Play Console</p>
+              <h3>ここからいつでも開始</h3>
+            </div>
+            <div className={styles.masterQuickGrid}>
+              {masterQuickActions.map((action) => (
+                <a
+                  href={`mailto:shokujibamaster@gmail.com?subject=${encodeURIComponent(action)}`}
+                  key={action}
+                >
+                  {action}
+                </a>
+              ))}
+            </div>
+          </div>
           <div className={styles.masterPlayGrid}>
             {masterPlayModes.map((mode) => (
               <article className={styles.masterPlayCard} key={mode.title}>
                 <h3>{mode.title}</h3>
                 <p>{mode.text}</p>
                 <strong>{mode.command}</strong>
+              </article>
+            ))}
+          </div>
+          <div className={styles.masterQuestGrid}>
+            {masterQuestLevels.map((quest) => (
+              <article className={styles.masterQuestCard} key={quest.level}>
+                <span>{quest.level}</span>
+                <h3>{quest.title}</h3>
+                <p>{quest.text}</p>
               </article>
             ))}
           </div>
