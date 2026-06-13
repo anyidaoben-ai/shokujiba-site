@@ -60,6 +60,11 @@ const wonderMoments = [
     label: "Hidden Orchard",
     text: "Shokujibaらしい果物と野菜の楽園。採る、香る、食べる、贈るまでを、静かな冒険として体験します。",
   },
+  {
+    title: "ユピテル",
+    label: "Yupiteru",
+    text: "Paradiseにある、MasterとDragonが新しい遊びを見つけるワクワクする場所。次の発見がここから始まります。",
+  },
 ];
 
 const zones = [
@@ -111,6 +116,12 @@ const zones = [
     description:
       "森、滝、ヴィラ、星空、野生の気配を安全に体験する自然区域。静かな冒険として北海道の自然を味わえます。",
   },
+  {
+    title: "Yupiteru",
+    label: "ユピテル",
+    description:
+      "Paradiseの中にあるワクワクする場所。MasterとDragonと一緒に、まだ名前のない遊び、発見、Goods、次の楽園体験を生み出します。",
+  },
 ];
 
 const paradiseSlides: Slide[] = [
@@ -157,7 +168,7 @@ export default function ParadisePage() {
             <p className={styles.lead}>
               Shokujiba Paradiseは、北海道全域を品位ある迎賓地として整えながら、
               最上位の賓客にも胸が高鳴る体験を届ける構想です。
-              御休息、御遊覧、御食事、御移動、祝祭、発見を一体で設計します。
+              御休息、御遊覧、御食事、御移動、祝祭、発見、そしてユピテルのワクワクを一体で設計します。
             </p>
             <div className={styles.actions}>
               <a href="#protocol" className={styles.primary}>
