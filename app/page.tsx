@@ -61,13 +61,39 @@ const principles = [
   "楽園欲を、現実の体験へ。",
 ];
 
-const characters = [
+const dragonPowers = [
+  "食材の香りを追って空を飛ぶ",
+  "Goodsに金色の守りを宿す",
+  "Paradiseの次の扉を開く",
+];
+
+const dragonRoutes = [
+  { href: "/Dispense", label: "食の森へ" },
+  { href: "/Goods", label: "宝物庫へ" },
+  { href: "/Paradise", label: "楽園の空へ" },
+];
+
+const dragonCharacter = {
+  name: "Shokujiba Dragon",
+  role: "楽園を守る案内役",
+  image: "/images/dragonai.png",
+  description:
+    "食事場の空を巡り、訪れる人を食、Goods、Paradiseの次の場所へ導く新しいキャラクターです。",
+  catchphrase: "Master、今日はどこへ飛ぶ？",
+};
+
+const dragonMissions = [
   {
-    name: "Shokujiba Dragon",
-    role: "楽園を守る案内役",
-    image: "/images/dragonai.png",
-    description:
-      "食事場の空を巡り、訪れる人を食、Goods、Paradiseの次の場所へ導く新しいキャラクターです。",
+    title: "食を見つける",
+    text: "果物、魚、肉、飲料の気配を読み取り、Shokujibaの食の入口へ案内します。",
+  },
+  {
+    title: "宝を守る",
+    text: "Goodsの輝きを見張り、持つ人の気分が上がる品を選びます。",
+  },
+  {
+    title: "楽園へ運ぶ",
+    text: "海、温泉、ホテル、遊び場を空から結び、Paradiseの体験へ連れていきます。",
   },
 ];
 
@@ -93,6 +119,20 @@ export default function Page() {
               食、Goods、楽園構想、宿泊案内、公式連絡先をひとつにまとめた、
               Shokujibaの入口です。
             </p>
+            <div className={styles.heroDragon} aria-label="Shokujiba Dragon">
+              <Image
+                src={dragonCharacter.image}
+                alt={`${dragonCharacter.name}の姿`}
+                width={150}
+                height={150}
+                className={styles.heroDragonImage}
+              />
+              <div>
+                <span>{dragonCharacter.role}</span>
+                <strong>{dragonCharacter.name}</strong>
+                <p>{dragonCharacter.catchphrase}</p>
+              </div>
+            </div>
             <div className={styles.heroActions} aria-label="主要リンク">
               <Link href="/Paradise" className={styles.primaryAction}>
                 Paradiseを見る
@@ -145,22 +185,41 @@ export default function Page() {
             <h2 id="character-title">Shokujibaに新しい案内役が登場</h2>
           </div>
           <div className={styles.characterGrid}>
-            {characters.map((character) => (
-              <article className={styles.characterCard} key={character.name}>
-                <div className={styles.characterImageFrame}>
-                  <Image
-                    src={character.image}
-                    alt={`${character.name}の姿`}
-                    width={520}
-                    height={520}
-                    className={styles.characterImage}
-                  />
+            <article className={styles.characterCard}>
+              <div className={styles.characterImageFrame}>
+                <Image
+                  src={dragonCharacter.image}
+                  alt={`${dragonCharacter.name}の姿`}
+                  width={520}
+                  height={520}
+                  className={styles.characterImage}
+                />
+              </div>
+              <div className={styles.characterText}>
+                <span>{dragonCharacter.role}</span>
+                <h3>{dragonCharacter.name}</h3>
+                <p>{dragonCharacter.description}</p>
+                <blockquote>{dragonCharacter.catchphrase}</blockquote>
+                <ul className={styles.dragonPowerList} aria-label="ドラゴンの力">
+                  {dragonPowers.map((power) => (
+                    <li key={power}>{power}</li>
+                  ))}
+                </ul>
+                <div className={styles.dragonRouteLinks} aria-label="ドラゴンと行く場所">
+                  {dragonRoutes.map((route) => (
+                    <Link href={route.href} key={route.href}>
+                      {route.label}
+                    </Link>
+                  ))}
                 </div>
-                <div className={styles.characterText}>
-                  <span>{character.role}</span>
-                  <h3>{character.name}</h3>
-                  <p>{character.description}</p>
-                </div>
+              </div>
+            </article>
+          </div>
+          <div className={styles.dragonMissionGrid}>
+            {dragonMissions.map((mission) => (
+              <article className={styles.dragonMissionCard} key={mission.title}>
+                <h3>{mission.title}</h3>
+                <p>{mission.text}</p>
               </article>
             ))}
           </div>

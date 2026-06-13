@@ -81,6 +81,52 @@
   line-height: 1.95;
 }
 
+.heroDragon {
+  width: min(100%, 520px);
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+  padding: 12px;
+  border: 1px solid rgba(255, 250, 240, 0.28);
+  border-radius: 8px;
+  background: rgba(10, 8, 6, 0.42);
+  backdrop-filter: blur(10px);
+}
+
+.heroDragonImage {
+  width: 92px;
+  height: 92px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: rgba(246, 191, 38, 0.14);
+}
+
+.heroDragon span {
+  display: block;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroDragon strong {
+  display: block;
+  margin-top: 4px;
+  color: #fffaf0;
+  font-size: 1.12rem;
+}
+
+.heroDragon p {
+  margin: 6px 0 0;
+  color: rgba(255, 250, 240, 0.78);
+  font-size: 0.94rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
 .heroActions {
   display: flex;
   flex-wrap: wrap;
@@ -286,6 +332,82 @@
   line-height: 1.9;
 }
 
+.characterText blockquote {
+  margin: 24px 0 0;
+  padding: 18px 20px;
+  border-left: 5px solid var(--gold);
+  background: rgba(246, 191, 38, 0.12);
+  color: var(--ink);
+  font-size: clamp(1.18rem, 2vw, 1.5rem);
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+.dragonPowerList {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dragonPowerList li {
+  padding: 12px 14px;
+  border: 1px solid rgba(24, 95, 69, 0.18);
+  border-radius: 8px;
+  background: rgba(24, 95, 69, 0.08);
+  color: var(--ink);
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.dragonRouteLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.dragonRouteLinks a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 18px;
+  background: var(--green);
+  color: #fffaf0;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.dragonMissionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.dragonMissionCard {
+  min-height: 160px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.dragonMissionCard h3 {
+  margin: 0;
+  font-size: 1.28rem;
+}
+
+.dragonMissionCard p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.75;
+}
+
 .infoSection {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr);
@@ -420,6 +542,7 @@
   .worldGrid,
   .principleList,
   .characterCard,
+  .dragonMissionGrid,
   .infoSection,
   .guideGrid {
     grid-template-columns: 1fr;
@@ -451,6 +574,15 @@
   .heroActions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .heroDragon {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .heroDragonImage {
+    width: 72px;
+    height: 72px;
   }
 
   .newsItem {
