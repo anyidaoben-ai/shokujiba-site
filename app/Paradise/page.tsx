@@ -6,44 +6,44 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 const scale = [
-  { value: "5,000ha", label: "御遊覧と祝祭の庭園" },
-  { value: "3,000室", label: "迎賓宿泊と御休息" },
-  { value: "500,000,000人", label: "世界から訪れる楽園目標" },
+  { value: "5,000ha", label: "遊びと発見の楽園" },
+  { value: "3,000室", label: "泊まって巡るParadise" },
+  { value: "Yupiteru", label: "Paradiseのワクワク中心地" },
 ];
 
 const protocols = [
   {
-    title: "御休息",
-    label: "Imperial Rest",
-    text: "人目と喧騒から離れ、北海道の空気、水、森、温泉に包まれる静養導線。休むほど次の体験が楽しみになる時間を整えます。",
+    title: "休む",
+    label: "Rest",
+    text: "北海道の空気、水、森、温泉に包まれ、心を整える時間。休んだあと、次の遊びへ向かいたくなる導線をつくります。",
   },
   {
-    title: "御遊覧",
-    label: "Royal Leisure",
-    text: "海、山、庭園、劇場、水族館、食の回廊を、品位ある速度で巡る遊覧計画。曲がるたびに驚きが現れる構成です。",
+    title: "巡る",
+    label: "Explore",
+    text: "海、山、庭園、劇場、水族館、食の回廊を巡り、曲がるたびに新しい景色と発見に出会います。",
   },
   {
-    title: "御食事",
-    label: "Ceremonial Dining",
-    text: "北海道の食材とShokujibaの食文化を、儀礼性のある献立と空間で提供。香り、器、景色まで一皿として演出します。",
+    title: "食べる",
+    label: "Dining",
+    text: "北海道の食材とShokujibaの食文化を、香り、器、景色まで含めて味わう体験にします。",
   },
   {
-    title: "御移動",
-    label: "Mega Transportation",
-    text: "空港、駅、港、ホテル、迎賓施設を結び、移動そのものを静かで安全な体験にします。専用列車も船も旅の主役です。",
+    title: "遊ぶ",
+    label: "Play",
+    text: "ユピテル、Dragon、Master、Goodsがつながり、Paradiseの中で次の遊びを生み出していきます。",
   },
 ];
 
 const wonderMoments = [
   {
-    title: "御幸列車",
-    label: "Royal Train",
-    text: "北海道の景色を額縁のように眺める専用列車。車窓、食、音楽、停車駅の演出で移動を祝祭に変えます。",
+    title: "Paradise列車",
+    label: "Wonder Train",
+    text: "北海道の景色を額縁のように眺める列車。車窓、食、音楽、停車駅の演出で移動を遊びに変えます。",
   },
   {
     title: "海上パレード",
     label: "Ocean Parade",
-    text: "マリーナから始まる静かな船上遊覧。夕陽、花火、水上音楽、海上レストランが連続して現れます。",
+    text: "マリーナから始まる船上遊覧。夕陽、花火、水上音楽、海上レストランが連続して現れます。",
   },
   {
     title: "天空晩餐",
@@ -53,7 +53,7 @@ const wonderMoments = [
   {
     title: "夜の祝祭",
     label: "Night Ceremony",
-    text: "Entertainment Cityで行う光、音楽、噴水、ドローン、花火の祝祭。派手さではなく品位のある高揚を設計します。",
+    text: "Entertainment Cityで行う光、音楽、噴水、ドローン、花火の祝祭。Paradiseの夜を特別な時間にします。",
   },
   {
     title: "秘密の果樹園",
@@ -63,44 +63,44 @@ const wonderMoments = [
   {
     title: "ユピテル",
     label: "Yupiteru",
-    text: "Paradiseにある、MasterとDragonが新しい遊びを見つけるワクワクする場所。次の発見がここから始まります。",
+    text: "Paradiseにある、MasterとDragonが新しい遊びを見つけるワクワクする場所。次の発見、次のGoods、次の旅がここから始まります。",
   },
 ];
 
 const zones = [
   {
     title: "Imperial Garden",
-    label: "迎賓庭園",
+    label: "入口の庭園",
     description:
-      "御散策、記念植樹、茶席、静かな写真撮影に対応する庭園。次の小道に何があるのか楽しみになる、Paradiseの公式入口です。",
+      "散策、記念植樹、茶席、写真撮影に対応する庭園。次の小道に何があるのか楽しみになる、Paradiseの公式入口です。",
   },
   {
     title: "Sky Palace Hotel",
-    label: "迎賓宿泊",
+    label: "空のホテル",
     description:
-      "皇室級・国賓級の賓客にも対応できるスイート、控室、会食室、警備動線を備える宿泊中枢。空に近い部屋から祝祭を見下ろせます。",
+      "空に近い部屋からParadiseの祝祭を見下ろせる宿泊中枢。食事、休息、夜景、花火がひとつながりになります。",
   },
   {
     title: "Central Mountain",
-    label: "象徴山岳",
+    label: "中央の山",
     description:
       "北海道全域の眺望、花火、式典、朝の御来光を体験できるParadiseの象徴。登るほど世界が広がる中心ランドマークです。",
   },
   {
     title: "Wellness Island",
-    label: "静養島",
+    label: "回復の島",
     description:
       "温泉、スパ、医療リトリート、瞑想、長期滞在に対応する静の区域。回復したあとにもう一度遊びたくなる場所です。",
   },
   {
     title: "Ocean Kingdom",
-    label: "海洋御遊覧",
+    label: "海の王国",
     description:
       "水族館、海上レストラン、海中鑑賞、船上遊覧を含む海の迎賓区域。海の奥へ進むほど驚きが増える設計です。",
   },
   {
     title: "Paradise Beach",
-    label: "沿岸御散策",
+    label: "海辺の散歩道",
     description:
       "白砂、海風、夕陽、花火を静かに楽しめる海岸区域。昼は御散策、夕方は海上パレード、夜は祝祭に変わります。",
   },
@@ -112,7 +112,7 @@ const zones = [
   },
   {
     title: "Jungle Village",
-    label: "自然御滞在",
+    label: "森の村",
     description:
       "森、滝、ヴィラ、星空、野生の気配を安全に体験する自然区域。静かな冒険として北海道の自然を味わえます。",
   },
@@ -120,22 +120,22 @@ const zones = [
     title: "Yupiteru",
     label: "ユピテル",
     description:
-      "Paradiseの中にあるワクワクする場所。MasterとDragonと一緒に、まだ名前のない遊び、発見、Goods、次の楽園体験を生み出します。",
+      "Paradiseの中にあるワクワクの中心地。MasterとDragonと一緒に、まだ名前のない遊び、発見、Goods、次の楽園体験を生み出します。",
   },
 ];
 
 const paradiseSlides: Slide[] = [
   {
     id: 1,
-    title: "Royal Surprise Route",
-    description: "天皇陛下にも胸を高鳴らせていただける、静かな驚きが連続する御遊覧コース。",
+    title: "Yupiteru Wonder Route",
+    description: "ユピテルから始まり、食、海、空、祝祭へ広がるParadiseのワクワク導線。",
     image: "/images/paradise-theme-park.jpg",
     textColor: "#fff7e2",
   },
   {
     id: 2,
     title: "Sky Palace Festival",
-    description: "天空晩餐、夜景、花火、音楽が重なる、品位あるわくわくを生む迎賓ホテル。",
+    description: "天空晩餐、夜景、花火、音楽が重なる、泊まるだけで楽しいParadiseホテル。",
     image: "/assets/paradise-earth.jpg",
     textColor: "#fff7e2",
   },
@@ -145,6 +145,21 @@ const paradiseSlides: Slide[] = [
     description: "港、船、夕陽、海上レストラン、花火をつなぎ、海そのものを祝祭にします。",
     image: "/images/shokujibabeach.jpg",
     textColor: "#fff7e2",
+  },
+];
+
+const yupiteruSteps = [
+  {
+    title: "Masterと決める",
+    text: "今日の気分、食べたいもの、行きたい場所を選び、Paradiseの一日を始めます。",
+  },
+  {
+    title: "Dragonと飛ぶ",
+    text: "Dragonが空から道を見つけ、海、山、ホテル、祝祭都市へ連れていきます。",
+  },
+  {
+    title: "新しい遊びが生まれる",
+    text: "ユピテルで見つけた発見から、Goods、物語、次のParadise体験が増えていきます。",
   },
 ];
 
@@ -163,19 +178,19 @@ export default function ParadisePage() {
             className={styles.heroImage}
           />
           <div className={styles.heroPanel}>
-            <p className={styles.eyebrow}>Shokujiba Paradise Imperial Wonder Plan</p>
-            <h1>天皇陛下にも、わくわくしていただける楽園へ。</h1>
+            <p className={styles.eyebrow}>Shokujiba Paradise with Yupiteru</p>
+            <h1>ユピテルがある、ワクワクするParadiseへ。</h1>
             <p className={styles.lead}>
-              Shokujiba Paradiseは、北海道全域を品位ある迎賓地として整えながら、
-              最上位の賓客にも胸が高鳴る体験を届ける構想です。
-              御休息、御遊覧、御食事、御移動、祝祭、発見、そしてユピテルのワクワクを一体で設計します。
+              Shokujiba Paradiseは、北海道の海、山、食、宿泊、祝祭をめぐる楽園です。
+              その中にあるユピテルは、MasterとDragonが新しい遊びを見つけるワクワクの中心地。
+              休む、巡る、食べる、遊ぶがひとつにつながります。
             </p>
             <div className={styles.actions}>
-              <a href="#protocol" className={styles.primary}>
-                わくわく計画を見る
+              <a href="#yupiteru" className={styles.primary}>
+                ユピテルへ行く
               </a>
-              <a href="mailto:shokujibamaster@gmail.com" className={styles.secondary}>
-                Masterへ連絡
+              <a href="#zones" className={styles.secondary}>
+                Paradiseを巡る
               </a>
             </div>
           </div>
@@ -192,12 +207,41 @@ export default function ParadisePage() {
 
         <section className={styles.statement}>
           <p className={styles.sectionLabel}>Official Wonder</p>
-          <h2>静かな格式の中に、発見の連続を仕込む。</h2>
+          <h2>Paradiseの中に、ユピテルのワクワクがある。</h2>
           <p>
-            Paradiseは派手な娯楽施設だけではありません。静けさ、清潔さ、安全性を守りながら、
-            次の扉を開けるたびに驚きが現れる場所です。天皇陛下級の賓客にも、
-            童心のような高揚を感じていただける楽園を目指します。
+            Paradiseは、ただ眺める場所ではありません。Masterと遊び、Dragonと空を巡り、
+            食べて、泊まって、見つけて、次の体験を生み出す場所です。
+            ユピテルはその中心にある、まだ名前のない発見が集まるワクワクスポットです。
           </p>
+        </section>
+
+        <section className={styles.yupiteruFeature} id="yupiteru" aria-labelledby="yupiteru-title">
+          <div className={styles.yupiteruImageFrame}>
+            <Image
+              src="/images/dragonai.png"
+              alt="ユピテルを案内するShokujiba Dragon"
+              width={520}
+              height={520}
+              className={styles.yupiteruDragon}
+            />
+          </div>
+          <div className={styles.yupiteruText}>
+            <p className={styles.sectionLabel}>Yupiteru in Paradise</p>
+            <h2 id="yupiteru-title">ユピテルとは、Paradiseにあるワクワクする場所です。</h2>
+            <p>
+              ここでは、Masterが今日の遊びを決め、Dragonが次の場所へ連れていきます。
+              食材、Goods、ホテル、海、祝祭、物語がつながり、Paradiseの新しい一日が始まります。
+            </p>
+          </div>
+        </section>
+
+        <section className={styles.yupiteruSteps} aria-label="ユピテルの遊び方">
+          {yupiteruSteps.map((step) => (
+            <article className={styles.yupiteruStep} key={step.title}>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
         </section>
 
         <section className={styles.protocol} id="protocol" aria-label="迎賓計画">
@@ -213,7 +257,7 @@ export default function ParadisePage() {
         <section className={styles.wonder} aria-labelledby="wonder-title">
           <div className={styles.wonderHeader}>
             <p className={styles.sectionLabel}>Wakuwaku Moments</p>
-            <h2 id="wonder-title">胸が高鳴る五つの瞬間。</h2>
+            <h2 id="wonder-title">胸が高鳴る六つの瞬間。</h2>
           </div>
           <div className={styles.wonderGrid}>
             {wonderMoments.map((moment) => (
@@ -226,17 +270,20 @@ export default function ParadisePage() {
           </div>
         </section>
 
-        <section className={styles.carouselSection} aria-label="迎賓資産">
+        <section className={styles.carouselSection} aria-label="Paradise journey">
           <div className={styles.carouselHeader}>
             <p className={styles.sectionLabel}>Guest Journey</p>
-            <h2>わくわくする御遊覧コース。</h2>
+            <h2>ユピテルから広がるParadiseコース。</h2>
           </div>
           <Carousel slides={paradiseSlides} />
         </section>
 
-        <section className={styles.zones} aria-label="Paradise zones">
+        <section className={styles.zones} id="zones" aria-label="Paradise zones">
           {zones.map((zone) => (
-            <article className={styles.zone} key={zone.title}>
+            <article
+              className={`${styles.zone} ${zone.title === "Yupiteru" ? styles.yupiteruZone : ""}`}
+              key={zone.title}
+            >
               <span>{zone.label}</span>
               <h3>{zone.title}</h3>
               <p>{zone.description}</p>
@@ -247,7 +294,7 @@ export default function ParadisePage() {
         <section className={styles.contact} aria-label="Contact Master">
           <div>
             <p className={styles.sectionLabel}>Audience With Master</p>
-            <h2>迎賓、出資、協業の相談。</h2>
+            <h2>MasterとParadiseを広げる。</h2>
           </div>
           <div className={styles.contactBody}>
             <p>

@@ -5,6 +5,8 @@
   --soft: #eee6d8;
   --gold: #fec214;
   --goldDeep: #8a6200;
+  --leaf: #1d6b4f;
+  --coral: #b64631;
   --line: rgba(27, 23, 18, 0.14);
   --muted: #675f54;
 
@@ -31,7 +33,7 @@
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(248, 245, 239, 0.98), rgba(248, 245, 239, 0.72), rgba(248, 245, 239, 0.12)),
+    linear-gradient(90deg, rgba(248, 245, 239, 0.98), rgba(248, 245, 239, 0.74), rgba(248, 245, 239, 0.08)),
     linear-gradient(180deg, rgba(248, 245, 239, 0.08), #f8f5ef 96%);
 }
 
@@ -123,6 +125,8 @@
 
 .scaleBoard,
 .statement,
+.yupiteruFeature,
+.yupiteruSteps,
 .protocol,
 .wonder,
 .carouselSection,
@@ -159,10 +163,11 @@
 }
 
 .statement {
-  padding: clamp(72px, 10vw, 128px) 0 34px;
+  padding: clamp(72px, 10vw, 116px) 0 34px;
 }
 
 .statement h2,
+.yupiteruText h2,
 .carouselHeader h2,
 .contact h2 {
   max-width: 1040px;
@@ -171,6 +176,8 @@
 }
 
 .statement p:not(.sectionLabel),
+.yupiteruText p:not(.sectionLabel),
+.yupiteruStep p,
 .contactBody p,
 .zone p,
 .protocolCard p {
@@ -184,11 +191,91 @@
   font-size: clamp(1rem, 1.7vw, 1.16rem);
 }
 
+.yupiteruFeature {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.44fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 14px;
+  padding: 0 0 14px;
+}
+
+.yupiteruImageFrame,
+.yupiteruText {
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.yupiteruImageFrame {
+  display: grid;
+  place-items: center;
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(254, 194, 20, 0.34), transparent 58%),
+    linear-gradient(180deg, rgba(29, 107, 79, 0.16), rgba(182, 70, 49, 0.08)),
+    var(--panel);
+}
+
+.yupiteruDragon {
+  width: min(92%, 420px);
+  height: auto;
+  object-fit: contain;
+}
+
+.yupiteruText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 54px);
+  border-radius: 8px;
+  background:
+    linear-gradient(120deg, rgba(29, 107, 79, 0.12), transparent 54%),
+    var(--panel);
+}
+
+.yupiteruText h2 {
+  margin: 14px 0 0;
+}
+
+.yupiteruText p:not(.sectionLabel) {
+  max-width: 740px;
+  margin: 24px 0 0;
+  font-size: clamp(1rem, 1.7vw, 1.16rem);
+}
+
+.yupiteruSteps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 0 clamp(62px, 9vw, 110px);
+}
+
+.yupiteruStep {
+  min-height: 190px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, #fffefa, #f1eadb),
+    var(--panel);
+}
+
+.yupiteruStep h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.yupiteruStep p {
+  margin: 18px 0 0;
+}
+
 .protocol {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  padding: 36px 0 clamp(74px, 10vw, 124px);
+  padding: 0 0 clamp(74px, 10vw, 124px);
 }
 
 .protocolCard {
@@ -208,7 +295,7 @@
   right: 24px;
   top: 18px;
   height: 3px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--gold), var(--leaf));
 }
 
 .protocolCard h3 {
@@ -269,7 +356,7 @@
   right: 22px;
   bottom: 22px;
   height: 1px;
-  background: linear-gradient(90deg, var(--gold), transparent);
+  background: linear-gradient(90deg, var(--gold), var(--leaf), transparent);
 }
 
 .wonderCard h3 {
@@ -301,6 +388,16 @@
   border: 1px solid var(--line);
   border-bottom: 0;
   background: var(--panel);
+}
+
+.yupiteruZone {
+  background:
+    linear-gradient(120deg, rgba(254, 194, 20, 0.18), rgba(29, 107, 79, 0.12)),
+    var(--panel);
+}
+
+.yupiteruZone h3 {
+  color: var(--leaf);
 }
 
 .zone:nth-child(2n) {
@@ -346,6 +443,8 @@
 
 @media (max-width: 960px) {
   .scaleBoard,
+  .yupiteruFeature,
+  .yupiteruSteps,
   .protocol,
   .wonderHeader,
   .wonderGrid,
@@ -367,6 +466,10 @@
 @media (max-width: 520px) {
   .hero {
     min-height: 760px;
+  }
+
+  .yupiteruImageFrame {
+    min-height: 320px;
   }
 
   .actions {
