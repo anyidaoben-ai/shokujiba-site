@@ -161,6 +161,7 @@
 .worldSection,
 .flowSection,
 .characterSection,
+.masterPlaySection,
 .infoSection,
 .guideSection {
   width: min(1180px, calc(100% - 40px));
@@ -408,6 +409,112 @@
   line-height: 1.75;
 }
 
+.masterPlaySection {
+  display: grid;
+  gap: 16px;
+  padding: clamp(56px, 8vw, 94px) 0 0;
+}
+
+.masterPlayIntro {
+  display: grid;
+  gap: 14px;
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(120deg, rgba(141, 47, 40, 0.12), transparent 52%),
+    var(--night);
+  color: #fffaf0;
+}
+
+.masterPlayIntro p {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.masterPlayIntro h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(2.1rem, 5.4vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.masterPlayIntro span {
+  max-width: 760px;
+  color: rgba(255, 250, 240, 0.78);
+  font-size: clamp(1rem, 1.5vw, 1.14rem);
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.masterPlayGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.masterPlayCard {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.masterPlayCard h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+}
+
+.masterPlayCard p {
+  margin: 20px 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.masterPlayCard strong {
+  color: var(--red);
+  font-size: 0.95rem;
+}
+
+.masterDialogue {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(246, 191, 38, 0.16), transparent),
+    var(--panel);
+}
+
+.masterIcon {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid rgba(141, 47, 40, 0.22);
+}
+
+.masterDialogue blockquote {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.08rem, 2vw, 1.5rem);
+  font-weight: 900;
+  line-height: 1.6;
+}
+
 .infoSection {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr);
@@ -543,6 +650,7 @@
   .principleList,
   .characterCard,
   .dragonMissionGrid,
+  .masterPlayGrid,
   .infoSection,
   .guideGrid {
     grid-template-columns: 1fr;
@@ -558,6 +666,7 @@
   .worldSection,
   .flowSection,
   .characterSection,
+  .masterPlaySection,
   .infoSection,
   .guideSection {
     width: min(100% - 28px, 1180px);
@@ -583,6 +692,10 @@
   .heroDragonImage {
     width: 72px;
     height: 72px;
+  }
+
+  .masterDialogue {
+    grid-template-columns: 1fr;
   }
 
   .newsItem {

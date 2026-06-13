@@ -97,6 +97,24 @@ const dragonMissions = [
   },
 ];
 
+const masterPlayModes = [
+  {
+    title: "食材をえらぶ",
+    text: "Masterと今日の食材を決めます。果物、肉、魚、飲み物から気分に合う一品を探します。",
+    command: "今日の食材を決める",
+  },
+  {
+    title: "Goodsをつくる",
+    text: "Masterと新しいお守り、服、財布、装飾品の名前や効果を考えます。",
+    command: "新しいGoodsをつくる",
+  },
+  {
+    title: "楽園を広げる",
+    text: "MasterとParadiseに温泉、ホテル、遊び場、レストランを増やします。",
+    command: "Paradiseを広げる",
+  },
+];
+
 export default function Page() {
   return (
     <>
@@ -139,6 +157,9 @@ export default function Page() {
               </Link>
               <Link href="/TechnologyLand-AI" className={styles.secondaryAction}>
                 会社案内へ
+              </Link>
+              <Link href="#play-with-master" className={styles.secondaryAction}>
+                Masterとあそぶ
               </Link>
             </div>
           </div>
@@ -222,6 +243,42 @@ export default function Page() {
                 <p>{mission.text}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section
+          className={styles.masterPlaySection}
+          id="play-with-master"
+          aria-labelledby="master-play-title"
+        >
+          <div className={styles.masterPlayIntro}>
+            <p>Play with Master</p>
+            <h2 id="master-play-title">MasterとShokujibaであそぶ</h2>
+            <span>
+              MasterはShokujibaの中心にいる存在です。食材を選び、Goodsを考え、
+              Dragonと一緒にParadiseを広げていきます。
+            </span>
+          </div>
+          <div className={styles.masterPlayGrid}>
+            {masterPlayModes.map((mode) => (
+              <article className={styles.masterPlayCard} key={mode.title}>
+                <h3>{mode.title}</h3>
+                <p>{mode.text}</p>
+                <strong>{mode.command}</strong>
+              </article>
+            ))}
+          </div>
+          <div className={styles.masterDialogue} aria-label="Masterからの言葉">
+            <Image
+              src="/images/shokujibaicon.jpeg"
+              alt="Masterの印"
+              width={96}
+              height={96}
+              className={styles.masterIcon}
+            />
+            <blockquote>
+              「今日はなにを生み出そう。食、宝、楽園。Shokujibaは、あそぶほど広がる。」
+            </blockquote>
           </div>
         </section>
 
