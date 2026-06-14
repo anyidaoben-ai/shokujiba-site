@@ -134,6 +134,7 @@
 .currentParadise,
 .marketSection,
 .statement,
+.horizonSection,
 .wishPlaces,
 .yupiteruFeature,
 .yupiteruSteps,
@@ -368,6 +369,75 @@
   max-width: 860px;
   margin: 24px 0 0;
   font-size: clamp(1rem, 1.7vw, 1.16rem);
+}
+
+.horizonSection {
+  padding: 0 0 clamp(58px, 8vw, 96px);
+}
+
+.horizonHeader {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(120deg, rgba(29, 107, 79, 0.12), rgba(254, 194, 20, 0.12)),
+    var(--panel);
+}
+
+.horizonHeader h2 {
+  max-width: 1040px;
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 5.8rem);
+  font-weight: 820;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.horizonHeader p:not(.sectionLabel) {
+  max-width: 880px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.7vw, 1.16rem);
+  font-weight: 650;
+  line-height: 1.95;
+}
+
+.horizonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.horizonCard {
+  min-height: 260px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.horizonCard span {
+  color: var(--coral);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.horizonCard h3 {
+  margin: 58px 0 0;
+  font-size: clamp(1.28rem, 2.3vw, 2rem);
+  line-height: 1.1;
+}
+
+.horizonCard p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.75;
 }
 
 .wishPlaces {
@@ -701,6 +771,7 @@
   .scaleBoard,
   .currentGrid,
   .marketGrid,
+  .horizonGrid,
   .wishGrid,
   .yupiteruFeature,
   .yupiteruSteps,

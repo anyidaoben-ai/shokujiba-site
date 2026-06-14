@@ -6,9 +6,9 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 const scale = [
-  { value: "Energy", label: "エネルギーが手に入る" },
-  { value: "Shokuzai", label: "UpiteLと並ぶ人気" },
-  { value: "UpiteL", label: "Shokuzaiと並ぶ人気" },
+  { value: "Now", label: "いま楽しめる場所がある" },
+  { value: "More", label: "これから場所が増えていく" },
+  { value: "All", label: "欲望も夢も願いも受け止める" },
 ];
 
 const protocols = [
@@ -78,6 +78,29 @@ const wishPlaces = [
     title: "神、恋、権力へつながる",
     label: "God / Love / Authority",
     text: "神の気配、恋の出会い、人を動かす力。すべてがParadiseの中で物語と場所になります。",
+  },
+];
+
+const paradiseHorizons = [
+  {
+    title: "食と買い物の領域",
+    label: "Food / Goods",
+    text: "Shokuzai、Goods、商人、料理人が集まり、食べたいもの、欲しいもの、持ち帰りたいものが増えていきます。",
+  },
+  {
+    title: "交流と物語の領域",
+    label: "Community / Story",
+    text: "UpiteLのように、宇宙人、神、人間、旅人が出会い、会話から新しい物語や遊びが生まれます。",
+  },
+  {
+    title: "自然と冒険の領域",
+    label: "Nature / Adventure",
+    text: "Jungle Village、Paradise Beach、Marina Bay、Central Mountainから、森、海、山、空の冒険が広がります。",
+  },
+  {
+    title: "力と願いの領域",
+    label: "Power / Wish",
+    text: "運、お金、恋、神、権力、夢。目に見えない願いも、Paradiseでは場所や体験として形になります。",
   },
 ];
 
@@ -244,7 +267,8 @@ export default function ParadisePage() {
             <h1>すべてが手に入るParadiseへ。</h1>
             <p className={styles.lead}>
               Shokujiba Paradiseは、エネルギー、運、お金、力、欲望、夢、神、恋、権力、
-              すべてが手に入る楽園です。北海道の海、山、食、宿泊、祝祭、買い物、交流をめぐり、
+              すべてが手に入る楽園です。今ある場所だけで終わらず、欲望や夢や願いに合わせて
+              これからも広がっていきます。北海道の海、山、食、宿泊、祝祭、買い物、交流をめぐり、
               ここではShokujibaのShokuzaiやGoodsを買うことができます。ShokuzaiとUpiteLは
               Paradiseの中でも同じくらい人気を誇り、Paradiseの中には
               Shokujiba Jungle Village、Shokujiba Paradise Beach、UpiteL、Shokujiba Marina Bay、
@@ -352,7 +376,28 @@ export default function ParadisePage() {
             人気のShokuzaiを買い、人気のUpiteLで話し、Goodsを手に入れ、食べて、泊まって、見つけて、
             次の体験を生み出す場所です。エネルギー、運、お金、力、欲望、夢、神、恋、権力。
             それらを場所、買い物、交流、食、景色、物語として手に入れていきます。
+            いまある5つの場所は入口であり、Paradiseはもっと広くなっていきます。
           </p>
+        </section>
+
+        <section className={styles.horizonSection} aria-labelledby="horizon-title">
+          <div className={styles.horizonHeader}>
+            <p className={styles.sectionLabel}>Wide Paradise</p>
+            <h2 id="horizon-title">Paradiseは、もっと広い。</h2>
+            <p>
+              いま見えている場所は、Paradiseの始まりです。Shokuzai、Goods、UpiteL、森、海、山の先に、
+              まだ名前のない場所、叶っていない願い、これから生まれる楽しさが広がっています。
+            </p>
+          </div>
+          <div className={styles.horizonGrid}>
+            {paradiseHorizons.map((horizon) => (
+              <article className={styles.horizonCard} key={horizon.title}>
+                <span>{horizon.label}</span>
+                <h3>{horizon.title}</h3>
+                <p>{horizon.text}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className={styles.wishPlaces} aria-labelledby="wish-title">
