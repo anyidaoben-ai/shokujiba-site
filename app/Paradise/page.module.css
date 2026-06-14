@@ -708,12 +708,18 @@
   padding: 0 0 clamp(82px, 10vw, 130px);
 }
 
-.zone {
+.zone,
+.zoneLink {
   min-height: 276px;
   padding: clamp(24px, 3vw, 36px);
   border: 1px solid var(--line);
   border-bottom: 0;
   background: var(--panel);
+}
+
+.zoneLink {
+  color: var(--ink);
+  text-decoration: none;
 }
 
 .yupiteruZone {
@@ -726,22 +732,26 @@
   color: var(--leaf);
 }
 
-.zone:nth-child(2n) {
+.zone:nth-child(2n),
+.zoneLink:nth-child(2n) {
   border-left: 0;
 }
 
-.zone:nth-last-child(-n + 2) {
+.zone:nth-last-child(-n + 2),
+.zoneLink:nth-last-child(-n + 2) {
   border-bottom: 1px solid var(--line);
 }
 
-.zone h3 {
+.zone h3,
+.zoneLink h3 {
   margin: 48px 0 16px;
   font-size: clamp(1.55rem, 3vw, 2.6rem);
   line-height: 1.08;
   letter-spacing: 0;
 }
 
-.zone p {
+.zone p,
+.zoneLink p {
   margin: 0;
 }
 
@@ -785,7 +795,9 @@
 
   .scaleItem,
   .zone,
+  .zoneLink,
   .zone:nth-child(2n),
+  .zoneLink:nth-child(2n),
   .zone:nth-last-child(-n + 2) {
     border-right: 0;
     border-left: 0;

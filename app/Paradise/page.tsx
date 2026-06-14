@@ -141,6 +141,7 @@ const zones = [
   {
     title: "Shokujiba Jungle Village",
     label: "森の村",
+    href: "/junglevillage",
     description:
       "森、滝、ヴィラ、星空、自然の気配を楽しめる場所。静かな冒険としてParadiseの自然を味わえます。",
   },
@@ -494,14 +495,22 @@ export default function ParadisePage() {
 
         <section className={styles.zones} id="zones" aria-label="Paradise zones">
           {zones.map((zone) => (
-            <article
-              className={`${styles.zone} ${zone.title === "Yupiteru" ? styles.yupiteruZone : ""}`}
-              key={zone.title}
-            >
-              <span>{zone.label}</span>
-              <h3>{zone.title}</h3>
-              <p>{zone.description}</p>
-            </article>
+            zone.href ? (
+              <Link href={zone.href} className={styles.zoneLink} key={zone.title}>
+                <span>{zone.label}</span>
+                <h3>{zone.title}</h3>
+                <p>{zone.description}</p>
+              </Link>
+            ) : (
+              <article
+                className={`${styles.zone} ${zone.title === "Yupiteru" ? styles.yupiteruZone : ""}`}
+                key={zone.title}
+              >
+                <span>{zone.label}</span>
+                <h3>{zone.title}</h3>
+                <p>{zone.description}</p>
+              </article>
+            )
           ))}
         </section>
 
