@@ -6,9 +6,9 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 const scale = [
-  { value: "5,000ha", label: "遊びと発見の楽園" },
-  { value: "3,000室", label: "泊まって巡るParadise" },
-  { value: "Yupiteru", label: "Paradiseのワクワク中心地" },
+  { value: "Dreams", label: "夢を叶える場所" },
+  { value: "Wishes", label: "願いを形にする楽園" },
+  { value: "UpiteL", label: "たくさんある場所のひとつ" },
 ];
 
 const protocols = [
@@ -30,7 +30,7 @@ const protocols = [
   {
     title: "遊ぶ",
     label: "Play",
-    text: "ユピテル、Dragon、Master、Goodsがつながり、Paradiseの中で次の遊びを生み出していきます。",
+    text: "Dragon、Master、Goods、UpiteL、さまざまな場所がつながり、Paradiseの中で次の遊びを生み出していきます。",
   },
 ];
 
@@ -54,7 +54,30 @@ const paradiseMarket = [
     title: "UpiteLへ行く",
     label: "Community Place",
     image: "/images/hiroma.png",
-    text: "宇宙人、料理人、商人、神、人間が集まる交流の場所。買う、食べる、話す、交換するがここで混ざります。",
+    text: "Paradiseにたくさんある場所のひとつ。宇宙人、料理人、商人、神、人間が集まる交流の場所です。",
+  },
+];
+
+const wishPlaces = [
+  {
+    title: "欲望を満たす場所",
+    label: "Desire",
+    text: "食べたい、欲しい、泊まりたい、遊びたい。Paradiseではその気持ちを体験に変えます。",
+  },
+  {
+    title: "夢を広げる場所",
+    label: "Dream",
+    text: "海、山、ホテル、祝祭、城、温泉。頭の中の夢が、歩ける場所として広がります。",
+  },
+  {
+    title: "願いを叶える場所",
+    label: "Wish",
+    text: "誰かに会いたい、何かを買いたい、新しい世界を見たい。その願いに行き先を与えます。",
+  },
+  {
+    title: "楽しい場所",
+    label: "Fun",
+    text: "笑う、驚く、集まる、交換する。UpiteLのような交流場所も、その楽しさのひとつです。",
   },
 ];
 
@@ -87,7 +110,7 @@ const wonderMoments = [
   {
     title: "ユピテル",
     label: "Yupiteru",
-    text: "Paradiseにある、MasterとDragonが新しい遊びを見つけるワクワクする場所。次の発見、次のGoods、次の旅がここから始まります。",
+    text: "Paradiseにあるワクワクする場所のひとつ。MasterとDragonが新しい遊びを見つけ、次の発見や旅につながります。",
   },
 ];
 
@@ -144,15 +167,15 @@ const zones = [
     title: "Yupiteru",
     label: "ユピテル",
     description:
-      "Paradiseの中にあるワクワクの中心地。ShokuzaiやGoods、UpiteLの交流が集まり、MasterとDragonと一緒に次の楽園体験を生み出します。",
+      "Paradiseの中にあるワクワクする場所のひとつ。Shokuzai、Goods、UpiteLの交流、Master、Dragonとつながり、次の楽園体験を生み出します。",
   },
 ];
 
 const paradiseSlides: Slide[] = [
   {
     id: 1,
-    title: "Yupiteru Wonder Route",
-    description: "ユピテルから始まり、食、海、空、祝祭へ広がるParadiseのワクワク導線。",
+    title: "Paradise Wonder Route",
+    description: "Shokuzai、Goods、UpiteL、海、空、祝祭へ広がるParadiseのワクワク導線。",
     image: "/images/shokujiba-paradise-concept.png",
     textColor: "#fff7e2",
   },
@@ -213,16 +236,16 @@ const currentParadise = [
 
 const yupiteruSteps = [
   {
-    title: "Masterと決める",
-    text: "今日の気分、食べたいもの、行きたい場所を選び、Paradiseの一日を始めます。",
+    title: "行きたい場所を決める",
+    text: "今日の気分、食べたいもの、買いたいもの、会いたい存在からParadiseの一日を始めます。",
   },
   {
-    title: "Dragonと飛ぶ",
-    text: "Dragonが空から道を見つけ、海、山、ホテル、祝祭都市へ連れていきます。",
+    title: "Dragonと巡る",
+    text: "Dragonが空から道を見つけ、海、山、ホテル、祝祭都市、UpiteLへ連れていきます。",
   },
   {
-    title: "新しい遊びが生まれる",
-    text: "ユピテルで見つけた発見から、Goods、物語、次のParadise体験が増えていきます。",
+    title: "願いが体験になる",
+    text: "いろんな場所で見つけた発見から、Goods、物語、交流、次のParadise体験が増えていきます。",
   },
 ];
 
@@ -241,19 +264,19 @@ export default function ParadisePage() {
             className={styles.heroImage}
           />
           <div className={styles.heroPanel}>
-            <p className={styles.eyebrow}>Shokujiba Paradise with Yupiteru</p>
-            <h1>ユピテルがある、ワクワクするParadiseへ。</h1>
+            <p className={styles.eyebrow}>Shokujiba Paradise</p>
+            <h1>欲望、夢、願いが叶うParadiseへ。</h1>
             <p className={styles.lead}>
-              Shokujiba Paradiseは、北海道の海、山、食、宿泊、祝祭をめぐる楽園です。
+              Shokujiba Paradiseは、北海道の海、山、食、宿泊、祝祭、買い物、交流をめぐる楽園です。
               ここではShokujibaのShokuzaiやGoodsを買うことができ、Paradiseの中には
-              交流の場所UpiteLもあります。休む、巡る、買う、食べる、話す、遊ぶがひとつにつながります。
+              UpiteLをはじめとするたくさんの場所があります。休む、巡る、買う、食べる、話す、遊ぶがひとつにつながります。
             </p>
             <div className={styles.actions}>
               <a href="#market" className={styles.primary}>
                 買えるものを見る
               </a>
               <a href="#yupiteru" className={styles.primary}>
-                ユピテルへ行く
+                場所を見る
               </a>
               <Link href="/upitel" className={styles.secondary}>
                 UpiteL交流所
@@ -343,12 +366,29 @@ export default function ParadisePage() {
 
         <section className={styles.statement}>
           <p className={styles.sectionLabel}>Official Wonder</p>
-          <h2>Paradiseの中に、ユピテルのワクワクがある。</h2>
+          <h2>Paradiseには、たくさんの場所があります。</h2>
           <p>
             Paradiseは、ただ眺める場所ではありません。Masterと遊び、Dragonと空を巡り、
             ShokuzaiやGoodsを買い、UpiteLで話し、食べて、泊まって、見つけて、
-            次の体験を生み出す場所です。ユピテルはその中心にある、まだ名前のない発見が集まるワクワクスポットです。
+            次の体験を生み出す場所です。欲望、夢、願い、楽しさを叶える場所がたくさんあり、
+            UpiteLはその中にある交流の場所のひとつです。
           </p>
+        </section>
+
+        <section className={styles.wishPlaces} aria-labelledby="wish-title">
+          <div className={styles.wishHeader}>
+            <p className={styles.sectionLabel}>Many Places</p>
+            <h2 id="wish-title">欲望や夢や願いを、場所にする。</h2>
+          </div>
+          <div className={styles.wishGrid}>
+            {wishPlaces.map((place) => (
+              <article className={styles.wishCard} key={place.title}>
+                <span>{place.label}</span>
+                <h3>{place.title}</h3>
+                <p>{place.text}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className={styles.yupiteruFeature} id="yupiteru" aria-labelledby="yupiteru-title">
@@ -362,12 +402,12 @@ export default function ParadisePage() {
             />
           </div>
           <div className={styles.yupiteruText}>
-            <p className={styles.sectionLabel}>Yupiteru in Paradise</p>
-            <h2 id="yupiteru-title">ユピテルとは、Paradiseにあるワクワクする場所です。</h2>
+            <p className={styles.sectionLabel}>One Place in Paradise</p>
+            <h2 id="yupiteru-title">UpiteLは、Paradiseにたくさんある場所のひとつです。</h2>
             <p>
-              ここでは、Masterが今日の遊びを決め、Dragonが次の場所へ連れていきます。
-              Shokuzai、Goods、ホテル、海、祝祭、UpiteLの交流、物語がつながり、
-              Paradiseの新しい一日が始まります。
+              UpiteLは交流の場所です。宇宙人、料理人、商人、神、人間が集まり、
+              Shokuzai、Goods、会話、交換、物語が混ざります。Paradiseにはそのほかにも、
+              欲望や夢や願いを叶える場所、楽しい場所がたくさんあります。
             </p>
             <Link href="/upitel" className={styles.yupiteruLink}>
               UpiteLの交流所へ

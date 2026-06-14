@@ -134,6 +134,7 @@
 .currentParadise,
 .marketSection,
 .statement,
+.wishPlaces,
 .yupiteruFeature,
 .yupiteruSteps,
 .protocol,
@@ -366,6 +367,62 @@
   max-width: 860px;
   margin: 24px 0 0;
   font-size: clamp(1rem, 1.7vw, 1.16rem);
+}
+
+.wishPlaces {
+  padding: 0 0 clamp(58px, 8vw, 96px);
+}
+
+.wishHeader {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.wishHeader h2 {
+  max-width: 1040px;
+  margin: 0;
+  font-size: clamp(2.1rem, 5.8vw, 5.6rem);
+  font-weight: 820;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.wishGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.wishCard {
+  min-height: 230px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(254, 194, 20, 0.1), transparent 44%),
+    var(--panel);
+}
+
+.wishCard span {
+  color: var(--leaf);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.wishCard h3 {
+  margin: 54px 0 0;
+  font-size: clamp(1.28rem, 2.3vw, 2rem);
+  line-height: 1.1;
+}
+
+.wishCard p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.75;
 }
 
 .yupiteruFeature {
@@ -622,6 +679,7 @@
   .scaleBoard,
   .currentGrid,
   .marketGrid,
+  .wishGrid,
   .yupiteruFeature,
   .yupiteruSteps,
   .protocol,
