@@ -116,58 +116,34 @@ const wonderMoments = [
 
 const zones = [
   {
-    title: "Imperial Garden",
-    label: "入口の庭園",
+    title: "Shokujiba Jungle Village",
+    label: "森の村",
     description:
-      "散策、記念植樹、茶席、写真撮影に対応する庭園。次の小道に何があるのか楽しみになる、Paradiseの公式入口です。",
+      "森、滝、ヴィラ、星空、自然の気配を楽しめる場所。静かな冒険としてParadiseの自然を味わえます。",
   },
   {
-    title: "Sky Palace Hotel",
-    label: "空のホテル",
+    title: "Shokujiba Paradise Beach",
+    label: "楽園の海辺",
     description:
-      "空に近い部屋からParadiseの祝祭を見下ろせる宿泊中枢。食事、休息、夜景、花火がひとつながりになります。",
+      "白砂、海風、透明な水、夕陽を楽しめる海辺。散歩、休息、遊び、海のワクワクが集まります。",
+  },
+  {
+    title: "UpiteL",
+    label: "交流の場所",
+    description:
+      "宇宙人、料理人、商人、神、人間が集まる交流の場所。食べる、話す、交換する、出会うを楽しめます。",
+  },
+  {
+    title: "Shokujiba Marina Bay",
+    label: "海の港",
+    description:
+      "船、海上散歩、夕陽、海辺の食事を楽しめる港。Paradise BeachやOceanの体験へつながります。",
   },
   {
     title: "Central Mountain",
     label: "中央の山",
     description:
-      "北海道全域の眺望、花火、式典、朝の御来光を体験できるParadiseの象徴。登るほど世界が広がる中心ランドマークです。",
-  },
-  {
-    title: "Wellness Island",
-    label: "回復の島",
-    description:
-      "温泉、スパ、医療リトリート、瞑想、長期滞在に対応する静の区域。回復したあとにもう一度遊びたくなる場所です。",
-  },
-  {
-    title: "Ocean Kingdom",
-    label: "海の王国",
-    description:
-      "水族館、海上レストラン、海中鑑賞、船上遊覧を含む海の迎賓区域。海の奥へ進むほど驚きが増える設計です。",
-  },
-  {
-    title: "Paradise Beach",
-    label: "海辺の散歩道",
-    description:
-      "白砂、海風、夕陽、花火を静かに楽しめる海岸区域。昼は御散策、夕方は海上パレード、夜は祝祭に変わります。",
-  },
-  {
-    title: "Entertainment City",
-    label: "祝祭都市",
-    description:
-      "劇場、音楽、式典、ナイトショーを制御された演出で提供する都市区域。最上位の賓客にも高揚していただく祝祭を担います。",
-  },
-  {
-    title: "Jungle Village",
-    label: "森の村",
-    description:
-      "森、滝、ヴィラ、星空、野生の気配を安全に体験する自然区域。静かな冒険として北海道の自然を味わえます。",
-  },
-  {
-    title: "Yupiteru",
-    label: "ユピテル",
-    description:
-      "Paradiseの中にあるワクワクする場所のひとつ。Shokuzai、Goods、UpiteLの交流、Master、Dragonとつながり、次の楽園体験を生み出します。",
+      "Paradiseの中心にある山。景色、朝日、花火、遠くまで見渡す体験を楽しめる象徴の場所です。",
   },
 ];
 
@@ -197,40 +173,40 @@ const paradiseSlides: Slide[] = [
 
 const currentParadise = [
   {
-    title: "光の広間",
-    label: "Hiroma",
-    image: "/images/hiroma.png",
-    text: "現在のParadiseを迎える中心空間。木、灯り、花、静けさが集まる入口です。",
-  },
-  {
-    title: "寝床",
-    label: "Stay",
-    image: "/images/nedoko.png",
-    text: "一日の冒険を終え、次のワクワクへ向かうための休息場所です。",
-  },
-  {
-    title: "至高の湯",
-    label: "Onsen",
+    title: "Shokujiba Jungle Village",
+    label: "Forest",
     image: "/images/sikounoyu.png",
-    text: "水、灯り、山の景色が重なる、Paradiseの回復スポットです。",
+    text: "森、滝、湯、灯りが重なる自然の場所。静かな冒険と休息を楽しめます。",
   },
   {
-    title: "Luxury Villa",
-    label: "Villa",
-    image: "/images/luxuryimage.png",
-    text: "海と空を望むヴィラ。泊まること自体がParadiseの遊びになります。",
-  },
-  {
-    title: "波",
-    label: "Ocean",
+    title: "Shokujiba Paradise Beach",
+    label: "Beach",
     image: "/images/nami.PNG",
-    text: "透明な海と光の波。Dragonと海辺へ飛びたくなる場所です。",
+    text: "透明な海と白い波の場所。散歩、海遊び、夕陽の時間を楽しめます。",
   },
   {
-    title: "現在の記録",
+    title: "UpiteL",
+    label: "Community",
+    image: "/images/hiroma.png",
+    text: "いろんな存在が集まる交流の場所。食べる、話す、交換する、出会うを楽しめます。",
+  },
+  {
+    title: "Shokujiba Marina Bay",
+    label: "Marina",
+    image: "/images/shokujibabeach.jpg",
+    text: "海の港と船の場所。海上散歩、港の食事、海辺の移動を楽しめます。",
+  },
+  {
+    title: "Central Mountain",
+    label: "Mountain",
+    image: "/images/shokujiba-paradise-concept.png",
+    text: "Paradiseを見渡す中央の山。朝日、夜景、花火、眺望を楽しめます。",
+  },
+  {
+    title: "Paradiseの記録",
     label: "Now",
     image: "/images/current-paradise.JPG",
-    text: "いまあるParadiseの気配を残す一枚。構想ではなく、現在につながる景色です。",
+    text: "いま見えているParadiseの気配。ここから次の場所や体験が増えていきます。",
   },
 ];
 
@@ -269,7 +245,8 @@ export default function ParadisePage() {
             <p className={styles.lead}>
               Shokujiba Paradiseは、北海道の海、山、食、宿泊、祝祭、買い物、交流をめぐる楽園です。
               ここではShokujibaのShokuzaiやGoodsを買うことができ、Paradiseの中には
-              UpiteLをはじめとするたくさんの場所があります。休む、巡る、買う、食べる、話す、遊ぶがひとつにつながります。
+              Shokujiba Jungle Village、Shokujiba Paradise Beach、UpiteL、Shokujiba Marina Bay、
+              Central Mountainがあります。それぞれの場所で、休む、巡る、買う、食べる、話す、遊ぶを楽しめます。
             </p>
             <div className={styles.actions}>
               <a href="#market" className={styles.primary}>
@@ -302,8 +279,8 @@ export default function ParadisePage() {
             <p className={styles.sectionLabel}>Current Paradise</p>
             <h2 id="current-title">現在のParadiseも、ここにあります。</h2>
             <p>
-              ユピテルは未来だけの言葉ではありません。広間、寝床、温泉、海、ヴィラ。
-              いま見えているParadiseの景色が、次のワクワクへつながっています。
+              いまのところ、Jungle Village、Paradise Beach、UpiteL、Marina Bay、Central Mountainがあります。
+              それぞれの場所で違う楽しみがあり、次のワクワクへつながっています。
             </p>
           </div>
           <div className={styles.currentHeroImage}>
@@ -366,12 +343,12 @@ export default function ParadisePage() {
 
         <section className={styles.statement}>
           <p className={styles.sectionLabel}>Official Wonder</p>
-          <h2>Paradiseには、たくさんの場所があります。</h2>
+            <h2>Paradiseには、いま楽しめる場所があります。</h2>
           <p>
             Paradiseは、ただ眺める場所ではありません。Masterと遊び、Dragonと空を巡り、
             ShokuzaiやGoodsを買い、UpiteLで話し、食べて、泊まって、見つけて、
-            次の体験を生み出す場所です。欲望、夢、願い、楽しさを叶える場所がたくさんあり、
-            UpiteLはその中にある交流の場所のひとつです。
+            次の体験を生み出す場所です。Jungle Village、Paradise Beach、UpiteL、Marina Bay、
+            Central Mountainがあり、UpiteLはその中にある交流の場所のひとつです。
           </p>
         </section>
 
@@ -456,6 +433,15 @@ export default function ParadisePage() {
             <h2>ユピテルから広がるParadiseコース。</h2>
           </div>
           <Carousel slides={paradiseSlides} />
+        </section>
+
+        <section className={styles.placeIntro} aria-labelledby="places-title">
+          <p className={styles.sectionLabel}>Current Places</p>
+          <h2 id="places-title">いまParadiseにある場所。</h2>
+          <p>
+            Shokujiba Jungle Village、Shokujiba Paradise Beach、UpiteL、Shokujiba Marina Bay、
+            Central Mountain。それぞれの場所で、違う楽しみ方ができます。
+          </p>
         </section>
 
         <section className={styles.zones} id="zones" aria-label="Paradise zones">
