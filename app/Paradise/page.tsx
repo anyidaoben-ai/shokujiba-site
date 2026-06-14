@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 
 const scale = [
   { value: "Energy", label: "エネルギーが手に入る" },
-  { value: "Luck", label: "運と流れをつかむ" },
-  { value: "Power", label: "力と権力へ向かう" },
+  { value: "Shokuzai", label: "UpiteLと並ぶ人気" },
+  { value: "UpiteL", label: "Shokuzaiと並ぶ人気" },
 ];
 
 const protocols = [
@@ -38,9 +38,9 @@ const paradiseMarket = [
   {
     href: "/Dispense",
     title: "Shokuzaiを買う",
-    label: "Food Market",
+    label: "Popular Place",
     image: "/images/shokujiba-receive-energy.jpg",
-    text: "果物、野菜、肉、魚、飲料。Paradiseの中でShokujibaの食材を見つけて、食べたいものを選びます。",
+    text: "ParadiseでUpiteLと同じくらい人気を誇る場所。果物、野菜、肉、魚、飲料から、食べたいものを選びます。",
   },
   {
     href: "/Goods",
@@ -52,9 +52,9 @@ const paradiseMarket = [
   {
     href: "/upitel",
     title: "UpiteLへ行く",
-    label: "Community Place",
+    label: "Popular Place",
     image: "/images/hiroma.png",
-    text: "Paradiseにたくさんある場所のひとつ。宇宙人、料理人、商人、神、人間が集まる交流の場所です。",
+    text: "ParadiseでShokuzaiと同じくらい人気を誇る交流の場所。宇宙人、料理人、商人、神、人間が集まります。",
   },
 ];
 
@@ -245,7 +245,8 @@ export default function ParadisePage() {
             <p className={styles.lead}>
               Shokujiba Paradiseは、エネルギー、運、お金、力、欲望、夢、神、恋、権力、
               すべてが手に入る楽園です。北海道の海、山、食、宿泊、祝祭、買い物、交流をめぐり、
-              ここではShokujibaのShokuzaiやGoodsを買うことができ、Paradiseの中には
+              ここではShokujibaのShokuzaiやGoodsを買うことができます。ShokuzaiとUpiteLは
+              Paradiseの中でも同じくらい人気を誇り、Paradiseの中には
               Shokujiba Jungle Village、Shokujiba Paradise Beach、UpiteL、Shokujiba Marina Bay、
               Central Mountainがあります。それぞれの場所で、休む、巡る、買う、食べる、話す、遊ぶを楽しめます。
             </p>
@@ -316,10 +317,11 @@ export default function ParadisePage() {
         <section className={styles.marketSection} id="market" aria-labelledby="market-title">
           <div className={styles.marketHeader}>
             <p className={styles.sectionLabel}>Buy and Meet</p>
-            <h2 id="market-title">Paradiseでは、ShokuzaiとGoodsが買えて、UpiteLで交流できます。</h2>
+            <h2 id="market-title">ShokuzaiとUpiteLは、同じくらい人気を誇っています。</h2>
             <p>
-              Paradiseは景色を見るだけの場所ではありません。Shokujibaの食材を選び、
-              Goodsを手に入れ、UpiteLでいろんな存在と出会う場所です。
+              Paradiseは景色を見るだけの場所ではありません。Shokujibaの食材を選ぶ楽しさと、
+              UpiteLでいろんな存在と出会う楽しさが、同じくらい大きな人気を持っています。
+              Goodsも、その体験を持ち帰るための大切な買い物です。
             </p>
           </div>
           <div className={styles.marketGrid}>
@@ -347,7 +349,7 @@ export default function ParadisePage() {
           <h2>Shokujiba Paradiseでは、すべてが手に入る。</h2>
           <p>
             Paradiseは、ただ眺める場所ではありません。Masterと遊び、Dragonと空を巡り、
-            ShokuzaiやGoodsを買い、UpiteLで話し、食べて、泊まって、見つけて、
+            人気のShokuzaiを買い、人気のUpiteLで話し、Goodsを手に入れ、食べて、泊まって、見つけて、
             次の体験を生み出す場所です。エネルギー、運、お金、力、欲望、夢、神、恋、権力。
             それらを場所、買い物、交流、食、景色、物語として手に入れていきます。
           </p>
@@ -384,7 +386,7 @@ export default function ParadisePage() {
             <h2 id="yupiteru-title">UpiteLは、Paradiseにたくさんある場所のひとつです。</h2>
             <p>
               UpiteLは交流の場所です。宇宙人、料理人、商人、神、人間が集まり、
-              Shokuzai、Goods、会話、交換、物語が混ざります。Paradiseにはそのほかにも、
+              Shokuzaiと同じくらい人気を誇ります。Goods、会話、交換、物語が混ざります。Paradiseにはそのほかにも、
               欲望や夢や願いを叶える場所、楽しい場所がたくさんあります。
             </p>
             <Link href="/upitel" className={styles.yupiteruLink}>
