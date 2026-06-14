@@ -25,12 +25,36 @@ const protocols = [
   {
     title: "食べる",
     label: "Dining",
-    text: "北海道の食材とShokujibaの食文化を、香り、器、景色まで含めて味わう体験にします。",
+    text: "ShokujibaのShokuzaiを選び、買い、味わう体験。香り、器、景色まで含めてParadiseの食にします。",
   },
   {
     title: "遊ぶ",
     label: "Play",
     text: "ユピテル、Dragon、Master、Goodsがつながり、Paradiseの中で次の遊びを生み出していきます。",
+  },
+];
+
+const paradiseMarket = [
+  {
+    href: "/Dispense",
+    title: "Shokuzaiを買う",
+    label: "Food Market",
+    image: "/images/shokujiba-receive-energy.jpg",
+    text: "果物、野菜、肉、魚、飲料。Paradiseの中でShokujibaの食材を見つけて、食べたいものを選びます。",
+  },
+  {
+    href: "/Goods",
+    title: "Goodsを買う",
+    label: "Goods Shop",
+    image: "/images/luxury.png",
+    text: "お守り、装飾、衣服、財布。Paradiseで遊んだ記憶を持ち帰るためのGoodsを選びます。",
+  },
+  {
+    href: "/upitel",
+    title: "UpiteLへ行く",
+    label: "Community Place",
+    image: "/images/hiroma.png",
+    text: "宇宙人、料理人、商人、神、人間が集まる交流の場所。買う、食べる、話す、交換するがここで混ざります。",
   },
 ];
 
@@ -58,7 +82,7 @@ const wonderMoments = [
   {
     title: "秘密の果樹園",
     label: "Hidden Orchard",
-    text: "Shokujibaらしい果物と野菜の楽園。採る、香る、食べる、贈るまでを、静かな冒険として体験します。",
+    text: "Shokujibaらしい果物と野菜の楽園。採る、香る、買う、食べる、贈るまでを、静かな冒険として体験します。",
   },
   {
     title: "ユピテル",
@@ -120,7 +144,7 @@ const zones = [
     title: "Yupiteru",
     label: "ユピテル",
     description:
-      "Paradiseの中にあるワクワクの中心地。MasterとDragonと一緒に、まだ名前のない遊び、発見、Goods、次の楽園体験を生み出します。",
+      "Paradiseの中にあるワクワクの中心地。ShokuzaiやGoods、UpiteLの交流が集まり、MasterとDragonと一緒に次の楽園体験を生み出します。",
   },
 ];
 
@@ -221,10 +245,13 @@ export default function ParadisePage() {
             <h1>ユピテルがある、ワクワクするParadiseへ。</h1>
             <p className={styles.lead}>
               Shokujiba Paradiseは、北海道の海、山、食、宿泊、祝祭をめぐる楽園です。
-              その中にあるユピテルは、MasterとDragonが新しい遊びを見つけるワクワクの中心地。
-              休む、巡る、食べる、遊ぶがひとつにつながります。
+              ここではShokujibaのShokuzaiやGoodsを買うことができ、Paradiseの中には
+              交流の場所UpiteLもあります。休む、巡る、買う、食べる、話す、遊ぶがひとつにつながります。
             </p>
             <div className={styles.actions}>
+              <a href="#market" className={styles.primary}>
+                買えるものを見る
+              </a>
               <a href="#yupiteru" className={styles.primary}>
                 ユピテルへ行く
               </a>
@@ -285,13 +312,42 @@ export default function ParadisePage() {
           </div>
         </section>
 
+        <section className={styles.marketSection} id="market" aria-labelledby="market-title">
+          <div className={styles.marketHeader}>
+            <p className={styles.sectionLabel}>Buy and Meet</p>
+            <h2 id="market-title">Paradiseでは、ShokuzaiとGoodsが買えて、UpiteLで交流できます。</h2>
+            <p>
+              Paradiseは景色を見るだけの場所ではありません。Shokujibaの食材を選び、
+              Goodsを手に入れ、UpiteLでいろんな存在と出会う場所です。
+            </p>
+          </div>
+          <div className={styles.marketGrid}>
+            {paradiseMarket.map((item) => (
+              <Link href={item.href} className={styles.marketCard} key={item.title}>
+                <Image
+                  src={item.image}
+                  alt={`${item.title}の案内`}
+                  width={720}
+                  height={520}
+                  className={styles.marketImage}
+                />
+                <div>
+                  <span>{item.label}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className={styles.statement}>
           <p className={styles.sectionLabel}>Official Wonder</p>
           <h2>Paradiseの中に、ユピテルのワクワクがある。</h2>
           <p>
             Paradiseは、ただ眺める場所ではありません。Masterと遊び、Dragonと空を巡り、
-            食べて、泊まって、見つけて、次の体験を生み出す場所です。
-            ユピテルはその中心にある、まだ名前のない発見が集まるワクワクスポットです。
+            ShokuzaiやGoodsを買い、UpiteLで話し、食べて、泊まって、見つけて、
+            次の体験を生み出す場所です。ユピテルはその中心にある、まだ名前のない発見が集まるワクワクスポットです。
           </p>
         </section>
 
@@ -310,7 +366,8 @@ export default function ParadisePage() {
             <h2 id="yupiteru-title">ユピテルとは、Paradiseにあるワクワクする場所です。</h2>
             <p>
               ここでは、Masterが今日の遊びを決め、Dragonが次の場所へ連れていきます。
-              食材、Goods、ホテル、海、祝祭、物語がつながり、Paradiseの新しい一日が始まります。
+              Shokuzai、Goods、ホテル、海、祝祭、UpiteLの交流、物語がつながり、
+              Paradiseの新しい一日が始まります。
             </p>
             <Link href="/upitel" className={styles.yupiteruLink}>
               UpiteLの交流所へ
