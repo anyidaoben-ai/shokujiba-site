@@ -6,9 +6,9 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 const scale = [
-  { value: "Dreams", label: "夢を叶える場所" },
-  { value: "Wishes", label: "願いを形にする楽園" },
-  { value: "UpiteL", label: "たくさんある場所のひとつ" },
+  { value: "Energy", label: "エネルギーが手に入る" },
+  { value: "Luck", label: "運と流れをつかむ" },
+  { value: "Power", label: "力と権力へ向かう" },
 ];
 
 const protocols = [
@@ -60,24 +60,24 @@ const paradiseMarket = [
 
 const wishPlaces = [
   {
-    title: "欲望を満たす場所",
-    label: "Desire",
-    text: "食べたい、欲しい、泊まりたい、遊びたい。Paradiseではその気持ちを体験に変えます。",
+    title: "エネルギーが手に入る",
+    label: "Energy",
+    text: "食、海、山、温泉、交流から力を受け取り、動き出すためのエネルギーを満たします。",
   },
   {
-    title: "夢を広げる場所",
-    label: "Dream",
-    text: "海、山、ホテル、祝祭、城、温泉。頭の中の夢が、歩ける場所として広がります。",
+    title: "運とお金がめぐる",
+    label: "Luck / Money",
+    text: "商人、Goods、Shokuzai、出会いが重なり、運とお金の流れをつかむ場所になります。",
   },
   {
-    title: "願いを叶える場所",
-    label: "Wish",
-    text: "誰かに会いたい、何かを買いたい、新しい世界を見たい。その願いに行き先を与えます。",
+    title: "欲望と夢が叶う",
+    label: "Desire / Dream",
+    text: "食べたい、欲しい、会いたい、遊びたい。欲望や夢を否定せず、Paradiseの体験に変えます。",
   },
   {
-    title: "楽しい場所",
-    label: "Fun",
-    text: "笑う、驚く、集まる、交換する。UpiteLのような交流場所も、その楽しさのひとつです。",
+    title: "神、恋、権力へつながる",
+    label: "God / Love / Authority",
+    text: "神の気配、恋の出会い、人を動かす力。すべてがParadiseの中で物語と場所になります。",
   },
 ];
 
@@ -241,9 +241,10 @@ export default function ParadisePage() {
           />
           <div className={styles.heroPanel}>
             <p className={styles.eyebrow}>Shokujiba Paradise</p>
-            <h1>欲望、夢、願いが叶うParadiseへ。</h1>
+            <h1>すべてが手に入るParadiseへ。</h1>
             <p className={styles.lead}>
-              Shokujiba Paradiseは、北海道の海、山、食、宿泊、祝祭、買い物、交流をめぐる楽園です。
+              Shokujiba Paradiseは、エネルギー、運、お金、力、欲望、夢、神、恋、権力、
+              すべてが手に入る楽園です。北海道の海、山、食、宿泊、祝祭、買い物、交流をめぐり、
               ここではShokujibaのShokuzaiやGoodsを買うことができ、Paradiseの中には
               Shokujiba Jungle Village、Shokujiba Paradise Beach、UpiteL、Shokujiba Marina Bay、
               Central Mountainがあります。それぞれの場所で、休む、巡る、買う、食べる、話す、遊ぶを楽しめます。
@@ -343,19 +344,19 @@ export default function ParadisePage() {
 
         <section className={styles.statement}>
           <p className={styles.sectionLabel}>Official Wonder</p>
-            <h2>Paradiseには、いま楽しめる場所があります。</h2>
+          <h2>Shokujiba Paradiseでは、すべてが手に入る。</h2>
           <p>
             Paradiseは、ただ眺める場所ではありません。Masterと遊び、Dragonと空を巡り、
             ShokuzaiやGoodsを買い、UpiteLで話し、食べて、泊まって、見つけて、
-            次の体験を生み出す場所です。Jungle Village、Paradise Beach、UpiteL、Marina Bay、
-            Central Mountainがあり、UpiteLはその中にある交流の場所のひとつです。
+            次の体験を生み出す場所です。エネルギー、運、お金、力、欲望、夢、神、恋、権力。
+            それらを場所、買い物、交流、食、景色、物語として手に入れていきます。
           </p>
         </section>
 
         <section className={styles.wishPlaces} aria-labelledby="wish-title">
           <div className={styles.wishHeader}>
             <p className={styles.sectionLabel}>Many Places</p>
-            <h2 id="wish-title">欲望や夢や願いを、場所にする。</h2>
+            <h2 id="wish-title">手に入れたいものを、場所にする。</h2>
           </div>
           <div className={styles.wishGrid}>
             {wishPlaces.map((place) => (
