@@ -97,6 +97,7 @@
 
 .primary,
 .secondary,
+.yupiteruLink,
 .mailLink,
 .homeLink {
   display: inline-flex;
@@ -111,9 +112,15 @@
 }
 
 .primary,
+.yupiteruLink,
 .mailLink {
   background: var(--gold);
   color: var(--ink);
+}
+
+.yupiteruLink {
+  width: fit-content;
+  margin-top: 28px;
 }
 
 .secondary,
@@ -570,6 +577,7 @@
 
   .primary,
   .secondary,
+  .yupiteruLink,
   .mailLink,
   .homeLink {
     width: 100%;

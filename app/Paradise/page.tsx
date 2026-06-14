@@ -228,6 +228,9 @@ export default function ParadisePage() {
               <a href="#yupiteru" className={styles.primary}>
                 ユピテルへ行く
               </a>
+              <Link href="/upitel" className={styles.secondary}>
+                UpiteL交流所
+              </Link>
               <a href="#zones" className={styles.secondary}>
                 Paradiseを巡る
               </a>
@@ -309,6 +312,9 @@ export default function ParadisePage() {
               ここでは、Masterが今日の遊びを決め、Dragonが次の場所へ連れていきます。
               食材、Goods、ホテル、海、祝祭、物語がつながり、Paradiseの新しい一日が始まります。
             </p>
+            <Link href="/upitel" className={styles.yupiteruLink}>
+              UpiteLの交流所へ
+            </Link>
           </div>
         </section>
 
