@@ -8,57 +8,85 @@ const worlds = [
   {
     href: "/Dispense",
     image: "/images/shokujiba-receive-energy.jpg",
-    label: "Dispense",
-    title: "食の世界",
-    description: "果物、野菜、肉、魚、飲料まで。Shokujibaの食欲経済をめぐる案内所です。",
+    label: "Shokuzai",
+    title: "食材の冒険",
+    description: "果物、野菜、肉、魚、飲料まで。食べたいものを探し、エネルギーを受け取る冒険です。",
   },
   {
     href: "/Goods",
     image: "/images/luxuryimage.png",
     label: "Goods",
-    title: "所有の世界",
-    description: "お守り、衣服、財布、装飾品。身につけることで食事場の気配を持ち歩く品々です。",
+    title: "宝物の冒険",
+    description: "お守り、衣服、財布、装飾品。欲しいものを手に入れ、Shokujibaの力を持ち帰ります。",
   },
   {
     href: "/Paradise",
     image: "/images/paradise-theme-park.jpg",
     label: "Paradise",
-    title: "楽園の世界",
-    description: "北海道を舞台に、宿泊、温泉、海、食、遊びを束ねる構想を案内します。",
+    title: "楽園の冒険",
+    description: "Jungle Village、Paradise Beach、UpiteL、Marina Bay、Central Mountainへ進みます。",
   },
 ];
 
 const notices = [
   {
-    date: "2026.06.12",
-    title: "株式会社食事場の公式玄関を更新しました",
-    href: "/TechnologyLand-AI",
-  },
-  {
-    date: "2026.06.12",
-    title: "Shokujiba Paradiseの構想を公開しています",
+    date: "Adventure",
+    title: "Shokujibaの冒険を開始できます",
     href: "/Paradise",
   },
   {
-    date: "2026.06.12",
-    title: "北海道宿泊案内をTripに掲載しました",
-    href: "/trip",
+    date: "Popular",
+    title: "ShokuzaiとUpiteLはParadiseで同じくらい人気です",
+    href: "/upitel",
+  },
+  {
+    date: "Nature",
+    title: "Jungle Villageで動物と心を通わせる",
+    href: "/junglevillage",
   },
 ];
 
 const guideLinks = [
-  { href: "/TechnologyLand-AI", label: "会社案内", text: "株式会社食事場の思想と活動" },
-  { href: "/Dispense", label: "食材案内", text: "食材、飲料、名産品" },
-  { href: "/Goods", label: "Goods", text: "装飾品と所有体験" },
-  { href: "/Paradise", label: "Paradise", text: "楽園構想と施設案内" },
-  { href: "/trip", label: "Trip", text: "北海道の宿泊案内" },
-  { href: "mailto:shokujibamaster@gmail.com", label: "Contact", text: "協業、出資、取材、採用" },
+  { href: "/Dispense", label: "Shokuzai", text: "食材を探してエネルギーを得る" },
+  { href: "/Goods", label: "Goods", text: "宝物を手に入れて力を持ち帰る" },
+  { href: "/Paradise", label: "Paradise", text: "欲望、夢、願いが叶う楽園へ進む" },
+  { href: "/upitel", label: "UpiteL", text: "いろんな存在と出会う交流所" },
+  { href: "/junglevillage", label: "Jungle Village", text: "動物と心を通わせる森の冒険" },
+  { href: "/trip", label: "Trip", text: "旅と宿泊の準備をする" },
 ];
 
 const principles = [
-  "食欲を、選ぶ楽しさへ。",
-  "購買欲を、品位ある所有へ。",
-  "楽園欲を、現実の体験へ。",
+  "食欲を、冒険のエネルギーへ。",
+  "購買欲を、手に入れる喜びへ。",
+  "楽園欲を、歩ける世界へ。",
+];
+
+const adventureRoutes = [
+  {
+    href: "/Dispense",
+    title: "Shokuzaiを探す",
+    text: "まずは食材を選び、冒険のエネルギーを手に入れます。",
+  },
+  {
+    href: "/Goods",
+    title: "Goodsを装備する",
+    text: "お守りや装飾品を持ち、Shokujibaの力をまといます。",
+  },
+  {
+    href: "/Paradise",
+    title: "Paradiseへ進む",
+    text: "欲望、夢、願いが叶う場所をめぐります。",
+  },
+  {
+    href: "/upitel",
+    title: "UpiteLで出会う",
+    text: "宇宙人、料理人、商人、神、人間と交流します。",
+  },
+  {
+    href: "/junglevillage",
+    title: "Jungle Villageを歩く",
+    text: "動物と触れ合い、北海道の自然と心を通わせます。",
+  },
 ];
 
 const dragonPowers = [
@@ -166,10 +194,10 @@ export default function Page() {
           <div className={styles.heroOverlay} />
           <div className={styles.heroInner}>
             <p className={styles.kicker}>株式会社食事場 公式サイト</p>
-            <h1 id="page-title">Shokujiba Paradise</h1>
+            <h1 id="page-title">Shokujiba Adventure</h1>
             <p className={styles.heroLead}>
-              食、Goods、楽園構想、宿泊案内、公式連絡先をひとつにまとめた、
-              Shokujibaの入口です。
+              Shokuzaiを探し、Goodsを手に入れ、Paradiseを進み、UpiteLで出会い、
+              Jungle Villageで自然と心を通わせる。ここはShokujibaを冒険する入口です。
             </p>
             <div className={styles.heroDragon} aria-label="Shokujiba Dragon">
               <Image
@@ -187,10 +215,10 @@ export default function Page() {
             </div>
             <div className={styles.heroActions} aria-label="主要リンク">
               <Link href="/Paradise" className={styles.primaryAction}>
-                Paradiseを見る
+                冒険を始める
               </Link>
-              <Link href="/TechnologyLand-AI" className={styles.secondaryAction}>
-                会社案内へ
+              <Link href="/upitel" className={styles.secondaryAction}>
+                UpiteLへ
               </Link>
               <Link href="#play-with-master" className={styles.secondaryAction}>
                 Masterとあそぶ
@@ -202,7 +230,7 @@ export default function Page() {
         <section className={styles.worldSection} aria-labelledby="world-title">
           <div className={styles.sectionHead}>
             <p>Worlds</p>
-            <h2 id="world-title">Shokujibaをめぐる三つの入口</h2>
+            <h2 id="world-title">Shokujibaを冒険する三つの入口</h2>
           </div>
           <div className={styles.worldGrid}>
             {worlds.map((world) => (
@@ -222,10 +250,25 @@ export default function Page() {
           </div>
         </section>
 
+        <section className={styles.adventureSection} aria-labelledby="adventure-title">
+          <div className={styles.sectionHead}>
+            <p>Adventure Route</p>
+            <h2 id="adventure-title">どこから冒険する？</h2>
+          </div>
+          <div className={styles.adventureGrid}>
+            {adventureRoutes.map((route) => (
+              <Link href={route.href} className={styles.adventureCard} key={route.href}>
+                <h3>{route.title}</h3>
+                <p>{route.text}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className={styles.flowSection} aria-labelledby="flow-title">
           <div className={styles.sectionHead}>
             <p>Concept</p>
-            <h2 id="flow-title">欲を、体験の流れに変える</h2>
+            <h2 id="flow-title">欲を、冒険の流れに変える</h2>
           </div>
           <ol className={styles.principleList}>
             {principles.map((principle) => (
@@ -237,7 +280,7 @@ export default function Page() {
         <section className={styles.characterSection} aria-labelledby="character-title">
           <div className={styles.sectionHead}>
             <p>Character</p>
-            <h2 id="character-title">Shokujibaに新しい案内役が登場</h2>
+            <h2 id="character-title">Dragonが冒険を案内する</h2>
           </div>
           <div className={styles.characterGrid}>
             <article className={styles.characterCard}>
@@ -368,7 +411,7 @@ export default function Page() {
         <section className={styles.guideSection} aria-labelledby="guide-title">
           <div className={styles.sectionHead}>
             <p>Guide</p>
-            <h2 id="guide-title">各種案内</h2>
+            <h2 id="guide-title">冒険の行き先</h2>
           </div>
           <div className={styles.guideGrid}>
             {guideLinks.map((link) =>

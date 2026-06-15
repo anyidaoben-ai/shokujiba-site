@@ -178,6 +178,7 @@
 }
 
 .worldSection,
+.adventureSection,
 .flowSection,
 .characterSection,
 .masterPlaySection,
@@ -189,6 +190,10 @@
 
 .worldSection {
   padding: clamp(56px, 8vw, 94px) 0;
+}
+
+.adventureSection {
+  padding: 0 0 clamp(56px, 8vw, 94px);
 }
 
 .sectionHead {
@@ -256,6 +261,40 @@
   color: var(--muted);
   font-weight: 650;
   line-height: 1.8;
+}
+
+.adventureGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.adventureCard {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(246, 191, 38, 0.12), transparent 44%),
+    var(--panel);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.adventureCard h3 {
+  margin: 0;
+  font-size: clamp(1.16rem, 1.8vw, 1.55rem);
+  line-height: 1.22;
+}
+
+.adventureCard p {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.65;
 }
 
 .flowSection {
@@ -763,6 +802,7 @@
 
 @media (max-width: 900px) {
   .worldGrid,
+  .adventureGrid,
   .principleList,
   .characterCard,
   .dragonMissionGrid,
@@ -786,6 +826,7 @@
 @media (max-width: 560px) {
   .heroInner,
   .worldSection,
+  .adventureSection,
   .flowSection,
   .characterSection,
   .masterPlaySection,
