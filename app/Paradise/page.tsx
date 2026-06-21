@@ -50,11 +50,11 @@ const paradiseMarket = [
     text: "お守り、装飾、衣服、財布。Paradiseで遊んだ記憶を持ち帰るためのGoodsを選びます。",
   },
   {
-    href: "/upitel",
-    title: "UpiteLへ行く",
-    label: "Popular Place",
+    href: "/Mastercard",
+    title: "Mastercardを買う",
+    label: "Luxury Card",
     image: "/images/hiroma.png",
-    text: "ParadiseでShokuzaiと同じくらい人気を誇る交流の場所。宇宙人、料理人、商人、神、人間が集まります。",
+    text: "Paradiseの会員ランクと特典を選べる公式マスターカード。VIP待遇や限定体験へつながります。",
   },
 ];
 
@@ -282,8 +282,8 @@ export default function ParadisePage() {
               <a href="#yupiteru" className={styles.primary}>
                 場所を見る
               </a>
-              <Link href="/upitel" className={styles.secondary}>
-                UpiteL交流所
+              <Link href="/Mastercard" className={styles.secondary}>
+                Mastercardを買う
               </Link>
               <a href="#zones" className={styles.secondary}>
                 Paradiseを巡る
@@ -435,8 +435,8 @@ export default function ParadisePage() {
               Shokuzaiと同じくらい人気を誇ります。Goods、会話、交換、物語が混ざります。Paradiseにはそのほかにも、
               欲望や夢や願いを叶える場所、楽しい場所がたくさんあります。
             </p>
-            <Link href="/upitel" className={styles.yupiteruLink}>
-              UpiteLの交流所へ
+            <Link href="/Mastercard" className={styles.yupiteruLink}>
+              Mastercardを買う
             </Link>
           </div>
         </section>

@@ -36,8 +36,8 @@ const notices = [
   },
   {
     date: "Popular",
-    title: "ShokuzaiとUpiteLはParadiseで同じくらい人気です",
-    href: "/upitel",
+    title: "Shokujiba Master Cardを購入できます",
+    href: "/Mastercard",
   },
   {
     date: "Nature",
@@ -50,7 +50,7 @@ const guideLinks = [
   { href: "/Dispense", label: "Shokuzai", text: "食材を探してエネルギーを得る" },
   { href: "/Goods", label: "Goods", text: "宝物を手に入れて力を持ち帰る" },
   { href: "/Paradise", label: "Paradise", text: "欲望、夢、願いが叶う楽園へ進む" },
-  { href: "/upitel", label: "UpiteL", text: "いろんな存在と出会う交流所" },
+  { href: "/Mastercard", label: "Mastercard", text: "最上位メンバー権を手に入れる" },
   { href: "/junglevillage", label: "Jungle Village", text: "動物と心を通わせる森の冒険" },
   { href: "/trip", label: "Trip", text: "旅と宿泊の準備をする" },
 ];
@@ -78,9 +78,9 @@ const adventureRoutes = [
     text: "欲望、夢、願いが叶う場所をめぐります。",
   },
   {
-    href: "/upitel",
-    title: "UpiteLで出会う",
-    text: "宇宙人、料理人、商人、神、人間と交流します。",
+    href: "/Mastercard",
+    title: "Mastercardを買う",
+    text: "Shokujiba Paradiseの会員ランクと特典を選びます。",
   },
   {
     href: "/junglevillage",

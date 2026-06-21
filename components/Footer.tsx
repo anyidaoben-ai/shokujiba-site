@@ -6,7 +6,7 @@ const exploreLinks = [
   { href: "/Goods", label: "Goods" },
   { href: "/Paradise", label: "Paradise" },
   { href: "/trip", label: "Trip" },
-  { href: "/upitel", label: "UpiteL" },
+  { href: "/Mastercard", label: "Mastercard" },
   { href: "mailto:shokujibamaster@gmail.com", label: "Contact" },
 ];
 

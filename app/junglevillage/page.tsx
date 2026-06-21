@@ -140,8 +140,8 @@ export default function JungleVillagePage() {
             <Link href="/Paradise" className={styles.primary}>
               Paradiseへ戻る
             </Link>
-            <Link href="/upitel" className={styles.secondaryDark}>
-              UpiteLへ行く
+            <Link href="/Mastercard" className={styles.secondaryDark}>
+              Mastercardを買う
             </Link>
           </div>
         </section>

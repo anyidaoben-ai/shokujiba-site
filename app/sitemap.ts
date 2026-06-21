@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/upitel`,
+      url: `${baseUrl}/Mastercard`,
       lastModified: new Date(),
     },
     {
