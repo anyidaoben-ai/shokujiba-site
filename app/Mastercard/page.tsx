@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 type Tier = {
@@ -23,6 +23,11 @@ type MenuSection = {
     price: string;
     limited?: string;
   }[];
+};
+
+type PreviewImage = {
+  src: string;
+  alt: string;
 };
 
 const tiers: Tier[] = [
@@ -181,6 +186,18 @@ const menuImages = [
 export default function MastercardPage() {
   const [loadingId, setLoadingId] = useState("");
   const [notice, setNotice] = useState("");
+  const [previewImage, setPreviewImage] = useState<PreviewImage | null>(null);
+
+  useEffect(() => {
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setPreviewImage(null);
+      }
+    }
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
 
   async function buyTier(tier: Tier) {
     try {
@@ -280,9 +297,16 @@ export default function MastercardPage() {
 
       <section className={styles.gallery} aria-label="Shokujiba Master Card visuals">
         {cardImages.map((image) => (
-          <div className={styles.galleryImage} key={image.src}>
+          <button
+            aria-label={`${image.alt}を拡大表示`}
+            className={styles.galleryImage}
+            key={image.src}
+            onClick={() => setPreviewImage(image)}
+            type="button"
+          >
             <Image src={image.src} alt={image.alt} fill sizes="(max-width: 900px) 100vw, 33vw" />
-          </div>
+            <span className={styles.zoomLabel}>タップで拡大</span>
+          </button>
         ))}
       </section>
 
@@ -319,14 +343,26 @@ export default function MastercardPage() {
 
       <section className={styles.menuVisuals} aria-label="Luxury menu image references">
         {menuImages.map((src, index) => (
-          <div className={styles.menuVisual} key={src}>
+          <button
+            aria-label={`Shokujiba luxury menu reference ${index + 1}を拡大表示`}
+            className={styles.menuVisual}
+            key={src}
+            onClick={() =>
+              setPreviewImage({
+                src,
+                alt: `Shokujiba luxury menu reference ${index + 1}`,
+              })
+            }
+            type="button"
+          >
             <Image
               src={src}
               alt={`Shokujiba luxury menu reference ${index + 1}`}
               fill
               sizes="(max-width: 900px) 100vw, 33vw"
             />
-          </div>
+            <span className={styles.zoomLabel}>タップで拡大</span>
+          </button>
         ))}
       </section>
 
@@ -335,6 +371,34 @@ export default function MastercardPage() {
         <h2>👑 Only For The Ultimate Members.</h2>
         <span>🏝️ 人生を最高のパラダイスへ。</span>
       </section>
+
+      {previewImage && (
+        <div
+          aria-label="画像拡大表示"
+          aria-modal="true"
+          className={styles.lightbox}
+          onClick={() => setPreviewImage(null)}
+          role="dialog"
+        >
+          <button
+            aria-label="拡大画像を閉じる"
+            className={styles.closeButton}
+            onClick={() => setPreviewImage(null)}
+            type="button"
+          >
+            ×
+          </button>
+          <div className={styles.lightboxImage} onClick={(event) => event.stopPropagation()}>
+            <Image
+              src={previewImage.src}
+              alt={previewImage.alt}
+              fill
+              sizes="100vw"
+              priority
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }
