@@ -32,8 +32,10 @@ export async function POST(request: Request) {
       );
     }
 
+    const maxUnitAmount = 50000000;
+
     const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] =
-      cartItems.map((item) => {
+      cartItems.flatMap((item) => {
         const product = getProductById(item.id);
 
         if (!product) {
@@ -44,16 +46,50 @@ export async function POST(request: Request) {
           throw new Error(`数量が正しくありません: ${item.id}`);
         }
 
-        return {
-          price_data: {
-            currency: "jpy",
-            product_data: {
-              name: item.size ? `${product.name} / Size ${item.size}` : product.name,
+        const productName = item.size ? `${product.name} / Size ${item.size}` : product.name;
+
+        if (product.price <= maxUnitAmount) {
+          return [
+            {
+              price_data: {
+                currency: "jpy",
+                product_data: {
+                  name: productName,
+                },
+                unit_amount: product.price,
+              },
+              quantity: item.quantity,
             },
-            unit_amount: product.price,
-          },
-          quantity: item.quantity,
-        };
+          ];
+        }
+
+        const chunks: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
+
+        for (let quantityIndex = 0; quantityIndex < item.quantity; quantityIndex += 1) {
+          let remainingAmount = product.price;
+          let part = 1;
+
+          while (remainingAmount > 0) {
+            const unitAmount = Math.min(remainingAmount, maxUnitAmount);
+            const needsPartName = product.price > maxUnitAmount;
+
+            chunks.push({
+              price_data: {
+                currency: "jpy",
+                product_data: {
+                  name: needsPartName ? `${productName} ${part}` : productName,
+                },
+                unit_amount: unitAmount,
+              },
+              quantity: 1,
+            });
+
+            remainingAmount -= unitAmount;
+            part += 1;
+          }
+        }
+
+        return chunks;
       });
 
     const orderSummary = cartItems

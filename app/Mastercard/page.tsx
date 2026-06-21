@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import styles from "./page.module.css";
 
 type Tier = {
+  id: string;
   icon: string;
   name: string;
   price: string;
@@ -23,6 +27,7 @@ type MenuSection = {
 
 const tiers: Tier[] = [
   {
+    id: "mastercard-bronze",
     icon: "🥉",
     name: "Bronze Master",
     price: "3万円",
@@ -31,6 +36,7 @@ const tiers: Tier[] = [
     tone: "bronze",
   },
   {
+    id: "mastercard-silver",
     icon: "🥈",
     name: "Silver Master",
     price: "10万円",
@@ -39,6 +45,7 @@ const tiers: Tier[] = [
     tone: "silver",
   },
   {
+    id: "mastercard-gold",
     icon: "🥇",
     name: "Gold Master",
     price: "100万円",
@@ -47,6 +54,7 @@ const tiers: Tier[] = [
     tone: "gold",
   },
   {
+    id: "mastercard-platinum",
     icon: "⚫",
     name: "Platinum Master",
     price: "1,000万円",
@@ -55,6 +63,7 @@ const tiers: Tier[] = [
     tone: "platinum",
   },
   {
+    id: "mastercard-diamond",
     icon: "💎",
     name: "Diamond Master",
     price: "1億円",
@@ -63,6 +72,7 @@ const tiers: Tier[] = [
     tone: "diamond",
   },
   {
+    id: "mastercard-crown",
     icon: "👑",
     name: "Paradise Crown Master",
     price: "10億円",
@@ -169,6 +179,45 @@ const menuImages = [
 ];
 
 export default function MastercardPage() {
+  const [loadingId, setLoadingId] = useState("");
+  const [notice, setNotice] = useState("");
+
+  async function buyTier(tier: Tier) {
+    try {
+      setLoadingId(tier.id);
+      setNotice("");
+
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          returnPath: "/Mastercard",
+          cartItems: [
+            {
+              id: tier.id,
+              quantity: 1,
+            },
+          ],
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.url) {
+        throw new Error(data.error || "決済ページを作成できませんでした");
+      }
+
+      window.location.assign(data.url);
+    } catch (error) {
+      console.error("Mastercard checkout error:", error);
+      setNotice("決済ページを開けませんでした。時間をおいてもう一度お試しください。");
+    } finally {
+      setLoadingId("");
+    }
+  }
+
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
@@ -204,9 +253,16 @@ export default function MastercardPage() {
           <p>Membership Rank</p>
           <h2>選ばれた会員だけのマスターカード</h2>
         </div>
+        {notice && <p className={styles.notice}>{notice}</p>}
         <div className={styles.tierGrid}>
           {tiers.map((tier) => (
-            <article className={`${styles.tierCard} ${styles[tier.tone]}`} key={tier.name}>
+            <button
+              className={`${styles.tierCard} ${styles[tier.tone]}`}
+              disabled={loadingId !== ""}
+              key={tier.name}
+              onClick={() => buyTier(tier)}
+              type="button"
+            >
               <div className={styles.tierTop}>
                 <span>{tier.icon}</span>
                 <p>{tier.color}</p>
@@ -214,7 +270,10 @@ export default function MastercardPage() {
               <h3>{tier.name}</h3>
               <strong>{tier.price}</strong>
               <p>{tier.benefit}</p>
-            </article>
+              <span className={styles.buyLabel}>
+                {loadingId === tier.id ? "決済ページを準備中" : `${tier.name}を買う`}
+              </span>
+            </button>
           ))}
         </div>
       </section>
