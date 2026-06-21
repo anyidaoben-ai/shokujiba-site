@@ -217,8 +217,8 @@ export default function Page() {
               <Link href="/Paradise" className={styles.primaryAction}>
                 冒険を始める
               </Link>
-              <Link href="/upitel" className={styles.secondaryAction}>
-                UpiteLへ
+              <Link href="/Mastercard" className={styles.secondaryAction}>
+                Mastercardを買う
               </Link>
               <Link href="#play-with-master" className={styles.secondaryAction}>
                 Masterとあそぶ
