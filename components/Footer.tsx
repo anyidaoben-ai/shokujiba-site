@@ -62,7 +62,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://x.com/Nagarebou"
+            href="https://x.com/"
             className={styles.socialLink}
             aria-label="Instagram"
           >
