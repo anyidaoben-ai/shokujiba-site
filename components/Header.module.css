@@ -1,44 +1,101 @@
 .header {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   width: 100%;
-  min-height: 77px;
-  padding: 14px clamp(18px, 4vw, 42px);
-  background: #f8f5ef;
-  border-bottom: 1px solid rgba(27, 23, 18, 0.14);
+  border-bottom: 1px solid rgba(23, 32, 27, 0.12);
+  background: rgba(255, 253, 248, 0.94);
+  backdrop-filter: blur(14px);
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  left: clamp(18px, 4vw, 42px);
-  right: clamp(18px, 4vw, 42px);
-  bottom: 6px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(138, 98, 0, 0.42), transparent);
+.headerInner {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 auto;
 }
 
 .logoArea {
+  min-width: 0;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  border: 1px solid rgba(138, 98, 0, 0.24);
-  border-radius: 999px;
-  background:
-    linear-gradient(180deg, rgba(254, 194, 20, 0.12), transparent),
-    #ffffff;
+  gap: 12px;
+  color: #17201b;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(47, 31, 0, 0.08);
 }
 
 .logoImage {
   width: 44px;
   height: 44px;
-  border-radius: 999px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(23, 32, 27, 0.14);
+  border-radius: 8px;
   object-fit: cover;
+}
+
+.logoArea span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.logoArea strong {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.logoArea small {
+  color: #667068;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.nav a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: #17201b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.nav a:last-child {
+  background: #164f3a;
+  color: #fffaf0;
+}
+
+@media (max-width: 720px) {
+  .headerInner {
+    width: min(100% - 28px, 1180px);
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .nav a {
+    flex: 0 0 auto;
+  }
 }

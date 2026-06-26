@@ -4,174 +4,90 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const worlds = [
+const services = [
   {
+    label: "Food Experience",
+    title: "食の体験設計",
+    description:
+      "食材、飲食、物販、地域体験をひとつの導線で設計し、訪れる理由と買う理由を同時につくります。",
     href: "/Dispense",
+  },
+  {
+    label: "Place Branding",
+    title: "場のブランド開発",
+    description:
+      "Paradise、Jungle Village、Tripなどの世界観を使い、施設・地域・商品に記憶される物語を持たせます。",
+    href: "/Paradise",
+  },
+  {
+    label: "Commerce",
+    title: "会員・物販導線",
+    description:
+      "Mastercard、Goods、限定商品を通じて、体験後も関係が続く収益導線を構築します。",
+    href: "/Goods",
+  },
+];
+
+const strengths = [
+  "企画、世界観、販売導線を一気通貫で設計",
+  "食・観光・物販を横断したブランド体験を構築",
+  "小さく始めて、施設・商品・会員制度へ拡張可能",
+  "写真、コピー、ページ構成までデジタル実装に落とし込み",
+];
+
+const numbers = [
+  { value: "3", label: "主要事業領域" },
+  { value: "6+", label: "展開可能な体験カテゴリ" },
+  { value: "24h", label: "Webでの受付導線" },
+];
+
+const cases = [
+  {
+    category: "Food",
+    title: "食材体験を入口にした購買導線",
+    text: "果物、野菜、魚、肉、飲料をただ並べるのではなく、選ぶ楽しさと到着後の体験まで設計します。",
     image: "/images/shokujiba-receive-energy.jpg",
-    label: "Shokuzai",
-    title: "食材の冒険",
-    description: "果物、野菜、肉、魚、飲料まで。食べたいものを探し、エネルギーを受け取る冒険です。",
-  },
-  {
-    href: "/Goods",
-    image: "/images/luxuryimage.png",
-    label: "Goods",
-    title: "宝物の冒険",
-    description: "お守り、衣服、財布、装飾品。欲しいものを手に入れ、Shokujibaの力を持ち帰ります。",
-  },
-  {
-    href: "/Paradise",
-    image: "/images/paradise-theme-park.jpg",
-    label: "Paradise",
-    title: "楽園の冒険",
-    description: "Jungle Village、Paradise Beach、UpiteL、Marina Bay、Central Mountainへ進みます。",
-  },
-];
-
-const notices = [
-  {
-    date: "Adventure",
-    title: "Shokujibaの冒険を開始できます",
-    href: "/Paradise",
-  },
-  {
-    date: "Popular",
-    title: "Shokujiba Master Cardを購入できます",
-    href: "/Mastercard",
-  },
-  {
-    date: "Nature",
-    title: "Jungle Villageで動物と心を通わせる",
-    href: "/junglevillage",
-  },
-];
-
-const guideLinks = [
-  { href: "/Dispense", label: "Shokuzai", text: "食材を探してエネルギーを得る" },
-  { href: "/Goods", label: "Goods", text: "宝物を手に入れて力を持ち帰る" },
-  { href: "/Paradise", label: "Paradise", text: "欲望、夢、願いが叶う楽園へ進む" },
-  { href: "/Mastercard", label: "Mastercard", text: "最上位メンバー権を手に入れる" },
-  { href: "/junglevillage", label: "Jungle Village", text: "動物と心を通わせる森の冒険" },
-  { href: "/trip", label: "Trip", text: "旅と宿泊の準備をする" },
-];
-
-const principles = [
-  "食欲を、冒険のエネルギーへ。",
-  "購買欲を、手に入れる喜びへ。",
-  "楽園欲を、歩ける世界へ。",
-];
-
-const adventureRoutes = [
-  {
     href: "/Dispense",
-    title: "Shokuzaiを探す",
-    text: "まずは食材を選び、冒険のエネルギーを手に入れます。",
   },
   {
-    href: "/Goods",
-    title: "Goodsを装備する",
-    text: "お守りや装飾品を持ち、Shokujibaの力をまといます。",
-  },
-  {
+    category: "Resort",
+    title: "滞在価値を高める楽園コンセプト",
+    text: "温泉、ホテル、レストラン、遊び場を一つの世界として束ね、訪問前から期待値を育てます。",
+    image: "/images/current-paradise.JPG",
     href: "/Paradise",
-    title: "Paradiseへ進む",
-    text: "欲望、夢、願いが叶う場所をめぐります。",
   },
   {
-    href: "/Mastercard",
-    title: "Mastercardを買う",
-    text: "Shokujiba Paradiseの会員ランクと特典を選びます。",
-  },
-  {
-    href: "/junglevillage",
-    title: "Jungle Villageを歩く",
-    text: "動物と触れ合い、北海道の自然と心を通わせます。",
+    category: "Retail",
+    title: "持ち帰れるブランド資産",
+    text: "アパレル、財布、装飾品、会員カードを通じて、体験を日常に持ち帰れる商品へ変えます。",
+    image: "/images/goods/paradise-wallet.jpg",
+    href: "/Goods",
   },
 ];
 
-const dragonPowers = [
-  "食材の香りを追って空を飛ぶ",
-  "Goodsに金色の守りを宿す",
-  "Paradiseの次の扉を開く",
-];
-
-const dragonRoutes = [
-  { href: "/Dispense", label: "食の森へ" },
-  { href: "/Goods", label: "宝物庫へ" },
-  { href: "/Paradise", label: "楽園の空へ" },
-];
-
-const dragonCharacter = {
-  name: "Shokujiba Dragon",
-  role: "楽園を守る案内役",
-  image: "/images/dragonai.png",
-  description:
-    "食事場の空を巡り、訪れる人を食、Goods、Paradiseの次の場所へ導く新しいキャラクターです。",
-  catchphrase: "Master、今日はどこへ飛ぶ？",
-};
-
-const dragonMissions = [
+const flow = [
   {
-    title: "食を見つける",
-    text: "果物、魚、肉、飲料の気配を読み取り、Shokujibaの食の入口へ案内します。",
+    step: "01",
+    title: "構想を整理",
+    text: "事業の目的、ターゲット、既存資産、収益化ポイントをヒアリングします。",
   },
   {
-    title: "宝を守る",
-    text: "Goodsの輝きを見張り、持つ人の気分が上がる品を選びます。",
+    step: "02",
+    title: "体験を設計",
+    text: "食、場所、商品、会員導線をひとつのブランド体験として組み立てます。",
   },
   {
-    title: "楽園へ運ぶ",
-    text: "海、温泉、ホテル、遊び場を空から結び、Paradiseの体験へ連れていきます。",
+    step: "03",
+    title: "公開して育てる",
+    text: "Webサイト、商品ページ、問い合わせ導線を整え、反応を見ながら改善します。",
   },
 ];
 
-const masterPlayModes = [
-  {
-    title: "食材をえらぶ",
-    text: "Masterと今日の食材を決めます。果物、肉、魚、飲み物から気分に合う一品を探します。",
-    command: "今日の食材を決める",
-  },
-  {
-    title: "Goodsをつくる",
-    text: "Masterと新しいお守り、服、財布、装飾品の名前や効果を考えます。",
-    command: "新しいGoodsをつくる",
-  },
-  {
-    title: "楽園を広げる",
-    text: "MasterとParadiseに温泉、ホテル、遊び場、レストランを増やします。",
-    command: "Paradiseを広げる",
-  },
-];
-
-const masterQuickActions = [
-  "今日の食材ガチャ",
-  "Dragonと空の散歩",
-  "Goodsの名前づくり",
-  "Paradiseに新施設を追加",
-  "Masterから一言もらう",
-];
-
-const masterQuestLevels = [
-  {
-    level: "Level 1",
-    title: "今日の気分をえらぶ",
-    text: "甘い、強い、豪華、のんびり。いまの気分からShokujibaの一歩目を決めます。",
-  },
-  {
-    level: "Level 2",
-    title: "食材とGoodsを組み合わせる",
-    text: "選んだ食材に合うGoodsを考え、名前、色、効果をMasterと作ります。",
-  },
-  {
-    level: "Level 3",
-    title: "Paradiseの一日をつくる",
-    text: "朝、昼、夜の行き先を決めて、Dragonと一緒に楽園の旅程を完成させます。",
-  },
-  {
-    level: "Level Max",
-    title: "新しい世界を生み出す",
-    text: "Shokujibaにまだない島、施設、キャラクター、伝説をMasterと追加します。",
-  },
+const company = [
+  { term: "会社名", value: "株式会社食事場" },
+  { term: "ブランド", value: "Shokujiba" },
+  { term: "事業内容", value: "食体験企画、観光・施設ブランディング、物販・会員導線設計" },
+  { term: "お問い合わせ", value: "shokujibamaster@gmail.com" },
 ];
 
 export default function Page() {
@@ -179,13 +95,10 @@ export default function Page() {
     <>
       <Header />
       <main className={styles.main}>
-        <a href="#play-with-master" className={styles.masterFloat}>
-          Masterとあそぶ
-        </a>
         <section className={styles.hero} aria-labelledby="page-title">
           <Image
-            src="/images/paradise.PNG"
-            alt="Shokujiba Paradiseの風景"
+            src="/images/dining.png"
+            alt="Shokujibaが提案する食体験のイメージ"
             fill
             sizes="100vw"
             className={styles.heroImage}
@@ -193,73 +106,106 @@ export default function Page() {
           />
           <div className={styles.heroOverlay} />
           <div className={styles.heroInner}>
-            <p className={styles.kicker}>株式会社食事場 公式サイト</p>
-            <h1 id="page-title">Shokujiba Adventure</h1>
+            <p className={styles.kicker}>Corporate Site</p>
+            <h1 id="page-title">食から、場の価値をつくる。</h1>
             <p className={styles.heroLead}>
-              Shokuzaiを探し、Goodsを手に入れ、Paradiseを進み、UpiteLで出会い、
-              Jungle Villageで自然と心を通わせる。ここはShokujibaを冒険する入口です。
+              Shokujibaは、食材・飲食・観光・物販をひとつの体験に編み上げるブランド開発会社です。
+              地域、施設、商品が持つ魅力を、訪れたくなる導線と買いたくなる仕組みに変えます。
             </p>
-            <div className={styles.heroDragon} aria-label="Shokujiba Dragon">
-              <Image
-                src={dragonCharacter.image}
-                alt={`${dragonCharacter.name}の姿`}
-                width={150}
-                height={150}
-                className={styles.heroDragonImage}
-              />
-              <div>
-                <span>{dragonCharacter.role}</span>
-                <strong>{dragonCharacter.name}</strong>
-                <p>{dragonCharacter.catchphrase}</p>
+            <div className={styles.heroActions} aria-label="主要導線">
+              <a href="mailto:shokujibamaster@gmail.com" className={styles.primaryAction}>
+                事業相談をする
+              </a>
+              <Link href="#services" className={styles.secondaryAction}>
+                事業を見る
+              </Link>
+            </div>
+          </div>
+          <div className={styles.heroMetrics} aria-label="Shokujibaの特徴">
+            {numbers.map((item) => (
+              <div key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
               </div>
-            </div>
-            <div className={styles.heroActions} aria-label="主要リンク">
-              <Link href="/Paradise" className={styles.primaryAction}>
-                冒険を始める
-              </Link>
-              <Link href="/Mastercard" className={styles.secondaryAction}>
-                Mastercardを買う
-              </Link>
-              <Link href="#play-with-master" className={styles.secondaryAction}>
-                Masterとあそぶ
-              </Link>
-            </div>
+            ))}
           </div>
         </section>
 
-        <section className={styles.worldSection} aria-labelledby="world-title">
+        <section className={styles.statementSection} aria-labelledby="statement-title">
+          <p className={styles.kickerDark}>Mission</p>
+          <h2 id="statement-title">
+            良い食事は、良い場所の記憶になる。
+            <br />
+            私たちはその記憶を、事業として育てます。
+          </h2>
+          <p>
+            食べる、歩く、泊まる、買う。ばらばらに見える行動を、ひとつの物語として設計することで、
+            施設や地域の価値はもっと伝わりやすくなります。Shokujibaは企画とWeb実装の両側から、
+            その体験づくりを支えます。
+          </p>
+        </section>
+
+        <section className={styles.servicesSection} id="services" aria-labelledby="services-title">
           <div className={styles.sectionHead}>
-            <p>Worlds</p>
-            <h2 id="world-title">Shokujibaを冒険する三つの入口</h2>
+            <p>Services</p>
+            <h2 id="services-title">事業領域</h2>
           </div>
-          <div className={styles.worldGrid}>
-            {worlds.map((world) => (
-              <Link href={world.href} className={styles.worldCard} key={world.href}>
-                <Image
-                  src={world.image}
-                  alt={`${world.title}のイメージ`}
-                  width={640}
-                  height={420}
-                  className={styles.worldImage}
-                />
-                <span>{world.label}</span>
-                <h3>{world.title}</h3>
-                <p>{world.description}</p>
+          <div className={styles.serviceGrid}>
+            {services.map((service) => (
+              <Link href={service.href} className={styles.serviceCard} key={service.title}>
+                <span>{service.label}</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
               </Link>
             ))}
           </div>
         </section>
 
-        <section className={styles.adventureSection} aria-labelledby="adventure-title">
-          <div className={styles.sectionHead}>
-            <p>Adventure Route</p>
-            <h2 id="adventure-title">どこから冒険する？</h2>
+        <section className={styles.valueSection} aria-labelledby="value-title">
+          <div className={styles.valueVisual}>
+            <Image
+              src="/images/restoran.PNG"
+              alt="食事場のレストラン体験"
+              width={780}
+              height={620}
+              className={styles.valueImage}
+            />
           </div>
-          <div className={styles.adventureGrid}>
-            {adventureRoutes.map((route) => (
-              <Link href={route.href} className={styles.adventureCard} key={route.href}>
-                <h3>{route.title}</h3>
-                <p>{route.text}</p>
+          <div className={styles.valueText}>
+            <p className={styles.kickerDark}>What We Do</p>
+            <h2 id="value-title">コンセプトで終わらせず、売れる導線までつくる。</h2>
+            <p>
+              ブランドの世界観は、見た目だけでは事業になりません。Shokujibaは体験前の期待、
+              現地での回遊、体験後の購入や再訪までを設計し、会社サイトとして信頼される情報に落とし込みます。
+            </p>
+            <ul className={styles.strengthList}>
+              {strengths.map((strength) => (
+                <li key={strength}>{strength}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.caseSection} aria-labelledby="case-title">
+          <div className={styles.sectionHead}>
+            <p>Projects</p>
+            <h2 id="case-title">展開中のブランド体験</h2>
+          </div>
+          <div className={styles.caseGrid}>
+            {cases.map((item) => (
+              <Link href={item.href} className={styles.caseCard} key={item.title}>
+                <Image
+                  src={item.image}
+                  alt={`${item.title}のイメージ`}
+                  width={720}
+                  height={520}
+                  className={styles.caseImage}
+                />
+                <div>
+                  <span>{item.category}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
               </Link>
             ))}
           </div>
@@ -267,167 +213,41 @@ export default function Page() {
 
         <section className={styles.flowSection} aria-labelledby="flow-title">
           <div className={styles.sectionHead}>
-            <p>Concept</p>
-            <h2 id="flow-title">欲を、冒険の流れに変える</h2>
+            <p>Process</p>
+            <h2 id="flow-title">相談から公開まで</h2>
           </div>
-          <ol className={styles.principleList}>
-            {principles.map((principle) => (
-              <li key={principle}>{principle}</li>
+          <div className={styles.flowGrid}>
+            {flow.map((item) => (
+              <article className={styles.flowCard} key={item.step}>
+                <span>{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
             ))}
-          </ol>
+          </div>
         </section>
 
-        <section className={styles.characterSection} aria-labelledby="character-title">
-          <div className={styles.sectionHead}>
-            <p>Character</p>
-            <h2 id="character-title">Dragonが冒険を案内する</h2>
+        <section className={styles.companySection} aria-labelledby="company-title">
+          <div>
+            <p className={styles.kickerDark}>Company</p>
+            <h2 id="company-title">会社概要</h2>
           </div>
-          <div className={styles.characterGrid}>
-            <article className={styles.characterCard}>
-              <div className={styles.characterImageFrame}>
-                <Image
-                  src={dragonCharacter.image}
-                  alt={`${dragonCharacter.name}の姿`}
-                  width={520}
-                  height={520}
-                  className={styles.characterImage}
-                />
+          <dl className={styles.companyList}>
+            {company.map((item) => (
+              <div key={item.term}>
+                <dt>{item.term}</dt>
+                <dd>{item.value}</dd>
               </div>
-              <div className={styles.characterText}>
-                <span>{dragonCharacter.role}</span>
-                <h3>{dragonCharacter.name}</h3>
-                <p>{dragonCharacter.description}</p>
-                <blockquote>{dragonCharacter.catchphrase}</blockquote>
-                <ul className={styles.dragonPowerList} aria-label="ドラゴンの力">
-                  {dragonPowers.map((power) => (
-                    <li key={power}>{power}</li>
-                  ))}
-                </ul>
-                <div className={styles.dragonRouteLinks} aria-label="ドラゴンと行く場所">
-                  {dragonRoutes.map((route) => (
-                    <Link href={route.href} key={route.href}>
-                      {route.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </article>
-          </div>
-          <div className={styles.dragonMissionGrid}>
-            {dragonMissions.map((mission) => (
-              <article className={styles.dragonMissionCard} key={mission.title}>
-                <h3>{mission.title}</h3>
-                <p>{mission.text}</p>
-              </article>
             ))}
-          </div>
+          </dl>
         </section>
 
-        <section
-          className={styles.masterPlaySection}
-          id="play-with-master"
-          aria-labelledby="master-play-title"
-        >
-          <div className={styles.masterPlayIntro}>
-            <p>Play with Master</p>
-            <h2 id="master-play-title">MasterとShokujibaであそぶ</h2>
-            <span>
-              MasterはShokujibaの中心にいる存在です。食材を選び、Goodsを考え、
-              Dragonと一緒にParadiseを広げていきます。
-            </span>
-          </div>
-          <div className={styles.masterConsole} aria-label="Masterとすぐ遊ぶ">
-            <div>
-              <p>Master Play Console</p>
-              <h3>ここからいつでも開始</h3>
-            </div>
-            <div className={styles.masterQuickGrid}>
-              {masterQuickActions.map((action) => (
-                <a
-                  href={`mailto:shokujibamaster@gmail.com?subject=${encodeURIComponent(action)}`}
-                  key={action}
-                >
-                  {action}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className={styles.masterPlayGrid}>
-            {masterPlayModes.map((mode) => (
-              <article className={styles.masterPlayCard} key={mode.title}>
-                <h3>{mode.title}</h3>
-                <p>{mode.text}</p>
-                <strong>{mode.command}</strong>
-              </article>
-            ))}
-          </div>
-          <div className={styles.masterQuestGrid}>
-            {masterQuestLevels.map((quest) => (
-              <article className={styles.masterQuestCard} key={quest.level}>
-                <span>{quest.level}</span>
-                <h3>{quest.title}</h3>
-                <p>{quest.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className={styles.masterDialogue} aria-label="Masterからの言葉">
-            <Image
-              src="/images/shokujibaicon.jpeg"
-              alt="Masterの印"
-              width={96}
-              height={96}
-              className={styles.masterIcon}
-            />
-            <blockquote>
-              「今日はなにを生み出そう。食、宝、楽園。Shokujibaは、あそぶほど広がる。」
-            </blockquote>
-          </div>
-        </section>
-
-        <section className={styles.infoSection} aria-label="新着情報と連絡先">
-          <div className={styles.newsPanel}>
-            <div className={styles.panelHead}>
-              <p>News</p>
-              <Link href="/TechnologyLand-AI">公式案内</Link>
-            </div>
-            <div className={styles.newsList}>
-              {notices.map((notice) => (
-                <Link href={notice.href} className={styles.newsItem} key={notice.title}>
-                  <time>{notice.date}</time>
-                  <span>{notice.title}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <aside className={styles.contactPanel}>
+        <section className={styles.contactSection} aria-labelledby="contact-title">
+          <div>
             <p>Contact</p>
-            <h2>Masterへ連絡する</h2>
-            <span>出資、協業、土地提供、飲食出店、イベント、取材、採用の相談を受け付けます。</span>
-            <a href="mailto:shokujibamaster@gmail.com">メールを送る</a>
-          </aside>
-        </section>
-
-        <section className={styles.guideSection} aria-labelledby="guide-title">
-          <div className={styles.sectionHead}>
-            <p>Guide</p>
-            <h2 id="guide-title">冒険の行き先</h2>
+            <h2 id="contact-title">食・観光・物販の企画を、会社の事業に変えたい方へ。</h2>
           </div>
-          <div className={styles.guideGrid}>
-            {guideLinks.map((link) =>
-              link.href.startsWith("mailto:") ? (
-                <a href={link.href} className={styles.guideLink} key={link.href}>
-                  <strong>{link.label}</strong>
-                  <span>{link.text}</span>
-                </a>
-              ) : (
-                <Link href={link.href} className={styles.guideLink} key={link.href}>
-                  <strong>{link.label}</strong>
-                  <span>{link.text}</span>
-                </Link>
-              ),
-            )}
-          </div>
+          <a href="mailto:shokujibamaster@gmail.com">お問い合わせ</a>
         </section>
       </main>
       <Footer />

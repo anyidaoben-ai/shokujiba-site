@@ -2,12 +2,12 @@ import Link from "next/link";
 import styles from "./Footer.module.css";
 
 const exploreLinks = [
-  { href: "/Dispense", label: "Shokuzai" },
-  { href: "/Goods", label: "Goods" },
-  { href: "/Paradise", label: "Paradise" },
-  { href: "/trip", label: "Trip" },
-  { href: "/Mastercard", label: "Mastercard" },
-  { href: "mailto:shokujibamaster@gmail.com", label: "Contact" },
+  { href: "/", label: "会社トップ" },
+  { href: "/Dispense", label: "食体験" },
+  { href: "/Paradise", label: "場の開発" },
+  { href: "/Goods", label: "物販" },
+  { href: "/trip", label: "旅・滞在" },
+  { href: "/Mastercard", label: "会員サービス" },
 ];
 
 const legalLinks = [
@@ -21,16 +21,15 @@ export default function Footer() {
       <div className={styles.footerFrame}>
         <div className={styles.brandPanel}>
           <p className={styles.eyebrow}>食事場</p>
-          <h2>Shokujiba Paradise</h2>
+          <h2>Shokujiba</h2>
           <p>
-            ひとつにつながるShokujibaの世界。
-            Shokujibaリンクタブから、それぞれの体験へ進めます。
+            食材、飲食、観光、物販をつなぎ、訪れる理由と買う理由を設計するブランド開発会社です。
           </p>
           <span>株式会社食事場</span>
         </div>
 
         <div className={styles.linkPanel}>
-          <h3>EXPLORE</h3>
+          <h3>BUSINESS</h3>
           <nav className={styles.footerTabs} aria-label="Footer navigation">
             {exploreLinks.map((link) => (
               <Link href={link.href} className={styles.footerTab} key={link.href}>
@@ -52,21 +51,21 @@ export default function Footer() {
         </div>
 
         <div className={styles.socialPanel}>
-          <h3>SOCIAL</h3>
+          <h3>CONTACT</h3>
           <a
-            href=""
+            href="mailto:shokujibamaster@gmail.com"
             className={styles.socialLink}
-            aria-label="X"
+            aria-label="Email"
           >
-            X
+            Mail
           </a>
 
           <a
             href="https://x.com/"
             className={styles.socialLink}
-            aria-label="Instagram"
+            aria-label="X"
           >
-            ◎
+            X
           </a>
 
           <a

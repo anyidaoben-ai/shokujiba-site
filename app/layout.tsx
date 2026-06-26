@@ -13,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: " 食事場 | Shokujiba 公式サイト",
+  title: "Shokujiba | 株式会社食事場",
   applicationName: "Shokujiba",
-  description: " 食事場 | Shokujiba へようこそ。ここにはすべてあります。",
+  description:
+    "株式会社食事場 Shokujibaは、食材・飲食・観光・物販をつなぎ、場の価値を事業に変えるブランド開発会社です。",
 };
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ja"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
